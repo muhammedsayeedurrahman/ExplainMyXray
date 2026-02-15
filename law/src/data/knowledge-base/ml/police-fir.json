@@ -1,0 +1,97 @@
+[
+  {
+    "id": "police-how-to-file-fir",
+    "categoryId": "police-fir",
+    "question": "How do I file an FIR at a police station?",
+    "keywords": ["FIR", "file FIR", "police complaint", "first information report", "police station", "file complaint"],
+    "answer": {
+      "simple": "You can file an FIR (First Information Report) at any police station by telling the officer about the crime. The police are legally required to register your FIR — they cannot refuse. You can also file online in many states.",
+      "practical": "To file an FIR, go to the nearest police station. You can go to any police station — it does not have to be in the area where the crime happened (this is called a Zero FIR). Tell the duty officer what happened clearly, including when, where, and who was involved.\n\nThe officer must write down your complaint and read it back to you. Check it carefully before signing. You are entitled to a free copy of the FIR — ask for it immediately. If possible, bring any evidence you have (photos, messages, documents).\n\nMany states now allow online FIR filing through their police websites. You can also send your complaint by registered post to the Superintendent of Police. For serious crimes (cognizable offences), the police must register the FIR. If they refuse, you can approach the Superintendent of Police or file a complaint with the Judicial Magistrate under Section 156(3) CrPC.",
+      "legal": "Under Section 154 of the Code of Criminal Procedure (CrPC) / Section 173 of the Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023, every information relating to a cognizable offence must be reduced to writing by the police officer. The Supreme Court in Lalita Kumari v. Govt. of UP (2014) held that registration of FIR is mandatory under Section 154 when information discloses commission of a cognizable offence — no preliminary inquiry is needed.\n\nSection 154(2) CrPC / Section 173(3) BNSS provides that if the officer in charge refuses to register an FIR, the informant may send the substance of information by post to the Superintendent of Police. Under Section 156(3) CrPC / Section 175(3) BNSS, a Magistrate can direct the police to register an FIR and investigate. Non-registration of FIR is a punishable offence under the Police Acts of respective states."
+    },
+    "actionSteps": [
+      { "step": 1, "title": "Go to the nearest police station", "description": "Visit any police station. Under the Zero FIR system, you can file at any station regardless of jurisdiction. The police will transfer it to the correct station later." },
+      { "step": 2, "title": "Narrate the incident clearly", "description": "Tell the duty officer what happened — include date, time, place, names of people involved, and describe the crime. Bring any evidence you have." },
+      { "step": 3, "title": "Review and sign the FIR", "description": "The officer will write your statement. Read it carefully (or have it read to you). Make sure all details are accurate before you sign." },
+      { "step": 4, "title": "Get a free copy of the FIR", "description": "You are legally entitled to a free copy of the FIR. Ask for it immediately and keep it safe. Note the FIR number for follow-up." },
+      { "step": 5, "title": "Follow up on the investigation", "description": "After filing, the police must investigate. Follow up regularly. If no action is taken, write to the Superintendent of Police or approach the Magistrate." }
+    ],
+    "relatedIds": ["police-zero-fir", "police-rights-during-arrest", "police-bail-rights"]
+  },
+  {
+    "id": "police-zero-fir",
+    "categoryId": "police-fir",
+    "question": "What should I do if the police refuse to file my FIR?",
+    "keywords": ["police refuse FIR", "zero FIR", "FIR rejection", "police not filing", "complaint refused", "SP complaint"],
+    "answer": {
+      "simple": "If police refuse to file your FIR, you have several options: file a Zero FIR at another station, complain to the Superintendent of Police, file online, or approach the Magistrate court to direct the police to register your FIR.",
+      "practical": "Police refusal to register an FIR is illegal, but it does happen. Here is what you can do:\n\n1. Try another police station — Under the Zero FIR system, any police station must accept your complaint regardless of jurisdiction.\n2. Send your complaint by registered post or email to the Superintendent of Police (SP) of the district. Under law, the SP must ensure your FIR is registered.\n3. File online — Most state police websites have online complaint portals.\n4. Approach the Judicial Magistrate — File an application under Section 156(3) CrPC / Section 175(3) BNSS before the Magistrate court. The Magistrate can direct the police to register and investigate.\n5. File a complaint with the State or National Human Rights Commission if the police misconduct is serious.\n\nAlways keep a written record of your attempt to file. If you went to the station in person, note the date, time, name of officer, and what they said. This evidence will help in your complaint to higher authorities.",
+      "legal": "The Supreme Court in Lalita Kumari v. Govt. of UP (2014) categorically held that registration of FIR is mandatory when information discloses a cognizable offence, and no preliminary inquiry is permissible. The Court directed that any police officer who fails to register an FIR shall be subject to disciplinary action.\n\nUnder Section 154(3) CrPC / Section 173(4) BNSS, if the officer refuses, information can be sent to the Superintendent of Police who shall either investigate the case himself or direct investigation. Section 156(3) CrPC / Section 175(3) BNSS empowers any Magistrate to order the police to register an FIR and investigate. In Sakiri Vasu v. State of UP (2008), the Supreme Court held that the Magistrate can direct registration of FIR under Section 156(3) even without the complainant approaching the police first."
+    },
+    "actionSteps": [
+      { "step": 1, "title": "Document the refusal", "description": "Note the date, time, police station, officer's name, and what they said. If possible, record video or audio (legal in India for personal documentation)." },
+      { "step": 2, "title": "Try a Zero FIR at another station", "description": "Go to a different police station and file there. Under the Zero FIR system, any station must accept and later transfer it to the jurisdictional station." },
+      { "step": 3, "title": "Write to the Superintendent of Police", "description": "Send your complaint by registered post or email to the SP of the district. The SP is legally bound to ensure your FIR is registered." },
+      { "step": 4, "title": "File online", "description": "Use your state police website to file an online FIR or complaint. Also report on the national cybercrime portal if relevant." },
+      { "step": 5, "title": "Approach the Magistrate court", "description": "File an application under Section 156(3) CrPC before the Judicial Magistrate. The court will direct the police to register and investigate your complaint." }
+    ],
+    "relatedIds": ["police-how-to-file-fir", "police-rights-during-arrest", "legal-aid-free-legal-aid"]
+  },
+  {
+    "id": "police-rights-during-arrest",
+    "categoryId": "police-fir",
+    "question": "What are my rights if I am arrested by the police?",
+    "keywords": ["arrest", "arrested", "police arrest", "rights during arrest", "detention", "custody", "handcuffs", "lock-up"],
+    "answer": {
+      "simple": "If you are arrested, you have the right to know why, the right to inform your family, the right to a lawyer (free if you can't afford one), and the right to be produced before a magistrate within 24 hours. Police cannot torture you or force a confession.",
+      "practical": "Being arrested can be frightening, but knowing your rights makes a big difference:\n\n1. Right to know the reason — Ask the officer why you are being arrested. They must tell you.\n2. Right to inform family — You can immediately call a family member or friend. The police must inform your nominated person.\n3. Right to a lawyer — You can call your lawyer. If you cannot afford one, you have the right to free legal aid from the Legal Services Authority.\n4. Right to silence — You do not have to answer any questions beyond your name and address. Anything you say can be used against you.\n5. No torture — Police cannot physically harm you, threaten you, or force you to confess.\n6. Medical examination — You have the right to be medically examined upon arrest.\n7. Court within 24 hours — You must be presented before a Magistrate within 24 hours.\n8. Women's rights — A woman cannot be arrested after sunset and before sunrise except in exceptional circumstances, and only by a female officer.",
+      "legal": "Article 22(1) of the Constitution guarantees the right to be informed of the grounds of arrest and the right to consult a lawyer. Article 22(2) mandates production before a Magistrate within 24 hours. Under D.K. Basu v. State of West Bengal (1997), the Supreme Court laid down mandatory guidelines for arrest, including: informing relatives, memo of arrest attested by a witness, medical examination every 48 hours, and maintaining an arrest memo with the arrestee's signature.\n\nSection 50 CrPC / Section 47 BNSS requires the police to communicate the grounds of arrest. Section 50A CrPC / Section 48 BNSS mandates informing a nominated person about the arrest. Section 41A CrPC / Section 35 BNSS restricts arrest for offences punishable with up to 7 years — the police must issue a notice of appearance instead of arresting. Article 20(3) protects against self-incrimination. Section 163 CrPC bars inducements or threats for confessions."
+    },
+    "actionSteps": [
+      { "step": 1, "title": "Stay calm and cooperate", "description": "Do not resist arrest or argue physically. Stay calm and polite. Resisting can lead to additional charges." },
+      { "step": 2, "title": "Ask for the reason of arrest", "description": "You have a constitutional right to know why you are being arrested. Ask the officer clearly and remember or note down the reason." },
+      { "step": 3, "title": "Inform family and lawyer", "description": "Immediately ask to call your family member or lawyer. The police must allow this and must also inform your nominated person." },
+      { "step": 4, "title": "Do not sign blank papers", "description": "Do not sign any blank paper or document you haven't fully read and understood. This is your right." },
+      { "step": 5, "title": "Request free legal aid if needed", "description": "If you cannot afford a lawyer, ask for free legal aid under Article 39A. Contact the District Legal Services Authority at 15100." }
+    ],
+    "relatedIds": ["police-how-to-file-fir", "police-bail-rights", "police-rights-of-accused"]
+  },
+  {
+    "id": "police-bail-rights",
+    "categoryId": "police-fir",
+    "question": "How does bail work in India and what are my bail rights?",
+    "keywords": ["bail", "get bail", "bail application", "anticipatory bail", "regular bail", "default bail", "bail bond"],
+    "answer": {
+      "simple": "Bail is your right to be released from police custody while your case is being investigated or tried. For most offences, bail is a right, not a privilege. You can apply for bail at the police station itself or through the court.",
+      "practical": "There are several types of bail in India:\n\n1. Station bail — For bailable offences (less serious crimes), the police station itself must grant bail. You just need to provide a bail bond.\n2. Regular bail — For non-bailable offences, apply to the Magistrate or Sessions Court. The court considers the nature of the crime, evidence, flight risk, and your background.\n3. Anticipatory bail — If you fear arrest, you can apply for anticipatory bail before arrest. Apply to the Sessions Court or High Court.\n4. Default bail — If the police don't file a chargesheet within 60 days (for offences up to 3 years) or 90 days (for serious offences), you have a right to default bail.\n\nTo apply, hire a lawyer or request free legal aid. Your lawyer will file a bail application in court. For bailable offences, simply go to the police station with a surety (someone who guarantees your appearance in court). The bail amount should be reasonable — if it is too high, ask the court to reduce it.",
+      "legal": "Sections 436-439 CrPC / Sections 478-483 BNSS govern bail. Section 436 CrPC / Section 478 BNSS makes bail a right for bailable offences. Section 437 CrPC / Section 480 BNSS governs bail for non-bailable offences. Section 438 CrPC / Section 482 BNSS provides for anticipatory bail.\n\nSection 167(2) CrPC / Section 187(2) BNSS provides the right to default bail if the investigation is not completed within the prescribed period. In Sanjay Chandra v. CBI (2012), the Supreme Court held that grant of bail is the rule and refusal is the exception. In Arnesh Kumar v. State of Bihar (2014), the Court directed that for offences punishable with up to 7 years, arrest should be avoided and bail should be liberally granted. In Satender Kumar Antil v. CBI (2022), the Supreme Court mandated bail as a preferred remedy and directed release on bail for offences up to 7 years."
+    },
+    "actionSteps": [
+      { "step": 1, "title": "Determine if the offence is bailable", "description": "Check if the offence is bailable (police must grant bail) or non-bailable (court grants bail). Your lawyer can tell you this. For bailable offences, demand bail at the station." },
+      { "step": 2, "title": "Arrange a surety and bail bond", "description": "For station bail, arrange a surety person (friend/family) who will sign a bail bond guaranteeing your court appearances. Carry ID proof and address proof." },
+      { "step": 3, "title": "File a bail application in court", "description": "For non-bailable offences, your lawyer must file a bail application in the Magistrate Court or Sessions Court with grounds for granting bail." },
+      { "step": 4, "title": "Apply for anticipatory bail if needed", "description": "If you fear arrest, apply for anticipatory bail in the Sessions Court or High Court before being arrested." },
+      { "step": 5, "title": "Claim default bail if applicable", "description": "If the police haven't filed a chargesheet within 60/90 days of arrest, apply for default bail — this is your statutory right." }
+    ],
+    "relatedIds": ["police-rights-during-arrest", "police-rights-of-accused", "legal-aid-free-legal-aid"]
+  },
+  {
+    "id": "police-rights-of-accused",
+    "categoryId": "police-fir",
+    "question": "What are the rights of an accused person in India?",
+    "keywords": ["accused rights", "rights of accused", "criminal case", "fair trial", "presumption of innocence", "right to lawyer", "legal rights accused"],
+    "answer": {
+      "simple": "Every accused person in India is presumed innocent until proven guilty. You have the right to a fair trial, a lawyer (free if you can't afford one), to remain silent, to not be tortured, and to a speedy trial.",
+      "practical": "If you are accused of a crime, you have important rights:\n\n1. Presumption of innocence — You are innocent until the prosecution proves you guilty beyond reasonable doubt.\n2. Right to know charges — You must be informed of the exact charges against you.\n3. Right to a lawyer — You can hire a lawyer or get one for free through Legal Services Authority.\n4. Right to fair trial — The trial must be conducted in open court, you can cross-examine witnesses, present your own evidence, and challenge the prosecution's case.\n5. Right to silence — You cannot be compelled to be a witness against yourself.\n6. Right against double jeopardy — You cannot be tried twice for the same offence.\n7. Right to speedy trial — Unreasonable delay in trial is a violation of your fundamental rights.\n8. Right to appeal — If convicted, you have the right to appeal to a higher court.\n\nDo not give any statement to the police without your lawyer present. Do not sign any document without reading it. Cooperate with the court process but assert your rights firmly.",
+      "legal": "Article 14 guarantees equality before law. Article 20 provides three key protections: (1) no ex post facto law, (2) no double jeopardy, (3) no self-incrimination. Article 21 guarantees right to life and personal liberty, which includes the right to fair trial and speedy trial (Hussainara Khatoon v. State of Bihar, 1979). Article 22 guarantees rights on arrest.\n\nSection 313 CrPC / Section 316 BNSS gives the accused the right to explain evidence and examine witnesses. Section 243 CrPC provides the right to defense. In Mohd. Hussain v. State (2012), the Supreme Court reiterated that the burden of proof lies entirely on the prosecution and the accused need not prove innocence. In Abdul Rehman Antulay v. RS Nayak (1992), the Supreme Court established that speedy trial is a fundamental right under Article 21. In Maneka Gandhi v. Union of India (1978), the Supreme Court held that fair procedure is part of Article 21."
+    },
+    "actionSteps": [
+      { "step": 1, "title": "Get a lawyer immediately", "description": "Hire a criminal lawyer or request free legal aid through the District Legal Services Authority (call 15100). Do not face any legal proceeding without a lawyer." },
+      { "step": 2, "title": "Understand the charges", "description": "Get a copy of the FIR and chargesheet. Your lawyer will explain the exact charges, the evidence against you, and the maximum punishment." },
+      { "step": 3, "title": "Exercise your right to silence", "description": "Do not give any statement to the police without your lawyer. Under Article 20(3), you cannot be compelled to be a witness against yourself." },
+      { "step": 4, "title": "Attend all court hearings", "description": "Attend every court date. Failure to appear can result in a warrant and cancellation of bail. Your lawyer will guide you through the process." },
+      { "step": 5, "title": "Prepare your defense", "description": "Work with your lawyer to prepare your defense — gather evidence, identify witnesses, and build your case. You have the right to present evidence and cross-examine prosecution witnesses." }
+    ],
+    "relatedIds": ["police-rights-during-arrest", "police-bail-rights", "legal-aid-free-legal-aid"]
+  }
+]
