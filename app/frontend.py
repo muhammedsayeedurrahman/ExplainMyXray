@@ -980,23 +980,22 @@ with col_right:
             """, unsafe_allow_html=True)
 
             if bboxes:
-                rows = ""
+                st.markdown(f"""
+                <div class="fc">
+                    <div class="fc-title">Regions Detected ({len(bboxes)})</div>
+                </div>
+                """, unsafe_allow_html=True)
+                region_data = []
                 for i, box in enumerate(bboxes):
                     label = box.get("label", f"Region {i+1}")
                     x1, y1 = int(box["xmin"]), int(box["ymin"])
                     x2, y2 = int(box["xmax"]), int(box["ymax"])
-                    rows += f'<tr><td><span class="rdot"></span>{label}</td>'
-                    rows += f'<td>({x1}, {y1}) &rarr; ({x2}, {y2})</td>'
-                    rows += f'<td>{x2-x1} x {y2-y1} px</td></tr>'
-                st.markdown(f"""
-                <div class="fc">
-                    <div class="fc-title">Regions Detected ({len(bboxes)})</div>
-                    <table class="rt">
-                        <thead><tr><th>Region</th><th>Coordinates</th><th>Size</th></tr></thead>
-                        <tbody>{rows}</tbody>
-                    </table>
-                </div>
-                """, unsafe_allow_html=True)
+                    region_data.append({
+                        "Region": label,
+                        "Coordinates": f"({x1}, {y1}) → ({x2}, {y2})",
+                        "Size": f"{x2-x1} x {y2-y1} px",
+                    })
+                st.dataframe(region_data, use_container_width=True, hide_index=True)
 
             if raw_tokens:
                 st.markdown(f"""
