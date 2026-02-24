@@ -44,7 +44,7 @@ Navigate to: **http://localhost:8501**
 ### Step 1: Upload a Chest X-Ray
 
 - Click the upload area or drag-and-drop a chest X-ray image
-- Supported formats: PNG, JPG, JPEG, DICOM
+- Supported formats: PNG, JPG, JPEG
 - The image appears in the viewer panel
 
 ### Step 2: Analyse
