@@ -14,8 +14,10 @@ Usage:
 import argparse
 import gc
 import os
+import random
 import time
 
+import numpy as np
 import psutil
 import torch
 from datasets import load_dataset
@@ -49,6 +51,14 @@ def main():
     args = parser.parse_args()
 
     os.makedirs(args.output, exist_ok=True)
+
+    # Reproducibility
+    SEED = 42
+    random.seed(SEED)
+    np.random.seed(SEED)
+    torch.manual_seed(SEED)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(SEED)
 
     print(f"Loading spatial dataset: {args.csv}")
     dataset = load_dataset("csv", data_files=args.csv, split="train")

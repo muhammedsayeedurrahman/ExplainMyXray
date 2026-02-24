@@ -187,6 +187,32 @@ See [data/dataset_instructions.md](data/dataset_instructions.md) for dataset set
 
 ## Evaluation
 
+**Generate predictions** by running inference on your test set and saving results as JSON:
+
+```python
+import json
+from model.load_model import load_model
+from model.inference import run_inference, parse_loc_tokens
+from PIL import Image
+
+model, processor = load_model()
+
+results = []
+for image_path, gt_findings in test_set:  # your test data
+    image = Image.open(image_path).convert("RGB")
+    result = run_inference(model, processor, image)
+    results.append({
+        "gt_findings": gt_findings,
+        "prediction": result.explanation,
+        "pred_bboxes": [{"xmin": b.xmin, "ymin": b.ymin, "xmax": b.xmax, "ymax": b.ymax, "label": b.label} for b in result.bboxes],
+    })
+
+with open("results.json", "w") as f:
+    json.dump(results, f, indent=2)
+```
+
+**Run evaluation** (text metrics + spatial IoU):
+
 ```bash
 python evaluation/metrics.py --predictions results.json
 ```
@@ -194,7 +220,7 @@ python evaluation/metrics.py --predictions results.json
 | Metric | Score |
 |--------|-------|
 | Token Accuracy | 84.53% |
-| Zero-Shot Spatial Generalisation | 100% |
+| Zero-Shot Spatial Generalisation | 100% (3 test cases) |
 
 See [docs/results.md](docs/results.md) for full evaluation details.
 

@@ -1,49 +1,63 @@
-# ExplainMyXRay: Technical Report & Kaggle Evaluation Criteria
+# ExplainMyXRay: Technical Report
 
 ## 1. Effective use of HAI-DEF models (20%)
 **Architectural Unification in MedGemma-4B**
-ExplainMyXRay proposes a highly advanced application that utilizes the Google MedGemma-4B model to its absolute fullest potential. Traditional AI diagnostic systems fall into two separate buckets: 1) simple image classifiers (which only output a label like "pneumonia") or 2) disjointed pipelines combining an object detector (e.g., YOLO) with a text generator.
 
-Instead of treating the Vision-Language Model (VLM) as merely a text generator, we leveraged the native architecture of MedGemma-4B (inherited from PaliGemma) to build a **unified semantic and spatial expert**. By heavily utilizing 4-bit QLoRA (Quantized Low-Rank Adaptation), we sequentially applied a two-phase training loop. We first fine-tuned the model's vocabulary and language generation on 34,000 highly complex X-rays to write flawless diagnostic text. Then, we systematically unfroze the `multi_modal_projector` to teach MedGemma the language of geometry, bypassing traditional bounding-box networks entirely. MedGemma was the perfect candidate for this because its architecture inherently supports `<loc>` geometric token generation; we unlocked and weaponized this capability for clinical radiology, a feat where other solutions would be vastly less efficient and lack unified semantic reasoning.
+ExplainMyXRay uses the Google MedGemma-4B model as both a diagnostic text generator and a spatial localisation engine within a single unified architecture. Traditional AI diagnostic systems either output simple labels (e.g., "pneumonia") or require disjoint pipelines combining an object detector (e.g., YOLO) with a separate text generator.
+
+Instead of treating the Vision-Language Model (VLM) as merely a text generator, we leveraged MedGemma-4B's native PaliGemma architecture to build a **unified semantic and spatial model**. Using 4-bit QLoRA (Quantized Low-Rank Adaptation), we applied a two-phase sequential training strategy:
+
+1. **Phase 1 — Diagnostic text:** Fine-tuned the model's language generation on 34,000 PadChest chest X-rays to produce structured radiology reports.
+2. **Phase 2 — Spatial localisation:** Systematically unfroze the `multi_modal_projector` to teach MedGemma geometric reasoning via native `<loc>` token generation, bypassing traditional bounding-box detection networks entirely.
+
+MedGemma's PaliGemma architecture inherently supports `<loc>` geometric token generation. We exploited this capability for clinical radiology — a use case where alternative approaches would require two separate models and lack unified semantic reasoning.
 
 ## 2. Problem Domain (15%)
 **The "Black Box" Trust Deficit**
-The primary roadblock to AI adoption in clinical settings is the "Black Box" effect. Even if a highly accurate AI says "Cardiomegaly is present," a clinician cannot blindly trust that output without knowing *why* the AI made that decision. If the AI is hallucinating or looking at the wrong part of the image, blind trust could lead to fatal misdiagnoses.
 
-**The Unmet Need & Improved Journey**
-The essential unmet need is **Interpretability**. Radiologists need immediate, visual proof. The user—a radiologist or a triage physician in an under-resourced hospital—experiences a vastly improved journey. Instead of receiving just a text report and having to re-examine the structural integrity of the entire X-ray manually, ExplainMyXRay acts as an interactive assistant. It provides a structured report ("There are no obvious signs of acute cardiopulmonary disease.") AND instantly draws a semitransparent bounding box over the precise area of interest, immediately proving its cognitive focus.
+The primary barrier to AI adoption in clinical settings is the "Black Box" effect. Even a highly accurate model that says "Cardiomegaly detected" provides no visual evidence of *where* it is looking. If the model hallucinates or focuses on the wrong region, blind trust could lead to misdiagnosis.
+
+**The Unmet Need**
+
+The essential unmet need is **Interpretability**. Radiologists require immediate, visual proof. ExplainMyXRay addresses this by simultaneously generating a structured diagnostic report *and* drawing semi-transparent bounding boxes over the precise regions of interest, providing direct visual evidence of the model's reasoning.
+
+For radiologists and triage physicians — especially in under-resourced settings — this transforms the workflow from "review the entire X-ray manually" to "verify the AI's highlighted findings," significantly reducing cognitive load.
 
 ## 3. Impact Potential (15%)
 **Global Triage and Decision Support**
-If implemented, ExplainMyXRay has massive real-world impact potential in resource-constrained environments and high-volume radiology departments.
-- **Workflow Acceleration:** Generating a preliminary, visually proven report within 5-10 seconds allows clinical experts to use the output as an advanced first-pass triage guide. Our conservative estimates suggest a 30-40% reduction in dictation and manual review time.
-- **Democratizing Expertise:** By wrapping the MedGemma HAI-DEF model in an accessible, low-resource deployment package (4-bit quantization allows inference on consumer hardware), clinics globally can access a system that performs expert-level diagnostic generation coupled with 100% Zero-Shot Spatial Generalization.
+
+ExplainMyXRay has strong deployment potential in resource-constrained environments and high-volume radiology departments:
+
+- **Workflow Acceleration:** Generating a preliminary, visually-grounded report within 3–10 seconds enables use as a first-pass triage tool, potentially reducing dictation and manual review time.
+- **Accessible Deployment:** 4-bit quantization enables inference on consumer GPUs (8 GB VRAM), making the system viable for clinics that cannot afford specialised hardware.
+- **Unified Architecture:** A single model replaces what traditionally requires a detector + generator pipeline, reducing deployment complexity and maintenance burden.
 
 ## 4. Product Feasibility (20%)
-**Technical Documentation & Performance Analysis**
-Our technical solution is highly feasible, fully executed, and capable of consumer hardware deployment.
+**Technical Stack & Performance**
 
-**Model Fine-Tuning Stack & Infrastructure:**
-- **Frameworks:** `transformers`, `peft` (LoRA/QLoRA), `trl` (SFTTrainer), `bitsandbytes` (NF4 double quantization).
-- **Phase 1 (Diagnostic):** We executed complex offline preprocessing (CLAHE, Auto-Crop) on the PadChest dataset, converting 34,614 multi-domain images. We fine-tuned the model to generate full-sentence reports. The model was evaluated against 250 unseen Kaggle validation cases, resulting in a mathematically verified **84.53% Token Accuracy**. See [`training/dataset_prep.py`](../training/dataset_prep.py) for preprocessing and [`training/finetune_phase1.py`](../training/finetune_phase1.py) for the training script.
-- **Phase 2 (Spatial Annotation):** We converted bounding box coordinates `[xmin, ymin, xmax, ymax]` from the continuous `leftMask` and `rightMask` PNGs of the NIH Indiana dataset into numerical `<loc0250>` spatial tokens. To prevent catastrophic forgetting and maintain 12GB VRAM safety, we strictly **frozen the `vision_tower`** and only unfroze the `multi_modal_projector`. See [`training/finetune_phase2.py`](../training/finetune_phase2.py).
+The solution is fully implemented and deployable on consumer hardware.
 
-*(Below: The successful loss convergence demonstrating rapid learning on the clinical datasets without overfitting)*
+**Fine-Tuning Infrastructure:**
+- **Frameworks:** `transformers`, `peft` (QLoRA), `trl` (SFTTrainer), `bitsandbytes` (NF4 double quantization).
+- **Phase 1 (Diagnostic):** Offline preprocessing (CLAHE, auto-crop, pad-to-square) on 34,614 PadChest images. Evaluated against 250 unseen validation cases: **84.53% Token Accuracy**. See [`training/dataset_prep.py`](../training/dataset_prep.py) and [`training/finetune_phase1.py`](../training/finetune_phase1.py).
+- **Phase 2 (Spatial):** Converted bounding box coordinates from NIH Indiana dataset mask PNGs into `<loc>` spatial tokens. Froze the `vision_tower` and unfroze only the `multi_modal_projector` to maintain 12 GB VRAM safety. See [`training/finetune_phase2.py`](../training/finetune_phase2.py).
+
 ![Training Curve](../training_curve.png)
+*Loss convergence across training phases, demonstrating stable learning without overfitting.*
 
-**Deployment Strategy:**
-We designed a custom Python adapter-merging script that maps both the Phase 1 diagnostic adapter and the Phase 2 spatial projector weights directly back into the core MedGemma-4B weights. This produces a single, standalone Unified Model that can be deployed via native HuggingFace `pipeline` without relying on dynamic adapter injection, eliminating massive production complexities.
+**Deployment:**
+Both Phase 1 and Phase 2 adapter weights are merged into a single unified adapter that loads via HuggingFace's PEFT library on top of the MedGemma-4B base model, with no dynamic adapter injection required.
 
 ## 5. Execution and Communication (30%)
-**Quality of Project Execution**
-The execution of ExplainMyXRay moved beyond traditional benchmarking and resulted in a highly polished, zero-shot capable clinical AI.
+**Project Structure**
 
-Our source code features structured abstractions:
-- [`training/dataset_prep.py`](../training/dataset_prep.py) for headless decoupled data engineering.
-- [`training/finetune_phase1.py`](../training/finetune_phase1.py) and [`training/finetune_phase2.py`](../training/finetune_phase2.py) for strictly managed two-phase QLoRA fine-tuning.
-- [`model/inference.py`](../model/inference.py) which intercepts the text generation stream, isolates the PaliGemma `<loc>` tokens, calculates geometric bounding boxes, and seamlessly renders shaded visual arrays onto the X-ray.
+The codebase is structured for reproducibility:
+- [`training/dataset_prep.py`](../training/dataset_prep.py) — PadChest image preprocessing pipeline (CLI-driven).
+- [`training/finetune_phase1.py`](../training/finetune_phase1.py) and [`training/finetune_phase2.py`](../training/finetune_phase2.py) — Two-phase QLoRA fine-tuning with full argparse CLI interfaces.
+- [`model/inference.py`](../model/inference.py) — Inference engine with `<loc>` token parsing and bounding box extraction.
+- [`evaluation/metrics.py`](../evaluation/metrics.py) — Text evaluation (P/R/F1, finding accuracy) and spatial evaluation (IoU, mAP).
 
-**Proof of Spatial Zero-Shot Generalization:**
-The model not only learned healthy geometry (Test 1 & 2), but when subjected to diseased PadChest X-rays it had *never* been spatially mapped to, it successfully extrapolated its fundamental geometric training to draw perfect boxes around severe pathologies like Cardiomegaly.
+**Spatial Zero-Shot Generalisation:**
+The model was trained on spatial annotations from the Indiana CXR dataset (healthy anatomy), yet when tested on diseased PadChest X-rays it had *never* been spatially trained on, it successfully generated accurate bounding boxes around pathologies such as cardiomegaly. This suggests the model learned generalisable geometric reasoning rather than memorising specific spatial patterns.
 
-ExplainMyXRay represents a flawlessly cohesive narrative: defining a critical clinical problem (Interpretability), engineering a novel architectural solution onto MedGemma (Unfrozen Projectors for `<loc>` Generation), and deploying a standalone VLM proven mathematically and visually.
+ExplainMyXRay demonstrates a cohesive end-to-end solution: identifying a critical clinical problem (interpretability), engineering a novel architectural approach using MedGemma's native `<loc>` capabilities, and delivering a deployable VLM validated both quantitatively and qualitatively.

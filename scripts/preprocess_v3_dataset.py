@@ -1,3 +1,12 @@
+"""
+PadChest Image Preprocessing — Original Script.
+
+NOTE: This is the original development script preserved for reference.
+For the clean, CLI-driven version, see training/dataset_prep.py.
+
+Preprocesses PadChest X-ray images: 16-bit to 8-bit conversion,
+auto-crop dark edges, pad to square, resize, CLAHE, and sharpen.
+"""
 
 import os
 import cv2
@@ -6,15 +15,14 @@ import pandas as pd
 from PIL import Image, ImageEnhance
 from concurrent.futures import ProcessPoolExecutor
 from tqdm import tqdm
-import time
 
-# CONFIG
-INPUT_CSV = r"E:\x-ray\filtered_padchest_0_12.csv"
-IMAGES_ROOT = r"E:\x-ray\images"
-OUTPUT_DIR = r"E:\x-ray\processed_v3"
+# CONFIG — Update these paths for your environment
+INPUT_CSV = os.environ.get("PADCHEST_CSV", "padchest_labels.csv")
+IMAGES_ROOT = os.environ.get("PADCHEST_IMAGES", "images")
+OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "output/processed_v3")
 IMAGE_SIZE = 512
 
-# Preprocessing Logic (Matches run_v3_cells.py Cell 7)
+# Preprocessing Logic
 def _convert_16bit_to_8bit(img):
     arr = np.array(img, dtype=np.float32)
     if arr.ndim == 3: arr = arr[:, :, 0]
@@ -31,10 +39,6 @@ def _auto_crop_dark_edges(gray, threshold_ratio=0.05):
     if center_mean < 10: return gray
     threshold = center_mean * threshold_ratio
     top, bottom, left, right = 0, h, 0, w
-    # (Simplified crop logic for speed, matches original)
-    return gray # Keeping it safe/fast, or full logic? 
-    # Let's use the FULL logic from Cell 7 to be consistent
-    # ... actually, copying full logic:
     for row in range(h // 6):
         if gray[row, w//4:3*w//4].mean() < threshold: top = row + 1
         else: break
@@ -61,7 +65,7 @@ def _pad_to_square(gray, pad_value=0):
 def preprocess_image_file(args):
     img_name, img_dir, out_path = args
     if os.path.exists(out_path): return "exist" # Skip if done
-    
+
     in_path = os.path.join(IMAGES_ROOT, str(img_dir), img_name)
     if not os.path.exists(in_path): return "missing"
 
@@ -87,43 +91,39 @@ def preprocess_image_file(args):
         # 5. CLAHE (Contrast Limited Adaptive Histogram Equalization)
         clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
         gray = clahe.apply(gray)
-        
+
         # 6. Sharpen
         img_pil = Image.fromarray(gray, mode='L')
         img_pil = ImageEnhance.Sharpness(img_pil).enhance(1.2)
-        
+
         # 7. Convert to RGB and Save
         final_img = img_pil.convert('RGB')
-        final_img.save(out_path, format="PNG", optimize=False, compress_level=0) # Fastest save
+        final_img.save(out_path, format="PNG", optimize=False, compress_level=0)
         return "done"
-    except Exception as e:
-        # print(f"Error {img_name}: {e}")
+    except Exception:
         return "error"
 
 def main():
     print(f"Reading CSV: {INPUT_CSV}...")
     df = pd.read_csv(INPUT_CSV)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    
+
     print(f"Preparing tasks for {len(df)} images...")
     tasks = []
     for _, row in df.iterrows():
         img_name = row['ImageID']
-        img_dir = row['ImageDir'] # 0-12
-        out_path = os.path.join(OUTPUT_DIR, img_name) # Flattened structure or keep folder?
-        # Let's keep it flat for simplicity in loading. Filenames are unique in PadChest?
-        # Actually PadChest filenames are unique IDs. Flat is fine.
+        img_dir = row['ImageDir']
+        out_path = os.path.join(OUTPUT_DIR, img_name)
         tasks.append((img_name, img_dir, out_path))
 
-    # On Windows, too many workers can cause BrokenProcessPool / OOM with large images
-    workers = 8 # Safe number for i9/Windows
-    print(f"Starting processing with {workers} workers on i9-14900HX/RTX4080...")
-    
+    workers = int(os.environ.get("NUM_WORKERS", "8"))
+    print(f"Starting processing with {workers} workers...")
+
     results = {"done":0, "exist":0, "missing":0, "error":0}
     with ProcessPoolExecutor(max_workers=workers) as executor:
         for res in tqdm(executor.map(preprocess_image_file, tasks), total=len(tasks)):
             results[res] += 1
-            
+
     print("\nProcessing Complete!")
     print(f"  Processed: {results['done']}")
     print(f"  Already Existed: {results['exist']}")

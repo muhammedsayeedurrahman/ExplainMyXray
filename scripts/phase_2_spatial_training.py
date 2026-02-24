@@ -1,3 +1,15 @@
+"""
+Phase 2: Spatial Annotation Training (Bounding Boxes) — Original Script.
+
+NOTE: This is the original development script preserved for reference.
+For the clean, CLI-driven version, see training/finetune_phase2.py.
+
+This script trains the model on indiana_spatial_data.csv containing
+precise <locY1><locX1><locY2><locX2> PaliGemma tokens. The
+multi_modal_projector is unfrozen so visual features can map to
+geometric constraints.
+"""
+
 import os
 import gc
 import torch
@@ -10,20 +22,13 @@ from trl import SFTConfig, SFTTrainer
 from PIL import Image
 
 # ==============================================================================
-# PHASE 2: SPATIAL ANNOTATION TRAINING (BOUNDING BOXES)
+# CONFIGURATION — Update these paths for your environment
 # ==============================================================================
-# This script trains the model on the generated `indiana_spatial_data.csv` 
-# which contains precise <locY1><locX1><locY2><locX2> PaliGemma tokens.
-# Crucially, we unfreeze the `multi_modal_projector` so the visual features 
-# can map exactly to the new geometric constraints.
-# ==============================================================================
-
-# 1. Configuration
 MODEL_ID = "google/medgemma-4b-it"
-CSV_PATH = r"E:\explainmyxray-main\indiana_spatial_data.csv"
-OUTPUT_DIR = r"E:\explainmyxray-main\explainmyxray-phase2-spatial"
+CSV_PATH = os.environ.get("SPATIAL_CSV", "indiana_spatial_data.csv")
+OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "output/phase2-spatial")
 # Optional: Phase 1 Checkpoint to start from (set to None to train from base)
-PHASE_1_CKPT = r"E:\explainmyxray-main\explainmyxray-v3-output\checkpoint-1100" 
+PHASE_1_CKPT = os.environ.get("PHASE1_CKPT", None)
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -73,7 +78,7 @@ lora_config = LoraConfig(
     bias="none",
     task_type="CAUSAL_LM",
     # We explicitly exclude the heavy vision tower, but ALLOW the projector
-    modules_to_save=["multi_modal_projector"] 
+    modules_to_save=["multi_modal_projector"]
 )
 
 model = get_peft_model(model, lora_config)
@@ -87,7 +92,7 @@ print(f'Trainable Parameters: {trainable:,} / {total_p:,} ({100*trainable/total_
 def format_data(examples):
     texts = []
     image_paths = []
-    
+
     for prompt, labels_text, img_path in zip(examples['prompt'], examples['completion'], examples['image_path']):
         # Format conversation exactly as PaliGemma/MedGemma expects
         conversation = [
@@ -97,7 +102,7 @@ def format_data(examples):
         text_prompt = processor.apply_chat_template(conversation, add_generation_prompt=False)
         texts.append(text_prompt)
         image_paths.append(img_path)
-        
+
     return {"text": texts, "image_path": image_paths}
 
 dataset = dataset.map(format_data, batched=True, remove_columns=dataset.column_names)
@@ -110,7 +115,7 @@ def collate_fn(examples):
         if img is None:
             img = Image.new('RGB', (512, 512), color='black') # Fallback to prevent crash
         images.append([img])
-    
+
     batch = processor(
         text=texts,
         images=images,
@@ -119,7 +124,7 @@ def collate_fn(examples):
         max_length=512,
         return_tensors="pt"
     )
-    
+
     # Mask user prompt in labels so we only calculate loss on the Assistant's bounding box output
     labels = batch["input_ids"].clone()
     for i in range(len(texts)):
@@ -128,7 +133,7 @@ def collate_fn(examples):
         labels[i, :len(prompt_ids)] = -100
         # Also mask padding
         labels[i, batch["attention_mask"][i] == 0] = -100
-        
+
     batch["labels"] = labels
     return batch
 
@@ -156,22 +161,22 @@ import time
 class MemoryMonitorCallback(TrainerCallback):
     def __init__(self):
         self.last_step_time = time.time()
-        
+
     def on_step_end(self, args, state, control, **kwargs):
         current_time = time.time()
         step_duration = current_time - self.last_step_time
         self.last_step_time = current_time
-        
+
         gc.collect()
         torch.cuda.empty_cache()
-        
+
         p = psutil.Process(os.getpid())
         ram_gb = p.memory_info().rss / 1e9
         vram_gb = torch.cuda.memory_allocated() / 1e9
-        
+
         if state.global_step % 5 == 0:
-            print(f"[Phase 2 - Step {state.global_step}] RAM: {ram_gb:.2f}GB / 29.0GB | VRAM: {vram_gb:.2f}GB / 11.0GB | Speed: {step_duration:.1f}s")
-            
+            print(f"[Phase 2 - Step {state.global_step}] RAM: {ram_gb:.2f}GB | VRAM: {vram_gb:.2f}GB | Speed: {step_duration:.1f}s")
+
         if ram_gb > 29.0 or vram_gb > 11.0:
             print("CRITICAL: Memory cap exceeded. Flushing...")
             torch.cuda.empty_cache()
