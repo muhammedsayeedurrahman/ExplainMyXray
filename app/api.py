@@ -134,8 +134,14 @@ async def explain_xray(file: UploadFile):
                 "The mediastinal contour is within normal limits. No pleural effusion "
                 "or pneumothorax is observed."
             ),
-            bboxes=[BoundingBox(xmin=150, ymin=150, xmax=350, ymax=350, label="Cardiac Silhouette (demo)")],
-            raw_tokens="<loc0250><loc0250><loc0750><loc0750>",
+            bboxes=[BoundingBox(
+                xmin=round(img_w * 0.25),
+                ymin=round(img_h * 0.25),
+                xmax=round(img_w * 0.75),
+                ymax=round(img_h * 0.75),
+                label="Cardiac Silhouette (demo)",
+            )],
+            raw_tokens="<loc0256><loc0256><loc0768><loc0768>",
             status="demo",
             model_version=MODEL_VERSION,
             processing_time_ms=round(elapsed, 1),
