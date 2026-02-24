@@ -784,8 +784,8 @@ with col_left:
     if uploaded_file is not None:
         file_size = fmt_size(uploaded_file.size)
         raw_image = Image.open(uploaded_file)
-        # Convert 16-bit / grayscale medical images to RGB for Streamlit display
-        if raw_image.mode not in ("RGB", "RGBA"):
+        # Convert any non-RGB image (16-bit, grayscale, RGBA, palette) to RGB
+        if raw_image.mode != "RGB":
             raw_image = raw_image.convert("RGB")
         st.session_state.raw_image = raw_image
         img_w, img_h = raw_image.size
