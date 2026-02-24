@@ -1,1 +1,46 @@
+# Claude
 .claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Training outputs
+output/
+checkpoints/
+logs/
+runs/
+
+# Large files
+*.zip
+*.tar.gz
+
+# Secrets
+.env
+*.token
+credentials.json
+
+# HuggingFace cache
+.hf_cache/
+
+# Node
+node_modules/

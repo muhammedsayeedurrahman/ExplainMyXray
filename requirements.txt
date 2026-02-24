@@ -1,0 +1,42 @@
+# ==================================================
+# ExplainMyXray — Dependencies
+# Kaggle MedGemma Impact Challenge Submission
+# ==================================================
+
+# Core ML — MedGemma-4B inference and fine-tuning
+torch>=2.2.0
+torchvision>=0.17.0
+transformers>=4.52.0
+accelerate>=1.5.0
+peft>=0.15.0
+bitsandbytes>=0.45.0
+
+# Training
+datasets>=3.5.0
+trl>=0.17.0
+evaluate
+scikit-learn
+tensorboard
+
+# Image Processing
+Pillow>=10.0.0
+opencv-python>=4.8.0
+
+# Data
+pandas>=2.2.0
+numpy
+matplotlib
+
+# HuggingFace Hub
+huggingface_hub
+
+# API & Frontend
+fastapi>=0.110.0
+uvicorn>=0.29.0
+streamlit>=1.32.0
+python-multipart>=0.0.9
+requests>=2.31.0
+
+# Utilities
+tqdm>=4.66.0
+psutil
