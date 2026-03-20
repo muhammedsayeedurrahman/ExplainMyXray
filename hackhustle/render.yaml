@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: smartroute-api
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    rootDir: smartroute/backend
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://smartroute-hackhustle.vercel.app,https://dist-bfq1o8pax-sayeeds-projects-e3951ca3.vercel.app
