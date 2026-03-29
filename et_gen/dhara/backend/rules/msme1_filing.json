@@ -1,0 +1,50 @@
+{
+  "law_name": "MSME-1 Half-Yearly Return Filing",
+  "version": "2024.1",
+  "rules": [
+    {
+      "rule_id": "MSME1-001",
+      "name": "MSME-1 filing - April to September",
+      "law": "Companies Act 2013 read with MSMED Act",
+      "section": "Section 405 / MSME Notification 02.11.2018",
+      "description": "Half-yearly return for outstanding MSME payments during April-September, due by 31st October",
+      "severity": "medium",
+      "conditions": [
+        {"field": "is_msme", "operator": "is_true"},
+        {"field": "has_overdue_in_period", "operator": "is_true"},
+        {"field": "filing_period", "operator": "equals", "value": "Apr-Sep"}
+      ],
+      "actions": [
+        {
+          "action_type": "generate_msme1_draft",
+          "description": "Generate MSME-1 filing draft for Apr-Sep period",
+          "parameters": {"deadline": "31-Oct", "form": "MSME-1"}
+        }
+      ],
+      "legal_text": "Every specified company shall file a half-yearly return in Form MSME-1 regarding outstanding amounts to Micro and Small enterprises.",
+      "penalty_description": "Fine up to INR 25,000 for officers in default"
+    },
+    {
+      "rule_id": "MSME1-002",
+      "name": "MSME-1 filing - October to March",
+      "law": "Companies Act 2013 read with MSMED Act",
+      "section": "Section 405 / MSME Notification 02.11.2018",
+      "description": "Half-yearly return for outstanding MSME payments during October-March, due by 30th April",
+      "severity": "medium",
+      "conditions": [
+        {"field": "is_msme", "operator": "is_true"},
+        {"field": "has_overdue_in_period", "operator": "is_true"},
+        {"field": "filing_period", "operator": "equals", "value": "Oct-Mar"}
+      ],
+      "actions": [
+        {
+          "action_type": "generate_msme1_draft",
+          "description": "Generate MSME-1 filing draft for Oct-Mar period",
+          "parameters": {"deadline": "30-Apr", "form": "MSME-1"}
+        }
+      ],
+      "legal_text": "Every specified company shall file a half-yearly return in Form MSME-1 regarding outstanding amounts to Micro and Small enterprises.",
+      "penalty_description": "Fine up to INR 25,000 for officers in default"
+    }
+  ]
+}

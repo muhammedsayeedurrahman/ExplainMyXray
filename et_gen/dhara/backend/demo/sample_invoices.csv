@@ -1,0 +1,855 @@
+invoice_id,vendor_id,vendor_name,invoice_date,due_date,amount,paid_amount,payment_date,agreed_payment_days,is_msme_vendor,msme_category,status,description
+INV-0297,V015,Verma Welding Electrodes,2026-03-06,2026-04-05,67745.48,67745.48,2026-04-13,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0362,V018,Thakur Industrial Fasteners,2025-10-22,2026-01-20,279386.60,0.00,,90,true,small,overdue,Invoice from Thakur Industrial Fasteners
+INV-0120,V007,Joshi Engineering Solutions,2026-02-10,2026-03-27,329748.72,329748.72,2026-03-27,45,true,small,paid,Invoice from Joshi Engineering Solutions
+INV-0511,V028,Bharat Heavy Electricals,2026-01-15,2026-03-01,143108.17,143108.17,2026-02-27,45,false,,paid,Invoice from Bharat Heavy Electricals
+INV-0594,V034,Siemens India Ltd,2025-10-27,2025-12-26,112423.18,112423.18,2025-12-24,60,false,,paid,Invoice from Siemens India Ltd
+INV-0007,V001,Sharma Precision Tools Pvt Ltd,2026-02-07,2026-03-09,350579.00,350579.00,2026-03-08,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0304,V016,Mishra Casting Works,2026-03-01,2026-04-15,450137.05,450137.05,2026-04-14,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0476,V026,Mahindra & Mahindra Ltd,2026-02-07,2026-03-24,407671.53,0.00,,45,false,,overdue,Invoice from Mahindra & Mahindra Ltd
+INV-0564,V032,Adani Enterprises Ltd,2025-10-05,2026-01-03,482072.37,482072.37,2026-03-02,90,false,,paid,Invoice from Adani Enterprises Ltd
+INV-0224,V012,Banerjee Textiles,2025-11-12,2025-12-12,466663.26,466663.26,2025-12-07,30,true,medium,paid,Invoice from Banerjee Textiles
+INV-0399,V020,Bhatt CNC Components,2026-01-13,2026-02-27,111749.10,111749.10,2026-02-22,45,true,small,paid,Invoice from Bhatt CNC Components
+INV-0579,V033,Wipro Technologies Ltd,2025-12-28,2026-01-27,290850.03,0.00,,30,false,,overdue,Invoice from Wipro Technologies Ltd
+INV-0348,V017,Pillai Electronics Assembly,2025-10-08,2025-11-07,61443.19,61443.19,2026-01-04,30,true,micro,paid,Invoice from Pillai Electronics Assembly
+INV-0361,V018,Thakur Industrial Fasteners,2026-02-24,2026-05-25,309429.15,309429.15,2026-06-24,90,true,small,paid,Invoice from Thakur Industrial Fasteners
+INV-0525,V029,Hindustan Unilever Ltd,2025-11-18,2025-12-18,241337.02,241337.02,2025-12-16,30,false,,paid,Invoice from Hindustan Unilever Ltd
+INV-0389,V019,Saxena Tooling Solutions,2025-10-16,2025-11-15,73507.27,73507.27,2025-11-12,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0095,V006,Singh Auto Parts,2026-03-13,2026-04-12,93783.53,0.00,,,true,micro,pending,Invoice from Singh Auto Parts
+INV-0731,V044,Ashok Leyland Ltd,2026-02-24,2026-03-26,204411.13,0.00,,30,false,,overdue,Invoice from Ashok Leyland Ltd
+INV-0402,V020,Bhatt CNC Components,2025-10-07,2025-11-21,397980.06,397980.06,2025-11-29,45,true,small,paid,Invoice from Bhatt CNC Components
+INV-0213,V011,Deshmukh Rubber Products,2025-11-13,2025-12-28,147667.81,0.00,,45,true,small,overdue,Invoice from Deshmukh Rubber Products
+INV-0749,V045,Cummins India Ltd,2026-01-21,2026-03-07,262124.91,262124.91,2026-03-08,45,false,,paid,Invoice from Cummins India Ltd
+INV-0038,V002,Gupta Electronics Components,2026-03-19,2026-05-03,301477.57,301477.57,2026-05-11,45,true,small,paid,Invoice from Gupta Electronics Components
+INV-0166,V009,Iyer Packaging Industries,2025-11-16,2025-12-16,235112.52,0.00,,30,true,small,overdue,Invoice from Iyer Packaging Industries
+INV-0185,V010,Kumar Metal Works,2026-03-16,2026-04-15,289161.79,289161.79,2026-05-07,,true,micro,paid,Invoice from Kumar Metal Works
+INV-0661,V039,Voltas Limited,2025-10-16,2025-12-15,473903.07,473903.07,2025-12-13,60,false,,paid,Invoice from Voltas Limited
+INV-0132,V007,Joshi Engineering Solutions,2026-02-27,2026-04-13,73495.16,73495.16,2026-04-08,45,true,small,paid,Invoice from Joshi Engineering Solutions
+INV-0135,V008,Agarwal Electrical Systems,2025-12-10,2026-01-09,452895.05,293367.97,2026-02-05,30,true,micro,partially_paid,Invoice from Agarwal Electrical Systems
+INV-0651,V038,Blue Star Limited,2025-10-27,2025-12-11,453077.75,0.00,,45,false,,overdue,Invoice from Blue Star Limited
+INV-0552,V031,Godrej Industries Ltd,2025-11-05,2025-12-20,226140.25,0.00,,45,false,,overdue,Invoice from Godrej Industries Ltd
+INV-0482,V026,Mahindra & Mahindra Ltd,2025-11-19,2026-01-03,146445.45,146445.45,2026-01-03,45,false,,paid,Invoice from Mahindra & Mahindra Ltd
+INV-0521,V028,Bharat Heavy Electricals,2026-01-21,2026-03-07,320782.56,320782.56,2026-03-04,45,false,,paid,Invoice from Bharat Heavy Electricals
+INV-0209,V011,Deshmukh Rubber Products,2026-02-03,2026-03-20,237897.91,180335.27,2026-03-25,45,true,small,partially_paid,Invoice from Deshmukh Rubber Products
+INV-0418,V021,Kulkarni Springs & Washers,2025-10-31,2025-11-30,239332.89,239332.89,2025-11-25,30,true,micro,paid,Invoice from Kulkarni Springs & Washers
+INV-0714,V043,Escorts Limited,2025-12-16,2026-01-30,273311.47,0.00,,45,false,,overdue,Invoice from Escorts Limited
+INV-0371,V019,Saxena Tooling Solutions,2026-02-23,2026-03-25,281191.79,281191.79,2026-03-20,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0684,V041,Thermax Limited,2025-12-20,2026-01-19,159385.72,159385.72,2026-02-02,30,false,,paid,Invoice from Thermax Limited
+INV-0144,V008,Agarwal Electrical Systems,2026-02-13,2026-03-15,434091.42,434091.42,2026-03-13,30,true,micro,paid,Invoice from Agarwal Electrical Systems
+INV-0672,V040,Crompton Greaves,2025-11-17,2026-01-01,293210.79,293210.79,2026-03-02,45,false,,paid,Invoice from Crompton Greaves
+INV-0018,V001,Sharma Precision Tools Pvt Ltd,2025-10-05,2025-11-04,40344.24,22878.01,2025-11-11,30,true,micro,partially_paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0102,V006,Singh Auto Parts,2026-02-18,2026-03-20,439134.01,439134.01,2026-03-18,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0683,V041,Thermax Limited,2026-02-18,2026-03-20,416502.28,0.00,,30,false,,overdue,Invoice from Thermax Limited
+INV-0713,V043,Escorts Limited,2025-10-30,2025-12-14,257848.96,111892.13,2025-12-31,45,false,,partially_paid,Invoice from Escorts Limited
+INV-0129,V007,Joshi Engineering Solutions,2025-10-07,2025-11-21,142269.12,0.00,,45,true,small,overdue,Invoice from Joshi Engineering Solutions
+INV-0246,V013,Nair Chemical Industries,2026-01-05,2026-02-04,498725.83,0.00,,30,true,small,overdue,Invoice from Nair Chemical Industries
+INV-0266,V014,Rao Hydraulics & Pneumatics,2025-12-26,2026-01-10,375003.03,375003.03,2026-01-06,,true,micro,paid,Invoice from Rao Hydraulics & Pneumatics
+INV-0740,V044,Ashok Leyland Ltd,2026-03-08,2026-04-07,54289.50,0.00,,30,false,,pending,Invoice from Ashok Leyland Ltd
+INV-0674,V040,Crompton Greaves,2025-12-17,2026-01-31,352308.97,0.00,,45,false,,overdue,Invoice from Crompton Greaves
+INV-0646,V038,Blue Star Limited,2026-01-09,2026-02-23,55604.55,55604.55,2026-02-20,45,false,,paid,Invoice from Blue Star Limited
+INV-0815,V050,NTN Bearing India,2025-12-26,2026-02-09,162438.57,162438.57,2026-02-09,45,false,,paid,Invoice from NTN Bearing India
+INV-0633,V036,Bosch India Limited,2025-12-08,2026-02-06,464793.10,464793.10,2026-02-02,60,false,,paid,Invoice from Bosch India Limited
+INV-0732,V044,Ashok Leyland Ltd,2025-12-15,2026-01-14,230074.35,230074.35,2026-02-21,30,false,,paid,Invoice from Ashok Leyland Ltd
+INV-0083,V005,Mehta Polymers & Plastics,2026-01-11,2026-02-10,62137.19,62137.19,2026-02-06,30,true,medium,paid,Invoice from Mehta Polymers & Plastics
+INV-0730,V044,Ashok Leyland Ltd,2025-11-24,2025-12-24,42380.56,0.00,,30,false,,overdue,Invoice from Ashok Leyland Ltd
+INV-0569,V032,Adani Enterprises Ltd,2026-03-19,2026-06-17,379308.81,0.00,,90,false,,pending,Invoice from Adani Enterprises Ltd
+INV-0269,V014,Rao Hydraulics & Pneumatics,2026-01-03,2026-02-02,374546.88,0.00,,,true,micro,overdue,Invoice from Rao Hydraulics & Pneumatics
+INV-0121,V007,Joshi Engineering Solutions,2025-12-01,2026-01-15,113326.36,0.00,,45,true,small,overdue,Invoice from Joshi Engineering Solutions
+INV-0230,V012,Banerjee Textiles,2026-01-10,2026-02-09,411171.99,411171.99,2026-02-07,30,true,medium,paid,Invoice from Banerjee Textiles
+INV-0376,V019,Saxena Tooling Solutions,2025-11-05,2025-12-20,51259.22,51259.22,2026-01-13,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0440,V023,Tiwari Insulation Materials,2025-11-25,2026-01-09,111212.36,71953.32,2026-01-24,45,true,medium,partially_paid,Invoice from Tiwari Insulation Materials
+INV-0823,V050,NTN Bearing India,2025-12-18,2026-02-01,201141.01,201141.01,2026-01-30,45,false,,paid,Invoice from NTN Bearing India
+INV-0252,V013,Nair Chemical Industries,2025-10-12,2025-11-11,343151.62,343151.62,2025-12-19,30,true,small,paid,Invoice from Nair Chemical Industries
+INV-0343,V017,Pillai Electronics Assembly,2026-02-04,2026-03-06,401654.47,287589.80,2026-04-04,30,true,micro,partially_paid,Invoice from Pillai Electronics Assembly
+INV-0818,V050,NTN Bearing India,2025-12-29,2026-02-12,206223.71,206223.71,2026-04-03,45,false,,paid,Invoice from NTN Bearing India
+INV-0248,V013,Nair Chemical Industries,2026-02-22,2026-03-24,224620.88,168850.22,2026-03-25,30,true,small,partially_paid,Invoice from Nair Chemical Industries
+INV-0709,V042,Kirloskar Brothers,2025-11-14,2026-01-13,210737.07,0.00,,60,false,,overdue,Invoice from Kirloskar Brothers
+INV-0143,V008,Agarwal Electrical Systems,2025-12-09,2026-01-08,297986.92,101903.70,2026-01-21,30,true,micro,partially_paid,Invoice from Agarwal Electrical Systems
+INV-0317,V016,Mishra Casting Works,2026-03-06,2026-04-20,484357.32,230468.40,2026-05-08,45,true,small,partially_paid,Invoice from Mishra Casting Works
+INV-0572,V032,Adani Enterprises Ltd,2026-02-08,2026-05-09,141446.62,0.00,,90,false,,pending,Invoice from Adani Enterprises Ltd
+INV-0200,V011,Deshmukh Rubber Products,2026-01-28,2026-03-14,215443.79,215443.79,2026-04-25,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0616,V035,ABB India Limited,2025-12-04,2026-01-18,10866.23,10866.23,2026-02-05,45,false,,paid,Invoice from ABB India Limited
+INV-0416,V021,Kulkarni Springs & Washers,2025-11-22,2025-12-22,23306.98,23306.98,2025-12-21,30,true,micro,paid,Invoice from Kulkarni Springs & Washers
+INV-0760,V045,Cummins India Ltd,2025-10-20,2025-12-04,366354.53,366354.53,2026-01-01,45,false,,paid,Invoice from Cummins India Ltd
+INV-0041,V003,Patel Fabrication Works,2026-02-26,2026-03-13,367294.26,0.00,,,true,micro,overdue,Invoice from Patel Fabrication Works
+INV-0367,V018,Thakur Industrial Fasteners,2026-02-03,2026-05-04,24375.35,0.00,,90,true,small,pending,Invoice from Thakur Industrial Fasteners
+INV-0009,V001,Sharma Precision Tools Pvt Ltd,2025-12-12,2026-01-11,52874.61,0.00,,30,true,micro,overdue,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0342,V017,Pillai Electronics Assembly,2026-01-04,2026-02-03,62010.82,62010.82,2026-02-01,30,true,micro,paid,Invoice from Pillai Electronics Assembly
+INV-0186,V010,Kumar Metal Works,2026-01-31,2026-03-02,482921.33,0.00,,,true,micro,overdue,Invoice from Kumar Metal Works
+INV-0202,V011,Deshmukh Rubber Products,2026-03-01,2026-04-15,34520.83,0.00,,45,true,small,pending,Invoice from Deshmukh Rubber Products
+INV-0548,V030,JSW Steel Limited,2025-11-17,2026-01-16,80826.85,0.00,,60,false,,overdue,Invoice from JSW Steel Limited
+INV-0630,V036,Bosch India Limited,2025-10-25,2025-12-24,240372.64,240372.64,2025-12-24,60,false,,paid,Invoice from Bosch India Limited
+INV-0280,V014,Rao Hydraulics & Pneumatics,2025-11-01,2025-12-16,212467.74,0.00,,,true,micro,overdue,Invoice from Rao Hydraulics & Pneumatics
+INV-0507,V027,Larsen & Toubro Ltd,2025-12-26,2026-02-24,499070.82,499070.82,2026-03-21,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0621,V036,Bosch India Limited,2025-12-06,2026-02-04,232203.88,232203.88,2026-01-30,60,false,,paid,Invoice from Bosch India Limited
+INV-0688,V041,Thermax Limited,2026-02-05,2026-03-07,465311.61,0.00,,30,false,,overdue,Invoice from Thermax Limited
+INV-0294,V015,Verma Welding Electrodes,2026-02-03,2026-03-05,59413.54,0.00,,30,true,micro,overdue,Invoice from Verma Welding Electrodes
+INV-0253,V013,Nair Chemical Industries,2026-02-11,2026-03-13,119933.28,63538.88,2026-04-03,30,true,small,partially_paid,Invoice from Nair Chemical Industries
+INV-0079,V005,Mehta Polymers & Plastics,2025-11-27,2025-12-27,417703.75,0.00,,30,true,medium,overdue,Invoice from Mehta Polymers & Plastics
+INV-0284,V015,Verma Welding Electrodes,2026-02-22,2026-03-24,490559.22,490559.22,2026-05-21,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0126,V007,Joshi Engineering Solutions,2025-11-10,2025-12-25,216236.67,0.00,,45,true,small,overdue,Invoice from Joshi Engineering Solutions
+INV-0707,V042,Kirloskar Brothers,2026-03-17,2026-05-16,244881.42,244881.42,2026-05-13,60,false,,paid,Invoice from Kirloskar Brothers
+INV-0181,V010,Kumar Metal Works,2025-10-20,2025-12-04,488420.48,385976.88,2025-12-30,,true,micro,partially_paid,Invoice from Kumar Metal Works
+INV-0136,V008,Agarwal Electrical Systems,2025-10-23,2025-11-22,193288.61,193288.61,2025-11-20,30,true,micro,paid,Invoice from Agarwal Electrical Systems
+INV-0481,V026,Mahindra & Mahindra Ltd,2025-11-13,2025-12-28,300771.79,0.00,,45,false,,overdue,Invoice from Mahindra & Mahindra Ltd
+INV-0118,V007,Joshi Engineering Solutions,2026-03-01,2026-04-15,230431.00,0.00,,45,true,small,pending,Invoice from Joshi Engineering Solutions
+INV-0387,V019,Saxena Tooling Solutions,2025-11-27,2025-12-27,233531.59,0.00,,,true,micro,overdue,Invoice from Saxena Tooling Solutions
+INV-0694,V042,Kirloskar Brothers,2026-03-03,2026-05-02,290787.21,0.00,,60,false,,pending,Invoice from Kirloskar Brothers
+INV-0513,V028,Bharat Heavy Electricals,2025-12-20,2026-02-03,282441.36,0.00,,45,false,,overdue,Invoice from Bharat Heavy Electricals
+INV-0466,V025,Reliance Industries Ltd,2026-03-12,2026-06-10,251528.84,111889.04,2026-07-10,90,false,,partially_paid,Invoice from Reliance Industries Ltd
+INV-0596,V034,Siemens India Ltd,2026-02-17,2026-04-18,374705.22,0.00,,60,false,,pending,Invoice from Siemens India Ltd
+INV-0017,V001,Sharma Precision Tools Pvt Ltd,2025-12-19,2026-01-18,108705.98,108705.98,2026-01-13,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0432,V023,Tiwari Insulation Materials,2026-02-07,2026-03-24,476630.75,476630.75,2026-03-20,45,true,medium,paid,Invoice from Tiwari Insulation Materials
+INV-0022,V001,Sharma Precision Tools Pvt Ltd,2025-12-07,2026-01-06,137531.73,137531.73,2026-01-02,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0467,V025,Reliance Industries Ltd,2026-01-01,2026-04-01,244057.68,0.00,,90,false,,pending,Invoice from Reliance Industries Ltd
+INV-0645,V038,Blue Star Limited,2026-02-24,2026-04-10,7571.64,7571.64,2026-04-08,45,false,,paid,Invoice from Blue Star Limited
+INV-0778,V047,Timken India Ltd,2026-01-17,2026-03-03,33663.44,33663.44,2026-02-28,45,false,,paid,Invoice from Timken India Ltd
+INV-0496,V027,Larsen & Toubro Ltd,2025-12-15,2026-02-13,168963.60,168963.60,2026-02-10,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0324,V016,Mishra Casting Works,2025-12-23,2026-02-06,178756.59,178756.59,2026-02-05,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0538,V030,JSW Steel Limited,2026-02-03,2026-04-04,307422.48,154555.17,2026-04-17,60,false,,partially_paid,Invoice from JSW Steel Limited
+INV-0768,V046,SKF India Limited,2025-12-17,2026-02-15,467292.58,467292.58,2026-02-11,60,false,,paid,Invoice from SKF India Limited
+INV-0698,V042,Kirloskar Brothers,2025-10-14,2025-12-13,199309.28,199309.28,2025-12-11,60,false,,paid,Invoice from Kirloskar Brothers
+INV-0125,V007,Joshi Engineering Solutions,2025-11-26,2026-01-10,308262.90,0.00,,45,true,small,overdue,Invoice from Joshi Engineering Solutions
+INV-0696,V042,Kirloskar Brothers,2026-02-18,2026-04-19,134864.93,0.00,,60,false,,pending,Invoice from Kirloskar Brothers
+INV-0314,V016,Mishra Casting Works,2025-12-14,2026-01-28,406825.80,241342.30,2026-02-14,45,true,small,partially_paid,Invoice from Mishra Casting Works
+INV-0557,V031,Godrej Industries Ltd,2025-11-09,2025-12-24,225513.93,225513.93,2025-12-23,45,false,,paid,Invoice from Godrej Industries Ltd
+INV-0480,V026,Mahindra & Mahindra Ltd,2026-01-23,2026-03-09,293755.34,293755.34,2026-03-07,45,false,,paid,Invoice from Mahindra & Mahindra Ltd
+INV-0221,V012,Banerjee Textiles,2025-10-15,2025-11-14,400660.30,0.00,,30,true,medium,overdue,Invoice from Banerjee Textiles
+INV-0237,V013,Nair Chemical Industries,2026-03-10,2026-04-09,67491.90,0.00,,30,true,small,pending,Invoice from Nair Chemical Industries
+INV-0254,V013,Nair Chemical Industries,2026-03-17,2026-04-16,449959.72,449959.72,2026-05-05,30,true,small,paid,Invoice from Nair Chemical Industries
+INV-0048,V003,Patel Fabrication Works,2025-10-09,2025-10-24,34142.51,0.00,,,true,micro,overdue,Invoice from Patel Fabrication Works
+INV-0660,V039,Voltas Limited,2025-10-04,2025-12-03,487241.56,487241.56,2025-12-01,60,false,,paid,Invoice from Voltas Limited
+INV-0261,V013,Nair Chemical Industries,2026-03-07,2026-04-06,455755.39,0.00,,30,true,small,pending,Invoice from Nair Chemical Industries
+INV-0113,V006,Singh Auto Parts,2025-10-15,2025-11-14,329079.28,329079.28,2025-12-28,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0763,V046,SKF India Limited,2026-03-13,2026-05-12,424706.59,191468.21,2026-05-28,60,false,,partially_paid,Invoice from SKF India Limited
+INV-0770,V046,SKF India Limited,2026-03-01,2026-04-30,13261.25,13261.25,2026-04-28,60,false,,paid,Invoice from SKF India Limited
+INV-0123,V007,Joshi Engineering Solutions,2025-11-23,2026-01-07,71002.86,71002.86,2026-02-10,45,true,small,paid,Invoice from Joshi Engineering Solutions
+INV-0057,V004,Reddy Industrial Supplies,2026-02-28,2026-04-29,224349.72,0.00,,60,true,small,pending,Invoice from Reddy Industrial Supplies
+INV-0686,V041,Thermax Limited,2025-11-24,2025-12-24,162860.19,162860.19,2025-12-19,30,false,,paid,Invoice from Thermax Limited
+INV-0306,V016,Mishra Casting Works,2025-12-26,2026-02-09,193547.68,86602.69,2026-02-25,45,true,small,partially_paid,Invoice from Mishra Casting Works
+INV-0653,V039,Voltas Limited,2026-01-10,2026-03-11,249096.35,249096.35,2026-03-08,60,false,,paid,Invoice from Voltas Limited
+INV-0249,V013,Nair Chemical Industries,2025-12-26,2026-01-25,399091.02,399091.02,2026-01-23,30,true,small,paid,Invoice from Nair Chemical Industries
+INV-0527,V029,Hindustan Unilever Ltd,2025-10-04,2025-11-03,289196.01,289196.01,2025-12-20,30,false,,paid,Invoice from Hindustan Unilever Ltd
+INV-0228,V012,Banerjee Textiles,2026-03-02,2026-04-01,141742.46,0.00,,30,true,medium,pending,Invoice from Banerjee Textiles
+INV-0757,V045,Cummins India Ltd,2026-01-24,2026-03-10,315899.62,315899.62,2026-03-07,45,false,,paid,Invoice from Cummins India Ltd
+INV-0025,V001,Sharma Precision Tools Pvt Ltd,2025-10-27,2025-11-26,271793.76,0.00,,30,true,micro,overdue,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0240,V013,Nair Chemical Industries,2026-03-16,2026-04-15,362609.69,362609.69,2026-05-27,30,true,small,paid,Invoice from Nair Chemical Industries
+INV-0506,V027,Larsen & Toubro Ltd,2026-03-04,2026-05-03,354358.74,354358.74,2026-06-08,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0603,V035,ABB India Limited,2026-03-15,2026-04-29,134083.18,0.00,,45,false,,pending,Invoice from ABB India Limited
+INV-0309,V016,Mishra Casting Works,2026-01-23,2026-03-09,217884.62,0.00,,45,true,small,overdue,Invoice from Mishra Casting Works
+INV-0825,V050,NTN Bearing India,2025-11-24,2026-01-08,280197.11,97330.01,2026-01-11,45,false,,partially_paid,Invoice from NTN Bearing India
+INV-0493,V027,Larsen & Toubro Ltd,2025-12-28,2026-02-26,85438.51,0.00,,60,false,,overdue,Invoice from Larsen & Toubro Ltd
+INV-0045,V003,Patel Fabrication Works,2025-12-07,2026-01-21,497598.93,497598.93,2026-03-20,,true,micro,paid,Invoice from Patel Fabrication Works
+INV-0150,V009,Iyer Packaging Industries,2025-10-04,2025-11-03,24927.78,24927.78,2025-11-02,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0214,V011,Deshmukh Rubber Products,2025-10-30,2025-12-14,23165.08,23165.08,2025-12-12,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0663,V039,Voltas Limited,2026-01-04,2026-03-05,368762.81,289066.36,2026-03-30,60,false,,partially_paid,Invoice from Voltas Limited
+INV-0174,V010,Kumar Metal Works,2026-01-17,2026-03-03,346851.62,0.00,,,true,micro,overdue,Invoice from Kumar Metal Works
+INV-0705,V042,Kirloskar Brothers,2026-02-05,2026-04-06,247372.80,247372.80,2026-04-04,60,false,,paid,Invoice from Kirloskar Brothers
+INV-0117,V007,Joshi Engineering Solutions,2026-03-08,2026-04-22,126197.06,126197.06,2026-06-16,45,true,small,paid,Invoice from Joshi Engineering Solutions
+INV-0520,V028,Bharat Heavy Electricals,2025-10-20,2025-12-04,123444.62,123444.62,2025-11-30,45,false,,paid,Invoice from Bharat Heavy Electricals
+INV-0226,V012,Banerjee Textiles,2026-01-16,2026-02-15,231109.30,231109.30,2026-02-14,30,true,medium,paid,Invoice from Banerjee Textiles
+INV-0194,V011,Deshmukh Rubber Products,2026-01-25,2026-03-11,314629.94,314629.94,2026-03-11,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0285,V015,Verma Welding Electrodes,2025-10-05,2025-11-04,182543.55,182543.55,2025-11-17,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0461,V025,Reliance Industries Ltd,2025-11-11,2026-02-09,322288.78,190254.56,2026-02-14,90,false,,partially_paid,Invoice from Reliance Industries Ltd
+INV-0264,V014,Rao Hydraulics & Pneumatics,2026-02-12,2026-03-29,315982.81,143603.58,2026-04-12,,true,micro,partially_paid,Invoice from Rao Hydraulics & Pneumatics
+INV-0695,V042,Kirloskar Brothers,2025-11-02,2026-01-01,97545.12,97545.12,2025-12-29,60,false,,paid,Invoice from Kirloskar Brothers
+INV-0127,V007,Joshi Engineering Solutions,2025-11-25,2026-01-09,449118.01,0.00,,45,true,small,overdue,Invoice from Joshi Engineering Solutions
+INV-0147,V009,Iyer Packaging Industries,2026-01-14,2026-02-13,418280.90,418280.90,2026-04-02,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0029,V001,Sharma Precision Tools Pvt Ltd,2025-12-01,2025-12-31,300222.47,300222.47,2026-02-08,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0834,V051,ITC Limited,2025-11-12,2025-12-12,19593.74,7571.09,2025-12-18,30,false,,partially_paid,Invoice from ITC Limited
+INV-0634,V036,Bosch India Limited,2026-01-17,2026-03-18,285514.48,0.00,,60,false,,overdue,Invoice from Bosch India Limited
+INV-0846,V051,ITC Limited,2025-10-21,2025-11-20,499804.84,0.00,,30,false,,overdue,Invoice from ITC Limited
+INV-0335,V017,Pillai Electronics Assembly,2025-10-17,2025-11-16,32117.07,32117.07,2025-11-15,30,true,micro,paid,Invoice from Pillai Electronics Assembly
+INV-0085,V005,Mehta Polymers & Plastics,2025-10-08,2025-11-07,427191.84,427191.84,2025-11-24,30,true,medium,paid,Invoice from Mehta Polymers & Plastics
+INV-0745,V044,Ashok Leyland Ltd,2026-01-08,2026-02-07,51203.29,51203.29,2026-02-13,30,false,,paid,Invoice from Ashok Leyland Ltd
+INV-0054,V004,Reddy Industrial Supplies,2026-02-22,2026-04-23,35003.27,0.00,,60,true,small,pending,Invoice from Reddy Industrial Supplies
+INV-0201,V011,Deshmukh Rubber Products,2026-02-09,2026-03-26,454663.67,0.00,,45,true,small,overdue,Invoice from Deshmukh Rubber Products
+INV-0290,V015,Verma Welding Electrodes,2025-10-29,2025-11-28,107542.90,107542.90,2025-11-27,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0462,V025,Reliance Industries Ltd,2025-10-02,2025-12-31,314117.20,0.00,,90,false,,overdue,Invoice from Reliance Industries Ltd
+INV-0394,V019,Saxena Tooling Solutions,2025-12-20,2026-01-19,465583.60,465583.60,2026-01-15,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0720,V043,Escorts Limited,2025-10-14,2025-11-28,318221.46,318221.46,2025-11-27,45,false,,paid,Invoice from Escorts Limited
+INV-0105,V006,Singh Auto Parts,2026-01-30,2026-03-16,131087.64,131087.64,2026-04-19,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0717,V043,Escorts Limited,2026-03-11,2026-04-25,227617.51,227617.51,2026-04-25,45,false,,paid,Invoice from Escorts Limited
+INV-0668,V040,Crompton Greaves,2026-03-02,2026-04-16,410387.96,0.00,,45,false,,pending,Invoice from Crompton Greaves
+INV-0282,V015,Verma Welding Electrodes,2026-01-07,2026-02-06,21194.56,21194.56,2026-03-07,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0455,V025,Reliance Industries Ltd,2025-10-29,2026-01-27,321698.00,321698.00,2026-01-26,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0516,V028,Bharat Heavy Electricals,2026-02-10,2026-03-27,148774.06,148774.06,2026-03-22,45,false,,paid,Invoice from Bharat Heavy Electricals
+INV-0189,V010,Kumar Metal Works,2026-01-01,2026-01-16,47164.55,47164.55,2026-01-13,,true,micro,paid,Invoice from Kumar Metal Works
+INV-0656,V039,Voltas Limited,2025-11-13,2026-01-12,298934.17,298934.17,2026-01-12,60,false,,paid,Invoice from Voltas Limited
+INV-0275,V014,Rao Hydraulics & Pneumatics,2026-02-20,2026-03-22,339044.09,339044.09,2026-03-18,,true,micro,paid,Invoice from Rao Hydraulics & Pneumatics
+INV-0218,V011,Deshmukh Rubber Products,2025-10-11,2025-11-25,379439.36,258016.97,2025-12-01,45,true,small,partially_paid,Invoice from Deshmukh Rubber Products
+INV-0428,V022,Choudhary Paint & Coatings,2025-11-30,2025-12-30,87489.16,87489.16,2026-01-28,30,true,small,paid,Invoice from Choudhary Paint & Coatings
+INV-0073,V004,Reddy Industrial Supplies,2026-01-12,2026-03-13,106108.30,0.00,,60,true,small,overdue,Invoice from Reddy Industrial Supplies
+INV-0031,V002,Gupta Electronics Components,2026-02-18,2026-04-04,342446.63,342446.63,2026-04-22,45,true,small,paid,Invoice from Gupta Electronics Components
+INV-0159,V009,Iyer Packaging Industries,2025-10-17,2025-11-16,403736.34,0.00,,30,true,small,overdue,Invoice from Iyer Packaging Industries
+INV-0791,V048,Schaeffler India,2026-03-16,2026-04-15,126052.97,126052.97,2026-05-10,30,false,,paid,Invoice from Schaeffler India
+INV-0829,V050,NTN Bearing India,2026-01-12,2026-02-26,459127.15,459127.15,2026-02-26,45,false,,paid,Invoice from NTN Bearing India
+INV-0323,V016,Mishra Casting Works,2026-01-10,2026-02-24,19331.82,19331.82,2026-02-22,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0618,V036,Bosch India Limited,2026-02-02,2026-04-03,57973.13,57973.13,2026-04-02,60,false,,paid,Invoice from Bosch India Limited
+INV-0541,V030,JSW Steel Limited,2026-01-15,2026-03-16,8380.91,8380.91,2026-04-14,60,false,,paid,Invoice from JSW Steel Limited
+INV-0156,V009,Iyer Packaging Industries,2025-10-23,2025-11-22,340286.91,0.00,,30,true,small,overdue,Invoice from Iyer Packaging Industries
+INV-0774,V046,SKF India Limited,2025-11-02,2026-01-01,271139.40,271139.40,2026-01-01,60,false,,paid,Invoice from SKF India Limited
+INV-0794,V048,Schaeffler India,2025-10-03,2025-11-02,212587.81,212587.81,2025-10-30,30,false,,paid,Invoice from Schaeffler India
+INV-0753,V045,Cummins India Ltd,2026-02-21,2026-04-07,160108.98,0.00,,45,false,,pending,Invoice from Cummins India Ltd
+INV-0697,V042,Kirloskar Brothers,2025-11-04,2026-01-03,483128.62,483128.62,2025-12-31,60,false,,paid,Invoice from Kirloskar Brothers
+INV-0478,V026,Mahindra & Mahindra Ltd,2025-11-20,2026-01-04,251886.06,251886.06,2026-01-04,45,false,,paid,Invoice from Mahindra & Mahindra Ltd
+INV-0219,V012,Banerjee Textiles,2025-10-30,2025-11-29,69851.55,69851.55,2025-11-24,30,true,medium,paid,Invoice from Banerjee Textiles
+INV-0816,V050,NTN Bearing India,2026-01-27,2026-03-13,72375.36,0.00,,45,false,,overdue,Invoice from NTN Bearing India
+INV-0543,V030,JSW Steel Limited,2025-10-24,2025-12-23,10660.69,6890.90,2025-12-24,60,false,,partially_paid,Invoice from JSW Steel Limited
+INV-0542,V030,JSW Steel Limited,2026-01-10,2026-03-11,477247.24,477247.24,2026-03-06,60,false,,paid,Invoice from JSW Steel Limited
+INV-0817,V050,NTN Bearing India,2026-02-20,2026-04-06,81928.22,81928.22,2026-04-03,45,false,,paid,Invoice from NTN Bearing India
+INV-0419,V021,Kulkarni Springs & Washers,2026-01-30,2026-03-01,146624.89,0.00,,30,true,micro,overdue,Invoice from Kulkarni Springs & Washers
+INV-0523,V029,Hindustan Unilever Ltd,2026-03-18,2026-04-17,482436.79,0.00,,30,false,,pending,Invoice from Hindustan Unilever Ltd
+INV-0644,V037,Havells India Ltd,2025-10-08,2025-11-07,81367.06,81367.06,2025-12-01,30,false,,paid,Invoice from Havells India Ltd
+INV-0562,V032,Adani Enterprises Ltd,2025-11-19,2026-02-17,20708.76,20708.76,2026-04-08,90,false,,paid,Invoice from Adani Enterprises Ltd
+INV-0734,V044,Ashok Leyland Ltd,2026-02-24,2026-03-26,366811.31,366811.31,2026-05-08,30,false,,paid,Invoice from Ashok Leyland Ltd
+INV-0122,V007,Joshi Engineering Solutions,2025-11-07,2025-12-22,234952.19,178266.45,2025-12-25,45,true,small,partially_paid,Invoice from Joshi Engineering Solutions
+INV-0065,V004,Reddy Industrial Supplies,2026-01-03,2026-03-04,112761.94,112761.94,2026-02-27,60,true,small,paid,Invoice from Reddy Industrial Supplies
+INV-0338,V017,Pillai Electronics Assembly,2025-12-12,2026-01-11,268628.26,268628.26,2026-01-07,30,true,micro,paid,Invoice from Pillai Electronics Assembly
+INV-0614,V035,ABB India Limited,2026-03-04,2026-04-18,310828.44,189064.41,2026-05-03,45,false,,partially_paid,Invoice from ABB India Limited
+INV-0278,V014,Rao Hydraulics & Pneumatics,2026-01-01,2026-01-16,497984.05,497984.05,2026-01-12,,true,micro,paid,Invoice from Rao Hydraulics & Pneumatics
+INV-0553,V031,Godrej Industries Ltd,2026-02-28,2026-04-14,459036.13,459036.13,2026-04-10,45,false,,paid,Invoice from Godrej Industries Ltd
+INV-0775,V046,SKF India Limited,2025-12-30,2026-02-28,44115.67,0.00,,60,false,,overdue,Invoice from SKF India Limited
+INV-0303,V015,Verma Welding Electrodes,2025-11-30,2025-12-30,344618.26,344618.26,2026-02-27,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0273,V014,Rao Hydraulics & Pneumatics,2026-02-16,2026-04-02,230119.08,0.00,,,true,micro,pending,Invoice from Rao Hydraulics & Pneumatics
+INV-0691,V041,Thermax Limited,2025-10-09,2025-11-08,96303.63,49699.15,2025-11-08,30,false,,partially_paid,Invoice from Thermax Limited
+INV-0433,V023,Tiwari Insulation Materials,2025-11-27,2026-01-11,22225.49,22225.49,2026-01-06,45,true,medium,paid,Invoice from Tiwari Insulation Materials
+INV-0635,V036,Bosch India Limited,2025-11-01,2025-12-31,169206.27,0.00,,60,false,,overdue,Invoice from Bosch India Limited
+INV-0168,V009,Iyer Packaging Industries,2026-02-25,2026-03-27,143069.48,143069.48,2026-05-15,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0531,V029,Hindustan Unilever Ltd,2026-01-04,2026-02-03,438987.87,438987.87,2026-01-30,30,false,,paid,Invoice from Hindustan Unilever Ltd
+INV-0341,V017,Pillai Electronics Assembly,2025-12-29,2026-01-28,290000.78,189877.86,2026-02-10,30,true,micro,partially_paid,Invoice from Pillai Electronics Assembly
+INV-0222,V012,Banerjee Textiles,2025-12-30,2026-01-29,277665.31,96240.07,2026-02-24,30,true,medium,partially_paid,Invoice from Banerjee Textiles
+INV-0728,V043,Escorts Limited,2026-01-15,2026-03-01,77390.50,77390.50,2026-02-28,45,false,,paid,Invoice from Escorts Limited
+INV-0624,V036,Bosch India Limited,2026-03-11,2026-05-10,51282.75,51282.75,2026-06-15,60,false,,paid,Invoice from Bosch India Limited
+INV-0279,V014,Rao Hydraulics & Pneumatics,2026-02-13,2026-03-15,197379.69,132554.29,2026-04-14,,true,micro,partially_paid,Invoice from Rao Hydraulics & Pneumatics
+INV-0137,V008,Agarwal Electrical Systems,2026-01-02,2026-02-01,377970.19,0.00,,30,true,micro,overdue,Invoice from Agarwal Electrical Systems
+INV-0479,V026,Mahindra & Mahindra Ltd,2026-02-24,2026-04-10,472890.24,472890.24,2026-04-26,45,false,,paid,Invoice from Mahindra & Mahindra Ltd
+INV-0354,V018,Thakur Industrial Fasteners,2025-10-22,2026-01-20,227208.10,0.00,,90,true,small,overdue,Invoice from Thakur Industrial Fasteners
+INV-0765,V046,SKF India Limited,2026-01-03,2026-03-04,324854.04,0.00,,60,false,,overdue,Invoice from SKF India Limited
+INV-0850,V052,Bajaj Electricals,2025-12-19,2026-02-02,467926.99,0.00,,45,false,,overdue,Invoice from Bajaj Electricals
+INV-0611,V035,ABB India Limited,2026-02-28,2026-04-14,472868.12,322576.17,2026-04-27,45,false,,partially_paid,Invoice from ABB India Limited
+INV-0277,V014,Rao Hydraulics & Pneumatics,2026-01-01,2026-01-16,326373.53,326373.53,2026-01-16,,true,micro,paid,Invoice from Rao Hydraulics & Pneumatics
+INV-0203,V011,Deshmukh Rubber Products,2025-10-18,2025-12-02,375734.07,166940.64,2025-12-05,45,true,small,partially_paid,Invoice from Deshmukh Rubber Products
+INV-0593,V034,Siemens India Ltd,2025-10-16,2025-12-15,24576.04,24576.04,2025-12-11,60,false,,paid,Invoice from Siemens India Ltd
+INV-0183,V010,Kumar Metal Works,2025-11-03,2025-11-18,67658.57,0.00,,,true,micro,overdue,Invoice from Kumar Metal Works
+INV-0526,V029,Hindustan Unilever Ltd,2025-12-27,2026-01-26,146280.59,146280.59,2026-01-26,30,false,,paid,Invoice from Hindustan Unilever Ltd
+INV-0708,V042,Kirloskar Brothers,2025-10-27,2025-12-26,255191.82,255191.82,2026-02-08,60,false,,paid,Invoice from Kirloskar Brothers
+INV-0605,V035,ABB India Limited,2025-12-25,2026-02-08,118859.22,50261.41,2026-02-25,45,false,,partially_paid,Invoice from ABB India Limited
+INV-0435,V023,Tiwari Insulation Materials,2026-03-11,2026-04-25,304521.94,235825.37,2026-05-06,45,true,medium,partially_paid,Invoice from Tiwari Insulation Materials
+INV-0748,V045,Cummins India Ltd,2026-03-19,2026-05-03,110643.48,110643.48,2026-04-29,45,false,,paid,Invoice from Cummins India Ltd
+INV-0006,V001,Sharma Precision Tools Pvt Ltd,2025-10-20,2025-11-19,142704.40,0.00,,30,true,micro,overdue,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0188,V010,Kumar Metal Works,2025-10-23,2025-11-07,316575.62,316575.62,2025-11-03,,true,micro,paid,Invoice from Kumar Metal Works
+INV-0701,V042,Kirloskar Brothers,2026-02-17,2026-04-18,123093.50,123093.50,2026-04-16,60,false,,paid,Invoice from Kirloskar Brothers
+INV-0595,V034,Siemens India Ltd,2026-01-01,2026-03-02,478724.78,478724.78,2026-03-01,60,false,,paid,Invoice from Siemens India Ltd
+INV-0782,V047,Timken India Ltd,2025-11-06,2025-12-21,261025.31,0.00,,45,false,,overdue,Invoice from Timken India Ltd
+INV-0532,V029,Hindustan Unilever Ltd,2025-10-16,2025-11-15,58113.84,0.00,,30,false,,overdue,Invoice from Hindustan Unilever Ltd
+INV-0059,V004,Reddy Industrial Supplies,2026-02-24,2026-04-25,463551.66,0.00,,60,true,small,pending,Invoice from Reddy Industrial Supplies
+INV-0450,V025,Reliance Industries Ltd,2026-02-14,2026-05-15,307914.44,307914.44,2026-05-13,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0675,V040,Crompton Greaves,2025-10-18,2025-12-02,320899.28,320899.28,2025-12-01,45,false,,paid,Invoice from Crompton Greaves
+INV-0381,V019,Saxena Tooling Solutions,2025-10-12,2025-11-11,69869.28,69869.28,2025-11-10,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0436,V023,Tiwari Insulation Materials,2025-11-26,2026-01-10,382726.81,216137.29,2026-01-22,45,true,medium,partially_paid,Invoice from Tiwari Insulation Materials
+INV-0632,V036,Bosch India Limited,2025-12-29,2026-02-27,12750.76,12750.76,2026-02-26,60,false,,paid,Invoice from Bosch India Limited
+INV-0456,V025,Reliance Industries Ltd,2025-11-29,2026-02-27,253917.57,0.00,,90,false,,overdue,Invoice from Reliance Industries Ltd
+INV-0043,V003,Patel Fabrication Works,2026-01-11,2026-02-25,266198.52,266198.52,2026-03-11,,true,micro,paid,Invoice from Patel Fabrication Works
+INV-0049,V003,Patel Fabrication Works,2025-12-25,2026-01-09,40074.39,40074.39,2026-01-06,,true,micro,paid,Invoice from Patel Fabrication Works
+INV-0472,V026,Mahindra & Mahindra Ltd,2026-02-14,2026-03-31,381529.17,381529.17,2026-04-07,45,false,,paid,Invoice from Mahindra & Mahindra Ltd
+INV-0848,V052,Bajaj Electricals,2026-03-05,2026-04-19,383204.61,0.00,,45,false,,pending,Invoice from Bajaj Electricals
+INV-0295,V015,Verma Welding Electrodes,2026-02-14,2026-03-16,12355.86,0.00,,30,true,micro,overdue,Invoice from Verma Welding Electrodes
+INV-0795,V048,Schaeffler India,2025-12-28,2026-01-27,139272.69,139272.69,2026-01-25,30,false,,paid,Invoice from Schaeffler India
+INV-0597,V034,Siemens India Ltd,2026-01-16,2026-03-17,349335.01,0.00,,60,false,,overdue,Invoice from Siemens India Ltd
+INV-0313,V016,Mishra Casting Works,2026-02-26,2026-04-12,51148.90,51148.90,2026-04-07,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0410,V021,Kulkarni Springs & Washers,2026-03-15,2026-04-14,181761.47,181761.47,2026-04-13,30,true,micro,paid,Invoice from Kulkarni Springs & Washers
+INV-0547,V030,JSW Steel Limited,2025-10-13,2025-12-12,114320.37,0.00,,60,false,,overdue,Invoice from JSW Steel Limited
+INV-0149,V009,Iyer Packaging Industries,2026-01-21,2026-02-20,326821.33,0.00,,30,true,small,overdue,Invoice from Iyer Packaging Industries
+INV-0321,V016,Mishra Casting Works,2025-10-27,2025-12-11,487400.57,0.00,,45,true,small,overdue,Invoice from Mishra Casting Works
+INV-0024,V001,Sharma Precision Tools Pvt Ltd,2025-10-06,2025-11-05,232131.67,232131.67,2025-11-04,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0518,V028,Bharat Heavy Electricals,2025-11-17,2026-01-01,110923.47,0.00,,45,false,,overdue,Invoice from Bharat Heavy Electricals
+INV-0086,V005,Mehta Polymers & Plastics,2026-03-06,2026-04-05,50687.74,50687.74,2026-04-23,30,true,medium,paid,Invoice from Mehta Polymers & Plastics
+INV-0703,V042,Kirloskar Brothers,2025-10-23,2025-12-22,194936.43,194936.43,2025-12-17,60,false,,paid,Invoice from Kirloskar Brothers
+INV-0258,V013,Nair Chemical Industries,2025-11-16,2025-12-16,57793.37,57793.37,2026-01-08,30,true,small,paid,Invoice from Nair Chemical Industries
+INV-0369,V018,Thakur Industrial Fasteners,2026-01-06,2026-04-06,196771.20,0.00,,90,true,small,pending,Invoice from Thakur Industrial Fasteners
+INV-0583,V034,Siemens India Ltd,2025-10-10,2025-12-09,340981.31,110287.69,2025-12-20,60,false,,partially_paid,Invoice from Siemens India Ltd
+INV-0375,V019,Saxena Tooling Solutions,2026-02-26,2026-03-28,158243.03,73462.47,2026-04-01,,true,micro,partially_paid,Invoice from Saxena Tooling Solutions
+INV-0160,V009,Iyer Packaging Industries,2025-10-26,2025-11-25,392404.50,392404.50,2025-11-22,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0847,V052,Bajaj Electricals,2026-01-15,2026-03-01,330147.89,330147.89,2026-02-24,45,false,,paid,Invoice from Bajaj Electricals
+INV-0469,V025,Reliance Industries Ltd,2026-02-07,2026-05-08,222604.72,222604.72,2026-05-22,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0128,V007,Joshi Engineering Solutions,2025-11-18,2026-01-02,227784.53,0.00,,45,true,small,overdue,Invoice from Joshi Engineering Solutions
+INV-0751,V045,Cummins India Ltd,2025-12-01,2026-01-15,348545.35,348545.35,2026-01-30,45,false,,paid,Invoice from Cummins India Ltd
+INV-0010,V001,Sharma Precision Tools Pvt Ltd,2025-10-16,2025-11-15,135937.83,135937.83,2025-11-12,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0842,V051,ITC Limited,2025-12-21,2026-01-20,456775.12,456775.12,2026-02-14,30,false,,paid,Invoice from ITC Limited
+INV-0322,V016,Mishra Casting Works,2025-10-13,2025-11-27,339113.47,204993.23,2025-12-18,45,true,small,partially_paid,Invoice from Mishra Casting Works
+INV-0716,V043,Escorts Limited,2026-02-21,2026-04-07,369314.41,156502.82,2026-05-04,45,false,,partially_paid,Invoice from Escorts Limited
+INV-0008,V001,Sharma Precision Tools Pvt Ltd,2026-01-23,2026-02-22,478820.47,478820.47,2026-02-22,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0573,V033,Wipro Technologies Ltd,2026-03-11,2026-04-10,405691.70,405691.70,2026-05-30,30,false,,paid,Invoice from Wipro Technologies Ltd
+INV-0662,V039,Voltas Limited,2026-02-02,2026-04-03,482464.44,0.00,,60,false,,pending,Invoice from Voltas Limited
+INV-0368,V018,Thakur Industrial Fasteners,2025-11-27,2026-02-25,264413.93,127434.02,2026-03-26,90,true,small,partially_paid,Invoice from Thakur Industrial Fasteners
+INV-0020,V001,Sharma Precision Tools Pvt Ltd,2025-10-28,2025-11-27,113709.51,113709.51,2025-11-27,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0676,V040,Crompton Greaves,2025-10-02,2025-11-16,334023.47,334023.47,2025-11-12,45,false,,paid,Invoice from Crompton Greaves
+INV-0197,V011,Deshmukh Rubber Products,2026-01-19,2026-03-05,147611.92,147611.92,2026-03-02,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0245,V013,Nair Chemical Industries,2025-11-01,2025-12-01,22770.05,22770.05,2025-11-26,30,true,small,paid,Invoice from Nair Chemical Industries
+INV-0291,V015,Verma Welding Electrodes,2025-12-25,2026-01-24,388312.45,0.00,,30,true,micro,overdue,Invoice from Verma Welding Electrodes
+INV-0459,V025,Reliance Industries Ltd,2026-01-06,2026-04-06,423737.18,423737.18,2026-04-01,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0220,V012,Banerjee Textiles,2025-11-15,2025-12-15,65105.91,0.00,,30,true,medium,overdue,Invoice from Banerjee Textiles
+INV-0223,V012,Banerjee Textiles,2026-02-18,2026-03-20,233416.71,233416.71,2026-03-19,30,true,medium,paid,Invoice from Banerjee Textiles
+INV-0067,V004,Reddy Industrial Supplies,2025-10-21,2025-12-20,241010.32,0.00,,60,true,small,overdue,Invoice from Reddy Industrial Supplies
+INV-0431,V023,Tiwari Insulation Materials,2025-10-07,2025-11-21,206074.06,206074.06,2026-01-08,45,true,medium,paid,Invoice from Tiwari Insulation Materials
+INV-0500,V027,Larsen & Toubro Ltd,2025-10-21,2025-12-20,242822.15,242822.15,2026-02-05,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0082,V005,Mehta Polymers & Plastics,2026-01-02,2026-02-01,466219.24,466219.24,2026-01-31,30,true,medium,paid,Invoice from Mehta Polymers & Plastics
+INV-0296,V015,Verma Welding Electrodes,2026-01-18,2026-02-17,296482.20,296482.20,2026-02-15,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0087,V005,Mehta Polymers & Plastics,2026-03-08,2026-04-07,6755.12,0.00,,30,true,medium,pending,Invoice from Mehta Polymers & Plastics
+INV-0721,V043,Escorts Limited,2026-01-26,2026-03-12,407697.28,0.00,,45,false,,overdue,Invoice from Escorts Limited
+INV-0441,V023,Tiwari Insulation Materials,2026-01-27,2026-03-13,65705.52,0.00,,45,true,medium,overdue,Invoice from Tiwari Insulation Materials
+INV-0643,V037,Havells India Ltd,2026-02-26,2026-03-28,137646.16,137646.16,2026-05-18,30,false,,paid,Invoice from Havells India Ltd
+INV-0003,V001,Sharma Precision Tools Pvt Ltd,2025-10-19,2025-11-18,213851.30,213851.30,2025-11-17,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0395,V019,Saxena Tooling Solutions,2025-12-14,2025-12-29,121710.15,121710.15,2025-12-31,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0702,V042,Kirloskar Brothers,2026-02-11,2026-04-12,257858.31,257858.31,2026-04-21,60,false,,paid,Invoice from Kirloskar Brothers
+INV-0535,V029,Hindustan Unilever Ltd,2026-02-19,2026-03-21,168688.63,0.00,,30,false,,overdue,Invoice from Hindustan Unilever Ltd
+INV-0742,V044,Ashok Leyland Ltd,2026-02-07,2026-03-09,223436.54,223436.54,2026-03-06,30,false,,paid,Invoice from Ashok Leyland Ltd
+INV-0250,V013,Nair Chemical Industries,2025-11-29,2025-12-29,77057.05,77057.05,2026-02-04,30,true,small,paid,Invoice from Nair Chemical Industries
+INV-0042,V003,Patel Fabrication Works,2025-11-03,2025-11-18,384088.04,297063.04,2025-11-23,,true,micro,partially_paid,Invoice from Patel Fabrication Works
+INV-0358,V018,Thakur Industrial Fasteners,2025-10-19,2026-01-17,32805.20,32805.20,2026-02-06,90,true,small,paid,Invoice from Thakur Industrial Fasteners
+INV-0814,V049,NSK Bearings India,2026-02-14,2026-04-15,122202.01,122202.01,2026-04-13,60,false,,paid,Invoice from NSK Bearings India
+INV-0074,V004,Reddy Industrial Supplies,2026-01-17,2026-03-18,136479.18,136479.18,2026-03-13,60,true,small,paid,Invoice from Reddy Industrial Supplies
+INV-0235,V012,Banerjee Textiles,2026-03-08,2026-04-07,162497.28,162497.28,2026-06-05,30,true,medium,paid,Invoice from Banerjee Textiles
+INV-0292,V015,Verma Welding Electrodes,2025-10-18,2025-11-17,6403.60,0.00,,30,true,micro,overdue,Invoice from Verma Welding Electrodes
+INV-0464,V025,Reliance Industries Ltd,2026-02-27,2026-05-28,27503.59,16182.72,2026-06-17,90,false,,partially_paid,Invoice from Reliance Industries Ltd
+INV-0373,V019,Saxena Tooling Solutions,2025-12-24,2026-02-07,45343.48,45343.48,2026-02-05,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0776,V047,Timken India Ltd,2025-11-02,2025-12-17,166741.40,113652.95,2026-01-06,45,false,,partially_paid,Invoice from Timken India Ltd
+INV-0071,V004,Reddy Industrial Supplies,2025-10-25,2025-12-24,126876.60,77355.49,2026-01-06,60,true,small,partially_paid,Invoice from Reddy Industrial Supplies
+INV-0078,V005,Mehta Polymers & Plastics,2026-03-02,2026-04-01,440238.77,440238.77,2026-04-12,30,true,medium,paid,Invoice from Mehta Polymers & Plastics
+INV-0333,V017,Pillai Electronics Assembly,2026-02-18,2026-03-20,175860.56,175860.56,2026-03-15,30,true,micro,paid,Invoice from Pillai Electronics Assembly
+INV-0669,V040,Crompton Greaves,2025-12-05,2026-01-19,338123.94,338123.94,2026-01-17,45,false,,paid,Invoice from Crompton Greaves
+INV-0785,V048,Schaeffler India,2025-11-05,2025-12-05,36616.63,0.00,,30,false,,overdue,Invoice from Schaeffler India
+INV-0658,V039,Voltas Limited,2025-12-24,2026-02-22,421598.63,421598.63,2026-04-19,60,false,,paid,Invoice from Voltas Limited
+INV-0196,V011,Deshmukh Rubber Products,2025-11-24,2026-01-08,346238.71,346238.71,2026-01-11,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0062,V004,Reddy Industrial Supplies,2025-12-10,2026-02-08,136275.51,0.00,,60,true,small,overdue,Invoice from Reddy Industrial Supplies
+INV-0257,V013,Nair Chemical Industries,2026-01-14,2026-02-13,231133.73,231133.73,2026-02-10,30,true,small,paid,Invoice from Nair Chemical Industries
+INV-0638,V037,Havells India Ltd,2025-12-22,2026-01-21,304558.53,182066.41,2026-02-14,30,false,,partially_paid,Invoice from Havells India Ltd
+INV-0355,V018,Thakur Industrial Fasteners,2025-10-26,2026-01-24,323280.96,0.00,,90,true,small,overdue,Invoice from Thakur Industrial Fasteners
+INV-0037,V002,Gupta Electronics Components,2026-02-08,2026-03-25,190087.36,190087.36,2026-03-21,45,true,small,paid,Invoice from Gupta Electronics Components
+INV-0318,V016,Mishra Casting Works,2025-11-10,2025-12-25,110305.71,45459.46,2025-12-28,45,true,small,partially_paid,Invoice from Mishra Casting Works
+INV-0298,V015,Verma Welding Electrodes,2026-03-03,2026-04-02,240741.75,0.00,,30,true,micro,pending,Invoice from Verma Welding Electrodes
+INV-0377,V019,Saxena Tooling Solutions,2026-03-15,2026-03-30,184485.85,0.00,,,true,micro,pending,Invoice from Saxena Tooling Solutions
+INV-0807,V049,NSK Bearings India,2026-02-21,2026-04-22,106571.21,0.00,,60,false,,pending,Invoice from NSK Bearings India
+INV-0028,V001,Sharma Precision Tools Pvt Ltd,2026-02-19,2026-03-21,80656.45,80656.45,2026-03-16,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0241,V013,Nair Chemical Industries,2026-02-08,2026-03-10,42039.98,0.00,,30,true,small,overdue,Invoice from Nair Chemical Industries
+INV-0835,V051,ITC Limited,2026-01-31,2026-03-02,141115.98,141115.98,2026-03-12,30,false,,paid,Invoice from ITC Limited
+INV-0510,V027,Larsen & Toubro Ltd,2025-10-06,2025-12-05,402808.00,402808.00,2025-12-02,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0357,V018,Thakur Industrial Fasteners,2025-11-19,2026-02-17,223892.99,223892.99,2026-02-15,90,true,small,paid,Invoice from Thakur Industrial Fasteners
+INV-0484,V026,Mahindra & Mahindra Ltd,2025-12-06,2026-01-20,186138.99,186138.99,2026-02-26,45,false,,paid,Invoice from Mahindra & Mahindra Ltd
+INV-0619,V036,Bosch India Limited,2026-01-17,2026-03-18,100006.37,100006.37,2026-05-10,60,false,,paid,Invoice from Bosch India Limited
+INV-0659,V039,Voltas Limited,2025-12-25,2026-02-23,222910.35,222910.35,2026-04-17,60,false,,paid,Invoice from Voltas Limited
+INV-0170,V010,Kumar Metal Works,2026-02-01,2026-03-03,246337.22,0.00,,,true,micro,overdue,Invoice from Kumar Metal Works
+INV-0216,V011,Deshmukh Rubber Products,2025-11-08,2025-12-23,413338.97,413338.97,2025-12-19,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0799,V049,NSK Bearings India,2025-12-30,2026-02-28,167013.96,50769.67,2026-03-06,60,false,,partially_paid,Invoice from NSK Bearings India
+INV-0744,V044,Ashok Leyland Ltd,2025-10-04,2025-11-03,154423.42,0.00,,30,false,,overdue,Invoice from Ashok Leyland Ltd
+INV-0790,V048,Schaeffler India,2025-11-09,2025-12-09,6271.41,0.00,,30,false,,overdue,Invoice from Schaeffler India
+INV-0739,V044,Ashok Leyland Ltd,2025-12-22,2026-01-21,447606.56,0.00,,30,false,,overdue,Invoice from Ashok Leyland Ltd
+INV-0648,V038,Blue Star Limited,2026-03-13,2026-04-27,49361.33,29540.89,2026-05-22,45,false,,partially_paid,Invoice from Blue Star Limited
+INV-0386,V019,Saxena Tooling Solutions,2025-11-19,2025-12-04,452467.30,452467.30,2026-01-10,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0803,V049,NSK Bearings India,2026-01-16,2026-03-17,79530.36,0.00,,60,false,,overdue,Invoice from NSK Bearings India
+INV-0390,V019,Saxena Tooling Solutions,2025-12-14,2025-12-29,279497.67,0.00,,,true,micro,overdue,Invoice from Saxena Tooling Solutions
+INV-0657,V039,Voltas Limited,2026-02-13,2026-04-14,155805.71,0.00,,60,false,,pending,Invoice from Voltas Limited
+INV-0287,V015,Verma Welding Electrodes,2026-02-24,2026-03-26,333070.53,199367.02,2026-03-26,30,true,micro,partially_paid,Invoice from Verma Welding Electrodes
+INV-0589,V034,Siemens India Ltd,2025-11-04,2026-01-03,71375.91,71375.91,2026-01-02,60,false,,paid,Invoice from Siemens India Ltd
+INV-0066,V004,Reddy Industrial Supplies,2025-11-01,2025-12-31,35174.00,35174.00,2025-12-31,60,true,small,paid,Invoice from Reddy Industrial Supplies
+INV-0623,V036,Bosch India Limited,2026-02-27,2026-04-28,328599.18,0.00,,60,false,,pending,Invoice from Bosch India Limited
+INV-0746,V044,Ashok Leyland Ltd,2025-12-14,2026-01-13,333931.86,108826.27,2026-02-02,30,false,,partially_paid,Invoice from Ashok Leyland Ltd
+INV-0613,V035,ABB India Limited,2026-02-09,2026-03-26,9525.02,9525.02,2026-04-19,45,false,,paid,Invoice from ABB India Limited
+INV-0854,V052,Bajaj Electricals,2025-11-13,2025-12-28,273351.68,273351.68,2025-12-28,45,false,,paid,Invoice from Bajaj Electricals
+INV-0286,V015,Verma Welding Electrodes,2026-02-16,2026-03-18,474760.34,0.00,,30,true,micro,overdue,Invoice from Verma Welding Electrodes
+INV-0337,V017,Pillai Electronics Assembly,2026-03-18,2026-04-17,251205.74,251205.74,2026-04-26,30,true,micro,paid,Invoice from Pillai Electronics Assembly
+INV-0637,V037,Havells India Ltd,2026-03-06,2026-04-05,53354.46,53354.46,2026-04-05,30,false,,paid,Invoice from Havells India Ltd
+INV-0784,V047,Timken India Ltd,2026-02-17,2026-04-03,386857.99,386857.99,2026-03-31,45,false,,paid,Invoice from Timken India Ltd
+INV-0260,V013,Nair Chemical Industries,2025-10-02,2025-11-01,200923.84,200923.84,2025-10-27,30,true,small,paid,Invoice from Nair Chemical Industries
+INV-0184,V010,Kumar Metal Works,2025-10-29,2025-11-13,149607.64,101194.02,2025-11-16,,true,micro,partially_paid,Invoice from Kumar Metal Works
+INV-0759,V045,Cummins India Ltd,2026-02-25,2026-04-11,448813.51,448813.51,2026-04-11,45,false,,paid,Invoice from Cummins India Ltd
+INV-0559,V032,Adani Enterprises Ltd,2026-03-14,2026-06-12,200994.61,0.00,,90,false,,pending,Invoice from Adani Enterprises Ltd
+INV-0723,V043,Escorts Limited,2026-02-04,2026-03-21,165208.54,0.00,,45,false,,overdue,Invoice from Escorts Limited
+INV-0274,V014,Rao Hydraulics & Pneumatics,2026-01-11,2026-02-25,294357.25,0.00,,,true,micro,overdue,Invoice from Rao Hydraulics & Pneumatics
+INV-0352,V018,Thakur Industrial Fasteners,2025-10-03,2026-01-01,42299.87,0.00,,90,true,small,overdue,Invoice from Thakur Industrial Fasteners
+INV-0471,V025,Reliance Industries Ltd,2025-12-28,2026-03-28,368428.88,0.00,,90,false,,overdue,Invoice from Reliance Industries Ltd
+INV-0801,V049,NSK Bearings India,2026-01-16,2026-03-17,234643.71,128275.10,2026-04-10,60,false,,partially_paid,Invoice from NSK Bearings India
+INV-0372,V019,Saxena Tooling Solutions,2025-10-02,2025-11-16,482382.96,0.00,,,true,micro,overdue,Invoice from Saxena Tooling Solutions
+INV-0176,V010,Kumar Metal Works,2026-01-16,2026-03-02,156571.98,156571.98,2026-04-07,,true,micro,paid,Invoice from Kumar Metal Works
+INV-0098,V006,Singh Auto Parts,2025-11-19,2025-12-19,115104.69,115104.69,2025-12-18,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0475,V026,Mahindra & Mahindra Ltd,2025-10-13,2025-11-27,211976.70,0.00,,45,false,,overdue,Invoice from Mahindra & Mahindra Ltd
+INV-0363,V018,Thakur Industrial Fasteners,2026-03-09,2026-06-07,227618.18,0.00,,90,true,small,pending,Invoice from Thakur Industrial Fasteners
+INV-0666,V039,Voltas Limited,2026-02-01,2026-04-02,342447.75,265911.47,2026-04-16,60,false,,partially_paid,Invoice from Voltas Limited
+INV-0019,V001,Sharma Precision Tools Pvt Ltd,2026-02-06,2026-03-08,233818.80,233818.80,2026-03-03,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0512,V028,Bharat Heavy Electricals,2026-01-05,2026-02-19,353925.96,192713.23,2026-03-06,45,false,,partially_paid,Invoice from Bharat Heavy Electricals
+INV-0199,V011,Deshmukh Rubber Products,2025-10-10,2025-11-24,296945.85,0.00,,45,true,small,overdue,Invoice from Deshmukh Rubber Products
+INV-0208,V011,Deshmukh Rubber Products,2026-01-10,2026-02-24,290242.26,0.00,,45,true,small,overdue,Invoice from Deshmukh Rubber Products
+INV-0755,V045,Cummins India Ltd,2026-02-13,2026-03-30,322580.19,107808.17,2026-04-17,45,false,,partially_paid,Invoice from Cummins India Ltd
+INV-0486,V026,Mahindra & Mahindra Ltd,2025-11-24,2026-01-08,383380.04,383380.04,2026-01-04,45,false,,paid,Invoice from Mahindra & Mahindra Ltd
+INV-0581,V034,Siemens India Ltd,2026-01-22,2026-03-23,209712.30,209712.30,2026-03-19,60,false,,paid,Invoice from Siemens India Ltd
+INV-0255,V013,Nair Chemical Industries,2025-10-31,2025-11-30,83197.93,83197.93,2025-12-23,30,true,small,paid,Invoice from Nair Chemical Industries
+INV-0404,V020,Bhatt CNC Components,2025-10-23,2025-12-07,124759.38,124759.38,2025-12-04,45,true,small,paid,Invoice from Bhatt CNC Components
+INV-0014,V001,Sharma Precision Tools Pvt Ltd,2026-03-02,2026-04-01,27683.07,27683.07,2026-03-30,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0781,V047,Timken India Ltd,2026-02-12,2026-03-29,352242.31,352242.31,2026-03-27,45,false,,paid,Invoice from Timken India Ltd
+INV-0072,V004,Reddy Industrial Supplies,2025-10-02,2025-12-01,293917.78,293917.78,2026-01-30,60,true,small,paid,Invoice from Reddy Industrial Supplies
+INV-0575,V033,Wipro Technologies Ltd,2026-03-11,2026-04-10,225988.33,166351.41,2026-04-17,30,false,,partially_paid,Invoice from Wipro Technologies Ltd
+INV-0164,V009,Iyer Packaging Industries,2025-11-22,2025-12-22,355117.78,355117.78,2026-02-07,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0339,V017,Pillai Electronics Assembly,2025-12-19,2026-01-18,40677.37,0.00,,30,true,micro,overdue,Invoice from Pillai Electronics Assembly
+INV-0820,V050,NTN Bearing India,2026-02-17,2026-04-03,49758.34,0.00,,45,false,,pending,Invoice from NTN Bearing India
+INV-0452,V025,Reliance Industries Ltd,2025-11-05,2026-02-03,208343.58,208343.58,2026-03-12,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0524,V029,Hindustan Unilever Ltd,2026-02-07,2026-03-09,206419.19,0.00,,30,false,,overdue,Invoice from Hindustan Unilever Ltd
+INV-0502,V027,Larsen & Toubro Ltd,2026-01-16,2026-03-17,20627.40,0.00,,60,false,,overdue,Invoice from Larsen & Toubro Ltd
+INV-0392,V019,Saxena Tooling Solutions,2026-01-09,2026-02-23,227413.01,227413.01,2026-02-20,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0599,V034,Siemens India Ltd,2025-11-20,2026-01-19,269156.81,269156.81,2026-02-05,60,false,,paid,Invoice from Siemens India Ltd
+INV-0715,V043,Escorts Limited,2025-11-27,2026-01-11,275444.87,0.00,,45,false,,overdue,Invoice from Escorts Limited
+INV-0097,V006,Singh Auto Parts,2026-01-10,2026-02-24,83802.93,83802.93,2026-02-24,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0415,V021,Kulkarni Springs & Washers,2026-02-13,2026-03-15,36234.77,0.00,,30,true,micro,overdue,Invoice from Kulkarni Springs & Washers
+INV-0465,V025,Reliance Industries Ltd,2026-01-25,2026-04-25,384644.71,384644.71,2026-06-05,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0444,V024,Tata Steel Limited,2025-10-30,2025-12-29,273374.82,0.00,,60,false,,overdue,Invoice from Tata Steel Limited
+INV-0336,V017,Pillai Electronics Assembly,2026-02-12,2026-03-14,383259.64,383259.64,2026-03-14,30,true,micro,paid,Invoice from Pillai Electronics Assembly
+INV-0841,V051,ITC Limited,2025-12-18,2026-01-17,242443.80,0.00,,30,false,,overdue,Invoice from ITC Limited
+INV-0409,V021,Kulkarni Springs & Washers,2025-10-08,2025-11-07,196506.25,196506.25,2025-12-25,30,true,micro,paid,Invoice from Kulkarni Springs & Washers
+INV-0729,V043,Escorts Limited,2025-12-09,2026-01-23,247282.07,107409.09,2026-02-05,45,false,,partially_paid,Invoice from Escorts Limited
+INV-0598,V034,Siemens India Ltd,2025-12-08,2026-02-06,457987.60,314984.15,2026-02-18,60,false,,partially_paid,Invoice from Siemens India Ltd
+INV-0142,V008,Agarwal Electrical Systems,2026-02-15,2026-03-17,490457.38,490457.38,2026-05-15,30,true,micro,paid,Invoice from Agarwal Electrical Systems
+INV-0173,V010,Kumar Metal Works,2026-02-26,2026-03-28,124471.24,124471.24,2026-05-16,,true,micro,paid,Invoice from Kumar Metal Works
+INV-0033,V002,Gupta Electronics Components,2025-11-23,2026-01-07,6606.43,0.00,,45,true,small,overdue,Invoice from Gupta Electronics Components
+INV-0247,V013,Nair Chemical Industries,2025-11-28,2025-12-28,489277.18,0.00,,30,true,small,overdue,Invoice from Nair Chemical Industries
+INV-0681,V041,Thermax Limited,2025-10-20,2025-11-19,346766.47,346766.47,2025-11-19,30,false,,paid,Invoice from Thermax Limited
+INV-0787,V048,Schaeffler India,2025-12-17,2026-01-16,32442.36,0.00,,30,false,,overdue,Invoice from Schaeffler India
+INV-0153,V009,Iyer Packaging Industries,2026-01-13,2026-02-12,384614.56,384614.56,2026-02-08,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0773,V046,SKF India Limited,2025-12-03,2026-02-01,214669.74,214669.74,2026-03-14,60,false,,paid,Invoice from SKF India Limited
+INV-0447,V024,Tata Steel Limited,2026-02-16,2026-04-17,492640.61,0.00,,60,false,,pending,Invoice from Tata Steel Limited
+INV-0809,V049,NSK Bearings India,2026-01-07,2026-03-08,51048.19,0.00,,60,false,,overdue,Invoice from NSK Bearings India
+INV-0544,V030,JSW Steel Limited,2025-09-30,2025-11-29,63521.30,63521.30,2025-11-26,60,false,,paid,Invoice from JSW Steel Limited
+INV-0550,V030,JSW Steel Limited,2025-11-19,2026-01-18,379888.51,0.00,,60,false,,overdue,Invoice from JSW Steel Limited
+INV-0650,V038,Blue Star Limited,2025-12-10,2026-01-24,390688.71,0.00,,45,false,,overdue,Invoice from Blue Star Limited
+INV-0737,V044,Ashok Leyland Ltd,2025-11-13,2025-12-13,137925.73,0.00,,30,false,,overdue,Invoice from Ashok Leyland Ltd
+INV-0262,V014,Rao Hydraulics & Pneumatics,2026-01-20,2026-02-19,305497.17,305497.17,2026-02-18,,true,micro,paid,Invoice from Rao Hydraulics & Pneumatics
+INV-0837,V051,ITC Limited,2025-12-04,2026-01-03,441975.39,441975.39,2026-01-09,30,false,,paid,Invoice from ITC Limited
+INV-0053,V004,Reddy Industrial Supplies,2026-03-06,2026-05-05,338315.45,0.00,,60,true,small,pending,Invoice from Reddy Industrial Supplies
+INV-0300,V015,Verma Welding Electrodes,2025-10-13,2025-11-12,26465.69,0.00,,30,true,micro,overdue,Invoice from Verma Welding Electrodes
+INV-0508,V027,Larsen & Toubro Ltd,2025-12-29,2026-02-27,478559.32,478559.32,2026-04-03,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0320,V016,Mishra Casting Works,2026-01-07,2026-02-21,289179.50,0.00,,45,true,small,overdue,Invoice from Mishra Casting Works
+INV-0423,V022,Choudhary Paint & Coatings,2025-11-12,2025-12-12,186836.73,0.00,,30,true,small,overdue,Invoice from Choudhary Paint & Coatings
+INV-0267,V014,Rao Hydraulics & Pneumatics,2025-12-16,2026-01-15,267771.92,0.00,,,true,micro,overdue,Invoice from Rao Hydraulics & Pneumatics
+INV-0517,V028,Bharat Heavy Electricals,2026-02-27,2026-04-13,176449.94,176449.94,2026-04-30,45,false,,paid,Invoice from Bharat Heavy Electricals
+INV-0639,V037,Havells India Ltd,2025-12-26,2026-01-25,19664.70,19664.70,2026-01-22,30,false,,paid,Invoice from Havells India Ltd
+INV-0852,V052,Bajaj Electricals,2025-12-18,2026-02-01,457420.10,457420.10,2026-01-27,45,false,,paid,Invoice from Bajaj Electricals
+INV-0112,V006,Singh Auto Parts,2026-03-19,2026-04-03,155418.10,155418.10,2026-05-11,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0812,V049,NSK Bearings India,2025-11-10,2026-01-09,71089.36,0.00,,60,false,,overdue,Invoice from NSK Bearings India
+INV-0236,V012,Banerjee Textiles,2025-12-12,2026-01-11,196108.98,139310.68,2026-01-15,30,true,medium,partially_paid,Invoice from Banerjee Textiles
+INV-0806,V049,NSK Bearings India,2025-12-13,2026-02-11,425257.96,0.00,,60,false,,overdue,Invoice from NSK Bearings India
+INV-0437,V023,Tiwari Insulation Materials,2025-12-29,2026-02-12,326532.56,326532.56,2026-02-12,45,true,medium,paid,Invoice from Tiwari Insulation Materials
+INV-0827,V050,NTN Bearing India,2026-02-14,2026-03-31,103075.85,103075.85,2026-05-14,45,false,,paid,Invoice from NTN Bearing India
+INV-0537,V030,JSW Steel Limited,2026-01-03,2026-03-04,286051.71,0.00,,60,false,,overdue,Invoice from JSW Steel Limited
+INV-0141,V008,Agarwal Electrical Systems,2025-12-06,2026-01-05,363469.78,0.00,,30,true,micro,overdue,Invoice from Agarwal Electrical Systems
+INV-0330,V017,Pillai Electronics Assembly,2026-02-08,2026-03-10,82917.90,52817.41,2026-03-18,30,true,micro,partially_paid,Invoice from Pillai Electronics Assembly
+INV-0364,V018,Thakur Industrial Fasteners,2025-10-04,2026-01-02,98178.54,54065.32,2026-02-01,90,true,small,partially_paid,Invoice from Thakur Industrial Fasteners
+INV-0365,V018,Thakur Industrial Fasteners,2026-03-04,2026-06-02,228008.94,0.00,,90,true,small,pending,Invoice from Thakur Industrial Fasteners
+INV-0157,V009,Iyer Packaging Industries,2025-12-08,2026-01-07,471027.95,471027.95,2026-01-03,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0565,V032,Adani Enterprises Ltd,2025-12-12,2026-03-12,227025.88,0.00,,90,false,,overdue,Invoice from Adani Enterprises Ltd
+INV-0312,V016,Mishra Casting Works,2025-12-14,2026-01-28,477028.30,256228.09,2026-01-30,45,true,small,partially_paid,Invoice from Mishra Casting Works
+INV-0606,V035,ABB India Limited,2025-10-03,2025-11-17,472014.95,472014.95,2025-11-14,45,false,,paid,Invoice from ABB India Limited
+INV-0115,V006,Singh Auto Parts,2026-01-06,2026-02-20,260148.74,90191.90,2026-03-22,,true,micro,partially_paid,Invoice from Singh Auto Parts
+INV-0649,V038,Blue Star Limited,2025-12-26,2026-02-09,432540.50,432540.50,2026-02-06,45,false,,paid,Invoice from Blue Star Limited
+INV-0411,V021,Kulkarni Springs & Washers,2025-10-02,2025-11-01,315987.20,0.00,,30,true,micro,overdue,Invoice from Kulkarni Springs & Washers
+INV-0545,V030,JSW Steel Limited,2025-11-11,2026-01-10,461937.48,0.00,,60,false,,overdue,Invoice from JSW Steel Limited
+INV-0089,V006,Singh Auto Parts,2025-11-30,2025-12-15,282648.90,282648.90,2025-12-10,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0588,V034,Siemens India Ltd,2025-11-21,2026-01-20,457796.88,358863.81,2026-02-06,60,false,,partially_paid,Invoice from Siemens India Ltd
+INV-0534,V029,Hindustan Unilever Ltd,2026-02-13,2026-03-15,426274.57,426274.57,2026-03-28,30,false,,paid,Invoice from Hindustan Unilever Ltd
+INV-0494,V027,Larsen & Toubro Ltd,2026-01-02,2026-03-03,298893.70,298893.70,2026-04-05,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0005,V001,Sharma Precision Tools Pvt Ltd,2025-10-04,2025-11-03,352155.86,352155.86,2025-12-02,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0350,V018,Thakur Industrial Fasteners,2026-02-10,2026-05-11,121953.08,121953.08,2026-05-10,90,true,small,paid,Invoice from Thakur Industrial Fasteners
+INV-0571,V032,Adani Enterprises Ltd,2025-12-12,2026-03-12,412563.42,412563.42,2026-03-10,90,false,,paid,Invoice from Adani Enterprises Ltd
+INV-0474,V026,Mahindra & Mahindra Ltd,2026-01-15,2026-03-01,74734.43,74734.43,2026-02-26,45,false,,paid,Invoice from Mahindra & Mahindra Ltd
+INV-0443,V024,Tata Steel Limited,2025-12-28,2026-02-26,335580.70,0.00,,60,false,,overdue,Invoice from Tata Steel Limited
+INV-0011,V001,Sharma Precision Tools Pvt Ltd,2025-11-02,2025-12-02,66788.95,0.00,,30,true,micro,overdue,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0813,V049,NSK Bearings India,2026-02-28,2026-04-29,297988.40,297988.40,2026-04-24,60,false,,paid,Invoice from NSK Bearings India
+INV-0210,V011,Deshmukh Rubber Products,2025-10-21,2025-12-05,220763.07,0.00,,45,true,small,overdue,Invoice from Deshmukh Rubber Products
+INV-0591,V034,Siemens India Ltd,2025-12-15,2026-02-13,50769.68,0.00,,60,false,,overdue,Invoice from Siemens India Ltd
+INV-0546,V030,JSW Steel Limited,2025-12-30,2026-02-28,346693.74,267064.36,2026-03-11,60,false,,partially_paid,Invoice from JSW Steel Limited
+INV-0106,V006,Singh Auto Parts,2025-11-02,2025-12-17,344994.29,0.00,,,true,micro,overdue,Invoice from Singh Auto Parts
+INV-0712,V043,Escorts Limited,2026-02-04,2026-03-21,391466.40,268653.14,2026-04-05,45,false,,partially_paid,Invoice from Escorts Limited
+INV-0584,V034,Siemens India Ltd,2025-10-06,2025-12-05,337314.55,0.00,,60,false,,overdue,Invoice from Siemens India Ltd
+INV-0836,V051,ITC Limited,2026-03-11,2026-04-10,308982.76,192693.76,2026-04-25,30,false,,partially_paid,Invoice from ITC Limited
+INV-0828,V050,NTN Bearing India,2025-10-09,2025-11-23,469099.57,469099.57,2025-11-19,45,false,,paid,Invoice from NTN Bearing India
+INV-0439,V023,Tiwari Insulation Materials,2025-10-27,2025-12-11,63291.69,0.00,,45,true,medium,overdue,Invoice from Tiwari Insulation Materials
+INV-0110,V006,Singh Auto Parts,2026-01-03,2026-01-18,279434.18,279434.18,2026-02-12,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0400,V020,Bhatt CNC Components,2025-10-15,2025-11-29,266246.90,266246.90,2025-11-27,45,true,small,paid,Invoice from Bhatt CNC Components
+INV-0804,V049,NSK Bearings India,2026-03-13,2026-05-12,120333.88,120333.88,2026-05-07,60,false,,paid,Invoice from NSK Bearings India
+INV-0678,V041,Thermax Limited,2025-11-29,2025-12-29,57442.55,57442.55,2025-12-28,30,false,,paid,Invoice from Thermax Limited
+INV-0489,V027,Larsen & Toubro Ltd,2025-12-16,2026-02-14,378707.76,378707.76,2026-02-10,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0026,V001,Sharma Precision Tools Pvt Ltd,2025-11-30,2025-12-30,449422.33,449422.33,2026-01-14,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0522,V029,Hindustan Unilever Ltd,2025-11-19,2025-12-19,54769.73,0.00,,30,false,,overdue,Invoice from Hindustan Unilever Ltd
+INV-0015,V001,Sharma Precision Tools Pvt Ltd,2026-02-27,2026-03-29,428382.27,0.00,,30,true,micro,pending,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0830,V050,NTN Bearing India,2026-01-28,2026-03-14,451735.56,451735.56,2026-03-23,45,false,,paid,Invoice from NTN Bearing India
+INV-0047,V003,Patel Fabrication Works,2026-03-14,2026-03-29,296212.82,89928.86,2026-04-20,,true,micro,partially_paid,Invoice from Patel Fabrication Works
+INV-0574,V033,Wipro Technologies Ltd,2026-03-15,2026-04-14,124129.82,124129.82,2026-04-10,30,false,,paid,Invoice from Wipro Technologies Ltd
+INV-0426,V022,Choudhary Paint & Coatings,2026-02-01,2026-03-03,275009.83,275009.83,2026-03-03,30,true,small,paid,Invoice from Choudhary Paint & Coatings
+INV-0384,V019,Saxena Tooling Solutions,2025-11-26,2026-01-10,307244.73,0.00,,,true,micro,overdue,Invoice from Saxena Tooling Solutions
+INV-0133,V008,Agarwal Electrical Systems,2026-01-24,2026-02-23,36793.28,36793.28,2026-03-30,30,true,micro,paid,Invoice from Agarwal Electrical Systems
+INV-0758,V045,Cummins India Ltd,2025-10-13,2025-11-27,344850.25,0.00,,45,false,,overdue,Invoice from Cummins India Ltd
+INV-0779,V047,Timken India Ltd,2026-02-18,2026-04-04,229419.06,104304.24,2026-04-27,45,false,,partially_paid,Invoice from Timken India Ltd
+INV-0808,V049,NSK Bearings India,2025-12-02,2026-01-31,248554.29,248554.29,2026-01-30,60,false,,paid,Invoice from NSK Bearings India
+INV-0631,V036,Bosch India Limited,2026-01-07,2026-03-08,450159.27,142453.30,2026-04-06,60,false,,partially_paid,Invoice from Bosch India Limited
+INV-0797,V048,Schaeffler India,2026-02-02,2026-03-04,115476.61,115476.61,2026-03-07,30,false,,paid,Invoice from Schaeffler India
+INV-0733,V044,Ashok Leyland Ltd,2026-03-19,2026-04-18,435109.34,0.00,,30,false,,pending,Invoice from Ashok Leyland Ltd
+INV-0301,V015,Verma Welding Electrodes,2025-10-02,2025-11-01,263118.35,263118.35,2025-11-03,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0243,V013,Nair Chemical Industries,2025-12-25,2026-01-24,426908.96,0.00,,30,true,small,overdue,Invoice from Nair Chemical Industries
+INV-0602,V035,ABB India Limited,2025-12-29,2026-02-12,209895.43,86190.84,2026-02-16,45,false,,partially_paid,Invoice from ABB India Limited
+INV-0673,V040,Crompton Greaves,2025-12-02,2026-01-16,274104.38,0.00,,45,false,,overdue,Invoice from Crompton Greaves
+INV-0771,V046,SKF India Limited,2026-01-23,2026-03-24,24714.30,24714.30,2026-03-21,60,false,,paid,Invoice from SKF India Limited
+INV-0800,V049,NSK Bearings India,2026-01-04,2026-03-05,284084.34,284084.34,2026-03-01,60,false,,paid,Invoice from NSK Bearings India
+INV-0690,V041,Thermax Limited,2025-11-30,2025-12-30,479439.00,479439.00,2025-12-27,30,false,,paid,Invoice from Thermax Limited
+INV-0251,V013,Nair Chemical Industries,2026-02-01,2026-03-03,89141.91,89141.91,2026-02-28,30,true,small,paid,Invoice from Nair Chemical Industries
+INV-0191,V011,Deshmukh Rubber Products,2025-12-12,2026-01-26,228004.66,228004.66,2026-03-23,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0612,V035,ABB India Limited,2026-02-12,2026-03-29,422059.63,422059.63,2026-03-24,45,false,,paid,Invoice from ABB India Limited
+INV-0016,V001,Sharma Precision Tools Pvt Ltd,2025-12-12,2026-01-11,142596.93,68791.05,2026-01-22,30,true,micro,partially_paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0840,V051,ITC Limited,2025-10-31,2025-11-30,398448.89,0.00,,30,false,,overdue,Invoice from ITC Limited
+INV-0640,V037,Havells India Ltd,2025-11-14,2025-12-14,117928.50,57515.32,2025-12-19,30,false,,partially_paid,Invoice from Havells India Ltd
+INV-0473,V026,Mahindra & Mahindra Ltd,2025-12-28,2026-02-11,124660.24,124660.24,2026-02-08,45,false,,paid,Invoice from Mahindra & Mahindra Ltd
+INV-0780,V047,Timken India Ltd,2025-10-02,2025-11-16,371625.80,371625.80,2025-11-11,45,false,,paid,Invoice from Timken India Ltd
+INV-0514,V028,Bharat Heavy Electricals,2026-01-08,2026-02-22,147455.74,84285.03,2026-03-22,45,false,,partially_paid,Invoice from Bharat Heavy Electricals
+INV-0259,V013,Nair Chemical Industries,2025-10-23,2025-11-22,151456.83,47098.50,2025-12-18,30,true,small,partially_paid,Invoice from Nair Chemical Industries
+INV-0238,V013,Nair Chemical Industries,2025-12-25,2026-01-24,435501.66,0.00,,30,true,small,overdue,Invoice from Nair Chemical Industries
+INV-0422,V022,Choudhary Paint & Coatings,2025-12-11,2026-01-10,172823.13,172823.13,2026-01-05,30,true,small,paid,Invoice from Choudhary Paint & Coatings
+INV-0378,V019,Saxena Tooling Solutions,2025-12-22,2026-01-21,474095.79,474095.79,2026-01-20,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0281,V015,Verma Welding Electrodes,2025-10-03,2025-11-02,54015.71,54015.71,2025-11-29,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0204,V011,Deshmukh Rubber Products,2025-11-20,2026-01-04,345895.61,266802.47,2026-01-20,45,true,small,partially_paid,Invoice from Deshmukh Rubber Products
+INV-0680,V041,Thermax Limited,2025-11-25,2025-12-25,190189.19,190189.19,2026-02-07,30,false,,paid,Invoice from Thermax Limited
+INV-0052,V003,Patel Fabrication Works,2025-12-05,2025-12-20,99252.91,47358.41,2026-01-02,,true,micro,partially_paid,Invoice from Patel Fabrication Works
+INV-0468,V025,Reliance Industries Ltd,2025-12-06,2026-03-06,152229.77,152229.77,2026-03-06,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0783,V047,Timken India Ltd,2026-01-12,2026-02-26,87646.66,87646.66,2026-02-24,45,false,,paid,Invoice from Timken India Ltd
+INV-0754,V045,Cummins India Ltd,2026-02-12,2026-03-29,194446.92,0.00,,45,false,,pending,Invoice from Cummins India Ltd
+INV-0060,V004,Reddy Industrial Supplies,2026-02-05,2026-04-06,206174.96,206174.96,2026-06-01,60,true,small,paid,Invoice from Reddy Industrial Supplies
+INV-0206,V011,Deshmukh Rubber Products,2025-11-29,2026-01-13,368594.29,115345.11,2026-01-20,45,true,small,partially_paid,Invoice from Deshmukh Rubber Products
+INV-0607,V035,ABB India Limited,2025-10-06,2025-11-20,371099.07,371099.07,2026-01-06,45,false,,paid,Invoice from ABB India Limited
+INV-0610,V035,ABB India Limited,2025-10-06,2025-11-20,478832.26,478832.26,2026-01-13,45,false,,paid,Invoice from ABB India Limited
+INV-0030,V001,Sharma Precision Tools Pvt Ltd,2025-11-20,2025-12-20,266911.60,0.00,,30,true,micro,overdue,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0139,V008,Agarwal Electrical Systems,2025-10-16,2025-11-15,449416.62,449416.62,2025-12-03,30,true,micro,paid,Invoice from Agarwal Electrical Systems
+INV-0414,V021,Kulkarni Springs & Washers,2025-11-21,2025-12-21,490505.50,490505.50,2026-01-02,30,true,micro,paid,Invoice from Kulkarni Springs & Washers
+INV-0519,V028,Bharat Heavy Electricals,2026-01-09,2026-02-23,466846.85,172096.78,2026-03-14,45,false,,partially_paid,Invoice from Bharat Heavy Electricals
+INV-0551,V030,JSW Steel Limited,2026-01-23,2026-03-24,382120.51,228472.62,2026-04-18,60,false,,partially_paid,Invoice from JSW Steel Limited
+INV-0068,V004,Reddy Industrial Supplies,2025-11-04,2026-01-03,82929.20,0.00,,60,true,small,overdue,Invoice from Reddy Industrial Supplies
+INV-0163,V009,Iyer Packaging Industries,2026-02-20,2026-03-22,219594.08,219594.08,2026-05-19,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0528,V029,Hindustan Unilever Ltd,2026-03-10,2026-04-09,457048.71,457048.71,2026-04-08,30,false,,paid,Invoice from Hindustan Unilever Ltd
+INV-0853,V052,Bajaj Electricals,2025-12-19,2026-02-02,474041.57,275680.98,2026-02-08,45,false,,partially_paid,Invoice from Bajaj Electricals
+INV-0824,V050,NTN Bearing India,2026-01-12,2026-02-26,410944.36,410944.36,2026-02-23,45,false,,paid,Invoice from NTN Bearing India
+INV-0529,V029,Hindustan Unilever Ltd,2026-03-10,2026-04-09,498600.04,498600.04,2026-05-11,30,false,,paid,Invoice from Hindustan Unilever Ltd
+INV-0497,V027,Larsen & Toubro Ltd,2025-10-21,2025-12-20,157300.53,0.00,,60,false,,overdue,Invoice from Larsen & Toubro Ltd
+INV-0417,V021,Kulkarni Springs & Washers,2026-03-09,2026-04-08,161219.93,161219.93,2026-04-05,30,true,micro,paid,Invoice from Kulkarni Springs & Washers
+INV-0608,V035,ABB India Limited,2025-12-19,2026-02-02,88786.53,0.00,,45,false,,overdue,Invoice from ABB India Limited
+INV-0453,V025,Reliance Industries Ltd,2026-03-01,2026-05-30,67036.76,67036.76,2026-05-30,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0193,V011,Deshmukh Rubber Products,2026-03-04,2026-04-18,306767.30,0.00,,45,true,small,pending,Invoice from Deshmukh Rubber Products
+INV-0092,V006,Singh Auto Parts,2026-01-25,2026-03-11,342623.01,342623.01,2026-03-07,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0427,V022,Choudhary Paint & Coatings,2025-12-26,2026-01-25,332155.01,332155.01,2026-01-21,30,true,small,paid,Invoice from Choudhary Paint & Coatings
+INV-0556,V031,Godrej Industries Ltd,2026-01-26,2026-03-12,359874.39,359874.39,2026-05-09,45,false,,paid,Invoice from Godrej Industries Ltd
+INV-0329,V017,Pillai Electronics Assembly,2025-10-25,2025-11-24,300130.77,0.00,,30,true,micro,overdue,Invoice from Pillai Electronics Assembly
+INV-0454,V025,Reliance Industries Ltd,2025-11-24,2026-02-22,235587.43,235587.43,2026-03-03,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0308,V016,Mishra Casting Works,2026-02-18,2026-04-04,427132.40,292364.17,2026-04-27,45,true,small,partially_paid,Invoice from Mishra Casting Works
+INV-0138,V008,Agarwal Electrical Systems,2025-12-02,2026-01-01,271419.18,0.00,,30,true,micro,overdue,Invoice from Agarwal Electrical Systems
+INV-0234,V012,Banerjee Textiles,2026-01-17,2026-02-16,288039.83,288039.83,2026-02-13,30,true,medium,paid,Invoice from Banerjee Textiles
+INV-0101,V006,Singh Auto Parts,2025-12-07,2026-01-21,341361.47,341361.47,2026-01-21,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0504,V027,Larsen & Toubro Ltd,2026-02-09,2026-04-10,209415.25,209415.25,2026-04-06,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0288,V015,Verma Welding Electrodes,2026-03-07,2026-04-06,394463.32,394463.32,2026-04-05,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0319,V016,Mishra Casting Works,2025-12-20,2026-02-03,423459.84,423459.84,2026-03-24,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0311,V016,Mishra Casting Works,2026-02-23,2026-04-09,159711.43,159711.43,2026-04-07,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0346,V017,Pillai Electronics Assembly,2025-12-08,2026-01-07,435909.59,0.00,,30,true,micro,overdue,Invoice from Pillai Electronics Assembly
+INV-0724,V043,Escorts Limited,2026-01-04,2026-02-18,288504.11,0.00,,45,false,,overdue,Invoice from Escorts Limited
+INV-0382,V019,Saxena Tooling Solutions,2025-10-11,2025-10-26,405476.64,0.00,,,true,micro,overdue,Invoice from Saxena Tooling Solutions
+INV-0642,V037,Havells India Ltd,2026-01-03,2026-02-02,400037.31,0.00,,30,false,,overdue,Invoice from Havells India Ltd
+INV-0625,V036,Bosch India Limited,2025-11-18,2026-01-17,32776.89,32776.89,2026-01-16,60,false,,paid,Invoice from Bosch India Limited
+INV-0762,V046,SKF India Limited,2025-10-17,2025-12-16,361983.92,361983.92,2025-12-11,60,false,,paid,Invoice from SKF India Limited
+INV-0689,V041,Thermax Limited,2025-11-07,2025-12-07,91354.35,91354.35,2025-12-03,30,false,,paid,Invoice from Thermax Limited
+INV-0699,V042,Kirloskar Brothers,2025-11-22,2026-01-21,310594.53,0.00,,60,false,,overdue,Invoice from Kirloskar Brothers
+INV-0821,V050,NTN Bearing India,2026-01-01,2026-02-15,414061.41,132567.93,2026-03-13,45,false,,partially_paid,Invoice from NTN Bearing India
+INV-0040,V002,Gupta Electronics Components,2025-12-31,2026-02-14,123528.89,123528.89,2026-02-10,45,true,small,paid,Invoice from Gupta Electronics Components
+INV-0412,V021,Kulkarni Springs & Washers,2025-12-24,2026-01-23,71037.75,71037.75,2026-02-14,30,true,micro,paid,Invoice from Kulkarni Springs & Washers
+INV-0148,V009,Iyer Packaging Industries,2025-11-01,2025-12-01,30782.38,0.00,,30,true,small,overdue,Invoice from Iyer Packaging Industries
+INV-0413,V021,Kulkarni Springs & Washers,2025-10-06,2025-11-05,91669.12,0.00,,30,true,micro,overdue,Invoice from Kulkarni Springs & Washers
+INV-0590,V034,Siemens India Ltd,2025-12-25,2026-02-23,325119.40,0.00,,60,false,,overdue,Invoice from Siemens India Ltd
+INV-0177,V010,Kumar Metal Works,2025-11-04,2025-12-19,175159.91,83359.52,2026-01-02,,true,micro,partially_paid,Invoice from Kumar Metal Works
+INV-0039,V002,Gupta Electronics Components,2025-12-17,2026-01-31,439967.33,0.00,,45,true,small,overdue,Invoice from Gupta Electronics Components
+INV-0664,V039,Voltas Limited,2026-01-16,2026-03-17,166313.69,166313.69,2026-03-14,60,false,,paid,Invoice from Voltas Limited
+INV-0498,V027,Larsen & Toubro Ltd,2025-10-09,2025-12-08,18190.34,18190.34,2026-01-19,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0393,V019,Saxena Tooling Solutions,2026-02-24,2026-03-11,473474.57,0.00,,,true,micro,overdue,Invoice from Saxena Tooling Solutions
+INV-0271,V014,Rao Hydraulics & Pneumatics,2026-01-21,2026-03-07,430769.60,214827.28,2026-04-03,,true,micro,partially_paid,Invoice from Rao Hydraulics & Pneumatics
+INV-0421,V022,Choudhary Paint & Coatings,2025-11-28,2025-12-28,445295.83,0.00,,30,true,small,overdue,Invoice from Choudhary Paint & Coatings
+INV-0636,V037,Havells India Ltd,2026-02-27,2026-03-29,252892.46,0.00,,30,false,,pending,Invoice from Havells India Ltd
+INV-0626,V036,Bosch India Limited,2026-02-26,2026-04-27,252429.90,252429.90,2026-06-17,60,false,,paid,Invoice from Bosch India Limited
+INV-0293,V015,Verma Welding Electrodes,2026-02-10,2026-03-12,493826.02,493826.02,2026-05-03,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0700,V042,Kirloskar Brothers,2026-01-02,2026-03-03,459747.88,292424.96,2026-03-13,60,false,,partially_paid,Invoice from Kirloskar Brothers
+INV-0577,V033,Wipro Technologies Ltd,2026-03-05,2026-04-04,74367.11,0.00,,30,false,,pending,Invoice from Wipro Technologies Ltd
+INV-0109,V006,Singh Auto Parts,2026-01-02,2026-02-16,256025.64,256025.64,2026-03-14,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0103,V006,Singh Auto Parts,2026-03-10,2026-04-09,58659.26,58659.26,2026-04-07,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0600,V034,Siemens India Ltd,2025-12-17,2026-02-15,258844.19,258844.19,2026-02-22,60,false,,paid,Invoice from Siemens India Ltd
+INV-0154,V009,Iyer Packaging Industries,2026-02-18,2026-03-20,390006.98,390006.98,2026-03-18,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0425,V022,Choudhary Paint & Coatings,2026-02-27,2026-03-29,218150.54,0.00,,30,true,small,pending,Invoice from Choudhary Paint & Coatings
+INV-0116,V007,Joshi Engineering Solutions,2025-12-30,2026-02-13,116197.13,116197.13,2026-02-13,45,true,small,paid,Invoice from Joshi Engineering Solutions
+INV-0743,V044,Ashok Leyland Ltd,2026-01-27,2026-02-26,497868.56,0.00,,30,false,,overdue,Invoice from Ashok Leyland Ltd
+INV-0628,V036,Bosch India Limited,2026-02-23,2026-04-24,447921.65,0.00,,60,false,,pending,Invoice from Bosch India Limited
+INV-0013,V001,Sharma Precision Tools Pvt Ltd,2025-10-12,2025-11-11,443298.62,443298.62,2025-11-24,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0470,V025,Reliance Industries Ltd,2025-12-22,2026-03-22,305296.83,305296.83,2026-03-17,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0533,V029,Hindustan Unilever Ltd,2026-01-06,2026-02-05,229902.79,129241.98,2026-03-05,30,false,,partially_paid,Invoice from Hindustan Unilever Ltd
+INV-0283,V015,Verma Welding Electrodes,2025-11-26,2025-12-26,475524.81,0.00,,30,true,micro,overdue,Invoice from Verma Welding Electrodes
+INV-0334,V017,Pillai Electronics Assembly,2025-10-19,2025-11-18,245883.21,79348.65,2025-11-30,30,true,micro,partially_paid,Invoice from Pillai Electronics Assembly
+INV-0566,V032,Adani Enterprises Ltd,2025-12-13,2026-03-13,190944.54,120466.20,2026-03-30,90,false,,partially_paid,Invoice from Adani Enterprises Ltd
+INV-0407,V020,Bhatt CNC Components,2026-03-02,2026-04-16,476934.82,476934.82,2026-06-06,45,true,small,paid,Invoice from Bhatt CNC Components
+INV-0570,V032,Adani Enterprises Ltd,2025-11-21,2026-02-19,338382.43,338382.43,2026-03-26,90,false,,paid,Invoice from Adani Enterprises Ltd
+INV-0398,V019,Saxena Tooling Solutions,2025-11-19,2025-12-04,227057.73,0.00,,,true,micro,overdue,Invoice from Saxena Tooling Solutions
+INV-0692,V041,Thermax Limited,2025-10-13,2025-11-12,442133.20,442133.20,2025-12-10,30,false,,paid,Invoice from Thermax Limited
+INV-0069,V004,Reddy Industrial Supplies,2026-02-27,2026-04-28,426414.56,426414.56,2026-04-28,60,true,small,paid,Invoice from Reddy Industrial Supplies
+INV-0767,V046,SKF India Limited,2025-10-07,2025-12-06,298995.24,298995.24,2025-12-07,60,false,,paid,Invoice from SKF India Limited
+INV-0265,V014,Rao Hydraulics & Pneumatics,2026-03-11,2026-04-25,291889.03,291889.03,2026-04-23,,true,micro,paid,Invoice from Rao Hydraulics & Pneumatics
+INV-0833,V051,ITC Limited,2025-10-24,2025-11-23,219412.41,0.00,,30,false,,overdue,Invoice from ITC Limited
+INV-0843,V051,ITC Limited,2026-01-09,2026-02-08,94008.86,94008.86,2026-02-07,30,false,,paid,Invoice from ITC Limited
+INV-0446,V024,Tata Steel Limited,2025-10-07,2025-12-06,91175.05,91175.05,2025-12-21,60,false,,paid,Invoice from Tata Steel Limited
+INV-0620,V036,Bosch India Limited,2025-12-19,2026-02-17,137325.74,137325.74,2026-03-13,60,false,,paid,Invoice from Bosch India Limited
+INV-0434,V023,Tiwari Insulation Materials,2025-12-16,2026-01-30,184264.54,0.00,,45,true,medium,overdue,Invoice from Tiwari Insulation Materials
+INV-0044,V003,Patel Fabrication Works,2025-11-01,2025-12-16,378856.27,378856.27,2025-12-14,,true,micro,paid,Invoice from Patel Fabrication Works
+INV-0130,V007,Joshi Engineering Solutions,2025-11-15,2025-12-30,315240.48,315240.48,2025-12-30,45,true,small,paid,Invoice from Joshi Engineering Solutions
+INV-0198,V011,Deshmukh Rubber Products,2026-03-01,2026-04-15,345255.54,0.00,,45,true,small,pending,Invoice from Deshmukh Rubber Products
+INV-0217,V011,Deshmukh Rubber Products,2025-11-21,2026-01-05,209557.55,209557.55,2026-01-03,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0766,V046,SKF India Limited,2026-01-17,2026-03-18,249969.42,249969.42,2026-03-15,60,false,,paid,Invoice from SKF India Limited
+INV-0178,V010,Kumar Metal Works,2026-01-09,2026-01-24,156778.38,156778.38,2026-01-23,,true,micro,paid,Invoice from Kumar Metal Works
+INV-0460,V025,Reliance Industries Ltd,2025-10-29,2026-01-27,140853.26,85528.09,2026-01-29,90,false,,partially_paid,Invoice from Reliance Industries Ltd
+INV-0124,V007,Joshi Engineering Solutions,2025-10-27,2025-12-11,299748.90,0.00,,45,true,small,overdue,Invoice from Joshi Engineering Solutions
+INV-0151,V009,Iyer Packaging Industries,2026-01-27,2026-02-26,420418.28,176269.81,2026-03-13,30,true,small,partially_paid,Invoice from Iyer Packaging Industries
+INV-0685,V041,Thermax Limited,2025-11-06,2025-12-06,244048.37,244048.37,2026-01-04,30,false,,paid,Invoice from Thermax Limited
+INV-0530,V029,Hindustan Unilever Ltd,2026-01-31,2026-03-02,468621.33,0.00,,30,false,,overdue,Invoice from Hindustan Unilever Ltd
+INV-0585,V034,Siemens India Ltd,2025-12-28,2026-02-26,349672.66,349672.66,2026-03-18,60,false,,paid,Invoice from Siemens India Ltd
+INV-0515,V028,Bharat Heavy Electricals,2025-12-08,2026-01-22,410096.84,0.00,,45,false,,overdue,Invoice from Bharat Heavy Electricals
+INV-0036,V002,Gupta Electronics Components,2026-01-02,2026-02-16,421626.33,421626.33,2026-03-01,45,true,small,paid,Invoice from Gupta Electronics Components
+INV-0405,V020,Bhatt CNC Components,2026-03-19,2026-05-03,309330.74,309330.74,2026-04-30,45,true,small,paid,Invoice from Bhatt CNC Components
+INV-0081,V005,Mehta Polymers & Plastics,2025-11-04,2025-12-04,8872.44,0.00,,30,true,medium,overdue,Invoice from Mehta Polymers & Plastics
+INV-0307,V016,Mishra Casting Works,2025-10-16,2025-11-30,217948.67,0.00,,45,true,small,overdue,Invoice from Mishra Casting Works
+INV-0488,V026,Mahindra & Mahindra Ltd,2025-12-09,2026-01-23,189733.18,0.00,,45,false,,overdue,Invoice from Mahindra & Mahindra Ltd
+INV-0242,V013,Nair Chemical Industries,2026-01-11,2026-02-10,172587.81,107853.29,2026-03-09,30,true,small,partially_paid,Invoice from Nair Chemical Industries
+INV-0786,V048,Schaeffler India,2025-10-23,2025-11-22,315628.75,315628.75,2025-12-25,30,false,,paid,Invoice from Schaeffler India
+INV-0487,V026,Mahindra & Mahindra Ltd,2025-10-14,2025-11-28,63811.45,0.00,,45,false,,overdue,Invoice from Mahindra & Mahindra Ltd
+INV-0549,V030,JSW Steel Limited,2025-10-15,2025-12-14,189944.30,0.00,,60,false,,overdue,Invoice from JSW Steel Limited
+INV-0429,V022,Choudhary Paint & Coatings,2026-03-09,2026-04-08,364773.13,0.00,,30,true,small,pending,Invoice from Choudhary Paint & Coatings
+INV-0536,V029,Hindustan Unilever Ltd,2025-10-05,2025-11-04,132346.12,132346.12,2025-10-30,30,false,,paid,Invoice from Hindustan Unilever Ltd
+INV-0761,V046,SKF India Limited,2026-02-12,2026-04-13,127654.26,54136.07,2026-05-02,60,false,,partially_paid,Invoice from SKF India Limited
+INV-0063,V004,Reddy Industrial Supplies,2025-11-23,2026-01-22,146198.37,97258.85,2026-02-16,60,true,small,partially_paid,Invoice from Reddy Industrial Supplies
+INV-0567,V032,Adani Enterprises Ltd,2026-02-13,2026-05-14,328499.38,328499.38,2026-05-13,90,false,,paid,Invoice from Adani Enterprises Ltd
+INV-0233,V012,Banerjee Textiles,2025-12-13,2026-01-12,230395.59,230395.59,2026-01-11,30,true,medium,paid,Invoice from Banerjee Textiles
+INV-0798,V049,NSK Bearings India,2026-03-02,2026-05-01,439110.66,0.00,,60,false,,pending,Invoice from NSK Bearings India
+INV-0741,V044,Ashok Leyland Ltd,2025-11-22,2025-12-22,13059.27,0.00,,30,false,,overdue,Invoice from Ashok Leyland Ltd
+INV-0555,V031,Godrej Industries Ltd,2025-12-26,2026-02-09,427970.57,427970.57,2026-03-25,45,false,,paid,Invoice from Godrej Industries Ltd
+INV-0353,V018,Thakur Industrial Fasteners,2025-10-10,2026-01-08,249587.93,0.00,,90,true,small,overdue,Invoice from Thakur Industrial Fasteners
+INV-0088,V005,Mehta Polymers & Plastics,2025-10-07,2025-11-06,489999.99,489999.99,2025-11-03,30,true,medium,paid,Invoice from Mehta Polymers & Plastics
+INV-0671,V040,Crompton Greaves,2025-12-13,2026-01-27,41612.74,0.00,,45,false,,overdue,Invoice from Crompton Greaves
+INV-0155,V009,Iyer Packaging Industries,2026-02-20,2026-03-22,291448.94,0.00,,30,true,small,overdue,Invoice from Iyer Packaging Industries
+INV-0064,V004,Reddy Industrial Supplies,2025-10-28,2025-12-27,332626.30,332626.30,2026-01-09,60,true,small,paid,Invoice from Reddy Industrial Supplies
+INV-0578,V033,Wipro Technologies Ltd,2026-01-19,2026-02-18,408814.20,0.00,,30,false,,overdue,Invoice from Wipro Technologies Ltd
+INV-0276,V014,Rao Hydraulics & Pneumatics,2025-12-26,2026-01-10,458051.67,282939.41,2026-01-24,,true,micro,partially_paid,Invoice from Rao Hydraulics & Pneumatics
+INV-0232,V012,Banerjee Textiles,2025-11-02,2025-12-02,244748.99,244748.99,2025-11-28,30,true,medium,paid,Invoice from Banerjee Textiles
+INV-0647,V038,Blue Star Limited,2025-11-25,2026-01-09,280707.59,280707.59,2026-01-16,45,false,,paid,Invoice from Blue Star Limited
+INV-0477,V026,Mahindra & Mahindra Ltd,2025-12-29,2026-02-12,98967.88,98967.88,2026-02-08,45,false,,paid,Invoice from Mahindra & Mahindra Ltd
+INV-0451,V025,Reliance Industries Ltd,2025-12-08,2026-03-08,499799.55,0.00,,90,false,,overdue,Invoice from Reliance Industries Ltd
+INV-0270,V014,Rao Hydraulics & Pneumatics,2025-11-20,2025-12-05,481632.18,0.00,,,true,micro,overdue,Invoice from Rao Hydraulics & Pneumatics
+INV-0046,V003,Patel Fabrication Works,2025-11-07,2025-11-22,228485.64,228485.64,2025-11-20,,true,micro,paid,Invoice from Patel Fabrication Works
+INV-0457,V025,Reliance Industries Ltd,2026-02-16,2026-05-17,261460.56,261460.56,2026-05-16,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0192,V011,Deshmukh Rubber Products,2025-10-20,2025-12-04,495065.47,495065.47,2025-11-30,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0379,V019,Saxena Tooling Solutions,2026-02-08,2026-02-23,43196.72,43196.72,2026-03-30,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0391,V019,Saxena Tooling Solutions,2025-11-07,2025-12-07,426327.19,426327.19,2025-12-06,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0380,V019,Saxena Tooling Solutions,2025-11-05,2025-12-05,23685.01,0.00,,,true,micro,overdue,Invoice from Saxena Tooling Solutions
+INV-0190,V011,Deshmukh Rubber Products,2025-10-18,2025-12-02,396416.71,396416.71,2025-11-28,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0397,V019,Saxena Tooling Solutions,2026-03-10,2026-04-09,147005.30,54303.22,2026-05-01,,true,micro,partially_paid,Invoice from Saxena Tooling Solutions
+INV-0558,V031,Godrej Industries Ltd,2025-11-08,2025-12-23,210635.16,122041.72,2026-01-13,45,false,,partially_paid,Invoice from Godrej Industries Ltd
+INV-0094,V006,Singh Auto Parts,2026-02-06,2026-02-21,488221.99,0.00,,,true,micro,overdue,Invoice from Singh Auto Parts
+INV-0693,V042,Kirloskar Brothers,2026-03-18,2026-05-17,353844.13,353844.13,2026-05-12,60,false,,paid,Invoice from Kirloskar Brothers
+INV-0501,V027,Larsen & Toubro Ltd,2025-10-12,2025-12-11,388430.03,388430.03,2026-02-02,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0483,V026,Mahindra & Mahindra Ltd,2025-11-29,2026-01-13,71297.80,71297.80,2026-01-11,45,false,,paid,Invoice from Mahindra & Mahindra Ltd
+INV-0408,V020,Bhatt CNC Components,2025-11-10,2025-12-25,279305.22,279305.22,2026-01-25,45,true,small,paid,Invoice from Bhatt CNC Components
+INV-0316,V016,Mishra Casting Works,2025-09-30,2025-11-14,470859.29,470859.29,2026-01-12,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0119,V007,Joshi Engineering Solutions,2025-10-23,2025-12-07,101245.44,55400.35,2025-12-14,45,true,small,partially_paid,Invoice from Joshi Engineering Solutions
+INV-0485,V026,Mahindra & Mahindra Ltd,2025-10-27,2025-12-11,101354.37,34132.69,2025-12-27,45,false,,partially_paid,Invoice from Mahindra & Mahindra Ltd
+INV-0084,V005,Mehta Polymers & Plastics,2026-02-08,2026-03-10,139812.37,92109.24,2026-03-16,30,true,medium,partially_paid,Invoice from Mehta Polymers & Plastics
+INV-0299,V015,Verma Welding Electrodes,2025-11-08,2025-12-08,298864.68,298864.68,2025-12-23,30,true,micro,paid,Invoice from Verma Welding Electrodes
+INV-0654,V039,Voltas Limited,2026-01-08,2026-03-09,213445.66,213445.66,2026-03-14,60,false,,paid,Invoice from Voltas Limited
+INV-0718,V043,Escorts Limited,2025-11-27,2026-01-11,433318.78,433318.78,2026-01-10,45,false,,paid,Invoice from Escorts Limited
+INV-0212,V011,Deshmukh Rubber Products,2026-02-21,2026-04-07,429577.88,429577.88,2026-04-02,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0027,V001,Sharma Precision Tools Pvt Ltd,2026-02-12,2026-03-14,257215.52,257215.52,2026-03-14,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0100,V006,Singh Auto Parts,2026-03-02,2026-04-01,483610.11,483610.11,2026-05-04,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0205,V011,Deshmukh Rubber Products,2025-11-01,2025-12-16,249428.63,249428.63,2025-12-16,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0492,V027,Larsen & Toubro Ltd,2025-10-15,2025-12-14,447100.19,447100.19,2025-12-10,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0615,V035,ABB India Limited,2025-10-02,2025-11-16,246487.92,246487.92,2025-11-12,45,false,,paid,Invoice from ABB India Limited
+INV-0641,V037,Havells India Ltd,2025-10-21,2025-11-20,332032.59,332032.59,2025-11-16,30,false,,paid,Invoice from Havells India Ltd
+INV-0805,V049,NSK Bearings India,2026-03-17,2026-05-16,475740.18,475740.18,2026-05-11,60,false,,paid,Invoice from NSK Bearings India
+INV-0090,V006,Singh Auto Parts,2026-02-09,2026-03-11,275067.19,102888.03,2026-03-15,,true,micro,partially_paid,Invoice from Singh Auto Parts
+INV-0438,V023,Tiwari Insulation Materials,2026-03-13,2026-04-27,369159.06,369159.06,2026-05-22,45,true,medium,paid,Invoice from Tiwari Insulation Materials
+INV-0004,V001,Sharma Precision Tools Pvt Ltd,2026-01-19,2026-02-18,255150.87,255150.87,2026-02-17,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0370,V019,Saxena Tooling Solutions,2026-03-06,2026-04-20,395667.33,395667.33,2026-04-18,,true,micro,paid,Invoice from Saxena Tooling Solutions
+INV-0056,V004,Reddy Industrial Supplies,2026-02-12,2026-04-13,213831.41,213831.41,2026-04-12,60,true,small,paid,Invoice from Reddy Industrial Supplies
+INV-0158,V009,Iyer Packaging Industries,2025-10-10,2025-11-09,125210.44,56443.78,2025-11-30,30,true,small,partially_paid,Invoice from Iyer Packaging Industries
+INV-0503,V027,Larsen & Toubro Ltd,2026-02-19,2026-04-20,99438.24,99438.24,2026-05-17,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0563,V032,Adani Enterprises Ltd,2026-02-13,2026-05-14,384084.70,0.00,,90,false,,pending,Invoice from Adani Enterprises Ltd
+INV-0586,V034,Siemens India Ltd,2025-12-13,2026-02-11,96020.09,96020.09,2026-02-27,60,false,,paid,Invoice from Siemens India Ltd
+INV-0403,V020,Bhatt CNC Components,2025-11-12,2025-12-27,300385.83,300385.83,2025-12-23,45,true,small,paid,Invoice from Bhatt CNC Components
+INV-0051,V003,Patel Fabrication Works,2025-10-24,2025-11-08,290224.77,0.00,,,true,micro,overdue,Invoice from Patel Fabrication Works
+INV-0099,V006,Singh Auto Parts,2026-01-21,2026-02-05,16713.90,16713.90,2026-02-23,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0769,V046,SKF India Limited,2025-12-02,2026-01-31,185879.17,126651.18,2026-03-02,60,false,,partially_paid,Invoice from SKF India Limited
+INV-0305,V016,Mishra Casting Works,2026-03-03,2026-04-17,67464.84,39985.22,2026-05-09,45,true,small,partially_paid,Invoice from Mishra Casting Works
+INV-0289,V015,Verma Welding Electrodes,2025-10-26,2025-11-25,106576.76,0.00,,30,true,micro,overdue,Invoice from Verma Welding Electrodes
+INV-0677,V040,Crompton Greaves,2026-03-08,2026-04-22,283794.04,176909.20,2026-05-22,45,false,,partially_paid,Invoice from Crompton Greaves
+INV-0756,V045,Cummins India Ltd,2026-03-17,2026-05-01,307108.02,307108.02,2026-04-29,45,false,,paid,Invoice from Cummins India Ltd
+INV-0554,V031,Godrej Industries Ltd,2025-11-10,2025-12-25,105067.61,105067.61,2026-01-05,45,false,,paid,Invoice from Godrej Industries Ltd
+INV-0568,V032,Adani Enterprises Ltd,2025-11-02,2026-01-31,199564.02,199564.02,2026-01-30,90,false,,paid,Invoice from Adani Enterprises Ltd
+INV-0420,V022,Choudhary Paint & Coatings,2025-10-03,2025-11-02,169302.72,169302.72,2025-10-31,30,true,small,paid,Invoice from Choudhary Paint & Coatings
+INV-0195,V011,Deshmukh Rubber Products,2026-02-07,2026-03-24,123733.26,46804.12,2026-04-06,45,true,small,partially_paid,Invoice from Deshmukh Rubber Products
+INV-0211,V011,Deshmukh Rubber Products,2026-02-24,2026-04-10,237655.15,237655.15,2026-05-01,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0772,V046,SKF India Limited,2025-11-10,2026-01-09,146811.46,0.00,,60,false,,overdue,Invoice from SKF India Limited
+INV-0839,V051,ITC Limited,2025-11-05,2025-12-05,128328.14,0.00,,30,false,,overdue,Invoice from ITC Limited
+INV-0055,V004,Reddy Industrial Supplies,2026-02-20,2026-04-21,128084.89,128084.89,2026-04-18,60,true,small,paid,Invoice from Reddy Industrial Supplies
+INV-0161,V009,Iyer Packaging Industries,2025-10-01,2025-10-31,188432.58,188432.58,2025-11-22,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0445,V024,Tata Steel Limited,2026-02-07,2026-04-08,357345.51,0.00,,60,false,,pending,Invoice from Tata Steel Limited
+INV-0622,V036,Bosch India Limited,2026-01-21,2026-03-22,153487.45,0.00,,60,false,,overdue,Invoice from Bosch India Limited
+INV-0169,V009,Iyer Packaging Industries,2025-11-21,2025-12-21,287075.57,134408.30,2026-01-05,30,true,small,partially_paid,Invoice from Iyer Packaging Industries
+INV-0670,V040,Crompton Greaves,2026-01-17,2026-03-03,130077.43,130077.43,2026-02-28,45,false,,paid,Invoice from Crompton Greaves
+INV-0442,V023,Tiwari Insulation Materials,2025-11-24,2026-01-08,90464.90,0.00,,45,true,medium,overdue,Invoice from Tiwari Insulation Materials
+INV-0032,V002,Gupta Electronics Components,2025-10-06,2025-11-20,173386.86,173386.86,2025-11-19,45,true,small,paid,Invoice from Gupta Electronics Components
+INV-0495,V027,Larsen & Toubro Ltd,2025-11-03,2026-01-02,247474.09,133004.03,2026-01-02,60,false,,partially_paid,Invoice from Larsen & Toubro Ltd
+INV-0802,V049,NSK Bearings India,2026-01-28,2026-03-29,367569.35,367569.35,2026-05-19,60,false,,paid,Invoice from NSK Bearings India
+INV-0609,V035,ABB India Limited,2025-11-14,2025-12-29,96103.65,0.00,,45,false,,overdue,Invoice from ABB India Limited
+INV-0347,V017,Pillai Electronics Assembly,2026-01-22,2026-02-21,169868.97,169868.97,2026-02-17,30,true,micro,paid,Invoice from Pillai Electronics Assembly
+INV-0096,V006,Singh Auto Parts,2025-12-04,2026-01-18,402106.39,0.00,,,true,micro,overdue,Invoice from Singh Auto Parts
+INV-0561,V032,Adani Enterprises Ltd,2026-03-03,2026-06-01,272875.93,272875.93,2026-06-01,90,false,,paid,Invoice from Adani Enterprises Ltd
+INV-0077,V005,Mehta Polymers & Plastics,2025-11-02,2025-12-02,110511.38,110511.38,2025-11-30,30,true,medium,paid,Invoice from Mehta Polymers & Plastics
+INV-0165,V009,Iyer Packaging Industries,2025-11-06,2025-12-06,482909.50,482909.50,2025-12-02,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0736,V044,Ashok Leyland Ltd,2025-12-08,2026-01-07,112825.82,112825.82,2026-01-21,30,false,,paid,Invoice from Ashok Leyland Ltd
+INV-0175,V010,Kumar Metal Works,2025-11-25,2025-12-10,397501.77,397501.77,2025-12-07,,true,micro,paid,Invoice from Kumar Metal Works
+INV-0351,V018,Thakur Industrial Fasteners,2026-02-03,2026-05-04,303187.50,0.00,,90,true,small,pending,Invoice from Thakur Industrial Fasteners
+INV-0727,V043,Escorts Limited,2025-10-03,2025-11-17,67809.64,0.00,,45,false,,overdue,Invoice from Escorts Limited
+INV-0108,V006,Singh Auto Parts,2025-12-25,2026-02-08,313461.93,0.00,,,true,micro,overdue,Invoice from Singh Auto Parts
+INV-0268,V014,Rao Hydraulics & Pneumatics,2026-01-13,2026-02-12,457454.23,0.00,,,true,micro,overdue,Invoice from Rao Hydraulics & Pneumatics
+INV-0327,V016,Mishra Casting Works,2026-01-23,2026-03-09,191216.23,191216.23,2026-03-20,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0849,V052,Bajaj Electricals,2025-10-23,2025-12-07,424020.02,0.00,,45,false,,overdue,Invoice from Bajaj Electricals
+INV-0792,V048,Schaeffler India,2026-02-09,2026-03-11,93585.66,0.00,,30,false,,overdue,Invoice from Schaeffler India
+INV-0035,V002,Gupta Electronics Components,2025-11-10,2025-12-25,456750.78,0.00,,45,true,small,overdue,Invoice from Gupta Electronics Components
+INV-0076,V004,Reddy Industrial Supplies,2026-03-01,2026-04-30,9611.15,5588.85,2026-05-03,60,true,small,partially_paid,Invoice from Reddy Industrial Supplies
+INV-0463,V025,Reliance Industries Ltd,2025-12-23,2026-03-23,422052.35,300762.16,2026-03-23,90,false,,partially_paid,Invoice from Reliance Industries Ltd
+INV-0167,V009,Iyer Packaging Industries,2025-10-19,2025-11-18,137855.79,0.00,,30,true,small,overdue,Invoice from Iyer Packaging Industries
+INV-0231,V012,Banerjee Textiles,2025-10-20,2025-11-19,292062.08,213973.53,2025-12-03,30,true,medium,partially_paid,Invoice from Banerjee Textiles
+INV-0704,V042,Kirloskar Brothers,2025-11-02,2026-01-01,348249.30,278581.95,2026-01-18,60,false,,partially_paid,Invoice from Kirloskar Brothers
+INV-0667,V040,Crompton Greaves,2025-11-27,2026-01-11,399854.33,0.00,,45,false,,overdue,Invoice from Crompton Greaves
+INV-0592,V034,Siemens India Ltd,2026-01-30,2026-03-31,30510.63,30510.63,2026-05-09,60,false,,paid,Invoice from Siemens India Ltd
+INV-0491,V027,Larsen & Toubro Ltd,2025-12-24,2026-02-22,402963.10,402963.10,2026-03-04,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0819,V050,NTN Bearing India,2026-01-25,2026-03-11,228698.95,228698.95,2026-05-05,45,false,,paid,Invoice from NTN Bearing India
+INV-0385,V019,Saxena Tooling Solutions,2026-01-19,2026-02-18,269335.52,0.00,,,true,micro,overdue,Invoice from Saxena Tooling Solutions
+INV-0560,V032,Adani Enterprises Ltd,2026-01-23,2026-04-23,291264.08,291264.08,2026-04-21,90,false,,paid,Invoice from Adani Enterprises Ltd
+INV-0360,V018,Thakur Industrial Fasteners,2026-02-28,2026-05-29,324109.90,0.00,,90,true,small,pending,Invoice from Thakur Industrial Fasteners
+INV-0796,V048,Schaeffler India,2026-02-17,2026-03-19,253510.27,0.00,,30,false,,overdue,Invoice from Schaeffler India
+INV-0505,V027,Larsen & Toubro Ltd,2025-10-14,2025-12-13,460657.87,0.00,,60,false,,overdue,Invoice from Larsen & Toubro Ltd
+INV-0424,V022,Choudhary Paint & Coatings,2026-01-10,2026-02-09,401568.30,0.00,,30,true,small,overdue,Invoice from Choudhary Paint & Coatings
+INV-0171,V010,Kumar Metal Works,2025-12-22,2026-02-05,143430.95,0.00,,,true,micro,overdue,Invoice from Kumar Metal Works
+INV-0430,V022,Choudhary Paint & Coatings,2025-10-13,2025-11-12,499084.55,499084.55,2025-11-12,30,true,small,paid,Invoice from Choudhary Paint & Coatings
+INV-0449,V024,Tata Steel Limited,2025-10-24,2025-12-23,187611.03,0.00,,60,false,,overdue,Invoice from Tata Steel Limited
+INV-0396,V019,Saxena Tooling Solutions,2025-12-28,2026-02-11,465758.82,324023.90,2026-02-15,,true,micro,partially_paid,Invoice from Saxena Tooling Solutions
+INV-0050,V003,Patel Fabrication Works,2026-01-24,2026-03-10,271920.80,0.00,,,true,micro,overdue,Invoice from Patel Fabrication Works
+INV-0788,V048,Schaeffler India,2026-02-05,2026-03-07,187005.45,187005.45,2026-03-07,30,false,,paid,Invoice from Schaeffler India
+INV-0738,V044,Ashok Leyland Ltd,2025-12-23,2026-01-22,275918.72,275918.72,2026-01-19,30,false,,paid,Invoice from Ashok Leyland Ltd
+INV-0111,V006,Singh Auto Parts,2026-02-03,2026-03-05,309679.88,309679.88,2026-04-28,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0263,V014,Rao Hydraulics & Pneumatics,2025-10-12,2025-11-26,129060.27,0.00,,,true,micro,overdue,Invoice from Rao Hydraulics & Pneumatics
+INV-0359,V018,Thakur Industrial Fasteners,2025-11-21,2026-02-19,228697.36,228697.36,2026-02-17,90,true,small,paid,Invoice from Thakur Industrial Fasteners
+INV-0070,V004,Reddy Industrial Supplies,2026-01-18,2026-03-19,204868.90,0.00,,60,true,small,overdue,Invoice from Reddy Industrial Supplies
+INV-0710,V043,Escorts Limited,2026-02-05,2026-03-22,45921.96,45921.96,2026-03-21,45,false,,paid,Invoice from Escorts Limited
+INV-0256,V013,Nair Chemical Industries,2025-10-20,2025-11-19,153081.35,0.00,,30,true,small,overdue,Invoice from Nair Chemical Industries
+INV-0215,V011,Deshmukh Rubber Products,2025-12-27,2026-02-10,62381.19,0.00,,45,true,small,overdue,Invoice from Deshmukh Rubber Products
+INV-0272,V014,Rao Hydraulics & Pneumatics,2025-10-28,2025-11-27,186058.65,186058.65,2025-11-23,,true,micro,paid,Invoice from Rao Hydraulics & Pneumatics
+INV-0012,V001,Sharma Precision Tools Pvt Ltd,2026-02-27,2026-03-29,278260.11,0.00,,30,true,micro,pending,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0458,V025,Reliance Industries Ltd,2025-12-27,2026-03-27,467695.23,467695.23,2026-03-23,90,false,,paid,Invoice from Reliance Industries Ltd
+INV-0344,V017,Pillai Electronics Assembly,2025-12-17,2026-01-16,48624.29,0.00,,30,true,micro,overdue,Invoice from Pillai Electronics Assembly
+INV-0789,V048,Schaeffler India,2025-10-24,2025-11-23,338689.61,338689.61,2025-11-18,30,false,,paid,Invoice from Schaeffler India
+INV-0777,V047,Timken India Ltd,2025-10-06,2025-11-20,37726.97,25087.65,2025-12-17,45,false,,partially_paid,Invoice from Timken India Ltd
+INV-0687,V041,Thermax Limited,2026-02-18,2026-03-20,16179.63,16179.63,2026-03-20,30,false,,paid,Invoice from Thermax Limited
+INV-0726,V043,Escorts Limited,2025-12-04,2026-01-18,459790.51,0.00,,45,false,,overdue,Invoice from Escorts Limited
+INV-0091,V006,Singh Auto Parts,2026-03-09,2026-03-24,157587.88,0.00,,,true,micro,overdue,Invoice from Singh Auto Parts
+INV-0652,V038,Blue Star Limited,2025-10-24,2025-12-08,262946.74,101168.99,2025-12-16,45,false,,partially_paid,Invoice from Blue Star Limited
+INV-0172,V010,Kumar Metal Works,2026-01-08,2026-02-22,280116.56,0.00,,,true,micro,overdue,Invoice from Kumar Metal Works
+INV-0328,V017,Pillai Electronics Assembly,2025-12-30,2026-01-29,362190.00,0.00,,30,true,micro,overdue,Invoice from Pillai Electronics Assembly
+INV-0356,V018,Thakur Industrial Fasteners,2025-12-27,2026-03-27,432802.20,162508.01,2026-03-29,90,true,small,partially_paid,Invoice from Thakur Industrial Fasteners
+INV-0244,V013,Nair Chemical Industries,2025-12-12,2026-01-11,477299.10,354976.57,2026-01-26,30,true,small,partially_paid,Invoice from Nair Chemical Industries
+INV-0080,V005,Mehta Polymers & Plastics,2025-10-14,2025-11-13,492007.39,0.00,,30,true,medium,overdue,Invoice from Mehta Polymers & Plastics
+INV-0764,V046,SKF India Limited,2025-10-15,2025-12-14,257213.67,0.00,,60,false,,overdue,Invoice from SKF India Limited
+INV-0845,V051,ITC Limited,2026-03-05,2026-04-04,405283.67,405283.67,2026-04-27,30,false,,paid,Invoice from ITC Limited
+INV-0145,V008,Agarwal Electrical Systems,2025-12-12,2026-01-11,167039.57,167039.57,2026-02-02,30,true,micro,paid,Invoice from Agarwal Electrical Systems
+INV-0509,V027,Larsen & Toubro Ltd,2025-12-22,2026-02-20,275405.24,202099.86,2026-03-13,60,false,,partially_paid,Invoice from Larsen & Toubro Ltd
+INV-0107,V006,Singh Auto Parts,2026-01-28,2026-02-12,185289.63,0.00,,,true,micro,overdue,Invoice from Singh Auto Parts
+INV-0580,V033,Wipro Technologies Ltd,2025-12-27,2026-01-26,122267.50,0.00,,30,false,,overdue,Invoice from Wipro Technologies Ltd
+INV-0810,V049,NSK Bearings India,2025-11-06,2026-01-05,209463.12,0.00,,60,false,,overdue,Invoice from NSK Bearings India
+INV-0227,V012,Banerjee Textiles,2025-10-17,2025-11-16,256579.24,0.00,,30,true,medium,overdue,Invoice from Banerjee Textiles
+INV-0627,V036,Bosch India Limited,2025-12-25,2026-02-23,285099.03,0.00,,60,false,,overdue,Invoice from Bosch India Limited
+INV-0326,V016,Mishra Casting Works,2025-10-08,2025-11-22,486046.11,486046.11,2025-11-18,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0851,V052,Bajaj Electricals,2026-02-03,2026-03-20,92169.68,64804.97,2026-04-11,45,false,,partially_paid,Invoice from Bajaj Electricals
+INV-0187,V010,Kumar Metal Works,2025-11-17,2025-12-02,61473.13,61473.13,2025-12-07,,true,micro,paid,Invoice from Kumar Metal Works
+INV-0034,V002,Gupta Electronics Components,2026-01-11,2026-02-25,486084.61,0.00,,45,true,small,overdue,Invoice from Gupta Electronics Components
+INV-0582,V034,Siemens India Ltd,2025-10-19,2025-12-18,440458.38,0.00,,60,false,,overdue,Invoice from Siemens India Ltd
+INV-0401,V020,Bhatt CNC Components,2026-01-18,2026-03-04,154069.84,154069.84,2026-03-01,45,true,small,paid,Invoice from Bhatt CNC Components
+INV-0587,V034,Siemens India Ltd,2026-01-21,2026-03-22,153864.53,0.00,,60,false,,overdue,Invoice from Siemens India Ltd
+INV-0719,V043,Escorts Limited,2026-01-25,2026-03-11,406297.84,193119.63,2026-04-02,45,false,,partially_paid,Invoice from Escorts Limited
+INV-0002,V001,Sharma Precision Tools Pvt Ltd,2026-02-12,2026-03-14,369553.25,275719.90,2026-03-16,30,true,micro,partially_paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0747,V045,Cummins India Ltd,2026-01-19,2026-03-05,217469.32,217469.32,2026-03-05,45,false,,paid,Invoice from Cummins India Ltd
+INV-0838,V051,ITC Limited,2026-01-07,2026-02-06,194592.56,194592.56,2026-03-20,30,false,,paid,Invoice from ITC Limited
+INV-0131,V007,Joshi Engineering Solutions,2026-01-05,2026-02-19,121074.32,121074.32,2026-02-15,45,true,small,paid,Invoice from Joshi Engineering Solutions
+INV-0302,V015,Verma Welding Electrodes,2026-03-04,2026-04-03,499300.44,0.00,,30,true,micro,pending,Invoice from Verma Welding Electrodes
+INV-0706,V042,Kirloskar Brothers,2025-11-24,2026-01-23,311607.94,0.00,,60,false,,overdue,Invoice from Kirloskar Brothers
+INV-0752,V045,Cummins India Ltd,2025-12-11,2026-01-25,49218.89,0.00,,45,false,,overdue,Invoice from Cummins India Ltd
+INV-0315,V016,Mishra Casting Works,2025-10-27,2025-12-11,168174.76,168174.76,2025-12-09,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0388,V019,Saxena Tooling Solutions,2025-11-11,2025-11-26,266092.60,0.00,,,true,micro,overdue,Invoice from Saxena Tooling Solutions
+INV-0180,V010,Kumar Metal Works,2026-01-31,2026-03-17,99812.78,99812.78,2026-05-03,,true,micro,paid,Invoice from Kumar Metal Works
+INV-0604,V035,ABB India Limited,2025-10-22,2025-12-06,361405.91,361405.91,2025-12-05,45,false,,paid,Invoice from ABB India Limited
+INV-0682,V041,Thermax Limited,2025-11-16,2025-12-16,56751.93,56751.93,2025-12-22,30,false,,paid,Invoice from Thermax Limited
+INV-0229,V012,Banerjee Textiles,2025-12-03,2026-01-02,173238.25,0.00,,30,true,medium,overdue,Invoice from Banerjee Textiles
+INV-0366,V018,Thakur Industrial Fasteners,2025-12-22,2026-03-22,491280.86,491280.86,2026-03-17,90,true,small,paid,Invoice from Thakur Industrial Fasteners
+INV-0844,V051,ITC Limited,2026-03-12,2026-04-11,448403.57,0.00,,30,false,,pending,Invoice from ITC Limited
+INV-0711,V043,Escorts Limited,2026-01-04,2026-02-18,21184.07,21184.07,2026-02-16,45,false,,paid,Invoice from Escorts Limited
+INV-0576,V033,Wipro Technologies Ltd,2026-03-08,2026-04-07,204121.35,204121.35,2026-04-06,30,false,,paid,Invoice from Wipro Technologies Ltd
+INV-0725,V043,Escorts Limited,2025-11-08,2025-12-23,492816.71,171309.29,2026-01-22,45,false,,partially_paid,Invoice from Escorts Limited
+INV-0179,V010,Kumar Metal Works,2025-12-29,2026-02-12,64179.60,0.00,,,true,micro,overdue,Invoice from Kumar Metal Works
+INV-0325,V016,Mishra Casting Works,2025-10-26,2025-12-10,330385.59,330385.59,2025-12-05,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0665,V039,Voltas Limited,2025-12-16,2026-02-14,61374.47,36586.15,2026-03-03,60,false,,partially_paid,Invoice from Voltas Limited
+INV-0499,V027,Larsen & Toubro Ltd,2025-10-22,2025-12-21,290929.03,0.00,,60,false,,overdue,Invoice from Larsen & Toubro Ltd
+INV-0655,V039,Voltas Limited,2025-12-17,2026-02-15,129591.37,129591.37,2026-02-10,60,false,,paid,Invoice from Voltas Limited
+INV-0811,V049,NSK Bearings India,2025-11-22,2026-01-21,487404.62,487404.62,2026-01-21,60,false,,paid,Invoice from NSK Bearings India
+INV-0448,V024,Tata Steel Limited,2026-01-18,2026-03-19,396234.67,396234.67,2026-03-15,60,false,,paid,Invoice from Tata Steel Limited
+INV-0750,V045,Cummins India Ltd,2025-12-22,2026-02-05,409468.97,0.00,,45,false,,overdue,Invoice from Cummins India Ltd
+INV-0162,V009,Iyer Packaging Industries,2026-03-16,2026-04-15,425539.94,0.00,,30,true,small,pending,Invoice from Iyer Packaging Industries
+INV-0140,V008,Agarwal Electrical Systems,2025-11-28,2025-12-28,245392.79,245392.79,2026-02-09,30,true,micro,paid,Invoice from Agarwal Electrical Systems
+INV-0331,V017,Pillai Electronics Assembly,2025-11-26,2025-12-26,332659.65,332659.65,2026-01-24,30,true,micro,paid,Invoice from Pillai Electronics Assembly
+INV-0310,V016,Mishra Casting Works,2025-12-04,2026-01-18,172771.15,172771.15,2026-02-14,45,true,small,paid,Invoice from Mishra Casting Works
+INV-0345,V017,Pillai Electronics Assembly,2026-01-16,2026-02-15,220659.88,220659.88,2026-02-21,30,true,micro,paid,Invoice from Pillai Electronics Assembly
+INV-0104,V006,Singh Auto Parts,2025-11-28,2026-01-12,305073.38,305073.38,2026-01-08,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0832,V051,ITC Limited,2026-02-16,2026-03-18,26134.68,26134.68,2026-03-29,30,false,,paid,Invoice from ITC Limited
+INV-0406,V020,Bhatt CNC Components,2026-01-31,2026-03-17,333863.79,333863.79,2026-03-15,45,true,small,paid,Invoice from Bhatt CNC Components
+INV-0679,V041,Thermax Limited,2025-11-09,2025-12-09,374692.25,241238.94,2025-12-16,30,false,,partially_paid,Invoice from Thermax Limited
+INV-0831,V050,NTN Bearing India,2026-02-24,2026-04-10,453013.60,0.00,,45,false,,pending,Invoice from NTN Bearing India
+INV-0383,V019,Saxena Tooling Solutions,2026-03-08,2026-04-22,208375.01,0.00,,,true,micro,pending,Invoice from Saxena Tooling Solutions
+INV-0075,V004,Reddy Industrial Supplies,2026-01-02,2026-03-03,231326.16,0.00,,60,true,small,overdue,Invoice from Reddy Industrial Supplies
+INV-0374,V019,Saxena Tooling Solutions,2025-12-30,2026-02-13,484009.77,176409.86,2026-03-07,,true,micro,partially_paid,Invoice from Saxena Tooling Solutions
+INV-0539,V030,JSW Steel Limited,2025-11-08,2026-01-07,167323.70,167323.70,2026-01-14,60,false,,paid,Invoice from JSW Steel Limited
+INV-0114,V006,Singh Auto Parts,2026-01-24,2026-03-10,258031.13,258031.13,2026-03-10,,true,micro,paid,Invoice from Singh Auto Parts
+INV-0793,V048,Schaeffler India,2026-03-10,2026-04-09,278668.07,0.00,,30,false,,pending,Invoice from Schaeffler India
+INV-0146,V008,Agarwal Electrical Systems,2025-12-12,2026-01-11,142737.02,0.00,,30,true,micro,overdue,Invoice from Agarwal Electrical Systems
+INV-0722,V043,Escorts Limited,2025-10-25,2025-12-09,178653.66,178653.66,2025-12-05,45,false,,paid,Invoice from Escorts Limited
+INV-0601,V034,Siemens India Ltd,2025-11-19,2026-01-18,382006.34,382006.34,2026-01-17,60,false,,paid,Invoice from Siemens India Ltd
+INV-0152,V009,Iyer Packaging Industries,2026-02-18,2026-03-20,284164.94,284164.94,2026-03-15,30,true,small,paid,Invoice from Iyer Packaging Industries
+INV-0023,V001,Sharma Precision Tools Pvt Ltd,2025-12-29,2026-01-28,110250.14,110250.14,2026-03-26,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0061,V004,Reddy Industrial Supplies,2025-12-07,2026-02-05,451709.22,451709.22,2026-02-05,60,true,small,paid,Invoice from Reddy Industrial Supplies
+INV-0332,V017,Pillai Electronics Assembly,2025-12-03,2026-01-02,140217.59,0.00,,30,true,micro,overdue,Invoice from Pillai Electronics Assembly
+INV-0822,V050,NTN Bearing India,2025-12-26,2026-02-09,78420.28,0.00,,45,false,,overdue,Invoice from NTN Bearing India
+INV-0182,V010,Kumar Metal Works,2026-01-29,2026-02-28,151642.00,151642.00,2026-02-28,,true,micro,paid,Invoice from Kumar Metal Works
+INV-0735,V044,Ashok Leyland Ltd,2025-12-18,2026-01-17,425802.59,0.00,,30,false,,overdue,Invoice from Ashok Leyland Ltd
+INV-0349,V018,Thakur Industrial Fasteners,2025-12-20,2026-03-20,365052.66,0.00,,90,true,small,overdue,Invoice from Thakur Industrial Fasteners
+INV-0134,V008,Agarwal Electrical Systems,2025-11-20,2025-12-20,210808.25,210808.25,2025-12-17,30,true,micro,paid,Invoice from Agarwal Electrical Systems
+INV-0826,V050,NTN Bearing India,2026-02-12,2026-03-29,65119.36,65119.36,2026-03-28,45,false,,paid,Invoice from NTN Bearing India
+INV-0207,V011,Deshmukh Rubber Products,2025-10-23,2025-12-07,295625.85,295625.85,2025-12-02,45,true,small,paid,Invoice from Deshmukh Rubber Products
+INV-0629,V036,Bosch India Limited,2026-01-20,2026-03-21,109651.44,0.00,,60,false,,overdue,Invoice from Bosch India Limited
+INV-0340,V017,Pillai Electronics Assembly,2026-03-09,2026-04-08,220928.70,220928.70,2026-04-13,30,true,micro,paid,Invoice from Pillai Electronics Assembly
+INV-0001,V001,Sharma Precision Tools Pvt Ltd,2026-02-19,2026-03-21,17380.32,17380.32,2026-03-20,30,true,micro,paid,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0490,V027,Larsen & Toubro Ltd,2025-12-07,2026-02-05,252538.56,252538.56,2026-02-04,60,false,,paid,Invoice from Larsen & Toubro Ltd
+INV-0540,V030,JSW Steel Limited,2026-01-31,2026-04-01,490934.17,490934.17,2026-05-31,60,false,,paid,Invoice from JSW Steel Limited
+INV-0021,V001,Sharma Precision Tools Pvt Ltd,2026-01-20,2026-02-19,411792.28,0.00,,30,true,micro,overdue,Invoice from Sharma Precision Tools Pvt Ltd
+INV-0225,V012,Banerjee Textiles,2026-01-09,2026-02-08,210667.72,210667.72,2026-03-11,30,true,medium,paid,Invoice from Banerjee Textiles
+INV-0617,V035,ABB India Limited,2025-11-02,2025-12-17,488852.28,488852.28,2025-12-12,45,false,,paid,Invoice from ABB India Limited
+INV-0239,V013,Nair Chemical Industries,2025-11-27,2025-12-27,54357.29,0.00,,30,true,small,overdue,Invoice from Nair Chemical Industries
+INV-0058,V004,Reddy Industrial Supplies,2025-10-30,2025-12-29,53464.82,30490.66,2025-12-29,60,true,small,partially_paid,Invoice from Reddy Industrial Supplies
+INV-0093,V006,Singh Auto Parts,2025-12-05,2026-01-19,487049.33,487049.33,2026-01-18,,true,micro,paid,Invoice from Singh Auto Parts

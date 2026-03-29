@@ -1,0 +1,532 @@
+﻿ invoice_id,vendor_id,vendor_name,invoice_date,due_date,amount,paid_amount,payment_date,agreed_payment_days,is_msme_vendor,msme_category,status,description
+AP/26/00115,SUP-1009,Sundar Packaging Industries,10-01-2026,09-02-2026,578783.77,0.00,,30,Yes,small,overdue,Industrial rubber gaskets & seals - Q568 supply
+AP/26/00386,SUP-2003,Mahindra & Mahindra Ltd,30-01-2026,16-03-2026,4119771.27,4119771.27,12-04-2026,45,No,,paid,Bearing & power transmission components
+AP/26/00332,SUP-1021,Rathi Paint & Surface Coatings,10-12-2025,09-01-2026,314696.95,0.00,,30,Yes,small,overdue,PCB assemblies & wiring harness
+AP/26/00447,SUP-2008,Godrej & Boyce Mfg Co Ltd,23-09-2025,07-11-2025,3491226.13,3491226.13,01-11-2025,45,No,,paid,Petroleum products & industrial lubricants
+AP/26/00181,SUP-1013,Nair Hydraulics & Pneumatics,02-01-2026,01-02-2026,505940.38,505940.38,27-01-2026,30,Yes,small,paid,Die cast aluminium housings - Batch 920
+AP/26/00121,SUP-1009,Sundar Packaging Industries,20-09-2025,20-10-2025,426619.63,0.00,,30,Yes,small,overdue,PCB assemblies & wiring harness
+AP/26/00220,SUP-1015,Mishra Casting & Forging Works,08-12-2025,22-01-2026,436625.30,436625.30,18-01-2026,45,Yes,small,paid,Pneumatic actuators & valves
+AP/26/00231,SUP-1016,Pillai Electronics Assembly,07-03-2026,06-04-2026,247356.07,247356.07,09-05-2026,30,Yes,micro,paid,Precision ground shafts and pins
+AP/26/00333,SUP-1021,Rathi Paint & Surface Coatings,05-12-2025,04-01-2026,442871.47,199195.41,06-02-2026,30,Yes,small,partially_paid,Industrial rubber gaskets & seals - Q145 supply
+AP/26/00006,SUP-1001,Rajesh Precision Tools Pvt Ltd,08-11-2025,08-12-2025,162327.62,0.00,,30,Yes,micro,overdue,Custom fabricated brackets - Batch 670
+AP/26/00459,SUP-2010,ABB India Limited,12-09-2025,27-10-2025,2325800.20,2325800.20,27-10-2025,45,No,,paid,Capital equipment spares & AMC charges
+AP/26/00472,SUP-2011,Bosch Limited,07-02-2026,08-04-2026,1932235.25,1932235.25,02-05-2026,60,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00411,SUP-2005,Bharat Heavy Electricals Ltd,31-12-2025,14-02-2026,4863984.31,4863984.31,11-02-2026,45,No,,paid,Petroleum products & industrial lubricants
+AP/26/00283,SUP-1018,Saxena CNC Tooling Solutions,30-09-2025,30-10-2025,105431.76,105431.76,12-01-2026,,Yes,micro,paid,Welded sub-assemblies per BOM
+AP/26/00223,SUP-1015,Mishra Casting & Forging Works,27-12-2025,10-02-2026,116556.41,0.00,,45,Yes,small,overdue,Die cast aluminium housings - Batch 131
+AP/26/00089,SUP-1007,Joshi Engineering Solutions,16-02-2026,02-04-2026,179048.26,0.00,,45,Yes,small,pending,Pneumatic actuators & valves
+AP/26/00157,SUP-1011,Deshmukh Rubber Industries,05-10-2025,19-11-2025,401957.48,84198.44,23-11-2025,45,Yes,small,partially_paid,Industrial rubber gaskets & seals - Q680 supply
+AP/26/00480,SUP-2012,Havells India Ltd,13-12-2025,12-01-2026,4426256.33,4426256.33,07-01-2026,30,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00424,SUP-2006,Hindustan Petroleum Corp Ltd,17-12-2025,16-01-2026,816396.24,488978.03,25-01-2026,30,No,,partially_paid,Industrial boiler chemicals & consumables
+AP/26/00503,SUP-2014,SKF India Limited,13-09-2025,12-11-2025,2323794.83,0.00,,60,No,,overdue,Heavy engineering castings & forgings
+AP/26/00171,SUP-1012,Sai Chemicals & Solvents,26-11-2025,26-12-2025,887103.44,0.00,,30,Yes,medium,overdue,Thermal insulation materials Q556 order
+AP/26/00130,SUP-1010,Kumar Metal & Alloy Works,12-02-2026,27-02-2026,34006.00,0.00,,,Yes,micro,overdue,Welded sub-assemblies per BOM
+AP/26/00198,SUP-1014,Verma Welding Consumables Pvt Ltd,28-11-2025,28-12-2025,198186.21,0.00,,30,Yes,micro,overdue,Welded sub-assemblies per BOM
+AP/26/00215,SUP-1015,Mishra Casting & Forging Works,02-12-2025,16-01-2026,156894.57,0.00,,45,Yes,small,overdue,Hydraulic cylinders & fittings
+AP/26/00372,SUP-2001,Tata Steel Limited,05-11-2025,04-01-2026,1699701.55,0.00,,60,No,,overdue,Automotive OEM components per annual contract
+AP/26/00381,SUP-2002,Reliance Industries Ltd,22-01-2026,22-04-2026,3497304.50,3497304.50,15-04-2026,90,No,,paid,Heavy engineering castings & forgings
+AP/26/00274,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,26-01-2026,26-04-2026,26981.24,26981.24,25-04-2026,90,Yes,small,paid,Pneumatic actuators & valves
+AP/26/00259,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,23-10-2025,21-01-2026,550539.70,0.00,,90,Yes,small,overdue,Die cast aluminium housings - Batch 728
+AP/26/00373,SUP-2002,Reliance Industries Ltd,01-01-2026,01-04-2026,1401053.18,568521.58,09-04-2026,90,No,,partially_paid,Mild steel plates & sections - Quarterly indent
+AP/26/00082,SUP-1007,Joshi Engineering Solutions,21-12-2025,04-02-2026,72465.94,0.00,,45,Yes,small,overdue,Hydraulic cylinders & fittings
+AP/26/00314,SUP-1020,Kulkarni Springs & Pressings,18-02-2026,20-03-2026,203471.62,0.00,,30,Yes,micro,overdue,Precision ground shafts and pins
+AP/26/00159,SUP-1011,Deshmukh Rubber Industries,23-09-2025,07-11-2025,110665.95,0.00,,45,Yes,small,overdue,Industrial rubber gaskets & seals - Q606 supply
+AP/26/00442,SUP-2008,Godrej & Boyce Mfg Co Ltd,18-11-2025,02-01-2026,1697461.42,1697461.42,02-01-2026,45,No,,paid,Heavy engineering castings & forgings
+AP/26/00040,SUP-1003,Patel Fabrication Works,18-03-2026,17-04-2026,238789.08,0.00,,,Yes,micro,pending,Jig & fixture components
+AP/26/00318,SUP-1020,Kulkarni Springs & Pressings,14-11-2025,14-12-2025,199927.94,0.00,,30,Yes,micro,overdue,Milled aluminium housings
+AP/26/00213,SUP-1015,Mishra Casting & Forging Works,16-12-2025,30-01-2026,562707.65,0.00,,45,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00448,SUP-2008,Godrej & Boyce Mfg Co Ltd,25-09-2025,09-11-2025,3430976.40,3430976.40,08-11-2025,45,No,,paid,Bearing & power transmission components
+AP/26/00008,SUP-1001,Rajesh Precision Tools Pvt Ltd,19-09-2025,19-10-2025,97260.39,23862.07,25-11-2025,30,Yes,micro,partially_paid,Milled aluminium housings
+AP/26/00265,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,05-03-2026,03-06-2026,533243.82,0.00,,90,Yes,small,pending,Electronic control panels - Order 741
+AP/26/00108,SUP-1008,Agarwal Electrical Systems,13-01-2026,12-02-2026,241277.03,0.00,,30,Yes,micro,overdue,Jig & fixture components
+AP/26/00473,SUP-2011,Bosch Limited,19-02-2026,20-04-2026,2254584.19,1046962.59,03-05-2026,60,No,,partially_paid,Mild steel plates & sections - Quarterly indent
+AP/26/00004,SUP-1001,Rajesh Precision Tools Pvt Ltd,22-02-2026,24-03-2026,116816.47,0.00,,30,Yes,micro,overdue,Milled aluminium housings
+AP/26/00048,SUP-1004,Sri Lakshmi Industrial Supplies,16-03-2026,15-05-2026,57954.18,57954.18,13-05-2026,60,Yes,small,paid,Hydraulic cylinders & fittings
+AP/26/00440,SUP-2007,JSW Steel Limited,05-10-2025,04-12-2025,2817210.27,2339654.04,19-12-2025,60,No,,partially_paid,Industrial boiler chemicals & consumables
+AP/26/00518,SUP-2015,Thermax Limited,15-02-2026,17-03-2026,4800357.54,4800357.54,15-03-2026,30,No,,paid,Electrical switchgear & transformer oil
+AP/26/00015,SUP-1002,Gupta Electricals & Components,07-12-2025,21-01-2026,274013.43,274013.43,01-03-2026,45,Yes,small,paid,Electronic control panels - Order 133
+AP/26/00201,SUP-1014,Verma Welding Consumables Pvt Ltd,11-09-2025,11-10-2025,207600.98,96282.14,27-10-2025,30,Yes,micro,partially_paid,CNC machined components as per PO
+AP/26/00077,SUP-1006,Bhagwati Auto Components,12-03-2026,27-03-2026,222700.57,0.00,,,Yes,micro,overdue,Custom fabricated brackets - Batch 476
+AP/26/00025,SUP-1002,Gupta Electricals & Components,08-10-2025,22-11-2025,230419.11,230419.11,17-11-2025,45,Yes,small,paid,Industrial springs & pressings lot
+AP/26/00367,SUP-2001,Tata Steel Limited,02-03-2026,01-05-2026,343410.39,343410.39,27-04-2026,60,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00037,SUP-1003,Patel Fabrication Works,01-12-2025,16-12-2025,136988.64,136988.64,13-01-2026,,Yes,micro,paid,Welded sub-assemblies per BOM
+AP/26/00165,SUP-1012,Sai Chemicals & Solvents,03-11-2025,03-12-2025,62058.43,62058.43,28-11-2025,30,Yes,medium,paid,Chemical treatment consumables - Monthly
+AP/26/00216,SUP-1015,Mishra Casting & Forging Works,01-03-2026,15-04-2026,599347.77,0.00,,45,Yes,small,pending,Pneumatic actuators & valves
+AP/26/00358,SUP-1023,Dubey Wire & Cable Industries,05-01-2026,04-02-2026,107414.40,0.00,,30,Yes,micro,overdue,Jig & fixture components
+AP/26/00279,SUP-1018,Saxena CNC Tooling Solutions,19-09-2025,04-10-2025,157797.86,0.00,,,Yes,micro,overdue,Custom fabricated brackets - Batch 852
+AP/26/00481,SUP-2012,Havells India Ltd,14-01-2026,13-02-2026,2286630.11,0.00,,30,No,,overdue,Electrical switchgear & transformer oil
+AP/26/00468,SUP-2011,Bosch Limited,01-02-2026,02-04-2026,605858.88,605858.88,18-04-2026,60,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00301,SUP-1020,Kulkarni Springs & Pressings,31-10-2025,30-11-2025,105912.34,0.00,,30,Yes,micro,overdue,Jig & fixture components
+AP/26/00470,SUP-2011,Bosch Limited,05-10-2025,04-12-2025,3717870.96,3717870.96,28-11-2025,60,No,,paid,Heavy engineering castings & forgings
+AP/26/00152,SUP-1011,Deshmukh Rubber Industries,12-10-2025,26-11-2025,396652.28,130764.70,30-12-2025,45,Yes,small,partially_paid,Industrial rubber gaskets & seals - Q660 supply
+AP/26/00347,SUP-1023,Dubey Wire & Cable Industries,06-10-2025,05-11-2025,92925.02,92925.02,01-11-2025,30,Yes,micro,paid,CNC machined components as per PO
+AP/26/00001,SUP-1001,Rajesh Precision Tools Pvt Ltd,28-12-2025,27-01-2026,129608.81,81653.59,02-02-2026,30,Yes,micro,partially_paid,Sheet metal assemblies - Lot 715
+AP/26/00395,SUP-2004,Larsen & Toubro Limited,30-09-2025,29-11-2025,688300.10,688300.10,17-12-2025,60,No,,paid,Bearing & power transmission components
+AP/26/00253,SUP-1016,Pillai Electronics Assembly,22-11-2025,22-12-2025,50546.10,0.00,,30,Yes,micro,overdue,Sheet metal assemblies - Lot 416
+AP/26/00248,SUP-1016,Pillai Electronics Assembly,28-01-2026,27-02-2026,177683.80,177683.80,12-04-2026,30,Yes,micro,paid,Jig & fixture components
+AP/26/00067,SUP-1005,Arora Polymers & Plastics,27-01-2026,26-02-2026,480935.50,206215.57,28-03-2026,30,Yes,medium,partially_paid,Thermal insulation materials Q292 order
+AP/26/00384,SUP-2003,Mahindra & Mahindra Ltd,02-03-2026,16-04-2026,4546430.40,4546430.40,06-04-2026,45,No,,paid,Electrical switchgear & transformer oil
+AP/26/00043,SUP-1004,Sri Lakshmi Industrial Supplies,25-10-2025,24-12-2025,194452.57,194452.57,10-03-2026,60,Yes,small,paid,Industrial rubber gaskets & seals - Q203 supply
+AP/26/00305,SUP-1020,Kulkarni Springs & Pressings,13-09-2025,13-10-2025,178189.19,0.00,,30,Yes,micro,overdue,Jig & fixture components
+AP/26/00418,SUP-2005,Bharat Heavy Electricals Ltd,04-01-2026,18-02-2026,459012.19,399926.78,02-03-2026,45,No,,partially_paid,Industrial boiler chemicals & consumables
+AP/26/00488,SUP-2012,Havells India Ltd,07-03-2026,06-04-2026,2687847.77,0.00,,30,No,,pending,Industrial boiler chemicals & consumables
+AP/26/00337,SUP-1021,Rathi Paint & Surface Coatings,19-02-2026,21-03-2026,28854.45,0.00,,30,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00072,SUP-1006,Bhagwati Auto Components,02-11-2025,17-11-2025,241080.68,0.00,,,Yes,micro,overdue,Custom fabricated brackets - Batch 187
+AP/26/00522,SUP-2015,Thermax Limited,13-02-2026,15-03-2026,2427311.27,2427311.27,12-03-2026,30,No,,paid,Capital equipment spares & AMC charges
+AP/26/00466,SUP-2011,Bosch Limited,18-01-2026,19-03-2026,1134318.76,1134318.76,17-03-2026,60,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00230,SUP-1015,Mishra Casting & Forging Works,03-03-2026,17-04-2026,547943.04,0.00,,45,Yes,small,pending,Die cast aluminium housings - Batch 917
+AP/26/00449,SUP-2008,Godrej & Boyce Mfg Co Ltd,28-02-2026,14-04-2026,2040944.80,2040944.80,30-04-2026,45,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00353,SUP-1023,Dubey Wire & Cable Industries,12-10-2025,11-11-2025,98512.13,0.00,,30,Yes,micro,overdue,CNC machined components as per PO
+AP/26/00179,SUP-1013,Nair Hydraulics & Pneumatics,29-11-2025,29-12-2025,410330.12,410330.12,26-12-2025,30,Yes,small,paid,Industrial springs & pressings lot
+AP/26/00084,SUP-1007,Joshi Engineering Solutions,29-11-2025,13-01-2026,316106.46,316106.46,22-03-2026,45,Yes,small,paid,Pneumatic actuators & valves
+AP/26/00076,SUP-1006,Bhagwati Auto Components,02-11-2025,17-11-2025,49354.23,49354.23,13-11-2025,,Yes,micro,paid,Turned parts per drawing #DWG-267
+AP/26/00071,SUP-1006,Bhagwati Auto Components,03-11-2025,03-12-2025,60543.67,0.00,,,Yes,micro,overdue,Jig & fixture components
+AP/26/00257,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,29-12-2025,29-03-2026,265880.82,265880.82,24-03-2026,90,Yes,small,paid,Die cast aluminium housings - Batch 222
+AP/26/00042,SUP-1003,Patel Fabrication Works,25-09-2025,10-10-2025,146504.40,146504.40,05-10-2025,,Yes,micro,paid,Precision ground shafts and pins
+AP/26/00377,SUP-2002,Reliance Industries Ltd,12-03-2026,10-06-2026,3260483.75,3260483.75,07-06-2026,90,No,,paid,Bearing & power transmission components
+AP/26/00005,SUP-1001,Rajesh Precision Tools Pvt Ltd,29-12-2025,28-01-2026,58874.37,58874.37,19-03-2026,30,Yes,micro,paid,Jig & fixture components
+AP/26/00161,SUP-1011,Deshmukh Rubber Industries,12-11-2025,27-12-2025,386829.40,0.00,,45,Yes,small,overdue,PCB assemblies & wiring harness
+AP/26/00123,SUP-1010,Kumar Metal & Alloy Works,27-01-2026,11-02-2026,209611.43,209611.43,06-02-2026,,Yes,micro,paid,Milled aluminium housings
+AP/26/00083,SUP-1007,Joshi Engineering Solutions,13-11-2025,28-12-2025,472327.71,472327.71,30-01-2026,45,Yes,small,paid,Industrial rubber gaskets & seals - Q432 supply
+AP/26/00239,SUP-1016,Pillai Electronics Assembly,18-12-2025,17-01-2026,211754.54,0.00,,30,Yes,micro,overdue,Milled aluminium housings
+AP/26/00208,SUP-1014,Verma Welding Consumables Pvt Ltd,18-12-2025,17-01-2026,101495.50,101495.50,23-02-2026,30,Yes,micro,paid,Milled aluminium housings
+AP/26/00144,SUP-1011,Deshmukh Rubber Industries,23-01-2026,09-03-2026,362274.05,0.00,,45,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00098,SUP-1007,Joshi Engineering Solutions,15-10-2025,29-11-2025,412057.18,0.00,,45,Yes,small,overdue,Hydraulic cylinders & fittings
+AP/26/00334,SUP-1021,Rathi Paint & Surface Coatings,01-10-2025,31-10-2025,569063.57,569063.57,28-10-2025,30,Yes,small,paid,Industrial rubber gaskets & seals - Q925 supply
+AP/26/00261,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,08-01-2026,08-04-2026,471326.23,471326.23,18-06-2026,90,Yes,small,paid,Hydraulic cylinders & fittings
+AP/26/00199,SUP-1014,Verma Welding Consumables Pvt Ltd,28-02-2026,30-03-2026,107338.93,0.00,,30,Yes,micro,pending,Precision ground shafts and pins
+AP/26/00298,SUP-1019,Bhatt Precision Components,08-12-2025,22-01-2026,424627.32,0.00,,45,Yes,small,overdue,Industrial rubber gaskets & seals - Q197 supply
+AP/26/00306,SUP-1020,Kulkarni Springs & Pressings,16-09-2025,16-10-2025,125252.84,125252.84,11-10-2025,30,Yes,micro,paid,Milled aluminium housings
+AP/26/00348,SUP-1023,Dubey Wire & Cable Industries,25-01-2026,24-02-2026,60382.54,60382.54,19-02-2026,30,Yes,micro,paid,Jig & fixture components
+AP/26/00094,SUP-1007,Joshi Engineering Solutions,18-11-2025,02-01-2026,514515.46,105926.90,16-01-2026,45,Yes,small,partially_paid,Hydraulic cylinders & fittings
+AP/26/00277,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,27-02-2026,28-05-2026,536411.71,536411.71,25-05-2026,90,Yes,small,paid,Electronic control panels - Order 623
+AP/26/00100,SUP-1007,Joshi Engineering Solutions,12-03-2026,26-04-2026,180752.94,52893.57,28-05-2026,45,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00193,SUP-1014,Verma Welding Consumables Pvt Ltd,14-02-2026,16-03-2026,30061.87,0.00,,30,Yes,micro,overdue,Jig & fixture components
+AP/26/00247,SUP-1016,Pillai Electronics Assembly,03-02-2026,05-03-2026,103289.75,0.00,,30,Yes,micro,overdue,Turned parts per drawing #DWG-934
+AP/26/00103,SUP-1007,Joshi Engineering Solutions,14-11-2025,29-12-2025,101609.73,38926.05,27-01-2026,45,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00090,SUP-1007,Joshi Engineering Solutions,14-03-2026,28-04-2026,341097.14,341097.14,24-06-2026,45,Yes,small,paid,PCB assemblies & wiring harness
+AP/26/00234,SUP-1016,Pillai Electronics Assembly,31-12-2025,30-01-2026,37898.13,0.00,,30,Yes,micro,overdue,Jig & fixture components
+AP/26/00392,SUP-2003,Mahindra & Mahindra Ltd,29-10-2025,13-12-2025,208332.50,208332.50,08-12-2025,45,No,,paid,Heavy engineering castings & forgings
+AP/26/00382,SUP-2002,Reliance Industries Ltd,11-12-2025,11-03-2026,1053001.28,0.00,,90,No,,overdue,Industrial boiler chemicals & consumables
+AP/26/00304,SUP-1020,Kulkarni Springs & Pressings,27-01-2026,26-02-2026,218311.11,0.00,,30,Yes,micro,overdue,Custom fabricated brackets - Batch 153
+AP/26/00487,SUP-2012,Havells India Ltd,20-12-2025,19-01-2026,642963.72,642963.72,21-01-2026,30,No,,paid,Electrical switchgear & transformer oil
+AP/26/00180,SUP-1013,Nair Hydraulics & Pneumatics,04-03-2026,03-04-2026,376805.59,0.00,,30,Yes,small,pending,PCB assemblies & wiring harness
+AP/26/00241,SUP-1016,Pillai Electronics Assembly,17-12-2025,16-01-2026,56848.27,0.00,,30,Yes,micro,overdue,Welded sub-assemblies per BOM
+AP/26/00457,SUP-2010,ABB India Limited,10-01-2026,24-02-2026,4642577.85,4642577.85,13-03-2026,45,No,,paid,Capital equipment spares & AMC charges
+AP/26/00131,SUP-1010,Kumar Metal & Alloy Works,13-12-2025,28-12-2025,155266.96,0.00,,,Yes,micro,overdue,Welded sub-assemblies per BOM
+AP/26/00423,SUP-2006,Hindustan Petroleum Corp Ltd,14-10-2025,13-11-2025,4610510.11,4610510.11,12-11-2025,30,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00530,SUP-2015,Thermax Limited,09-11-2025,09-12-2025,2483073.48,2483073.48,29-11-2025,30,No,,paid,Bearing & power transmission components
+AP/26/00313,SUP-1020,Kulkarni Springs & Pressings,17-09-2025,17-10-2025,36513.79,36513.79,08-11-2025,30,Yes,micro,paid,Precision ground shafts and pins
+AP/26/00276,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,23-12-2025,23-03-2026,547304.07,547304.07,19-03-2026,90,Yes,small,paid,Powder coated enclosures per spec
+AP/26/00186,SUP-1013,Nair Hydraulics & Pneumatics,14-11-2025,14-12-2025,380219.90,230803.71,10-01-2026,30,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00260,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,28-09-2025,27-12-2025,180362.19,0.00,,90,Yes,small,overdue,Industrial rubber gaskets & seals - Q679 supply
+AP/26/00461,SUP-2010,ABB India Limited,13-12-2025,27-01-2026,311931.99,311931.99,19-01-2026,45,No,,paid,Capital equipment spares & AMC charges
+AP/26/00112,SUP-1008,Agarwal Electrical Systems,27-09-2025,27-10-2025,211421.38,211421.38,21-12-2025,30,Yes,micro,paid,Sheet metal assemblies - Lot 255
+AP/26/00524,SUP-2015,Thermax Limited,25-10-2025,24-11-2025,1541555.87,1541555.87,04-12-2025,30,No,,paid,Electrical switchgear & transformer oil
+AP/26/00045,SUP-1004,Sri Lakshmi Industrial Supplies,31-01-2026,01-04-2026,396418.03,396418.03,30-03-2026,60,Yes,small,paid,Die cast aluminium housings - Batch 702
+AP/26/00209,SUP-1014,Verma Welding Consumables Pvt Ltd,17-12-2025,16-01-2026,108032.03,108032.03,16-01-2026,30,Yes,micro,paid,Precision ground shafts and pins
+AP/26/00482,SUP-2012,Havells India Ltd,11-09-2025,11-10-2025,4667139.60,4667139.60,03-10-2025,30,No,,paid,Automotive OEM components per annual contract
+AP/26/00117,SUP-1009,Sundar Packaging Industries,06-10-2025,05-11-2025,383109.56,0.00,,30,Yes,small,overdue,Electronic control panels - Order 407
+AP/26/00405,SUP-2004,Larsen & Toubro Limited,25-02-2026,26-04-2026,243767.31,0.00,,60,No,,pending,Industrial boiler chemicals & consumables
+AP/26/00520,SUP-2015,Thermax Limited,17-09-2025,17-10-2025,4954447.07,4954447.07,15-10-2025,30,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00529,SUP-2015,Thermax Limited,17-02-2026,19-03-2026,4395748.42,4395748.42,18-03-2026,30,No,,paid,Petroleum products & industrial lubricants
+AP/26/00475,SUP-2011,Bosch Limited,31-01-2026,01-04-2026,2269522.73,2269522.73,26-03-2026,60,No,,paid,Heavy engineering castings & forgings
+AP/26/00026,SUP-1002,Gupta Electricals & Components,16-09-2025,31-10-2025,564070.30,246212.04,08-11-2025,45,Yes,small,partially_paid,Die cast aluminium housings - Batch 186
+AP/26/00088,SUP-1007,Joshi Engineering Solutions,10-02-2026,27-03-2026,338442.24,338442.24,13-05-2026,45,Yes,small,paid,Industrial rubber gaskets & seals - Q674 supply
+AP/26/00254,SUP-1016,Pillai Electronics Assembly,11-10-2025,10-11-2025,106313.27,0.00,,30,Yes,micro,overdue,CNC machined components as per PO
+AP/26/00211,SUP-1015,Mishra Casting & Forging Works,02-01-2026,16-02-2026,550829.71,0.00,,45,Yes,small,overdue,Die cast aluminium housings - Batch 102
+AP/26/00458,SUP-2010,ABB India Limited,29-11-2025,13-01-2026,2570876.19,2570876.19,12-02-2026,45,No,,paid,Petroleum products & industrial lubricants
+AP/26/00226,SUP-1015,Mishra Casting & Forging Works,22-01-2026,08-03-2026,136793.73,136793.73,20-04-2026,45,Yes,small,paid,Hydraulic cylinders & fittings
+AP/26/00451,SUP-2009,Siemens India Limited,16-12-2025,14-02-2026,2854253.34,0.00,,60,No,,overdue,Petroleum products & industrial lubricants
+AP/26/00361,SUP-2001,Tata Steel Limited,19-02-2026,20-04-2026,1114541.61,1114541.61,15-04-2026,60,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00322,SUP-1021,Rathi Paint & Surface Coatings,20-09-2025,20-10-2025,115055.82,0.00,,30,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00206,SUP-1014,Verma Welding Consumables Pvt Ltd,23-12-2025,22-01-2026,106253.27,45782.83,15-02-2026,30,Yes,micro,partially_paid,Custom fabricated brackets - Batch 481
+AP/26/00145,SUP-1011,Deshmukh Rubber Industries,19-02-2026,05-04-2026,485998.19,0.00,,45,Yes,small,pending,Pneumatic actuators & valves
+AP/26/00430,SUP-2006,Hindustan Petroleum Corp Ltd,18-01-2026,17-02-2026,2562773.98,2562773.98,17-02-2026,30,No,,paid,Bearing & power transmission components
+AP/26/00086,SUP-1007,Joshi Engineering Solutions,19-10-2025,03-12-2025,244435.88,244435.88,28-11-2025,45,Yes,small,paid,Industrial rubber gaskets & seals - Q541 supply
+AP/26/00178,SUP-1012,Sai Chemicals & Solvents,09-11-2025,09-12-2025,397328.32,0.00,,30,Yes,medium,overdue,Chemical treatment consumables - Monthly
+AP/26/00036,SUP-1003,Patel Fabrication Works,07-11-2025,22-11-2025,224497.00,224497.00,21-11-2025,,Yes,micro,paid,Jig & fixture components
+AP/26/00498,SUP-2013,Cummins India Ltd,26-11-2025,10-01-2026,864701.42,864701.42,02-01-2026,45,No,,paid,Capital equipment spares & AMC charges
+AP/26/00513,SUP-2014,SKF India Limited,06-02-2026,07-04-2026,504622.80,0.00,,60,No,,pending,Mild steel plates & sections - Quarterly indent
+AP/26/00235,SUP-1016,Pillai Electronics Assembly,17-11-2025,17-12-2025,84522.55,84522.55,28-12-2025,30,Yes,micro,paid,Custom fabricated brackets - Batch 398
+AP/26/00136,SUP-1010,Kumar Metal & Alloy Works,21-02-2026,08-03-2026,102824.74,33672.44,10-03-2026,,Yes,micro,partially_paid,Custom fabricated brackets - Batch 870
+AP/26/00173,SUP-1012,Sai Chemicals & Solvents,30-10-2025,29-11-2025,85230.80,85230.80,24-11-2025,30,Yes,medium,paid,Thermal insulation materials Q829 order
+AP/26/00456,SUP-2010,ABB India Limited,08-12-2025,22-01-2026,3018355.36,0.00,,45,No,,overdue,Industrial boiler chemicals & consumables
+AP/26/00132,SUP-1010,Kumar Metal & Alloy Works,13-01-2026,28-01-2026,242095.56,90294.64,02-03-2026,,Yes,micro,partially_paid,Custom fabricated brackets - Batch 933
+AP/26/00191,SUP-1013,Nair Hydraulics & Pneumatics,29-10-2025,28-11-2025,519421.00,519421.00,26-12-2025,30,Yes,small,paid,Hydraulic cylinders & fittings
+AP/26/00409,SUP-2005,Bharat Heavy Electricals Ltd,26-12-2025,09-02-2026,2917764.49,2917764.49,01-02-2026,45,No,,paid,Heavy engineering castings & forgings
+AP/26/00398,SUP-2004,Larsen & Toubro Limited,04-03-2026,03-05-2026,2749424.27,1790189.76,09-05-2026,60,No,,partially_paid,Petroleum products & industrial lubricants
+AP/26/00044,SUP-1004,Sri Lakshmi Industrial Supplies,11-01-2026,12-03-2026,80447.68,20354.70,15-03-2026,60,Yes,small,partially_paid,PCB assemblies & wiring harness
+AP/26/00378,SUP-2002,Reliance Industries Ltd,17-12-2025,17-03-2026,212497.00,212497.00,27-03-2026,90,No,,paid,Automotive OEM components per annual contract
+AP/26/00485,SUP-2012,Havells India Ltd,09-02-2026,11-03-2026,1814739.24,1814739.24,05-03-2026,30,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00267,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,15-03-2026,13-06-2026,366179.41,366179.41,13-06-2026,90,Yes,small,paid,Powder coated enclosures per spec
+AP/26/00316,SUP-1020,Kulkarni Springs & Pressings,08-10-2025,07-11-2025,23926.25,23926.25,06-11-2025,30,Yes,micro,paid,Custom fabricated brackets - Batch 837
+AP/26/00225,SUP-1015,Mishra Casting & Forging Works,17-03-2026,01-05-2026,236051.56,0.00,,45,Yes,small,pending,Die cast aluminium housings - Batch 665
+AP/26/00081,SUP-1007,Joshi Engineering Solutions,15-01-2026,01-03-2026,501469.82,0.00,,45,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00351,SUP-1023,Dubey Wire & Cable Industries,17-02-2026,19-03-2026,49597.05,0.00,,30,Yes,micro,overdue,Milled aluminium housings
+AP/26/00124,SUP-1010,Kumar Metal & Alloy Works,14-12-2025,13-01-2026,46360.17,0.00,,,Yes,micro,overdue,Milled aluminium housings
+AP/26/00027,SUP-1002,Gupta Electricals & Components,03-12-2025,17-01-2026,409419.05,0.00,,45,Yes,small,overdue,Die cast aluminium housings - Batch 619
+AP/26/00477,SUP-2011,Bosch Limited,19-10-2025,18-12-2025,3317566.54,1443830.55,26-12-2025,60,No,,partially_paid,Petroleum products & industrial lubricants
+AP/26/00450,SUP-2008,Godrej & Boyce Mfg Co Ltd,11-09-2025,26-10-2025,3988403.30,3988403.30,21-11-2025,45,No,,paid,Automotive OEM components per annual contract
+AP/26/00099,SUP-1007,Joshi Engineering Solutions,03-12-2025,17-01-2026,434301.64,0.00,,45,Yes,small,overdue,Industrial rubber gaskets & seals - Q210 supply
+AP/26/00156,SUP-1011,Deshmukh Rubber Industries,27-10-2025,11-12-2025,139633.93,0.00,,45,Yes,small,overdue,Pneumatic actuators & valves
+AP/26/00308,SUP-1020,Kulkarni Springs & Pressings,18-01-2026,17-02-2026,160431.92,160431.92,15-02-2026,30,Yes,micro,paid,Welded sub-assemblies per BOM
+AP/26/00365,SUP-2001,Tata Steel Limited,30-12-2025,28-02-2026,1956344.55,1956344.55,23-02-2026,60,No,,paid,Heavy engineering castings & forgings
+AP/26/00055,SUP-1004,Sri Lakshmi Industrial Supplies,03-12-2025,01-02-2026,208357.45,0.00,,60,Yes,small,overdue,PCB assemblies & wiring harness
+AP/26/00041,SUP-1003,Patel Fabrication Works,29-09-2025,14-10-2025,52153.25,52153.25,08-11-2025,,Yes,micro,paid,Welded sub-assemblies per BOM
+AP/26/00010,SUP-1001,Rajesh Precision Tools Pvt Ltd,05-11-2025,05-12-2025,70591.71,46810.53,04-01-2026,30,Yes,micro,partially_paid,CNC machined components as per PO
+AP/26/00107,SUP-1008,Agarwal Electrical Systems,01-10-2025,31-10-2025,90185.44,90185.44,27-10-2025,30,Yes,micro,paid,Turned parts per drawing #DWG-877
+AP/26/00511,SUP-2014,SKF India Limited,04-11-2025,03-01-2026,2811142.41,2811142.41,30-12-2025,60,No,,paid,Capital equipment spares & AMC charges
+AP/26/00426,SUP-2006,Hindustan Petroleum Corp Ltd,15-03-2026,14-04-2026,4894443.18,4894443.18,29-04-2026,30,No,,paid,Petroleum products & industrial lubricants
+AP/26/00237,SUP-1016,Pillai Electronics Assembly,29-12-2025,28-01-2026,56898.82,0.00,,30,Yes,micro,overdue,Welded sub-assemblies per BOM
+AP/26/00496,SUP-2013,Cummins India Ltd,13-01-2026,27-02-2026,4874911.06,2155627.93,13-03-2026,45,No,,partially_paid,Industrial boiler chemicals & consumables
+AP/26/00406,SUP-2005,Bharat Heavy Electricals Ltd,02-02-2026,19-03-2026,4605681.56,4605681.56,11-03-2026,45,No,,paid,Capital equipment spares & AMC charges
+AP/26/00204,SUP-1014,Verma Welding Consumables Pvt Ltd,30-12-2025,29-01-2026,34698.02,0.00,,30,Yes,micro,overdue,CNC machined components as per PO
+AP/26/00093,SUP-1007,Joshi Engineering Solutions,10-01-2026,24-02-2026,346379.84,346379.84,12-04-2026,45,Yes,small,paid,Pneumatic actuators & valves
+AP/26/00222,SUP-1015,Mishra Casting & Forging Works,23-02-2026,09-04-2026,482848.65,161691.43,08-05-2026,45,Yes,small,partially_paid,Industrial rubber gaskets & seals - Q310 supply
+AP/26/00128,SUP-1010,Kumar Metal & Alloy Works,30-11-2025,15-12-2025,15381.44,0.00,,,Yes,micro,overdue,Precision ground shafts and pins
+AP/26/00417,SUP-2005,Bharat Heavy Electricals Ltd,22-02-2026,08-04-2026,3223446.57,3223446.57,19-04-2026,45,No,,paid,Heavy engineering castings & forgings
+AP/26/00389,SUP-2003,Mahindra & Mahindra Ltd,07-01-2026,21-02-2026,3516851.66,3516851.66,20-02-2026,45,No,,paid,Automotive OEM components per annual contract
+AP/26/00515,SUP-2014,SKF India Limited,26-12-2025,24-02-2026,4958333.94,0.00,,60,No,,overdue,Capital equipment spares & AMC charges
+AP/26/00527,SUP-2015,Thermax Limited,24-12-2025,23-01-2026,2307149.51,1796207.32,04-02-2026,30,No,,partially_paid,Petroleum products & industrial lubricants
+AP/26/00464,SUP-2010,ABB India Limited,06-01-2026,20-02-2026,3838625.60,2345515.02,04-03-2026,45,No,,partially_paid,Capital equipment spares & AMC charges
+AP/26/00218,SUP-1015,Mishra Casting & Forging Works,05-01-2026,19-02-2026,260148.42,260148.42,21-04-2026,45,Yes,small,paid,Powder coated enclosures per spec
+AP/26/00134,SUP-1010,Kumar Metal & Alloy Works,24-11-2025,24-12-2025,144579.46,0.00,,,Yes,micro,overdue,Milled aluminium housings
+AP/26/00531,SUP-2015,Thermax Limited,11-03-2026,10-04-2026,623949.59,623949.59,04-04-2026,30,No,,paid,Heavy engineering castings & forgings
+AP/26/00312,SUP-1020,Kulkarni Springs & Pressings,20-12-2025,19-01-2026,8424.06,8424.06,18-01-2026,30,Yes,micro,paid,CNC machined components as per PO
+AP/26/00049,SUP-1004,Sri Lakshmi Industrial Supplies,25-09-2025,24-11-2025,347677.50,0.00,,60,Yes,small,overdue,PCB assemblies & wiring harness
+AP/26/00486,SUP-2012,Havells India Ltd,28-11-2025,28-12-2025,4696642.16,4696642.16,11-01-2026,30,No,,paid,Bearing & power transmission components
+AP/26/00142,SUP-1010,Kumar Metal & Alloy Works,12-02-2026,14-03-2026,79310.70,79310.70,13-05-2026,,Yes,micro,paid,CNC machined components as per PO
+AP/26/00356,SUP-1023,Dubey Wire & Cable Industries,03-01-2026,02-02-2026,86952.66,52030.69,01-03-2026,30,Yes,micro,partially_paid,Precision ground shafts and pins
+AP/26/00102,SUP-1007,Joshi Engineering Solutions,14-11-2025,29-12-2025,532874.70,0.00,,45,Yes,small,overdue,Electronic control panels - Order 759
+AP/26/00133,SUP-1010,Kumar Metal & Alloy Works,08-01-2026,23-01-2026,79815.44,0.00,,,Yes,micro,overdue,Custom fabricated brackets - Batch 640
+AP/26/00432,SUP-2006,Hindustan Petroleum Corp Ltd,15-02-2026,17-03-2026,799987.03,799987.03,12-03-2026,30,No,,paid,Capital equipment spares & AMC charges
+AP/26/00092,SUP-1007,Joshi Engineering Solutions,19-12-2025,02-02-2026,397729.58,397729.58,30-01-2026,45,Yes,small,paid,Industrial rubber gaskets & seals - Q110 supply
+AP/26/00285,SUP-1018,Saxena CNC Tooling Solutions,12-11-2025,27-11-2025,108406.86,0.00,,,Yes,micro,overdue,Welded sub-assemblies per BOM
+AP/26/00168,SUP-1012,Sai Chemicals & Solvents,05-12-2025,04-01-2026,1131323.43,1131323.43,31-12-2025,30,Yes,medium,paid,Thermal insulation materials Q254 order
+AP/26/00425,SUP-2006,Hindustan Petroleum Corp Ltd,27-12-2025,26-01-2026,1794339.67,0.00,,30,No,,overdue,Capital equipment spares & AMC charges
+AP/26/00170,SUP-1012,Sai Chemicals & Solvents,20-01-2026,19-02-2026,1006739.18,235706.14,15-03-2026,30,Yes,medium,partially_paid,Thermal insulation materials Q549 order
+AP/26/00148,SUP-1011,Deshmukh Rubber Industries,20-09-2025,04-11-2025,509239.94,0.00,,45,Yes,small,overdue,Hydraulic cylinders & fittings
+AP/26/00422,SUP-2006,Hindustan Petroleum Corp Ltd,09-12-2025,08-01-2026,4533479.97,4533479.97,19-01-2026,30,No,,paid,Capital equipment spares & AMC charges
+AP/26/00163,SUP-1012,Sai Chemicals & Solvents,18-01-2026,17-02-2026,182918.70,0.00,,30,Yes,medium,overdue,Thermal insulation materials Q708 order
+AP/26/00167,SUP-1012,Sai Chemicals & Solvents,11-11-2025,11-12-2025,1122659.88,262431.79,11-12-2025,30,Yes,medium,partially_paid,Thermal insulation materials Q251 order
+AP/26/00062,SUP-1005,Arora Polymers & Plastics,02-02-2026,04-03-2026,685929.43,0.00,,30,Yes,medium,overdue,Thermal insulation materials Q448 order
+AP/26/00408,SUP-2005,Bharat Heavy Electricals Ltd,16-02-2026,02-04-2026,4928193.15,4928193.15,28-03-2026,45,No,,paid,Petroleum products & industrial lubricants
+AP/26/00330,SUP-1021,Rathi Paint & Surface Coatings,08-03-2026,07-04-2026,529619.19,112972.36,03-05-2026,30,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00326,SUP-1021,Rathi Paint & Surface Coatings,04-12-2025,03-01-2026,52646.54,28848.87,17-01-2026,30,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00369,SUP-2001,Tata Steel Limited,21-10-2025,20-12-2025,3058444.88,3058444.88,19-12-2025,60,No,,paid,Electrical switchgear & transformer oil
+AP/26/00401,SUP-2004,Larsen & Toubro Limited,08-10-2025,07-12-2025,1464421.23,687473.06,09-12-2025,60,No,,partially_paid,Petroleum products & industrial lubricants
+AP/26/00264,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,27-10-2025,25-01-2026,421871.57,0.00,,90,Yes,small,overdue,Electronic control panels - Order 171
+AP/26/00286,SUP-1018,Saxena CNC Tooling Solutions,21-11-2025,06-12-2025,55419.69,55419.69,06-12-2025,,Yes,micro,paid,Milled aluminium housings
+AP/26/00038,SUP-1003,Patel Fabrication Works,11-01-2026,10-02-2026,120267.49,120267.49,09-03-2026,,Yes,micro,paid,Welded sub-assemblies per BOM
+AP/26/00182,SUP-1013,Nair Hydraulics & Pneumatics,30-09-2025,30-10-2025,502861.84,0.00,,30,Yes,small,overdue,PCB assemblies & wiring harness
+AP/26/00224,SUP-1015,Mishra Casting & Forging Works,21-02-2026,07-04-2026,136160.62,136160.62,28-05-2026,45,Yes,small,paid,Pneumatic actuators & valves
+AP/26/00436,SUP-2007,JSW Steel Limited,01-11-2025,31-12-2025,525071.30,525071.30,28-12-2025,60,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00244,SUP-1016,Pillai Electronics Assembly,10-02-2026,12-03-2026,217960.77,56701.31,03-04-2026,30,Yes,micro,partially_paid,Custom fabricated brackets - Batch 370
+AP/26/00210,SUP-1014,Verma Welding Consumables Pvt Ltd,31-10-2025,30-11-2025,199960.38,199960.38,28-11-2025,30,Yes,micro,paid,Jig & fixture components
+AP/26/00439,SUP-2007,JSW Steel Limited,13-11-2025,12-01-2026,2656732.76,2656732.76,07-01-2026,60,No,,paid,Petroleum products & industrial lubricants
+AP/26/00287,SUP-1018,Saxena CNC Tooling Solutions,26-09-2025,26-10-2025,178911.37,178911.37,22-12-2025,,Yes,micro,paid,Jig & fixture components
+AP/26/00105,SUP-1008,Agarwal Electrical Systems,04-12-2025,03-01-2026,216829.94,0.00,,30,Yes,micro,overdue,Precision ground shafts and pins
+AP/26/00238,SUP-1016,Pillai Electronics Assembly,14-01-2026,13-02-2026,128736.86,52262.23,06-03-2026,30,Yes,micro,partially_paid,Sheet metal assemblies - Lot 143
+AP/26/00355,SUP-1023,Dubey Wire & Cable Industries,11-11-2025,11-12-2025,53834.17,53834.17,06-12-2025,30,Yes,micro,paid,Jig & fixture components
+AP/26/00307,SUP-1020,Kulkarni Springs & Pressings,05-10-2025,04-11-2025,37991.23,0.00,,30,Yes,micro,overdue,Precision ground shafts and pins
+AP/26/00203,SUP-1014,Verma Welding Consumables Pvt Ltd,14-09-2025,14-10-2025,150917.49,150917.49,10-10-2025,30,Yes,micro,paid,Precision ground shafts and pins
+AP/26/00325,SUP-1021,Rathi Paint & Surface Coatings,14-03-2026,13-04-2026,188670.98,188670.98,15-06-2026,30,Yes,small,paid,Electronic control panels - Order 684
+AP/26/00028,SUP-1002,Gupta Electricals & Components,04-12-2025,18-01-2026,249484.20,249484.20,17-01-2026,45,Yes,small,paid,Pneumatic actuators & valves
+AP/26/00096,SUP-1007,Joshi Engineering Solutions,08-01-2026,22-02-2026,383124.77,383124.77,09-05-2026,45,Yes,small,paid,Powder coated enclosures per spec
+AP/26/00519,SUP-2015,Thermax Limited,25-02-2026,27-03-2026,1091734.76,1091734.76,31-03-2026,30,No,,paid,Petroleum products & industrial lubricants
+AP/26/00460,SUP-2010,ABB India Limited,15-02-2026,01-04-2026,1036788.07,1036788.07,23-03-2026,45,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00371,SUP-2001,Tata Steel Limited,26-10-2025,25-12-2025,3811531.12,3811531.12,22-01-2026,60,No,,paid,Petroleum products & industrial lubricants
+AP/26/00492,SUP-2013,Cummins India Ltd,25-10-2025,09-12-2025,994168.29,994168.29,04-01-2026,45,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00118,SUP-1009,Sundar Packaging Industries,22-01-2026,21-02-2026,320882.03,0.00,,30,Yes,small,overdue,Hydraulic cylinders & fittings
+AP/26/00184,SUP-1013,Nair Hydraulics & Pneumatics,11-10-2025,10-11-2025,538060.85,538060.85,16-12-2025,30,Yes,small,paid,Pneumatic actuators & valves
+AP/26/00293,SUP-1019,Bhatt Precision Components,12-12-2025,26-01-2026,59625.49,0.00,,45,Yes,small,overdue,Hydraulic cylinders & fittings
+AP/26/00427,SUP-2006,Hindustan Petroleum Corp Ltd,11-12-2025,10-01-2026,1700809.56,1700809.56,05-01-2026,30,No,,paid,Heavy engineering castings & forgings
+AP/26/00379,SUP-2002,Reliance Industries Ltd,04-10-2025,02-01-2026,1990319.28,1990319.28,24-01-2026,90,No,,paid,Petroleum products & industrial lubricants
+AP/26/00245,SUP-1016,Pillai Electronics Assembly,17-02-2026,19-03-2026,66794.49,66794.49,18-03-2026,30,Yes,micro,paid,Precision ground shafts and pins
+AP/26/00129,SUP-1010,Kumar Metal & Alloy Works,11-09-2025,26-09-2025,96384.94,41455.36,13-10-2025,,Yes,micro,partially_paid,Welded sub-assemblies per BOM
+AP/26/00341,SUP-1022,Tiwari Insulation Materials,21-09-2025,05-11-2025,486246.16,0.00,,45,Yes,medium,overdue,Chemical treatment consumables - Monthly
+AP/26/00266,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,29-12-2025,29-03-2026,389963.44,389963.44,26-03-2026,90,Yes,small,paid,Electronic control panels - Order 887
+AP/26/00523,SUP-2015,Thermax Limited,22-10-2025,21-11-2025,780416.62,780416.62,21-11-2025,30,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00212,SUP-1015,Mishra Casting & Forging Works,26-01-2026,12-03-2026,150512.83,150512.83,11-03-2026,45,Yes,small,paid,Electronic control panels - Order 825
+AP/26/00278,SUP-1018,Saxena CNC Tooling Solutions,09-02-2026,11-03-2026,195816.24,123903.43,11-04-2026,,Yes,micro,partially_paid,Turned parts per drawing #DWG-698
+AP/26/00414,SUP-2005,Bharat Heavy Electricals Ltd,09-03-2026,23-04-2026,2899676.11,2899676.11,21-04-2026,45,No,,paid,Automotive OEM components per annual contract
+AP/26/00095,SUP-1007,Joshi Engineering Solutions,10-01-2026,24-02-2026,212802.86,0.00,,45,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00328,SUP-1021,Rathi Paint & Surface Coatings,31-10-2025,30-11-2025,510417.10,104675.36,07-01-2026,30,Yes,small,partially_paid,Pneumatic actuators & valves
+AP/26/00505,SUP-2014,SKF India Limited,10-11-2025,09-01-2026,589676.15,589676.15,06-01-2026,60,No,,paid,Automotive OEM components per annual contract
+AP/26/00258,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,20-09-2025,19-12-2025,56716.32,0.00,,90,Yes,small,overdue,Powder coated enclosures per spec
+AP/26/00415,SUP-2005,Bharat Heavy Electricals Ltd,26-01-2026,12-03-2026,4167038.99,0.00,,45,No,,overdue,Capital equipment spares & AMC charges
+AP/26/00122,SUP-1009,Sundar Packaging Industries,12-03-2026,11-04-2026,119190.99,119190.99,11-04-2026,30,Yes,small,paid,Pneumatic actuators & valves
+AP/26/00497,SUP-2013,Cummins India Ltd,08-03-2026,22-04-2026,1428202.83,1428202.83,14-04-2026,45,No,,paid,Petroleum products & industrial lubricants
+AP/26/00221,SUP-1015,Mishra Casting & Forging Works,17-11-2025,01-01-2026,278627.27,0.00,,45,Yes,small,overdue,Electronic control panels - Order 394
+AP/26/00510,SUP-2014,SKF India Limited,15-01-2026,16-03-2026,1087411.87,0.00,,60,No,,overdue,Industrial boiler chemicals & consumables
+AP/26/00014,SUP-1002,Gupta Electricals & Components,07-12-2025,21-01-2026,410108.51,410108.51,31-03-2026,45,Yes,small,paid,Industrial springs & pressings lot
+AP/26/00079,SUP-1006,Bhagwati Auto Components,20-02-2026,22-03-2026,246378.04,246378.04,17-03-2026,,Yes,micro,paid,Custom fabricated brackets - Batch 490
+AP/26/00085,SUP-1007,Joshi Engineering Solutions,02-02-2026,19-03-2026,137979.27,87300.80,10-04-2026,45,Yes,small,partially_paid,PCB assemblies & wiring harness
+AP/26/00052,SUP-1004,Sri Lakshmi Industrial Supplies,17-02-2026,18-04-2026,419716.49,0.00,,60,Yes,small,pending,Die cast aluminium housings - Batch 498
+AP/26/00420,SUP-2006,Hindustan Petroleum Corp Ltd,16-09-2025,16-10-2025,3576386.49,3576386.49,29-10-2025,30,No,,paid,Bearing & power transmission components
+AP/26/00242,SUP-1016,Pillai Electronics Assembly,06-12-2025,05-01-2026,138026.59,0.00,,30,Yes,micro,overdue,CNC machined components as per PO
+AP/26/00271,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,07-12-2025,07-03-2026,515791.97,0.00,,90,Yes,small,overdue,Die cast aluminium housings - Batch 510
+AP/26/00273,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,09-11-2025,07-02-2026,163161.82,163161.82,05-02-2026,90,Yes,small,paid,Electronic control panels - Order 744
+AP/26/00362,SUP-2001,Tata Steel Limited,12-01-2026,13-03-2026,3850858.76,3850858.76,10-03-2026,60,No,,paid,Heavy engineering castings & forgings
+AP/26/00517,SUP-2015,Thermax Limited,07-03-2026,06-04-2026,538628.81,538628.81,30-03-2026,30,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00039,SUP-1003,Patel Fabrication Works,16-11-2025,16-12-2025,115589.06,0.00,,,Yes,micro,overdue,Sheet metal assemblies - Lot 336
+AP/26/00296,SUP-1019,Bhatt Precision Components,10-10-2025,24-11-2025,107343.40,0.00,,45,Yes,small,overdue,Pneumatic actuators & valves
+AP/26/00207,SUP-1014,Verma Welding Consumables Pvt Ltd,29-11-2025,29-12-2025,190872.66,69137.72,22-01-2026,30,Yes,micro,partially_paid,Welded sub-assemblies per BOM
+AP/26/00175,SUP-1012,Sai Chemicals & Solvents,22-02-2026,24-03-2026,314324.24,314324.24,22-03-2026,30,Yes,medium,paid,Industrial packaging materials - Bulk
+AP/26/00491,SUP-2013,Cummins India Ltd,04-02-2026,21-03-2026,4781301.86,4781301.86,15-03-2026,45,No,,paid,Automotive OEM components per annual contract
+AP/26/00263,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,02-02-2026,03-05-2026,249725.05,249725.05,01-05-2026,90,Yes,small,paid,Pneumatic actuators & valves
+AP/26/00412,SUP-2005,Bharat Heavy Electricals Ltd,09-01-2026,23-02-2026,1914640.03,0.00,,45,No,,overdue,Heavy engineering castings & forgings
+AP/26/00153,SUP-1011,Deshmukh Rubber Industries,08-10-2025,22-11-2025,322098.57,144182.05,25-11-2025,45,Yes,small,partially_paid,PCB assemblies & wiring harness
+AP/26/00063,SUP-1005,Arora Polymers & Plastics,08-10-2025,07-11-2025,648516.27,0.00,,30,Yes,medium,overdue,Polymer injection moulded parts - PO#773
+AP/26/00342,SUP-1022,Tiwari Insulation Materials,10-01-2026,24-02-2026,299894.12,0.00,,45,Yes,medium,overdue,Industrial packaging materials - Bulk
+AP/26/00009,SUP-1001,Rajesh Precision Tools Pvt Ltd,18-02-2026,20-03-2026,110957.28,0.00,,30,Yes,micro,overdue,Milled aluminium housings
+AP/26/00319,SUP-1021,Rathi Paint & Surface Coatings,08-03-2026,07-04-2026,191240.80,191240.80,05-04-2026,30,Yes,small,paid,Industrial rubber gaskets & seals - Q393 supply
+AP/26/00139,SUP-1010,Kumar Metal & Alloy Works,08-11-2025,08-12-2025,216407.14,96188.01,15-01-2026,,Yes,micro,partially_paid,Turned parts per drawing #DWG-549
+AP/26/00360,SUP-2001,Tata Steel Limited,10-01-2026,11-03-2026,3590148.64,3590148.64,07-03-2026,60,No,,paid,Petroleum products & industrial lubricants
+AP/26/00228,SUP-1015,Mishra Casting & Forging Works,12-02-2026,29-03-2026,123212.72,123212.72,27-03-2026,45,Yes,small,paid,Hydraulic cylinders & fittings
+AP/26/00311,SUP-1020,Kulkarni Springs & Pressings,29-01-2026,28-02-2026,230207.29,0.00,,30,Yes,micro,overdue,Turned parts per drawing #DWG-281
+AP/26/00252,SUP-1016,Pillai Electronics Assembly,25-02-2026,27-03-2026,215100.89,0.00,,30,Yes,micro,overdue,Turned parts per drawing #DWG-181
+AP/26/00444,SUP-2008,Godrej & Boyce Mfg Co Ltd,25-11-2025,09-01-2026,2388780.12,2388780.12,05-01-2026,45,No,,paid,Electrical switchgear & transformer oil
+AP/26/00176,SUP-1012,Sai Chemicals & Solvents,13-10-2025,12-11-2025,681440.24,0.00,,30,Yes,medium,overdue,Industrial packaging materials - Bulk
+AP/26/00229,SUP-1015,Mishra Casting & Forging Works,14-01-2026,28-02-2026,363090.47,107304.30,11-03-2026,45,Yes,small,partially_paid,PCB assemblies & wiring harness
+AP/26/00078,SUP-1006,Bhagwati Auto Components,01-01-2026,16-01-2026,60318.31,0.00,,,Yes,micro,overdue,Sheet metal assemblies - Lot 229
+AP/26/00343,SUP-1022,Tiwari Insulation Materials,01-12-2025,15-01-2026,1124835.84,1124835.84,15-02-2026,45,Yes,medium,paid,Chemical treatment consumables - Monthly
+AP/26/00516,SUP-2014,SKF India Limited,09-02-2026,10-04-2026,2781175.97,2781175.97,10-04-2026,60,No,,paid,Heavy engineering castings & forgings
+AP/26/00521,SUP-2015,Thermax Limited,04-02-2026,06-03-2026,3969066.14,3969066.14,24-02-2026,30,No,,paid,Capital equipment spares & AMC charges
+AP/26/00140,SUP-1010,Kumar Metal & Alloy Works,30-01-2026,01-03-2026,194046.59,0.00,,,Yes,micro,overdue,Milled aluminium housings
+AP/26/00189,SUP-1013,Nair Hydraulics & Pneumatics,18-01-2026,17-02-2026,209687.67,0.00,,30,Yes,small,overdue,Hydraulic cylinders & fittings
+AP/26/00149,SUP-1011,Deshmukh Rubber Industries,30-10-2025,14-12-2025,408533.46,408533.46,16-02-2026,45,Yes,small,paid,Electronic control panels - Order 979
+AP/26/00364,SUP-2001,Tata Steel Limited,16-03-2026,15-05-2026,444863.58,444863.58,10-05-2026,60,No,,paid,Electrical switchgear & transformer oil
+AP/26/00350,SUP-1023,Dubey Wire & Cable Industries,05-02-2026,07-03-2026,120651.03,120651.03,03-03-2026,30,Yes,micro,paid,Sheet metal assemblies - Lot 888
+AP/26/00443,SUP-2008,Godrej & Boyce Mfg Co Ltd,13-03-2026,27-04-2026,2553500.34,2553500.34,15-05-2026,45,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00282,SUP-1018,Saxena CNC Tooling Solutions,21-10-2025,05-11-2025,216145.27,0.00,,,Yes,micro,overdue,Milled aluminium housings
+AP/26/00433,SUP-2007,JSW Steel Limited,30-12-2025,28-02-2026,2840849.71,2840849.71,24-02-2026,60,No,,paid,Electrical switchgear & transformer oil
+AP/26/00512,SUP-2014,SKF India Limited,26-11-2025,25-01-2026,2051740.71,0.00,,60,No,,overdue,Mild steel plates & sections - Quarterly indent
+AP/26/00024,SUP-1002,Gupta Electricals & Components,17-02-2026,03-04-2026,382117.93,0.00,,45,Yes,small,pending,Die cast aluminium housings - Batch 784
+AP/26/00188,SUP-1013,Nair Hydraulics & Pneumatics,08-12-2025,07-01-2026,95796.30,0.00,,30,Yes,small,overdue,Hydraulic cylinders & fittings
+AP/26/00403,SUP-2004,Larsen & Toubro Limited,22-12-2025,20-02-2026,253445.26,253445.26,08-03-2026,60,No,,paid,Heavy engineering castings & forgings
+AP/26/00249,SUP-1016,Pillai Electronics Assembly,01-12-2025,31-12-2025,206718.36,0.00,,30,Yes,micro,overdue,Sheet metal assemblies - Lot 191
+AP/26/00376,SUP-2002,Reliance Industries Ltd,28-11-2025,26-02-2026,471731.46,471731.46,12-03-2026,90,No,,paid,Capital equipment spares & AMC charges
+AP/26/00315,SUP-1020,Kulkarni Springs & Pressings,25-10-2025,24-11-2025,12259.51,7424.98,26-12-2025,30,Yes,micro,partially_paid,Jig & fixture components
+AP/26/00380,SUP-2002,Reliance Industries Ltd,31-12-2025,31-03-2026,3317254.39,3317254.39,24-03-2026,90,No,,paid,Petroleum products & industrial lubricants
+AP/26/00400,SUP-2004,Larsen & Toubro Limited,14-11-2025,13-01-2026,2318456.82,2318456.82,12-02-2026,60,No,,paid,Capital equipment spares & AMC charges
+AP/26/00021,SUP-1002,Gupta Electricals & Components,01-02-2026,18-03-2026,581178.98,0.00,,45,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00057,SUP-1005,Arora Polymers & Plastics,17-02-2026,19-03-2026,92916.54,46316.69,07-04-2026,30,Yes,medium,partially_paid,Polymer injection moulded parts - PO#534
+AP/26/00476,SUP-2011,Bosch Limited,30-11-2025,29-01-2026,2021465.78,2021465.78,22-01-2026,60,No,,paid,Petroleum products & industrial lubricants
+AP/26/00125,SUP-1010,Kumar Metal & Alloy Works,17-12-2025,16-01-2026,178620.26,0.00,,,Yes,micro,overdue,Milled aluminium housings
+AP/26/00441,SUP-2007,JSW Steel Limited,10-02-2026,11-04-2026,1773820.88,1773820.88,29-04-2026,60,No,,paid,Automotive OEM components per annual contract
+AP/26/00345,SUP-1022,Tiwari Insulation Materials,18-10-2025,02-12-2025,232026.94,232026.94,23-01-2026,45,Yes,medium,paid,Chemical treatment consumables - Monthly
+AP/26/00438,SUP-2007,JSW Steel Limited,15-01-2026,16-03-2026,2293575.37,2293575.37,10-03-2026,60,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00453,SUP-2009,Siemens India Limited,22-01-2026,23-03-2026,4111974.64,4111974.64,16-04-2026,60,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00431,SUP-2006,Hindustan Petroleum Corp Ltd,19-10-2025,18-11-2025,3617338.45,3617338.45,12-11-2025,30,No,,paid,Petroleum products & industrial lubricants
+AP/26/00387,SUP-2003,Mahindra & Mahindra Ltd,14-09-2025,29-10-2025,2075470.23,1360637.18,12-11-2025,45,No,,partially_paid,Bearing & power transmission components
+AP/26/00321,SUP-1021,Rathi Paint & Surface Coatings,25-11-2025,25-12-2025,272511.99,0.00,,30,Yes,small,overdue,Hydraulic cylinders & fittings
+AP/26/00185,SUP-1013,Nair Hydraulics & Pneumatics,10-09-2025,10-10-2025,522392.35,522392.35,09-10-2025,30,Yes,small,paid,Powder coated enclosures per spec
+AP/26/00375,SUP-2002,Reliance Industries Ltd,12-02-2026,13-05-2026,3800114.42,3800114.42,09-05-2026,90,No,,paid,Bearing & power transmission components
+AP/26/00294,SUP-1019,Bhatt Precision Components,06-11-2025,21-12-2025,363074.02,0.00,,45,Yes,small,overdue,Electronic control panels - Order 405
+AP/26/00250,SUP-1016,Pillai Electronics Assembly,08-12-2025,07-01-2026,98968.98,98968.98,08-02-2026,30,Yes,micro,paid,Milled aluminium housings
+AP/26/00214,SUP-1015,Mishra Casting & Forging Works,27-09-2025,11-11-2025,377202.97,191884.94,29-11-2025,45,Yes,small,partially_paid,Industrial rubber gaskets & seals - Q210 supply
+AP/26/00183,SUP-1013,Nair Hydraulics & Pneumatics,20-12-2025,19-01-2026,456961.98,94476.81,21-02-2026,30,Yes,small,partially_paid,Pneumatic actuators & valves
+AP/26/00323,SUP-1021,Rathi Paint & Surface Coatings,13-01-2026,12-02-2026,445874.59,178593.15,01-03-2026,30,Yes,small,partially_paid,Industrial springs & pressings lot
+AP/26/00338,SUP-1021,Rathi Paint & Surface Coatings,29-09-2025,29-10-2025,37878.23,37878.23,25-10-2025,30,Yes,small,paid,Industrial rubber gaskets & seals - Q271 supply
+AP/26/00344,SUP-1022,Tiwari Insulation Materials,25-01-2026,11-03-2026,179968.39,0.00,,45,Yes,medium,overdue,Industrial packaging materials - Bulk
+AP/26/00137,SUP-1010,Kumar Metal & Alloy Works,16-10-2025,15-11-2025,134036.76,0.00,,,Yes,micro,overdue,Precision ground shafts and pins
+AP/26/00091,SUP-1007,Joshi Engineering Solutions,27-09-2025,11-11-2025,466113.58,251282.31,21-12-2025,45,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00110,SUP-1008,Agarwal Electrical Systems,17-01-2026,16-02-2026,58740.17,27213.64,20-03-2026,30,Yes,micro,partially_paid,Sheet metal assemblies - Lot 910
+AP/26/00061,SUP-1005,Arora Polymers & Plastics,11-01-2026,10-02-2026,1152250.79,1152250.79,05-02-2026,30,Yes,medium,paid,Polymer injection moulded parts - PO#959
+AP/26/00340,SUP-1022,Tiwari Insulation Materials,06-11-2025,21-12-2025,350313.51,350313.51,18-12-2025,45,Yes,medium,paid,Chemical treatment consumables - Monthly
+AP/26/00195,SUP-1014,Verma Welding Consumables Pvt Ltd,22-02-2026,24-03-2026,249444.03,103288.50,28-03-2026,30,Yes,micro,partially_paid,Precision ground shafts and pins
+AP/26/00019,SUP-1002,Gupta Electricals & Components,28-11-2025,12-01-2026,345756.85,0.00,,45,Yes,small,overdue,Die cast aluminium housings - Batch 424
+AP/26/00202,SUP-1014,Verma Welding Consumables Pvt Ltd,14-10-2025,13-11-2025,68922.04,28030.90,29-11-2025,30,Yes,micro,partially_paid,Sheet metal assemblies - Lot 824
+AP/26/00106,SUP-1008,Agarwal Electrical Systems,13-10-2025,12-11-2025,29953.83,13815.35,02-12-2025,30,Yes,micro,partially_paid,Milled aluminium housings
+AP/26/00413,SUP-2005,Bharat Heavy Electricals Ltd,18-02-2026,04-04-2026,1209207.38,647284.22,04-04-2026,45,No,,partially_paid,Electrical switchgear & transformer oil
+AP/26/00416,SUP-2005,Bharat Heavy Electricals Ltd,23-12-2025,06-02-2026,2924579.87,0.00,,45,No,,overdue,Capital equipment spares & AMC charges
+AP/26/00309,SUP-1020,Kulkarni Springs & Pressings,18-10-2025,17-11-2025,217365.33,0.00,,30,Yes,micro,overdue,CNC machined components as per PO
+AP/26/00217,SUP-1015,Mishra Casting & Forging Works,12-02-2026,29-03-2026,278464.78,0.00,,45,Yes,small,pending,Electronic control panels - Order 874
+AP/26/00268,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,18-10-2025,16-01-2026,114616.06,114616.06,15-01-2026,90,Yes,small,paid,Electronic control panels - Order 482
+AP/26/00060,SUP-1005,Arora Polymers & Plastics,10-02-2026,12-03-2026,312494.16,312494.16,08-03-2026,30,Yes,medium,paid,Industrial packaging materials - Bulk
+AP/26/00288,SUP-1019,Bhatt Precision Components,07-11-2025,22-12-2025,491790.50,0.00,,45,Yes,small,overdue,Industrial rubber gaskets & seals - Q115 supply
+AP/26/00493,SUP-2013,Cummins India Ltd,29-10-2025,13-12-2025,4462406.05,2448628.64,21-12-2025,45,No,,partially_paid,Automotive OEM components per annual contract
+AP/26/00020,SUP-1002,Gupta Electricals & Components,22-11-2025,06-01-2026,552166.73,552166.73,01-01-2026,45,Yes,small,paid,Die cast aluminium housings - Batch 563
+AP/26/00352,SUP-1023,Dubey Wire & Cable Industries,14-12-2025,13-01-2026,168882.07,0.00,,30,Yes,micro,overdue,Turned parts per drawing #DWG-753
+AP/26/00138,SUP-1010,Kumar Metal & Alloy Works,17-01-2026,16-02-2026,85985.45,0.00,,,Yes,micro,overdue,Jig & fixture components
+AP/26/00219,SUP-1015,Mishra Casting & Forging Works,03-12-2025,17-01-2026,204187.74,204187.74,31-03-2026,45,Yes,small,paid,Industrial rubber gaskets & seals - Q721 supply
+AP/26/00504,SUP-2014,SKF India Limited,10-11-2025,09-01-2026,2709580.15,2709580.15,11-01-2026,60,No,,paid,Petroleum products & industrial lubricants
+AP/26/00394,SUP-2004,Larsen & Toubro Limited,08-11-2025,07-01-2026,2518858.61,2518858.61,29-12-2025,60,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00391,SUP-2003,Mahindra & Mahindra Ltd,11-11-2025,26-12-2025,4194112.92,4194112.92,31-12-2025,45,No,,paid,Bearing & power transmission components
+AP/26/00003,SUP-1001,Rajesh Precision Tools Pvt Ltd,20-10-2025,19-11-2025,114744.99,114744.99,19-11-2025,30,Yes,micro,paid,Custom fabricated brackets - Batch 394
+AP/26/00471,SUP-2011,Bosch Limited,25-02-2026,26-04-2026,4017105.14,0.00,,60,No,,pending,Heavy engineering castings & forgings
+AP/26/00374,SUP-2002,Reliance Industries Ltd,13-12-2025,13-03-2026,1909550.23,1909550.23,25-03-2026,90,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00101,SUP-1007,Joshi Engineering Solutions,02-10-2025,16-11-2025,406254.53,406254.53,31-12-2025,45,Yes,small,paid,Industrial springs & pressings lot
+AP/26/00047,SUP-1004,Sri Lakshmi Industrial Supplies,16-03-2026,15-05-2026,261694.34,0.00,,60,Yes,small,pending,Die cast aluminium housings - Batch 524
+AP/26/00097,SUP-1007,Joshi Engineering Solutions,17-03-2026,01-05-2026,589987.17,589987.17,30-04-2026,45,Yes,small,paid,Industrial springs & pressings lot
+AP/26/00046,SUP-1004,Sri Lakshmi Industrial Supplies,03-03-2026,02-05-2026,192345.79,192345.79,09-06-2026,60,Yes,small,paid,Die cast aluminium housings - Batch 164
+AP/26/00335,SUP-1021,Rathi Paint & Surface Coatings,01-02-2026,03-03-2026,44487.16,0.00,,30,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00126,SUP-1010,Kumar Metal & Alloy Works,15-10-2025,30-10-2025,124597.23,0.00,,,Yes,micro,overdue,Custom fabricated brackets - Batch 874
+AP/26/00366,SUP-2001,Tata Steel Limited,10-09-2025,09-11-2025,3379307.32,3379307.32,30-11-2025,60,No,,paid,Automotive OEM components per annual contract
+AP/26/00292,SUP-1019,Bhatt Precision Components,13-03-2026,27-04-2026,475923.56,0.00,,45,Yes,small,pending,PCB assemblies & wiring harness
+AP/26/00073,SUP-1006,Bhagwati Auto Components,11-02-2026,13-03-2026,185283.37,65814.49,19-04-2026,,Yes,micro,partially_paid,Sheet metal assemblies - Lot 266
+AP/26/00192,SUP-1014,Verma Welding Consumables Pvt Ltd,18-01-2026,17-02-2026,44154.35,27702.83,23-02-2026,30,Yes,micro,partially_paid,Jig & fixture components
+AP/26/00143,SUP-1010,Kumar Metal & Alloy Works,16-10-2025,31-10-2025,218423.17,0.00,,,Yes,micro,overdue,Custom fabricated brackets - Batch 676
+AP/26/00029,SUP-1002,Gupta Electricals & Components,20-02-2026,06-04-2026,248875.09,248875.09,04-04-2026,45,Yes,small,paid,PCB assemblies & wiring harness
+AP/26/00289,SUP-1019,Bhatt Precision Components,04-11-2025,19-12-2025,445175.74,0.00,,45,Yes,small,overdue,Industrial rubber gaskets & seals - Q821 supply
+AP/26/00507,SUP-2014,SKF India Limited,10-01-2026,11-03-2026,4919268.70,4919268.70,04-03-2026,60,No,,paid,Petroleum products & industrial lubricants
+AP/26/00295,SUP-1019,Bhatt Precision Components,16-02-2026,02-04-2026,204866.24,95874.07,08-04-2026,45,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00299,SUP-1019,Bhatt Precision Components,24-09-2025,08-11-2025,516871.49,131594.59,14-11-2025,45,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00164,SUP-1012,Sai Chemicals & Solvents,28-09-2025,28-10-2025,712689.30,0.00,,30,Yes,medium,overdue,Chemical treatment consumables - Monthly
+AP/26/00502,SUP-2013,Cummins India Ltd,27-01-2026,13-03-2026,282567.37,282567.37,11-03-2026,45,No,,paid,Heavy engineering castings & forgings
+AP/26/00068,SUP-1006,Bhagwati Auto Components,10-10-2025,09-11-2025,107350.25,0.00,,,Yes,micro,overdue,Welded sub-assemblies per BOM
+AP/26/00087,SUP-1007,Joshi Engineering Solutions,10-01-2026,24-02-2026,214159.76,214159.76,22-02-2026,45,Yes,small,paid,Industrial springs & pressings lot
+AP/26/00240,SUP-1016,Pillai Electronics Assembly,14-11-2025,14-12-2025,174970.56,174970.56,09-12-2025,30,Yes,micro,paid,Welded sub-assemblies per BOM
+AP/26/00064,SUP-1005,Arora Polymers & Plastics,17-03-2026,16-04-2026,772036.88,772036.88,16-04-2026,30,Yes,medium,paid,Chemical treatment consumables - Monthly
+AP/26/00483,SUP-2012,Havells India Ltd,16-10-2025,15-11-2025,1792756.40,1792756.40,15-11-2025,30,No,,paid,Electrical switchgear & transformer oil
+AP/26/00069,SUP-1006,Bhagwati Auto Components,06-11-2025,21-11-2025,177968.36,0.00,,,Yes,micro,overdue,Custom fabricated brackets - Batch 406
+AP/26/00232,SUP-1016,Pillai Electronics Assembly,08-10-2025,07-11-2025,231085.18,0.00,,30,Yes,micro,overdue,Turned parts per drawing #DWG-374
+AP/26/00407,SUP-2005,Bharat Heavy Electricals Ltd,25-11-2025,09-01-2026,535876.32,535876.32,05-01-2026,45,No,,paid,Bearing & power transmission components
+AP/26/00396,SUP-2004,Larsen & Toubro Limited,14-11-2025,13-01-2026,1760463.80,1760463.80,08-01-2026,60,No,,paid,Bearing & power transmission components
+AP/26/00428,SUP-2006,Hindustan Petroleum Corp Ltd,02-02-2026,04-03-2026,3539844.14,3539844.14,28-02-2026,30,No,,paid,Capital equipment spares & AMC charges
+AP/26/00310,SUP-1020,Kulkarni Springs & Pressings,21-02-2026,23-03-2026,86596.78,86596.78,20-03-2026,30,Yes,micro,paid,Custom fabricated brackets - Batch 142
+AP/26/00255,SUP-1016,Pillai Electronics Assembly,16-09-2025,16-10-2025,222312.56,222312.56,01-11-2025,30,Yes,micro,paid,CNC machined components as per PO
+AP/26/00111,SUP-1008,Agarwal Electrical Systems,09-01-2026,08-02-2026,195739.93,0.00,,30,Yes,micro,overdue,Turned parts per drawing #DWG-672
+AP/26/00397,SUP-2004,Larsen & Toubro Limited,04-01-2026,05-03-2026,3241627.60,3241627.60,23-02-2026,60,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00462,SUP-2010,ABB India Limited,24-12-2025,07-02-2026,1406781.54,1406781.54,06-02-2026,45,No,,paid,Bearing & power transmission components
+AP/26/00059,SUP-1005,Arora Polymers & Plastics,15-02-2026,17-03-2026,260987.18,260987.18,12-03-2026,30,Yes,medium,paid,Industrial packaging materials - Bulk
+AP/26/00331,SUP-1021,Rathi Paint & Surface Coatings,15-02-2026,17-03-2026,500198.83,500198.83,22-03-2026,30,Yes,small,paid,Industrial springs & pressings lot
+AP/26/00467,SUP-2011,Bosch Limited,30-12-2025,28-02-2026,136999.23,98665.34,03-03-2026,60,No,,partially_paid,Bearing & power transmission components
+AP/26/00399,SUP-2004,Larsen & Toubro Limited,31-01-2026,01-04-2026,1380497.72,1380497.72,24-03-2026,60,No,,paid,Heavy engineering castings & forgings
+AP/26/00354,SUP-1023,Dubey Wire & Cable Industries,03-01-2026,02-02-2026,49404.77,49404.77,20-03-2026,30,Yes,micro,paid,Milled aluminium housings
+AP/26/00388,SUP-2003,Mahindra & Mahindra Ltd,27-11-2025,11-01-2026,2704202.93,0.00,,45,No,,overdue,Automotive OEM components per annual contract
+AP/26/00007,SUP-1001,Rajesh Precision Tools Pvt Ltd,02-11-2025,02-12-2025,78693.49,50225.13,07-01-2026,30,Yes,micro,partially_paid,Precision ground shafts and pins
+AP/26/00256,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,23-12-2025,23-03-2026,424834.65,424834.65,20-03-2026,90,Yes,small,paid,Pneumatic actuators & valves
+AP/26/00023,SUP-1002,Gupta Electricals & Components,16-03-2026,30-04-2026,77996.96,36915.59,05-05-2026,45,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00116,SUP-1009,Sundar Packaging Industries,04-02-2026,06-03-2026,132278.94,132278.94,05-03-2026,30,Yes,small,paid,Industrial rubber gaskets & seals - Q523 supply
+AP/26/00166,SUP-1012,Sai Chemicals & Solvents,22-11-2025,22-12-2025,728394.22,728394.22,19-12-2025,30,Yes,medium,paid,Chemical treatment consumables - Monthly
+AP/26/00227,SUP-1015,Mishra Casting & Forging Works,31-10-2025,15-12-2025,67065.74,67065.74,11-12-2025,45,Yes,small,paid,PCB assemblies & wiring harness
+AP/26/00284,SUP-1018,Saxena CNC Tooling Solutions,01-12-2025,16-12-2025,103654.62,0.00,,,Yes,micro,overdue,Custom fabricated brackets - Batch 504
+AP/26/00011,SUP-1001,Rajesh Precision Tools Pvt Ltd,21-01-2026,20-02-2026,193329.97,0.00,,30,Yes,micro,overdue,Custom fabricated brackets - Batch 834
+AP/26/00050,SUP-1004,Sri Lakshmi Industrial Supplies,23-11-2025,22-01-2026,374171.66,0.00,,60,Yes,small,overdue,Electronic control panels - Order 513
+AP/26/00058,SUP-1005,Arora Polymers & Plastics,22-10-2025,21-11-2025,195242.48,75869.49,17-12-2025,30,Yes,medium,partially_paid,Chemical treatment consumables - Monthly
+AP/26/00474,SUP-2011,Bosch Limited,26-02-2026,27-04-2026,783463.59,783463.59,03-05-2026,60,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00032,SUP-1002,Gupta Electricals & Components,19-10-2025,03-12-2025,323777.89,119218.07,10-01-2026,45,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00363,SUP-2001,Tata Steel Limited,14-09-2025,13-11-2025,4527166.42,4527166.42,10-12-2025,60,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00390,SUP-2003,Mahindra & Mahindra Ltd,10-02-2026,27-03-2026,4968043.99,0.00,,45,No,,overdue,Mild steel plates & sections - Quarterly indent
+AP/26/00349,SUP-1023,Dubey Wire & Cable Industries,08-12-2025,07-01-2026,131447.61,0.00,,30,Yes,micro,overdue,Turned parts per drawing #DWG-999
+AP/26/00528,SUP-2015,Thermax Limited,21-09-2025,21-10-2025,1688782.79,1688782.79,16-10-2025,30,No,,paid,Bearing & power transmission components
+AP/26/00514,SUP-2014,SKF India Limited,12-12-2025,10-02-2026,1979229.85,1979229.85,08-02-2026,60,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00169,SUP-1012,Sai Chemicals & Solvents,12-12-2025,11-01-2026,778552.31,778552.31,07-01-2026,30,Yes,medium,paid,Polymer injection moulded parts - PO#198
+AP/26/00197,SUP-1014,Verma Welding Consumables Pvt Ltd,11-02-2026,13-03-2026,153806.84,0.00,,30,Yes,micro,overdue,Precision ground shafts and pins
+AP/26/00419,SUP-2006,Hindustan Petroleum Corp Ltd,19-11-2025,19-12-2025,465600.99,465600.99,17-12-2025,30,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00525,SUP-2015,Thermax Limited,16-02-2026,18-03-2026,4394957.14,4394957.14,15-03-2026,30,No,,paid,Bearing & power transmission components
+AP/26/00172,SUP-1012,Sai Chemicals & Solvents,11-09-2025,11-10-2025,765363.32,482180.79,21-10-2025,30,Yes,medium,partially_paid,Polymer injection moulded parts - PO#727
+AP/26/00463,SUP-2010,ABB India Limited,13-11-2025,28-12-2025,2433031.23,2433031.23,18-12-2025,45,No,,paid,Capital equipment spares & AMC charges
+AP/26/00233,SUP-1016,Pillai Electronics Assembly,23-11-2025,23-12-2025,103008.97,0.00,,30,Yes,micro,overdue,Custom fabricated brackets - Batch 312
+AP/26/00243,SUP-1016,Pillai Electronics Assembly,20-11-2025,20-12-2025,233870.56,233870.56,16-12-2025,30,Yes,micro,paid,CNC machined components as per PO
+AP/26/00478,SUP-2012,Havells India Ltd,28-09-2025,28-10-2025,1466857.77,0.00,,30,No,,overdue,Capital equipment spares & AMC charges
+AP/26/00154,SUP-1011,Deshmukh Rubber Industries,02-11-2025,17-12-2025,250963.55,250963.55,17-12-2025,45,Yes,small,paid,Electronic control panels - Order 523
+AP/26/00065,SUP-1005,Arora Polymers & Plastics,09-11-2025,09-12-2025,1041423.19,0.00,,30,Yes,medium,overdue,Industrial packaging materials - Bulk
+AP/26/00187,SUP-1013,Nair Hydraulics & Pneumatics,12-03-2026,11-04-2026,338574.92,0.00,,30,Yes,small,pending,Hydraulic cylinders & fittings
+AP/26/00051,SUP-1004,Sri Lakshmi Industrial Supplies,29-12-2025,27-02-2026,374476.75,0.00,,60,Yes,small,overdue,Pneumatic actuators & valves
+AP/26/00147,SUP-1011,Deshmukh Rubber Industries,26-02-2026,12-04-2026,171826.26,0.00,,45,Yes,small,pending,Electronic control panels - Order 323
+AP/26/00196,SUP-1014,Verma Welding Consumables Pvt Ltd,31-10-2025,30-11-2025,134802.50,50556.08,10-12-2025,30,Yes,micro,partially_paid,CNC machined components as per PO
+AP/26/00236,SUP-1016,Pillai Electronics Assembly,28-11-2025,28-12-2025,29798.56,29798.56,27-12-2025,30,Yes,micro,paid,CNC machined components as per PO
+AP/26/00385,SUP-2003,Mahindra & Mahindra Ltd,30-11-2025,14-01-2026,3111346.18,3111346.18,11-01-2026,45,No,,paid,Petroleum products & industrial lubricants
+AP/26/00455,SUP-2010,ABB India Limited,12-03-2026,26-04-2026,4708247.26,0.00,,45,No,,pending,Mild steel plates & sections - Quarterly indent
+AP/26/00160,SUP-1011,Deshmukh Rubber Industries,30-10-2025,14-12-2025,91337.85,91337.85,11-12-2025,45,Yes,small,paid,Hydraulic cylinders & fittings
+AP/26/00526,SUP-2015,Thermax Limited,14-09-2025,14-10-2025,2412965.51,2412965.51,06-10-2025,30,No,,paid,Capital equipment spares & AMC charges
+AP/26/00489,SUP-2012,Havells India Ltd,25-02-2026,27-03-2026,3650823.90,3650823.90,27-03-2026,30,No,,paid,Electrical switchgear & transformer oil
+AP/26/00080,SUP-1006,Bhagwati Auto Components,11-01-2026,26-01-2026,157303.03,157303.03,04-04-2026,,Yes,micro,paid,Custom fabricated brackets - Batch 668
+AP/26/00141,SUP-1010,Kumar Metal & Alloy Works,15-03-2026,30-03-2026,128747.11,128747.11,08-04-2026,,Yes,micro,paid,Milled aluminium housings
+AP/26/00270,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,23-09-2025,22-12-2025,329213.95,0.00,,90,Yes,small,overdue,Pneumatic actuators & valves
+AP/26/00205,SUP-1014,Verma Welding Consumables Pvt Ltd,17-10-2025,16-11-2025,151975.39,0.00,,30,Yes,micro,overdue,Custom fabricated brackets - Batch 776
+AP/26/00151,SUP-1011,Deshmukh Rubber Industries,24-02-2026,10-04-2026,121796.54,121796.54,09-04-2026,45,Yes,small,paid,Electronic control panels - Order 393
+AP/26/00329,SUP-1021,Rathi Paint & Surface Coatings,13-01-2026,12-02-2026,189640.22,0.00,,30,Yes,small,overdue,Die cast aluminium housings - Batch 926
+AP/26/00127,SUP-1010,Kumar Metal & Alloy Works,27-02-2026,14-03-2026,93652.37,93652.37,13-03-2026,,Yes,micro,paid,Jig & fixture components
+AP/26/00022,SUP-1002,Gupta Electricals & Components,04-10-2025,18-11-2025,178218.03,44257.11,14-12-2025,45,Yes,small,partially_paid,Industrial rubber gaskets & seals - Q560 supply
+AP/26/00031,SUP-1002,Gupta Electricals & Components,12-11-2025,27-12-2025,570549.74,0.00,,45,Yes,small,overdue,Industrial rubber gaskets & seals - Q257 supply
+AP/26/00074,SUP-1006,Bhagwati Auto Components,04-01-2026,03-02-2026,79460.63,79460.63,29-03-2026,,Yes,micro,paid,Sheet metal assemblies - Lot 864
+AP/26/00162,SUP-1011,Deshmukh Rubber Industries,18-12-2025,01-02-2026,72852.24,0.00,,45,Yes,small,overdue,Electronic control panels - Order 765
+AP/26/00200,SUP-1014,Verma Welding Consumables Pvt Ltd,30-11-2025,30-12-2025,215598.12,0.00,,30,Yes,micro,overdue,Precision ground shafts and pins
+AP/26/00402,SUP-2004,Larsen & Toubro Limited,04-02-2026,05-04-2026,4184072.49,4184072.49,12-04-2026,60,No,,paid,Bearing & power transmission components
+AP/26/00300,SUP-1020,Kulkarni Springs & Pressings,07-12-2025,06-01-2026,22732.04,22732.04,05-01-2026,30,Yes,micro,paid,Turned parts per drawing #DWG-318
+AP/26/00429,SUP-2006,Hindustan Petroleum Corp Ltd,04-02-2026,06-03-2026,831168.69,438828.63,07-03-2026,30,No,,partially_paid,Automotive OEM components per annual contract
+AP/26/00054,SUP-1004,Sri Lakshmi Industrial Supplies,23-09-2025,22-11-2025,215065.13,0.00,,60,Yes,small,overdue,Hydraulic cylinders & fittings
+AP/26/00290,SUP-1019,Bhatt Precision Components,16-09-2025,31-10-2025,203321.43,0.00,,45,Yes,small,overdue,Electronic control panels - Order 864
+AP/26/00034,SUP-1003,Patel Fabrication Works,05-10-2025,20-10-2025,139833.48,80733.54,01-11-2025,,Yes,micro,partially_paid,Milled aluminium housings
+AP/26/00017,SUP-1002,Gupta Electricals & Components,06-11-2025,21-12-2025,558000.68,558000.68,20-01-2026,45,Yes,small,paid,Die cast aluminium housings - Batch 809
+AP/26/00508,SUP-2014,SKF India Limited,18-01-2026,19-03-2026,2534383.80,2534383.80,11-03-2026,60,No,,paid,Heavy engineering castings & forgings
+AP/26/00454,SUP-2009,Siemens India Limited,18-11-2025,17-01-2026,282106.45,282106.45,16-01-2026,60,No,,paid,Heavy engineering castings & forgings
+AP/26/00174,SUP-1012,Sai Chemicals & Solvents,06-12-2025,05-01-2026,308576.01,0.00,,30,Yes,medium,overdue,Thermal insulation materials Q269 order
+AP/26/00120,SUP-1009,Sundar Packaging Industries,09-11-2025,09-12-2025,48156.97,48156.97,09-12-2025,30,Yes,small,paid,PCB assemblies & wiring harness
+AP/26/00452,SUP-2009,Siemens India Limited,09-11-2025,08-01-2026,3728937.33,3728937.33,27-01-2026,60,No,,paid,Capital equipment spares & AMC charges
+AP/26/00346,SUP-1022,Tiwari Insulation Materials,04-01-2026,18-02-2026,394379.11,0.00,,45,Yes,medium,overdue,Industrial packaging materials - Bulk
+AP/26/00177,SUP-1012,Sai Chemicals & Solvents,11-01-2026,10-02-2026,449779.49,0.00,,30,Yes,medium,overdue,Chemical treatment consumables - Monthly
+AP/26/00012,SUP-1002,Gupta Electricals & Components,19-11-2025,03-01-2026,106887.22,0.00,,45,Yes,small,overdue,Hydraulic cylinders & fittings
+AP/26/00269,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,24-11-2025,22-02-2026,43905.73,43905.73,18-02-2026,90,Yes,small,paid,Industrial springs & pressings lot
+AP/26/00495,SUP-2013,Cummins India Ltd,13-02-2026,30-03-2026,906436.17,906436.17,29-04-2026,45,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00490,SUP-2013,Cummins India Ltd,29-09-2025,13-11-2025,2917455.24,2917455.24,02-12-2025,45,No,,paid,Petroleum products & industrial lubricants
+AP/26/00368,SUP-2001,Tata Steel Limited,10-10-2025,09-12-2025,3090506.81,2700278.35,11-12-2025,60,No,,partially_paid,Mild steel plates & sections - Quarterly indent
+AP/26/00370,SUP-2001,Tata Steel Limited,22-01-2026,23-03-2026,2479782.73,2479782.73,13-03-2026,60,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00146,SUP-1011,Deshmukh Rubber Industries,18-03-2026,02-05-2026,165481.54,165481.54,01-05-2026,45,Yes,small,paid,Die cast aluminium housings - Batch 483
+AP/26/00393,SUP-2003,Mahindra & Mahindra Ltd,13-10-2025,27-11-2025,4038811.01,4038811.01,26-11-2025,45,No,,paid,Heavy engineering castings & forgings
+AP/26/00016,SUP-1002,Gupta Electricals & Components,09-02-2026,26-03-2026,401994.56,0.00,,45,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00435,SUP-2007,JSW Steel Limited,14-09-2025,13-11-2025,4379149.43,4379149.43,20-11-2025,60,No,,paid,Automotive OEM components per annual contract
+AP/26/00150,SUP-1011,Deshmukh Rubber Industries,30-01-2026,16-03-2026,398998.80,0.00,,45,Yes,small,overdue,Electronic control panels - Order 398
+AP/26/00445,SUP-2008,Godrej & Boyce Mfg Co Ltd,07-02-2026,24-03-2026,2518555.69,0.00,,45,No,,overdue,Industrial boiler chemicals & consumables
+AP/26/00018,SUP-1002,Gupta Electricals & Components,15-11-2025,30-12-2025,293327.26,0.00,,45,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00066,SUP-1005,Arora Polymers & Plastics,17-12-2025,16-01-2026,1143649.89,1143649.89,14-01-2026,30,Yes,medium,paid,Thermal insulation materials Q981 order
+AP/26/00336,SUP-1021,Rathi Paint & Surface Coatings,24-10-2025,23-11-2025,216033.91,0.00,,30,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00297,SUP-1019,Bhatt Precision Components,16-12-2025,30-01-2026,535998.43,360660.97,01-03-2026,45,Yes,small,partially_paid,Industrial rubber gaskets & seals - Q579 supply
+AP/26/00410,SUP-2005,Bharat Heavy Electricals Ltd,06-12-2025,20-01-2026,2082477.56,1651767.44,29-01-2026,45,No,,partially_paid,Heavy engineering castings & forgings
+AP/26/00302,SUP-1020,Kulkarni Springs & Pressings,24-12-2025,23-01-2026,57513.08,57513.08,20-01-2026,30,Yes,micro,paid,Precision ground shafts and pins
+AP/26/00484,SUP-2012,Havells India Ltd,18-10-2025,17-11-2025,3910837.44,3910837.44,13-11-2025,30,No,,paid,Electrical switchgear & transformer oil
+AP/26/00280,SUP-1018,Saxena CNC Tooling Solutions,30-01-2026,14-02-2026,55587.87,0.00,,,Yes,micro,overdue,Milled aluminium housings
+AP/26/00246,SUP-1016,Pillai Electronics Assembly,22-11-2025,22-12-2025,239131.35,239131.35,22-12-2025,30,Yes,micro,paid,Milled aluminium housings
+AP/26/00135,SUP-1010,Kumar Metal & Alloy Works,17-11-2025,02-12-2025,138869.43,0.00,,,Yes,micro,overdue,Turned parts per drawing #DWG-127
+AP/26/00421,SUP-2006,Hindustan Petroleum Corp Ltd,27-02-2026,29-03-2026,4127624.84,4127624.84,27-04-2026,30,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00035,SUP-1003,Patel Fabrication Works,27-09-2025,12-10-2025,220431.69,0.00,,,Yes,micro,overdue,Sheet metal assemblies - Lot 904
+AP/26/00013,SUP-1002,Gupta Electricals & Components,21-09-2025,05-11-2025,287657.90,191215.51,09-12-2025,45,Yes,small,partially_paid,Die cast aluminium housings - Batch 673
+AP/26/00251,SUP-1016,Pillai Electronics Assembly,28-12-2025,27-01-2026,244781.25,244781.25,22-01-2026,30,Yes,micro,paid,Welded sub-assemblies per BOM
+AP/26/00002,SUP-1001,Rajesh Precision Tools Pvt Ltd,11-10-2025,10-11-2025,142687.28,0.00,,30,Yes,micro,overdue,Milled aluminium housings
+AP/26/00499,SUP-2013,Cummins India Ltd,11-10-2025,25-11-2025,3951459.48,3951459.48,24-11-2025,45,No,,paid,Industrial boiler chemicals & consumables
+AP/26/00053,SUP-1004,Sri Lakshmi Industrial Supplies,04-01-2026,05-03-2026,569561.58,569561.58,04-05-2026,60,Yes,small,paid,Electronic control panels - Order 388
+AP/26/00465,SUP-2010,ABB India Limited,31-12-2025,14-02-2026,1359046.68,1359046.68,13-02-2026,45,No,,paid,Petroleum products & industrial lubricants
+AP/26/00324,SUP-1021,Rathi Paint & Surface Coatings,21-01-2026,20-02-2026,377578.15,377578.15,03-03-2026,30,Yes,small,paid,PCB assemblies & wiring harness
+AP/26/00437,SUP-2007,JSW Steel Limited,09-10-2025,08-12-2025,1034068.28,1034068.28,15-12-2025,60,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00033,SUP-1003,Patel Fabrication Works,30-10-2025,14-11-2025,104596.01,0.00,,,Yes,micro,overdue,Turned parts per drawing #DWG-146
+AP/26/00320,SUP-1021,Rathi Paint & Surface Coatings,10-12-2025,09-01-2026,323776.18,323776.18,02-02-2026,30,Yes,small,paid,Die cast aluminium housings - Batch 243
+AP/26/00479,SUP-2012,Havells India Ltd,10-09-2025,10-10-2025,4676561.77,4676561.77,03-10-2025,30,No,,paid,Electrical switchgear & transformer oil
+AP/26/00158,SUP-1011,Deshmukh Rubber Industries,07-11-2025,22-12-2025,472901.96,0.00,,45,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00506,SUP-2014,SKF India Limited,14-10-2025,13-12-2025,4713820.98,4713820.98,07-12-2025,60,No,,paid,Bearing & power transmission components
+AP/26/00327,SUP-1021,Rathi Paint & Surface Coatings,20-11-2025,20-12-2025,557738.18,0.00,,30,Yes,small,overdue,Industrial rubber gaskets & seals - Q498 supply
+AP/26/00509,SUP-2014,SKF India Limited,05-10-2025,04-12-2025,4635787.36,4635787.36,30-11-2025,60,No,,paid,Bearing & power transmission components
+AP/26/00155,SUP-1011,Deshmukh Rubber Industries,11-12-2025,25-01-2026,344632.06,176198.69,04-02-2026,45,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00500,SUP-2013,Cummins India Ltd,28-02-2026,14-04-2026,4571486.07,4571486.07,13-04-2026,45,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00494,SUP-2013,Cummins India Ltd,01-10-2025,15-11-2025,3747629.91,3206695.07,23-11-2025,45,No,,partially_paid,Bearing & power transmission components
+AP/26/00446,SUP-2008,Godrej & Boyce Mfg Co Ltd,29-10-2025,13-12-2025,3892044.74,3892044.74,12-12-2025,45,No,,paid,Mild steel plates & sections - Quarterly indent
+AP/26/00303,SUP-1020,Kulkarni Springs & Pressings,08-12-2025,07-01-2026,218798.49,0.00,,30,Yes,micro,overdue,CNC machined components as per PO
+AP/26/00469,SUP-2011,Bosch Limited,11-11-2025,10-01-2026,3566567.65,3566567.65,31-12-2025,60,No,,paid,Capital equipment spares & AMC charges
+AP/26/00383,SUP-2002,Reliance Industries Ltd,25-10-2025,23-01-2026,454336.51,454336.51,19-01-2026,90,No,,paid,Petroleum products & industrial lubricants
+AP/26/00113,SUP-1008,Agarwal Electrical Systems,15-10-2025,14-11-2025,141416.73,0.00,,30,Yes,micro,overdue,Turned parts per drawing #DWG-234
+AP/26/00275,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,26-11-2025,24-02-2026,579364.18,0.00,,90,Yes,small,overdue,Industrial springs & pressings lot
+AP/26/00317,SUP-1020,Kulkarni Springs & Pressings,14-02-2026,16-03-2026,52715.97,0.00,,30,Yes,micro,overdue,Jig & fixture components
+AP/26/00030,SUP-1002,Gupta Electricals & Components,13-03-2026,27-04-2026,39709.82,21498.79,25-05-2026,45,Yes,small,partially_paid,PCB assemblies & wiring harness
+AP/26/00281,SUP-1018,Saxena CNC Tooling Solutions,22-02-2026,09-03-2026,131952.91,131952.91,29-03-2026,,Yes,micro,paid,Turned parts per drawing #DWG-932
+AP/26/00194,SUP-1014,Verma Welding Consumables Pvt Ltd,03-03-2026,02-04-2026,114913.77,114913.77,30-03-2026,30,Yes,micro,paid,Welded sub-assemblies per BOM
+AP/26/00056,SUP-1004,Sri Lakshmi Industrial Supplies,27-10-2025,26-12-2025,57283.46,0.00,,60,Yes,small,overdue,Industrial rubber gaskets & seals - Q733 supply
+AP/26/00501,SUP-2013,Cummins India Ltd,26-12-2025,09-02-2026,4095033.14,4095033.14,01-02-2026,45,No,,paid,Heavy engineering castings & forgings
+AP/26/00339,SUP-1022,Tiwari Insulation Materials,13-11-2025,28-12-2025,69421.59,69421.59,25-12-2025,45,Yes,medium,paid,Chemical treatment consumables - Monthly
+AP/26/00070,SUP-1006,Bhagwati Auto Components,14-12-2025,13-01-2026,140307.34,140307.34,08-01-2026,,Yes,micro,paid,Custom fabricated brackets - Batch 118
+AP/26/00262,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,30-10-2025,28-01-2026,99092.80,0.00,,90,Yes,small,overdue,Pneumatic actuators & valves
+AP/26/00357,SUP-1023,Dubey Wire & Cable Industries,19-03-2026,18-04-2026,249264.44,249264.44,16-04-2026,30,Yes,micro,paid,Welded sub-assemblies per BOM
+AP/26/00359,SUP-2001,Tata Steel Limited,03-11-2025,02-01-2026,1493155.11,1282266.36,02-01-2026,60,No,,partially_paid,Heavy engineering castings & forgings
+AP/26/00291,SUP-1019,Bhatt Precision Components,03-01-2026,17-02-2026,103220.45,103220.45,16-02-2026,45,Yes,small,paid,Industrial springs & pressings lot
+AP/26/00272,SUP-1017,Thakur Industrial Fasteners Pvt Ltd,17-01-2026,17-04-2026,229397.92,229397.92,16-04-2026,90,Yes,small,paid,Electronic control panels - Order 351
+AP/26/00404,SUP-2004,Larsen & Toubro Limited,10-11-2025,09-01-2026,4885854.61,3649516.64,20-01-2026,60,No,,partially_paid,Heavy engineering castings & forgings
+AP/26/00119,SUP-1009,Sundar Packaging Industries,26-09-2025,26-10-2025,454609.68,454609.68,24-10-2025,30,Yes,small,paid,Industrial rubber gaskets & seals - Q831 supply
+AP/26/00104,SUP-1007,Joshi Engineering Solutions,08-01-2026,22-02-2026,319568.90,0.00,,45,Yes,small,overdue,Die cast aluminium housings - Batch 323
+AP/26/00190,SUP-1013,Nair Hydraulics & Pneumatics,22-12-2025,21-01-2026,403854.87,164343.31,27-01-2026,30,Yes,small,partially_paid,Powder coated enclosures per spec
+AP/26/00075,SUP-1006,Bhagwati Auto Components,09-10-2025,08-11-2025,10286.62,0.00,,,Yes,micro,overdue,Welded sub-assemblies per BOM
+AP/26/00114,SUP-1009,Sundar Packaging Industries,30-09-2025,30-10-2025,522616.57,522616.57,12-12-2025,30,Yes,small,paid,Industrial rubber gaskets & seals - Q242 supply
+AP/26/00434,SUP-2007,JSW Steel Limited,10-01-2026,11-03-2026,1609775.67,1609775.67,02-03-2026,60,No,,paid,Bearing & power transmission components
+AP/26/00109,SUP-1008,Agarwal Electrical Systems,20-02-2026,22-03-2026,231972.08,0.00,,30,Yes,micro,overdue,CNC machined components as per PO

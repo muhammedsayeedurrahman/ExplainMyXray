@@ -1,0 +1,71 @@
+invoice_id,vendor_id,vendor_name,invoice_date,due_date,amount,paid_amount,payment_date,agreed_payment_days,is_msme_vendor,msme_category,status,description
+INV-0001,V001,Sharma Precision Tools Pvt Ltd,2025-10-15,2025-11-14,125000.00,125000.00,2025-11-10,30,true,micro,paid,CNC machined components - Batch 42
+INV-0002,V001,Sharma Precision Tools Pvt Ltd,2025-11-20,2025-12-20,87500.00,0.00,,30,true,micro,overdue,Precision shafts for assembly line
+INV-0003,V001,Sharma Precision Tools Pvt Ltd,2025-12-01,2025-12-31,210000.00,50000.00,2026-01-15,30,true,micro,partially_paid,Custom tooling dies - Phase 2
+INV-0004,V002,Gupta Electronics Components,2025-09-10,2025-10-25,340000.00,340000.00,2025-11-20,45,true,small,paid,PCB assemblies Q3 order
+INV-0005,V002,Gupta Electronics Components,2025-10-20,2025-12-04,175000.00,0.00,,45,true,small,overdue,Sensor modules - 500 units
+INV-0006,V002,Gupta Electronics Components,2025-11-15,2025-12-30,420000.00,0.00,,45,true,small,overdue,Control panel wiring harnesses
+INV-0007,V002,Gupta Electronics Components,2025-12-10,2026-01-24,95000.00,95000.00,2026-01-20,45,true,small,paid,Replacement capacitors bulk order
+INV-0008,V003,Patel Fabrication Works,2025-10-01,2025-10-16,68000.00,0.00,,,true,micro,overdue,Steel frame fabrication - Unit A
+INV-0009,V003,Patel Fabrication Works,2025-11-05,2025-11-20,145000.00,0.00,,,true,micro,overdue,Welded chassis assemblies
+INV-0010,V003,Patel Fabrication Works,2025-12-15,2025-12-30,92000.00,30000.00,2026-01-10,,true,micro,partially_paid,Sheet metal enclosures
+INV-0011,V004,Reddy Industrial Supplies,2025-08-20,2025-10-19,250000.00,0.00,,60,true,small,overdue,Industrial lubricants annual contract
+INV-0012,V004,Reddy Industrial Supplies,2025-09-15,2025-11-14,180000.00,180000.00,2025-12-20,60,true,small,paid,Safety equipment - PPE kits
+INV-0013,V004,Reddy Industrial Supplies,2025-11-01,2025-12-31,310000.00,0.00,,60,true,small,overdue,Hydraulic fluid and consumables
+INV-0014,V005,Mehta Polymers & Plastics,2025-10-10,2025-11-09,195000.00,195000.00,2025-11-05,30,true,medium,paid,Injection molded casings
+INV-0015,V005,Mehta Polymers & Plastics,2025-11-25,2025-12-25,280000.00,0.00,,30,true,medium,overdue,Custom polymer gaskets
+INV-0016,V005,Mehta Polymers & Plastics,2025-12-20,2026-01-19,150000.00,75000.00,2026-02-01,30,true,medium,partially_paid,Rubber seals and O-rings
+INV-0017,V006,Singh Auto Parts,2025-09-25,2025-10-10,45000.00,0.00,,,true,micro,overdue,Brake pads and rotors
+INV-0018,V006,Singh Auto Parts,2025-10-30,2025-11-14,78000.00,0.00,,,true,micro,overdue,Suspension components
+INV-0019,V006,Singh Auto Parts,2025-11-18,2025-12-03,112000.00,0.00,,,true,micro,overdue,Engine mounting brackets
+INV-0020,V006,Singh Auto Parts,2025-12-05,2025-12-20,55000.00,55000.00,2025-12-18,,true,micro,paid,Windshield wiper assemblies
+INV-0021,V007,Joshi Engineering Solutions,2025-10-05,2025-11-19,430000.00,430000.00,2025-11-15,45,true,small,paid,CAD design services Q3
+INV-0022,V007,Joshi Engineering Solutions,2025-11-10,2025-12-25,260000.00,0.00,,45,true,small,overdue,Prototype development - Project X
+INV-0023,V007,Joshi Engineering Solutions,2025-12-18,2026-02-01,185000.00,0.00,,45,true,small,pending,Structural analysis report
+INV-0024,V008,Agarwal Electrical Systems,2025-09-05,2025-10-05,72000.00,0.00,,30,true,micro,overdue,Panel boards - 10 units
+INV-0025,V008,Agarwal Electrical Systems,2025-10-25,2025-11-24,135000.00,135000.00,2025-12-10,30,true,micro,paid,Cable trays and conduits
+INV-0026,V008,Agarwal Electrical Systems,2025-11-30,2025-12-30,98000.00,0.00,,30,true,micro,overdue,Switchgear components
+INV-0027,V009,Iyer Packaging Industries,2025-10-12,2025-11-11,38000.00,38000.00,2025-11-08,30,true,small,paid,Corrugated boxes - 5000 pcs
+INV-0028,V009,Iyer Packaging Industries,2025-11-22,2025-12-22,52000.00,0.00,,30,true,small,overdue,Custom packaging inserts
+INV-0029,V010,Kumar Metal Works,2025-08-15,2025-08-30,160000.00,0.00,,,true,micro,overdue,Stainless steel sheets - Grade 304
+INV-0030,V010,Kumar Metal Works,2025-09-28,2025-10-13,225000.00,100000.00,2025-11-15,,true,micro,partially_paid,Aluminum extrusions
+INV-0031,V010,Kumar Metal Works,2025-11-08,2025-11-23,88000.00,0.00,,,true,micro,overdue,Copper bus bars
+INV-0032,V011,Deshmukh Rubber Products,2025-10-18,2025-12-02,67000.00,67000.00,2025-11-28,45,true,small,paid,Industrial rubber hoses
+INV-0033,V011,Deshmukh Rubber Products,2025-12-01,2026-01-15,115000.00,0.00,,45,true,small,overdue,Conveyor belt sections
+INV-0034,V012,Banerjee Textiles,2025-09-20,2025-10-20,82000.00,82000.00,2025-10-18,30,true,medium,paid,Industrial filter fabric
+INV-0035,V012,Banerjee Textiles,2025-11-15,2025-12-15,145000.00,0.00,,30,true,medium,overdue,Heat resistant cloth rolls
+INV-0036,V013,Nair Chemical Industries,2025-10-08,2025-11-07,198000.00,0.00,,30,true,small,overdue,Cleaning solvents - bulk order
+INV-0037,V013,Nair Chemical Industries,2025-12-12,2026-01-11,75000.00,75000.00,2026-01-08,30,true,small,paid,Surface treatment chemicals
+INV-0038,V014,Rao Hydraulics & Pneumatics,2025-09-01,2025-09-16,310000.00,0.00,,,true,micro,overdue,Hydraulic cylinders - 20 units
+INV-0039,V014,Rao Hydraulics & Pneumatics,2025-10-22,2025-11-06,185000.00,85000.00,2025-12-01,,true,micro,partially_paid,Pneumatic actuators
+INV-0040,V014,Rao Hydraulics & Pneumatics,2025-12-08,2025-12-23,142000.00,0.00,,,true,micro,overdue,Hydraulic hose fittings
+INV-0041,V015,Verma Welding Electrodes,2025-10-28,2025-11-27,28000.00,28000.00,2025-11-25,30,true,micro,paid,E6013 welding rods - 100kg
+INV-0042,V015,Verma Welding Electrodes,2025-11-20,2025-12-20,42000.00,0.00,,30,true,micro,overdue,TIG welding wire spools
+INV-0043,V016,Mishra Casting Works,2025-08-25,2025-10-09,480000.00,480000.00,2025-11-01,45,true,small,paid,Gray iron castings - Pattern A
+INV-0044,V016,Mishra Casting Works,2025-10-15,2025-11-29,350000.00,0.00,,45,true,small,overdue,Ductile iron impellers
+INV-0045,V016,Mishra Casting Works,2025-12-05,2026-01-19,275000.00,0.00,,45,true,small,pending,Aluminum die castings
+INV-0046,V017,Pillai Electronics Assembly,2025-09-18,2025-10-18,92000.00,0.00,,30,true,micro,overdue,SMD assembly - Board Rev 3.1
+INV-0047,V017,Pillai Electronics Assembly,2025-11-05,2025-12-05,128000.00,128000.00,2025-12-03,30,true,micro,paid,Through-hole assembly batch
+INV-0048,V018,Thakur Industrial Fasteners,2025-07-10,2025-10-08,165000.00,0.00,,90,true,small,overdue,M8 hex bolts - 50000 pcs
+INV-0049,V018,Thakur Industrial Fasteners,2025-09-20,2025-12-19,210000.00,0.00,,90,true,small,overdue,Custom anchor bolts
+INV-0050,V019,Saxena Tooling Solutions,2025-10-03,2025-10-18,55000.00,0.00,,,true,micro,overdue,Carbide inserts - CNMG type
+INV-0051,V019,Saxena Tooling Solutions,2025-11-28,2025-12-13,78000.00,0.00,,,true,micro,overdue,End mill cutters assorted
+INV-0052,V020,Bhatt CNC Components,2025-10-22,2025-12-06,320000.00,320000.00,2025-12-04,45,true,small,paid,CNC turned parts - Lot 88
+INV-0053,V020,Bhatt CNC Components,2025-12-15,2026-01-29,185000.00,0.00,,45,true,small,pending,Precision ground shafts
+INV-0054,V021,Kulkarni Springs & Washers,2025-09-12,2025-10-12,35000.00,0.00,,30,true,micro,overdue,Compression springs - 1000 pcs
+INV-0055,V021,Kulkarni Springs & Washers,2025-11-08,2025-12-08,48000.00,48000.00,2025-12-05,30,true,micro,paid,Wave washers assorted pack
+INV-0056,V022,Choudhary Paint & Coatings,2025-10-30,2025-11-29,62000.00,0.00,,30,true,small,overdue,Epoxy primer - 200 litres
+INV-0057,V022,Choudhary Paint & Coatings,2025-12-10,2026-01-09,85000.00,0.00,,30,true,small,overdue,Powder coating material
+INV-0058,V023,Tiwari Insulation Materials,2025-09-25,2025-11-09,110000.00,110000.00,2025-11-05,45,true,medium,paid,Thermal insulation blankets
+INV-0059,V023,Tiwari Insulation Materials,2025-11-18,2026-01-02,175000.00,0.00,,45,true,medium,overdue,Acoustic insulation panels
+INV-0060,V024,Tata Steel Limited,2025-08-15,2025-10-14,1250000.00,1250000.00,2025-10-10,60,false,,paid,HR coil - 50 MT
+INV-0061,V024,Tata Steel Limited,2025-10-20,2025-12-19,980000.00,980000.00,2025-12-15,60,false,,paid,CR sheets - Grade E250
+INV-0062,V025,Reliance Industries Ltd,2025-09-05,2025-12-04,750000.00,750000.00,2025-11-28,90,false,,paid,PP granules - 20 MT
+INV-0063,V025,Reliance Industries Ltd,2025-11-10,2026-02-08,520000.00,0.00,,90,false,,pending,HDPE resin - 10 MT
+INV-0064,V026,Mahindra & Mahindra Ltd,2025-10-15,2025-11-29,680000.00,680000.00,2025-11-25,45,false,,paid,Tractor spare parts kit
+INV-0065,V027,Larsen & Toubro Ltd,2025-09-20,2025-11-19,1500000.00,1500000.00,2025-11-15,60,false,,paid,EPC project milestone 3
+INV-0066,V028,Bharat Heavy Electricals,2025-10-08,2025-11-22,890000.00,890000.00,2025-11-20,45,false,,paid,Transformer components
+INV-0067,V029,Hindustan Unilever Ltd,2025-11-15,2025-12-15,125000.00,125000.00,2025-12-12,30,false,,paid,Industrial cleaning supplies
+INV-0068,V030,JSW Steel Limited,2025-10-25,2025-12-24,1100000.00,1100000.00,2025-12-20,60,false,,paid,TMT bars - 30 MT
+INV-0069,V031,Godrej Industries Ltd,2025-11-05,2025-12-20,340000.00,340000.00,2025-12-18,45,false,,paid,Storage solutions
+INV-0070,V032,Adani Enterprises Ltd,2025-09-10,2025-12-09,2100000.00,2100000.00,2025-12-05,90,false,,paid,Coal supply contract Q3

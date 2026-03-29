@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-gray-100;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-gray-900/60 backdrop-blur-xl border border-gray-800/50 rounded-2xl;
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 40px rgba(92, 124, 250, 0.15), 0 0 80px rgba(92, 124, 250, 0.05);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.2), 0 0 80px rgba(16, 185, 129, 0.05);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 40px rgba(239, 68, 68, 0.2), 0 0 80px rgba(239, 68, 68, 0.05);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.15), 0 0 80px rgba(147, 51, 234, 0.05);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400;
+  }
+
+  /* Dashboard sidebar transitions */
+  .sidebar-transition {
+    transition: width 200ms ease, transform 200ms ease;
+  }
+}
+
+/* Hide scrollbar for sidebar nav on overflow */
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}

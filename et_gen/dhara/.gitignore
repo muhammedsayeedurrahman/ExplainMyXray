@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# Build
+dist/
+*.egg-info/
+
+# Environment
+.env
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Large files
+*.mp4
+*.avi
+*.mov
+
+# OS
+.DS_Store
+Thumbs.db

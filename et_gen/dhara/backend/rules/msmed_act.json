@@ -1,0 +1,108 @@
+{
+  "law_name": "Micro, Small and Medium Enterprises Development Act, 2006",
+  "version": "2024.1",
+  "rules": [
+    {
+      "rule_id": "MSMED-001",
+      "name": "Payment within agreed terms (max 45 days)",
+      "law": "MSMED Act 2006",
+      "section": "Section 15",
+      "description": "Buyer must pay MSME supplier within agreed period, not exceeding 45 days from acceptance/deemed acceptance",
+      "severity": "high",
+      "conditions": [
+        {"field": "is_msme", "operator": "is_true"},
+        {"field": "has_agreement", "operator": "is_true"},
+        {"field": "days_since_acceptance", "operator": "greater_than", "value": 0},
+        {"field": "is_overdue", "operator": "is_true"}
+      ],
+      "actions": [
+        {
+          "action_type": "flag_overdue",
+          "description": "Flag invoice as overdue per MSMED Act Section 15",
+          "parameters": {"calculate_interest": true}
+        },
+        {
+          "action_type": "calculate_interest",
+          "description": "Calculate compound interest at 3x RBI bank rate",
+          "parameters": {"rate_multiplier": 3, "compounding": "monthly"}
+        }
+      ],
+      "legal_text": "The buyer shall make payment to the micro or small enterprise supplier on or before the date agreed upon between him and the supplier in writing or, where there is no agreement in this behalf, before the appointed day.",
+      "penalty_description": "Compound interest at 3x bank rate from due date"
+    },
+    {
+      "rule_id": "MSMED-002",
+      "name": "No agreement - 15 day default",
+      "law": "MSMED Act 2006",
+      "section": "Section 15 read with Section 2(b)",
+      "description": "Where no written agreement exists, payment must be made within 15 days of acceptance",
+      "severity": "high",
+      "conditions": [
+        {"field": "is_msme", "operator": "is_true"},
+        {"field": "has_agreement", "operator": "is_false"},
+        {"field": "days_since_acceptance", "operator": "greater_than", "value": 15}
+      ],
+      "actions": [
+        {
+          "action_type": "flag_overdue",
+          "description": "Flag as overdue - no agreement, 15-day statutory default applies",
+          "parameters": {"default_days": 15}
+        },
+        {
+          "action_type": "calculate_interest",
+          "description": "Calculate compound interest from day 16",
+          "parameters": {"rate_multiplier": 3, "compounding": "monthly"}
+        }
+      ],
+      "legal_text": "Where there is no agreement regarding payment, 'appointed day' means the day following immediately after the expiry of 15 days from the day of acceptance.",
+      "penalty_description": "Compound interest at 3x bank rate from day 16"
+    },
+    {
+      "rule_id": "MSMED-003",
+      "name": "Agreement exceeds 45 days - void terms",
+      "law": "MSMED Act 2006",
+      "section": "Section 15 proviso",
+      "description": "Any agreement with payment terms exceeding 45 days is void; 45-day limit applies",
+      "severity": "critical",
+      "conditions": [
+        {"field": "is_msme", "operator": "is_true"},
+        {"field": "agreed_payment_days", "operator": "greater_than", "value": 45}
+      ],
+      "actions": [
+        {
+          "action_type": "override_terms",
+          "description": "Override agreed terms to statutory 45-day maximum",
+          "parameters": {"max_days": 45}
+        },
+        {
+          "action_type": "flag_illegal_terms",
+          "description": "Flag agreement as containing illegal payment terms",
+          "parameters": {}
+        }
+      ],
+      "legal_text": "Provided that in no case the period agreed upon between the supplier and the buyer in writing shall exceed forty-five days from the day of acceptance or the day of deemed acceptance.",
+      "penalty_description": "Terms voided; 45-day statutory maximum enforced"
+    },
+    {
+      "rule_id": "MSMED-004",
+      "name": "MSME-1 filing required for delays > 45 days",
+      "law": "MSMED Act 2006",
+      "section": "Section 9 read with MSME Notification dt. 02.11.2018",
+      "description": "Buyers with overdue MSME payments > 45 days must file MSME-1 half-yearly return",
+      "severity": "medium",
+      "conditions": [
+        {"field": "is_msme", "operator": "is_true"},
+        {"field": "days_overdue", "operator": "greater_than", "value": 45}
+      ],
+      "actions": [
+        {
+          "action_type": "require_msme1_filing",
+          "description": "MSME-1 half-yearly return filing required",
+          "parameters": {"filing_periods": ["Apr-Sep", "Oct-Mar"]}
+        }
+      ],
+      "legal_text": "Every buyer must file a half-yearly return (Form MSME-1) with the Ministry regarding outstanding amounts owed to MSME suppliers.",
+      "penalty_description": "Non-filing penalty and regulatory scrutiny"
+    }
+  ]
+}

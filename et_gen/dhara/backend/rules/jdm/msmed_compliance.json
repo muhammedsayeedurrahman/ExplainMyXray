@@ -1,0 +1,200 @@
+{
+  "contentType": "application/vnd.gorules.decision",
+  "name": "MSMED Compliance Decision Graph",
+  "description": "Indian MSME payment compliance rules encoded as JSON Decision Model",
+  "nodes": [
+    {
+      "id": "input",
+      "type": "inputNode",
+      "name": "Invoice Context",
+      "position": {"x": 0, "y": 200}
+    },
+    {
+      "id": "msme_check",
+      "type": "switchNode",
+      "name": "Is MSME Vendor?",
+      "position": {"x": 250, "y": 200},
+      "content": {
+        "hitPolicy": "first",
+        "statements": [
+          {"condition": "is_msme == true", "target": "payment_rules"},
+          {"condition": "is_msme == false", "target": "non_msme_output"}
+        ]
+      }
+    },
+    {
+      "id": "payment_rules",
+      "type": "decisionTableNode",
+      "name": "MSMED Payment Rules",
+      "position": {"x": 550, "y": 100},
+      "content": {
+        "hitPolicy": "collect",
+        "inputs": [
+          {"id": "i1", "name": "Has Agreement", "field": "has_agreement"},
+          {"id": "i2", "name": "Agreed Days", "field": "agreed_payment_days"},
+          {"id": "i3", "name": "Days Overdue", "field": "days_overdue"},
+          {"id": "i4", "name": "Outstanding (INR)", "field": "outstanding_amount"}
+        ],
+        "outputs": [
+          {"id": "o1", "name": "Rule ID", "field": "rule_id"},
+          {"id": "o2", "name": "Severity", "field": "severity"},
+          {"id": "o3", "name": "Action", "field": "action"},
+          {"id": "o4", "name": "Law Reference", "field": "law_reference"},
+          {"id": "o5", "name": "Interest Applicable", "field": "interest_applicable"}
+        ],
+        "rules": [
+          {
+            "_description": "Payment overdue with agreement (max 45 days)",
+            "i1": "true",
+            "i2": "<= 45",
+            "i3": "> 0",
+            "i4": "> 0",
+            "o1": "MSMED-001",
+            "o2": "high",
+            "o3": "Flag overdue per Section 15; calculate compound interest at 3x RBI rate",
+            "o4": "MSMED Act 2006, Section 15",
+            "o5": "true"
+          },
+          {
+            "_description": "No agreement - 15 day default exceeded",
+            "i1": "false",
+            "i2": "",
+            "i3": "> 15",
+            "i4": "> 0",
+            "o1": "MSMED-002",
+            "o2": "high",
+            "o3": "Flag overdue - no agreement, 15-day statutory default applies",
+            "o4": "MSMED Act 2006, Section 15 read with Section 2(b)",
+            "o5": "true"
+          },
+          {
+            "_description": "Agreement exceeds 45 days - void terms",
+            "i1": "true",
+            "i2": "> 45",
+            "i3": "",
+            "i4": "",
+            "o1": "MSMED-003",
+            "o2": "critical",
+            "o3": "Override agreed terms to statutory 45-day maximum; flag illegal terms",
+            "o4": "MSMED Act 2006, Section 15 proviso",
+            "o5": "false"
+          },
+          {
+            "_description": "MSME-1 filing required for delays > 45 days",
+            "i1": "",
+            "i2": "",
+            "i3": "> 45",
+            "i4": "> 0",
+            "o1": "MSMED-004",
+            "o2": "medium",
+            "o3": "MSME-1 half-yearly return filing required",
+            "o4": "MSMED Act 2006, Section 9 / Notification 02.11.2018",
+            "o5": "false"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tax_rules",
+      "type": "decisionTableNode",
+      "name": "IT Act 43B(h) Rules",
+      "position": {"x": 550, "y": 350},
+      "content": {
+        "hitPolicy": "collect",
+        "inputs": [
+          {"id": "i1", "name": "Is Overdue", "field": "is_overdue"},
+          {"id": "i2", "name": "Outstanding (INR)", "field": "outstanding_amount"},
+          {"id": "i3", "name": "Days to ITR Deadline", "field": "days_to_itr_deadline"}
+        ],
+        "outputs": [
+          {"id": "o1", "name": "Rule ID", "field": "rule_id"},
+          {"id": "o2", "name": "Severity", "field": "severity"},
+          {"id": "o3", "name": "Action", "field": "action"},
+          {"id": "o4", "name": "Law Reference", "field": "law_reference"}
+        ],
+        "rules": [
+          {
+            "_description": "Tax disallowance for unpaid MSME dues",
+            "i1": "true",
+            "i2": "> 0",
+            "i3": "",
+            "o1": "IT43BH-001",
+            "o2": "critical",
+            "o3": "Disallow expense deduction for unpaid MSME amount in current FY ITR",
+            "o4": "IT Act 1961, Section 43B(h)"
+          },
+          {
+            "_description": "Deduction preserved if paid before ITR deadline",
+            "i1": "true",
+            "i2": "> 0",
+            "i3": "> 0",
+            "o1": "IT43BH-002",
+            "o2": "high",
+            "o3": "Prioritize payment before ITR filing deadline to preserve deduction",
+            "o4": "IT Act 1961, Section 43B(h) proviso"
+          }
+        ]
+      }
+    },
+    {
+      "id": "filing_rules",
+      "type": "decisionTableNode",
+      "name": "MSME-1 Filing Rules",
+      "position": {"x": 550, "y": 550},
+      "content": {
+        "hitPolicy": "collect",
+        "inputs": [
+          {"id": "i1", "name": "Has Overdue in Period", "field": "has_overdue_in_period"},
+          {"id": "i2", "name": "Filing Period", "field": "filing_period"}
+        ],
+        "outputs": [
+          {"id": "o1", "name": "Rule ID", "field": "rule_id"},
+          {"id": "o2", "name": "Severity", "field": "severity"},
+          {"id": "o3", "name": "Action", "field": "action"},
+          {"id": "o4", "name": "Deadline", "field": "deadline"}
+        ],
+        "rules": [
+          {
+            "_description": "Apr-Sep filing due Oct 31",
+            "i1": "true",
+            "i2": "Apr-Sep",
+            "o1": "MSME1-001",
+            "o2": "medium",
+            "o3": "Generate MSME-1 filing draft for Apr-Sep period",
+            "o4": "31-Oct"
+          },
+          {
+            "_description": "Oct-Mar filing due Apr 30",
+            "i1": "true",
+            "i2": "Oct-Mar",
+            "o1": "MSME1-002",
+            "o2": "medium",
+            "o3": "Generate MSME-1 filing draft for Oct-Mar period",
+            "o4": "30-Apr"
+          }
+        ]
+      }
+    },
+    {
+      "id": "non_msme_output",
+      "type": "outputNode",
+      "name": "Non-MSME (No Rules Apply)",
+      "position": {"x": 900, "y": 400}
+    },
+    {
+      "id": "output",
+      "type": "outputNode",
+      "name": "Compliance Result",
+      "position": {"x": 900, "y": 200}
+    }
+  ],
+  "edges": [
+    {"id": "e1", "sourceId": "input", "targetId": "msme_check"},
+    {"id": "e2", "sourceId": "msme_check", "targetId": "payment_rules"},
+    {"id": "e3", "sourceId": "msme_check", "targetId": "non_msme_output"},
+    {"id": "e4", "sourceId": "payment_rules", "targetId": "tax_rules"},
+    {"id": "e5", "sourceId": "tax_rules", "targetId": "filing_rules"},
+    {"id": "e6", "sourceId": "filing_rules", "targetId": "output"},
+    {"id": "e7", "sourceId": "payment_rules", "targetId": "output"}
+  ]
+}

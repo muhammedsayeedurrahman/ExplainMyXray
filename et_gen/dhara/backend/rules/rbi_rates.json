@@ -1,0 +1,18 @@
+{
+  "description": "RBI Bank Rate history for MSMED Act interest calculation",
+  "source": "Reserve Bank of India",
+  "current_rate": 6.5,
+  "msmed_multiplier": 3,
+  "effective_rate": 19.5,
+  "compounding": "monthly",
+  "rates": [
+    {"effective_from": "2023-02-08", "bank_rate": 6.5, "multiplier": 3, "effective_rate": 19.5},
+    {"effective_from": "2022-09-30", "bank_rate": 5.9, "multiplier": 3, "effective_rate": 17.7},
+    {"effective_from": "2022-08-05", "bank_rate": 5.4, "multiplier": 3, "effective_rate": 16.2},
+    {"effective_from": "2022-06-08", "bank_rate": 4.9, "multiplier": 3, "effective_rate": 14.7},
+    {"effective_from": "2022-05-04", "bank_rate": 4.65, "multiplier": 3, "effective_rate": 13.95},
+    {"effective_from": "2020-03-27", "bank_rate": 4.40, "multiplier": 3, "effective_rate": 13.2},
+    {"effective_from": "2019-10-04", "bank_rate": 5.15, "multiplier": 3, "effective_rate": 15.45}
+  ],
+  "note": "Interest rate under MSMED Act = 3 times the RBI bank rate. Currently 6.5% x 3 = 19.5% p.a. compounded monthly. Rates sorted newest-first for binary search."
+}

@@ -1,0 +1,60 @@
+{
+  "law_name": "Income Tax Act, 1961 - Section 43B(h)",
+  "version": "2024.1",
+  "rules": [
+    {
+      "rule_id": "IT43BH-001",
+      "name": "Tax disallowance for unpaid MSME dues",
+      "law": "Income Tax Act 1961",
+      "section": "Section 43B(h)",
+      "description": "Expenses towards MSME suppliers not paid within time limit under MSMED Act are disallowed as deduction in ITR",
+      "severity": "critical",
+      "conditions": [
+        {"field": "is_msme", "operator": "is_true"},
+        {"field": "is_overdue", "operator": "is_true"},
+        {"field": "outstanding_amount", "operator": "greater_than", "value": 0}
+      ],
+      "actions": [
+        {
+          "action_type": "tax_disallowance",
+          "description": "Disallow expense deduction for unpaid MSME amount in current FY ITR",
+          "parameters": {"disallowance_type": "full_amount"}
+        },
+        {
+          "action_type": "calculate_tax_impact",
+          "description": "Calculate additional tax liability due to disallowance",
+          "parameters": {"applicable_tax_rates": [0.25, 0.30]}
+        }
+      ],
+      "legal_text": "Any sum payable by the assessee to a micro or small enterprise beyond the time limit specified in section 15 of the MSMED Act shall be allowed as deduction only in the previous year in which it is actually paid.",
+      "penalty_description": "Full amount disallowed from taxable income; increased tax liability"
+    },
+    {
+      "rule_id": "IT43BH-002",
+      "name": "Deduction allowed if paid before ITR due date",
+      "law": "Income Tax Act 1961",
+      "section": "Section 43B(h) proviso",
+      "description": "If payment is made before ITR filing deadline, deduction is still allowed in the relevant assessment year",
+      "severity": "high",
+      "conditions": [
+        {"field": "is_msme", "operator": "is_true"},
+        {"field": "is_overdue", "operator": "is_true"},
+        {"field": "days_to_itr_deadline", "operator": "greater_than", "value": 0}
+      ],
+      "actions": [
+        {
+          "action_type": "priority_payment",
+          "description": "Prioritize payment before ITR filing deadline to preserve deduction",
+          "parameters": {"urgency": "high", "deadline_type": "itr_filing"}
+        },
+        {
+          "action_type": "flag_recoverable",
+          "description": "Deduction recoverable if paid before filing",
+          "parameters": {}
+        }
+      ],
+      "legal_text": "The deduction shall be allowed in computing the income of the previous year in which the sum is actually paid, irrespective of the previous year in which the liability was incurred.",
+      "penalty_description": "Deduction preserved if payment made before ITR due date"
+    }
+  ]
+}

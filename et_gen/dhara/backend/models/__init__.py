@@ -1,0 +1,1 @@
+"""LAWTRIX data models."""
