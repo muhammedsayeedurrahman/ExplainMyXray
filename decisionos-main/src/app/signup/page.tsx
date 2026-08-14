@@ -89,8 +89,12 @@ export default function SignUpPage() {
         workspaceName: isFirstUser ? formData.workspaceName : undefined,
       });
 
-      // Redirect to appropriate dashboard
-      router.push('/dashboard');
+      // Import helper to get dashboard path
+      const { getDashboardPath } = await import('@/lib/supabase/helpers');
+      const dashboardPath = getDashboardPath(formData.role);
+
+      router.push(dashboardPath);
+      router.refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Sign up failed. Please try again.');
     } finally {

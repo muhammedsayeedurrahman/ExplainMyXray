@@ -1,5 +1,8 @@
-import { supabase } from './client';
+import { createClient } from './client';
 import { Role } from '@/config/roles';
+
+// Create a singleton client for auth operations
+const supabase = createClient();
 
 export interface SignUpData {
   email: string;

@@ -48,11 +48,20 @@ export default function LoginPage() {
 
     try {
       const { signIn } = await import('@/lib/supabase/auth');
+      const { getUserRoleAndWorkspace, getDashboardPath } = await import('@/lib/supabase/helpers');
+
       await signIn({ email, password });
 
-      // Redirect to appropriate dashboard based on user role
-      // The middleware will handle redirection if user is already authenticated
-      router.push('/dashboard');
+      // Get user role and redirect to appropriate dashboard
+      const userInfo = await getUserRoleAndWorkspace();
+      if (userInfo) {
+        const dashboardPath = getDashboardPath(userInfo.role);
+        router.push(dashboardPath);
+      } else {
+        router.push('/demo/owner'); // Default fallback
+      }
+
+      router.refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Sign in failed. Please try again.');
     } finally {
