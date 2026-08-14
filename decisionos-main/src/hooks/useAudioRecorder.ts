@@ -5,11 +5,18 @@ import { transcribeAudio, isRecordingSupported } from '@/lib/whisper/client';
 
 export type RecordingState = 'idle' | 'recording' | 'processing' | 'done' | 'error';
 
+export interface UseAudioRecorderOptions {
+  language?: string; // ISO 639-1 language code or 'auto' for auto-detection
+  onTranscriptionComplete?: (text: string, detectedLanguage?: string) => void;
+  onError?: (error: string) => void;
+}
+
 export interface UseAudioRecorderReturn {
   // State
   state: RecordingState;
   isRecording: boolean;
   transcription: string | null;
+  detectedLanguage: string | null;
   error: string | null;
   audioBlob: Blob | null;
   recordingDuration: number; // in seconds
@@ -19,6 +26,7 @@ export interface UseAudioRecorderReturn {
   stopRecording: () => Promise<void>;
   cancelRecording: () => void;
   reset: () => void;
+  setLanguage: (language: string) => void;
 
   // Capabilities
   isSupported: boolean;
@@ -29,7 +37,10 @@ export interface UseAudioRecorderReturn {
  *
  * Usage:
  * ```typescript
- * const { state, transcription, startRecording, stopRecording } = useAudioRecorder();
+ * const { state, transcription, startRecording, stopRecording, setLanguage } = useAudioRecorder({
+ *   language: 'en',
+ *   onTranscriptionComplete: (text, lang) => console.log('Done:', text, lang)
+ * });
  *
  * <button onClick={startRecording} disabled={state === 'recording'}>
  *   Start Recording
@@ -40,12 +51,14 @@ export interface UseAudioRecorderReturn {
  * {transcription && <p>{transcription}</p>}
  * ```
  */
-export function useAudioRecorder(): UseAudioRecorderReturn {
+export function useAudioRecorder(options: UseAudioRecorderOptions = {}): UseAudioRecorderReturn {
   const [state, setState] = useState<RecordingState>('idle');
   const [transcription, setTranscription] = useState<string | null>(null);
+  const [detectedLanguage, setDetectedLanguage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
   const [recordingDuration, setRecordingDuration] = useState(0);
+  const [language, setLanguage] = useState(options.language || 'auto');
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
@@ -115,12 +128,24 @@ export function useAudioRecorder(): UseAudioRecorderReturn {
         // Transcribe audio
         setState('processing');
         try {
-          const result = await transcribeAudio(blob);
+          const result = await transcribeAudio(blob, { language });
           setTranscription(result.text);
+          setDetectedLanguage(result.language || null);
           setState('done');
+
+          // Callback on success
+          if (options.onTranscriptionComplete) {
+            options.onTranscriptionComplete(result.text, result.language);
+          }
         } catch (err) {
-          setError(err instanceof Error ? err.message : 'Transcription failed');
+          const errorMessage = err instanceof Error ? err.message : 'Transcription failed';
+          setError(errorMessage);
           setState('error');
+
+          // Callback on error
+          if (options.onError) {
+            options.onError(errorMessage);
+          }
         }
       };
 
@@ -188,6 +213,7 @@ export function useAudioRecorder(): UseAudioRecorderReturn {
     state,
     isRecording: state === 'recording',
     transcription,
+    detectedLanguage,
     error,
     audioBlob,
     recordingDuration,
@@ -195,6 +221,7 @@ export function useAudioRecorder(): UseAudioRecorderReturn {
     stopRecording,
     cancelRecording,
     reset,
+    setLanguage,
     isSupported,
   };
 }

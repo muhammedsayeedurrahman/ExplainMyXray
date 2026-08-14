@@ -1,8 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAudioRecorder } from '@/hooks/useAudioRecorder';
-import { Mic, Square, Loader2, CheckCircle, XCircle } from 'lucide-react';
+import { Mic, Square, Loader2, CheckCircle, XCircle, Globe } from 'lucide-react';
+import { LanguageSelector } from './LanguageSelector';
+import { getPreferredLanguage, setPreferredLanguage, getLanguageByCode } from '@/types/languages';
 
 export interface VoiceRecorderProps {
   onTranscriptionComplete?: (text: string) => void;
@@ -28,18 +30,41 @@ export function VoiceRecorder({
   onError,
   className = '',
 }: VoiceRecorderProps) {
+  const [language, setLanguage] = useState<string>('auto');
+
+  // Load preferred language on mount
+  useEffect(() => {
+    setLanguage(getPreferredLanguage());
+  }, []);
+
   const {
     state,
     isRecording,
     transcription,
+    detectedLanguage,
     error,
     recordingDuration,
     startRecording,
     stopRecording,
     cancelRecording,
     reset,
+    setLanguage: setRecorderLanguage,
     isSupported,
-  } = useAudioRecorder();
+  } = useAudioRecorder({
+    language,
+    onTranscriptionComplete,
+    onError,
+  });
+
+  // Update recorder language when language changes
+  useEffect(() => {
+    setRecorderLanguage(language);
+  }, [language, setRecorderLanguage]);
+
+  const handleLanguageChange = (newLanguage: string) => {
+    setLanguage(newLanguage);
+    setPreferredLanguage(newLanguage); // Save preference
+  };
 
   // Notify parent when transcription completes
   React.useEffect(() => {
@@ -72,8 +97,40 @@ export function VoiceRecorder({
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
+  const selectedLanguageInfo = getLanguageByCode(language);
+
   return (
     <div className={`flex flex-col gap-4 ${className}`}>
+      {/* Language Selector */}
+      {state === 'idle' && (
+        <div className="flex items-center justify-between gap-4 p-3 bg-zinc-50 dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800">
+          <div className="flex items-center gap-2">
+            <Globe className="w-4 h-4 text-zinc-500 dark:text-zinc-400" />
+            <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              Language
+            </span>
+          </div>
+          <LanguageSelector
+            selectedLanguage={language}
+            onChange={handleLanguageChange}
+            compact
+          />
+        </div>
+      )}
+
+      {/* Detected Language Badge */}
+      {detectedLanguage && state === 'done' && (
+        <div className="flex items-center gap-2 px-3 py-2 bg-brand-blue/10 dark:bg-brand-blue/20 rounded-lg border border-brand-blue/20">
+          <Globe className="w-4 h-4 text-brand-blue" />
+          <span className="text-xs font-medium text-brand-blue">
+            Detected: {getLanguageByCode(detectedLanguage)?.name || detectedLanguage}
+            {selectedLanguageInfo?.code !== 'auto' && detectedLanguage !== language && (
+              <span className="ml-1 text-zinc-500">(Expected: {selectedLanguageInfo?.name})</span>
+            )}
+          </span>
+        </div>
+      )}
+
       {/* Recording Button */}
       <div className="flex items-center gap-4">
         {state === 'idle' && (
