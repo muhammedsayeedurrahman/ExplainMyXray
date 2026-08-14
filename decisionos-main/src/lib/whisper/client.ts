@@ -15,10 +15,17 @@ export interface TranscriptionError {
   code?: string;
 }
 
+export interface TranscribeOptions {
+  language?: string; // ISO 639-1 language code or 'auto' for auto-detection
+}
+
 /**
  * Send audio file to Whisper API for transcription
  */
-export async function transcribeAudio(audioBlob: Blob): Promise<TranscriptionResult> {
+export async function transcribeAudio(
+  audioBlob: Blob,
+  options: TranscribeOptions = {}
+): Promise<TranscriptionResult> {
   const formData = new FormData();
 
   // Create a file with proper extension based on MIME type
@@ -26,6 +33,11 @@ export async function transcribeAudio(audioBlob: Blob): Promise<TranscriptionRes
   const file = new File([audioBlob], `recording.${extension}`, { type: audioBlob.type });
 
   formData.append('audio', file);
+
+  // Add language parameter if specified
+  if (options.language && options.language !== 'auto') {
+    formData.append('language', options.language);
+  }
 
   const response = await fetch('/api/transcribe', {
     method: 'POST',
