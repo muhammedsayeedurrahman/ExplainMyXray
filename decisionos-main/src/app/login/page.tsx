@@ -18,6 +18,20 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
+      // Check if running in demo mode (placeholder Supabase credentials)
+      const isDemoMode = process.env.NEXT_PUBLIC_SUPABASE_URL?.includes('placeholder') ||
+                        !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+                        process.env.NEXT_PUBLIC_SUPABASE_URL === 'https://placeholder.supabase.co';
+
+      if (isDemoMode) {
+        // Demo mode: Simulate login and redirect to demo page
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
+        // Default to owner role in demo mode
+        router.push('/demo/owner');
+        return;
+      }
+
+      // Production mode: Real Supabase Auth login
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
