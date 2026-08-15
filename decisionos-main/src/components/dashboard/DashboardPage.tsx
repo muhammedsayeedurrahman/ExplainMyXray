@@ -68,8 +68,8 @@ function WorkspaceSettings({ role, onSave }: WorkspaceSettingsProps) {
 
   const [activeSection, setActiveSection] = useState<'profile' | 'security' | 'preferences'>('profile');
 
-  // Profile state
-  const [fullName, setFullName] = useState(ROLES[role]?.personName || '');
+  // Profile state - use demo signup name if available
+  const [fullName, setFullName] = useState(getDemoUserName(role));
   const [mobileNumber, setMobileNumber] = useState(defaults.phone);
   const [email] = useState(defaults.email);
 
@@ -315,6 +315,24 @@ function WorkspaceSettings({ role, onSave }: WorkspaceSettingsProps) {
   );
 }
 
+// Helper function to get user name from demo signup or default to hardcoded name
+function getDemoUserName(role: Role): string {
+  if (typeof window !== 'undefined') {
+    const demoUser = localStorage.getItem('demo_user');
+    if (demoUser) {
+      try {
+        const userData = JSON.parse(demoUser);
+        if (userData.fullName && userData.role === role) {
+          return userData.fullName;
+        }
+      } catch (e) {
+        // Invalid JSON, ignore
+      }
+    }
+  }
+  return ROLES[role]?.personName || '';
+}
+
 export default function DashboardPage({ role }: DashboardPageProps) {
   const workspace = useWorkspace(role);
   const { config, workspaceState, triggerAlert } = workspace;
@@ -512,7 +530,7 @@ export default function DashboardPage({ role }: DashboardPageProps) {
         triggerAlert('Welcome to DecisionOS! Let\'s get started.');
       }}
       role={role}
-      userName={config.personName}
+      userName={getDemoUserName(role)}
     />
 
     <DashboardShell

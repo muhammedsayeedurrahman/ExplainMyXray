@@ -23,7 +23,12 @@ export default function SignupPage() {
     try {
       // Check if running in demo mode - don't make any Supabase calls
       if (isDemoMode()) {
-        // Demo mode: Simulate signup and redirect to demo page
+        // Demo mode: Save user info to localStorage and redirect
+        localStorage.setItem('demo_user', JSON.stringify({
+          fullName,
+          email,
+          role,
+        }));
         await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
         router.push(`/demo/${role}`);
         return;
