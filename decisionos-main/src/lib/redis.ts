@@ -8,25 +8,6 @@
 import { Redis } from '@upstash/redis';
 import { isDemoMode } from './env';
 
-// Check if Redis is configured
-const isRedisConfigured = Boolean(
-  process.env.UPSTASH_REDIS_REST_URL &&
-  process.env.UPSTASH_REDIS_REST_TOKEN
-);
-
-/**
- * Redis client instance
- *
- * In production, this connects to Upstash Redis.
- * In demo mode or when Redis not configured, uses mock implementation.
- */
-export const redis: Redis | MockRedis = isRedisConfigured && !isDemoMode()
-  ? new Redis({
-      url: process.env.UPSTASH_REDIS_REST_URL!,
-      token: process.env.UPSTASH_REDIS_REST_TOKEN!,
-    })
-  : new MockRedis();
-
 /**
  * Mock Redis client for local development without Upstash
  *
@@ -129,6 +110,25 @@ class MockRedis {
     }
   }
 }
+
+// Check if Redis is configured
+const isRedisConfigured = Boolean(
+  process.env.UPSTASH_REDIS_REST_URL &&
+  process.env.UPSTASH_REDIS_REST_TOKEN
+);
+
+/**
+ * Redis client instance
+ *
+ * In production, this connects to Upstash Redis.
+ * In demo mode or when Redis not configured, uses mock implementation.
+ */
+export const redis: Redis | MockRedis = isRedisConfigured && !isDemoMode()
+  ? new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL!,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+    })
+  : new MockRedis();
 
 // Log which Redis implementation is being used
 if (process.env.NODE_ENV !== 'test') {

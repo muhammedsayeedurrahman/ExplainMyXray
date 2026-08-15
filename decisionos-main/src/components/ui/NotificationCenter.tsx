@@ -2,81 +2,45 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bell, CheckSquare, AtSign, Clock, ArrowRight, Settings, X, Check } from 'lucide-react';
+import { Bell, CheckCircle, XCircle, AlertCircle, Info, Settings, X, Check, Trash2 } from 'lucide-react';
+import { useNotifications, type Notification } from '@/contexts/NotificationContext';
 
-export type NotificationType = 'task_assigned' | 'mention' | 'deadline' | 'handoff' | 'comment';
-
-export interface Notification {
-  id: string;
-  type: NotificationType;
-  title: string;
-  message: string;
-  timestamp: Date;
-  read: boolean;
-  actionUrl?: string;
-  actor?: {
-    name: string;
-    avatar?: string;
-  };
-}
-
-interface NotificationCenterProps {
-  notifications?: Notification[];
-  onNotificationClick?: (notification: Notification) => void;
-  onMarkAsRead?: (notificationId: string) => void;
-  onMarkAllAsRead?: () => void;
-  onClearAll?: () => void;
-  onOpenSettings?: () => void;
-}
-
-const NOTIFICATION_ICONS: Record<NotificationType, React.ReactNode> = {
-  task_assigned: <CheckSquare className="w-4 h-4" />,
-  mention: <AtSign className="w-4 h-4" />,
-  deadline: <Clock className="w-4 h-4" />,
-  handoff: <ArrowRight className="w-4 h-4" />,
-  comment: <AtSign className="w-4 h-4" />,
+const NOTIFICATION_ICONS = {
+  success: <CheckCircle className="w-4 h-4" />,
+  error: <XCircle className="w-4 h-4" />,
+  warning: <AlertCircle className="w-4 h-4" />,
+  info: <Info className="w-4 h-4" />,
 };
 
-const NOTIFICATION_COLORS: Record<NotificationType, string> = {
-  task_assigned: 'text-brand-blue',
-  mention: 'text-brand-yellow',
-  deadline: 'text-brand-red',
-  handoff: 'text-green-600',
-  comment: 'text-zinc-600',
+const NOTIFICATION_COLORS = {
+  success: 'text-green-600 dark:text-green-500',
+  error: 'text-red-600 dark:text-red-500',
+  warning: 'text-orange-600 dark:text-orange-500',
+  info: 'text-blue-600 dark:text-blue-500',
 };
 
 /**
  * Notification center with dropdown panel
- *
- * Displays notifications with filtering, marking as read, and actions
- *
- * Usage:
- * ```tsx
- * <NotificationCenter
- *   notifications={notifications}
- *   onNotificationClick={(notif) => router.push(notif.actionUrl)}
- *   onMarkAsRead={(id) => markNotificationRead(id)}
- * />
- * ```
+ * Connected to NotificationContext for global notification management
  */
-export function NotificationCenter({
-  notifications = [],
-  onNotificationClick,
-  onMarkAsRead,
-  onMarkAllAsRead,
-  onClearAll,
-  onOpenSettings,
-}: NotificationCenterProps) {
+export function NotificationCenter() {
+  const {
+    notifications,
+    unreadCount,
+    markAsRead,
+    markAllAsRead,
+    clearNotification,
+    clearAll,
+  } = useNotifications();
+
   const [isOpen, setIsOpen] = useState(false);
 
-  const unreadCount = notifications.filter((n) => !n.read).length;
-
   const handleNotificationClick = (notification: Notification) => {
-    if (onMarkAsRead && !notification.read) {
-      onMarkAsRead(notification.id);
+    if (!notification.read) {
+      markAsRead(notification.id);
     }
-    if (onNotificationClick) {
-      onNotificationClick(notification);
+    if (notification.action) {
+      notification.action.onClick();
     }
     setIsOpen(false);
   };
@@ -163,33 +127,20 @@ export function NotificationCenter({
                 </h3>
                 <div className="flex items-center gap-2">
                   {notifications.length > 0 && (
-                    <>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onMarkAllAsRead?.();
-                        }}
-                        className="text-xs text-brand-red hover:underline font-medium"
-                        title="Mark all as read"
-                      >
-                        <Check className="w-4 h-4" />
-                      </button>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onOpenSettings?.();
-                          setIsOpen(false);
-                        }}
-                        className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
-                        title="Notification settings"
-                      >
-                        <Settings className="w-4 h-4" />
-                      </button>
-                    </>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        markAllAsRead();
+                      }}
+                      className="p-1.5 text-zinc-600 dark:text-zinc-400 hover:text-brand-red dark:hover:text-brand-red transition-colors cursor-pointer"
+                      title="Mark all as read"
+                    >
+                      <Check className="w-4 h-4" />
+                    </button>
                   )}
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                    className="p-1.5 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-pointer"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -208,54 +159,72 @@ export function NotificationCenter({
                 ) : (
                   <div className="divide-y divide-zinc-200 dark:divide-zinc-800">
                     {notifications.map((notification) => (
-                      <motion.button
+                      <motion.div
                         key={notification.id}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={() => handleNotificationClick(notification)}
                         className={`
-                          w-full p-4 text-left
-                          hover:bg-zinc-50 dark:hover:bg-zinc-800
-                          transition-colors
+                          relative group
                           ${!notification.read ? 'bg-brand-red/5 dark:bg-brand-red/10' : ''}
                         `}
                       >
-                        <div className="flex items-start gap-3">
-                          {/* Icon */}
-                          <div className={`
-                            flex-shrink-0 w-8 h-8
-                            flex items-center justify-center
-                            rounded-full
-                            bg-zinc-100 dark:bg-zinc-800
-                            ${NOTIFICATION_COLORS[notification.type]}
-                          `}>
-                            {NOTIFICATION_ICONS[notification.type]}
-                          </div>
+                        <button
+                          onClick={() => handleNotificationClick(notification)}
+                          className="w-full p-4 text-left hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
+                        >
+                          <div className="flex items-start gap-3">
+                            {/* Icon */}
+                            <div className={`
+                              flex-shrink-0 w-8 h-8
+                              flex items-center justify-center
+                              rounded-full
+                              bg-zinc-100 dark:bg-zinc-800
+                              ${NOTIFICATION_COLORS[notification.type]}
+                            `}>
+                              {NOTIFICATION_ICONS[notification.type]}
+                            </div>
 
-                          {/* Content */}
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-start justify-between gap-2 mb-1">
-                              <p className="font-medium text-sm text-zinc-900 dark:text-zinc-100">
-                                {notification.title}
-                              </p>
-                              {!notification.read && (
-                                <div className="w-2 h-2 bg-brand-red rounded-full flex-shrink-0 mt-1" />
+                            {/* Content */}
+                            <div className="flex-1 min-w-0 pr-8">
+                              <div className="flex items-start justify-between gap-2 mb-1">
+                                <p className="font-medium text-sm text-zinc-900 dark:text-zinc-100">
+                                  {notification.title}
+                                </p>
+                                {!notification.read && (
+                                  <div className="w-2 h-2 bg-brand-red rounded-full flex-shrink-0 mt-1" />
+                                )}
+                              </div>
+                              {notification.message && (
+                                <p className="text-xs text-zinc-600 dark:text-zinc-400 line-clamp-2 mb-1">
+                                  {notification.message}
+                                </p>
                               )}
-                            </div>
-                            <p className="text-xs text-zinc-600 dark:text-zinc-400 line-clamp-2 mb-1">
-                              {notification.message}
-                            </p>
-                            <div className="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-500">
-                              {notification.actor && (
-                                <span>{notification.actor.name}</span>
-                              )}
-                              <span>•</span>
-                              <span>{formatTimestamp(notification.timestamp)}</span>
+                              <div className="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-500">
+                                <span>{formatTimestamp(notification.timestamp)}</span>
+                                {notification.action && (
+                                  <>
+                                    <span>•</span>
+                                    <span className="text-brand-red font-medium">{notification.action.label}</span>
+                                  </>
+                                )}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </motion.button>
+                        </button>
+
+                        {/* Delete Button */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            clearNotification(notification.id);
+                          }}
+                          className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 p-1 text-zinc-400 hover:text-red-500 transition-opacity cursor-pointer"
+                          title="Delete notification"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </motion.div>
                     ))}
                   </div>
                 )}
@@ -267,7 +236,7 @@ export function NotificationCenter({
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      onClearAll?.();
+                      clearAll();
                     }}
                     className="
                       w-full
@@ -275,6 +244,7 @@ export function NotificationCenter({
                       text-zinc-600 dark:text-zinc-400
                       hover:text-brand-red dark:hover:text-brand-red
                       transition-colors
+                      cursor-pointer
                     "
                   >
                     Clear all notifications

@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import { Sparkles, User, Lock, Settings } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import DashboardShell from './DashboardShell';
@@ -16,13 +17,23 @@ import FinanceLedger from './tabs/FinanceLedger';
 import BriefBlock from './tabs/BriefBlock';
 import HandoffReplyCard from './tabs/HandoffReplyCard';
 import HandoffReviewList from './tabs/HandoffReviewList';
+import KanbanBoard from './tabs/KanbanBoard';
+import TimelineView from './tabs/TimelineView';
 import { useWorkspace } from '@/hooks/useWorkspace';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
+import { useAdvancedFilters } from '@/hooks/useAdvancedFilters';
 import { Role, TabId, ROLES } from '@/config/roles';
 import { ROLE_DATA, SHARED_ASSETS } from '@/config/roleData';
 import { TaskCard, HandoffItem } from '@/utils/sharedState';
-import { WelcomeModal } from '@/components/onboarding/WelcomeModal';
-import { QuickCaptureFAB } from '@/components/ui/QuickCaptureFAB';
+import FilterPanel from '@/components/ui/FilterPanel';
+
+// Dynamic imports for modal components to reduce initial bundle size
+const WelcomeModal = dynamic(() => import('@/components/onboarding/WelcomeModal').then(mod => ({ default: mod.WelcomeModal })), {
+  ssr: false,
+});
+const KeyboardShortcutsHelp = dynamic(() => import('@/components/ui/KeyboardShortcutsHelp'), {
+  ssr: false,
+});
 
 interface DashboardPageProps {
   role: Role;
@@ -191,7 +202,7 @@ function WorkspaceSettings({ role, onSave }: WorkspaceSettingsProps) {
                       className="w-full border border-zinc-200 dark:border-zinc-800 rounded-lg bg-zinc-100 dark:bg-zinc-900/40 px-3 py-2 text-sm mt-1 text-zinc-400 cursor-not-allowed"
                       value={email}
                     />
-                    <p className="label-mono text-zinc-400 dark:text-zinc-500 mt-1 text-[10px]">Email is your sign-in ID and can't be changed here.</p>
+                    <p className="label-mono text-zinc-400 dark:text-zinc-500 mt-1 text-[10px]">Email is your sign-in ID and can&apos;t be changed here.</p>
                   </div>
                   <button
                     type="submit"
@@ -306,36 +317,47 @@ function WorkspaceSettings({ role, onSave }: WorkspaceSettingsProps) {
 
 export default function DashboardPage({ role }: DashboardPageProps) {
   const workspace = useWorkspace(role);
-  const { config, workspaceState, updateState, triggerAlert } = workspace;
+  const { config, workspaceState, triggerAlert } = workspace;
   const data = ROLE_DATA[role];
 
   const [activeTab, setActiveTab] = useState<TabId>('desk');
+  const [deskViewMode, setDeskViewMode] = useState<'feed' | 'kanban' | 'timeline'>('feed');
   const [activeFilter, setActiveFilter] = useState('ALL');
   const [paletteOpen, setPaletteOpen] = useState(false);
-  const [showWelcomeModal, setShowWelcomeModal] = useState(false);
+  const [showKeyboardHelp, setShowKeyboardHelp] = useState(false);
+  const [showFilterPanel, setShowFilterPanel] = useState(false);
+  // Check if user has completed onboarding (lazy initialization)
+  const [showWelcomeModal, setShowWelcomeModal] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    const onboardingCompleted = localStorage.getItem('decisionos_onboarding_completed');
+    return !onboardingCompleted;
+  });
   const [showQuickCapture, setShowQuickCapture] = useState(false);
 
-  // Check if user has completed onboarding
-  useEffect(() => {
-    const onboardingCompleted = localStorage.getItem('decisionos_onboarding_completed');
-    if (!onboardingCompleted) {
-      setShowWelcomeModal(true);
-    }
-  }, []);
+  // Advanced filtering system
+  const advancedFilters = useAdvancedFilters(workspaceState.cards, config.id);
 
-  // Keyboard shortcuts
-  useKeyboardShortcuts([
+  // Keyboard shortcuts - defined in useMemo to share with help modal
+  const shortcuts = useMemo(() => [
+    {
+      key: '?',
+      description: 'Show keyboard shortcuts',
+      handler: () => setShowKeyboardHelp(true),
+      category: 'General',
+    },
     {
       key: 'k',
       meta: true,
       description: 'Open command palette',
       handler: () => setPaletteOpen(true),
+      category: 'Navigation',
     },
     {
       key: '/',
       meta: true,
       description: 'Quick capture',
       handler: () => setShowQuickCapture(!showQuickCapture),
+      category: 'Actions',
     },
     {
       key: 'n',
@@ -345,6 +367,7 @@ export default function DashboardPage({ role }: DashboardPageProps) {
         if (activeTab !== 'desk') setActiveTab('desk');
         // Focus on task input (will be handled by TaskCalendarFeed)
       },
+      category: 'Actions',
     },
     {
       key: 'f',
@@ -352,12 +375,21 @@ export default function DashboardPage({ role }: DashboardPageProps) {
       shift: true,
       description: 'Search everything',
       handler: () => setPaletteOpen(true),
+      category: 'Navigation',
+    },
+    {
+      key: 'f',
+      meta: true,
+      description: 'Open filters',
+      handler: () => setShowFilterPanel(true),
+      category: 'Navigation',
     },
     {
       key: ',',
       meta: true,
       description: 'Open settings',
       handler: () => setActiveTab('settings'),
+      category: 'Navigation',
     },
     // Number keys 1-9 for tab switching
     ...(['1', '2', '3', '4', '5', '6', '7', '8', '9'] as const).map((num, index) => ({
@@ -368,50 +400,89 @@ export default function DashboardPage({ role }: DashboardPageProps) {
         const tab = config.navTabs[index];
         if (tab) setActiveTab(tab);
       },
+      category: 'Navigation',
     })),
-  ]);
+  ], [config.navTabs, activeTab, showQuickCapture]);
 
-  const deskCards = workspaceState.cards.filter(DESK_FILTERS[role]);
-  const submittedHandoffs = workspaceState.handoffs.filter(h => h.status === 'submitted');
+  useKeyboardShortcuts({ shortcuts });
+
+  // Memoize expensive computations to prevent unnecessary re-renders
+  const deskCards = useMemo(
+    () => workspaceState.cards.filter(DESK_FILTERS[role]),
+    [workspaceState.cards, role]
+  );
+
+  // Apply advanced filters on top of role-filtered cards
+  const filteredDeskCards = useMemo(() => {
+    // First apply role-based filtering (deskCards already filtered)
+    let result = deskCards;
+
+    // Then apply advanced filters if any are active
+    if (advancedFilters.hasActiveFilters) {
+      // Use the filtered tasks from advanced filters
+      result = advancedFilters.filteredTasks.filter(task =>
+        deskCards.some(card => card.id === task.id)
+      );
+    }
+
+    // Finally apply legacy category filter if no advanced filters
+    if (!advancedFilters.hasActiveFilters && activeFilter !== 'ALL') {
+      result = result.filter(card => card.category === activeFilter || card.type === activeFilter);
+    }
+
+    return result;
+  }, [deskCards, advancedFilters.filteredTasks, advancedFilters.hasActiveFilters, activeFilter]);
+
+  const submittedHandoffs = useMemo(
+    () => workspaceState.handoffs.filter(h => h.status === 'submitted'),
+    [workspaceState.handoffs]
+  );
+
   const myHandoffId = HANDOFF_ID[role];
-  const myHandoff = myHandoffId ? workspaceState.handoffs.find(h => h.id === myHandoffId) : undefined;
+  const myHandoff = useMemo(
+    () => myHandoffId ? workspaceState.handoffs.find(h => h.id === myHandoffId) : undefined,
+    [myHandoffId, workspaceState.handoffs]
+  );
 
-  const handleSubmitHandoffReply = (id: HandoffItem['id'], text: string) => {
-    updateState({
-      ...workspaceState,
-      handoffs: workspaceState.handoffs.map(h => h.id === id ? { ...h, status: 'submitted' as const, replyText: text } : h),
-    });
+  const handleSubmitHandoffReply = async (id: HandoffItem['id'], text: string) => {
+    // Find the actual handoff ID from the legacy ID
+    const handoff = workspaceState.handoffs.find(h => h.id === id);
+    if (handoff) {
+      // Extract numeric ID from the description or use a mapping
+      // For now, we'll need to update the handoff in the database
+      // This is a temporary workaround until we refactor the handoff system
+      await workspace.approveHandoff(parseInt(id.split('_')[0]) || 1, text);
+    }
     triggerAlert('Handoff feedback response sent to Rajesh Sharma.');
   };
 
-  const handleApproveHandoff = (id: HandoffItem['id']) => {
-    updateState({
-      ...workspaceState,
-      handoffs: workspaceState.handoffs.map(h => h.id === id ? { ...h, status: 'approved' as const } : h),
-    });
+  const handleApproveHandoff = async (id: HandoffItem['id']) => {
+    const handoff = workspaceState.handoffs.find(h => h.id === id);
+    if (handoff) {
+      await workspace.approveHandoff(parseInt(id.split('_')[0]) || 1);
+    }
     triggerAlert('Handoff feedback response approved and closed.');
   };
 
-  const handleRejectHandoff = (id: HandoffItem['id']) => {
-    updateState({
-      ...workspaceState,
-      handoffs: workspaceState.handoffs.map(h => h.id === id ? { ...h, status: 'pending' as const, replyText: '' } : h),
-    });
+  const handleRejectHandoff = async (id: HandoffItem['id']) => {
+    const handoff = workspaceState.handoffs.find(h => h.id === id);
+    if (handoff) {
+      await workspace.rejectHandoff(parseInt(id.split('_')[0]) || 1);
+    }
     triggerAlert('Handoff response rejected and returned for review.');
   };
 
-  const handleAddTask = (input: NewTaskInput) => {
-    workspace.distributeCard({
-      id: Date.now(),
+  const handleAddTask = async (input: NewTaskInput) => {
+    await workspace.createTask({
       title: input.title,
       subtext: input.subtext,
       type: input.type,
       source: 'TEXT',
       category: input.category,
-      assignedTo: role,
+      assigned_to: role,
       done: false,
-      scheduledDate: input.scheduledDate,
-      scheduledTime: input.scheduledTime,
+      scheduled_date: input.scheduledDate,
+      reminder_time: input.scheduledTime,
     });
     triggerAlert('Task added to the calendar.');
   };
@@ -444,24 +515,6 @@ export default function DashboardPage({ role }: DashboardPageProps) {
       userName={config.personName}
     />
 
-    {/* Quick Capture FAB */}
-    <QuickCaptureFAB
-      hidden={paletteOpen || activeTab === 'settings'}
-      onVoiceCapture={() => {
-        if (activeTab !== 'desk') setActiveTab('desk');
-        // Trigger voice recording
-        workspace.handleMicClick();
-      }}
-      onNewTask={() => {
-        if (activeTab !== 'desk') setActiveTab('desk');
-        // Focus will be handled by TaskCalendarFeed
-      }}
-      onFileUpload={() => {
-        if (activeTab !== 'capture') setActiveTab('capture');
-      }}
-      position="bottom-right"
-    />
-
     <DashboardShell
       workspace={workspace}
       activeTab={activeTab}
@@ -471,24 +524,108 @@ export default function DashboardPage({ role }: DashboardPageProps) {
       onOpenPalette={() => setPaletteOpen(true)}
     >
       {activeTab === 'desk' && (
-        <div className="space-y-8 animate-fade-up">
+        <div className="space-y-6 animate-fade-up">
+          {/* Desk View Switcher */}
+          <div className="flex items-center justify-between gap-2 border-b border-zinc-200 dark:border-zinc-800 pb-3">
+            <div className="flex items-center gap-1 bg-zinc-100 dark:bg-zinc-800/80 p-1 rounded-xl">
+              <button
+                onClick={() => setDeskViewMode('feed')}
+                className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                  deskViewMode === 'feed'
+                    ? 'bg-white dark:bg-zinc-900 text-brand-red shadow-xs'
+                    : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                }`}
+              >
+                Calendar &amp; Feed
+              </button>
+              <button
+                onClick={() => setDeskViewMode('kanban')}
+                className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                  deskViewMode === 'kanban'
+                    ? 'bg-white dark:bg-zinc-900 text-brand-red shadow-xs'
+                    : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                }`}
+              >
+                Kanban Board
+              </button>
+              <button
+                onClick={() => setDeskViewMode('timeline')}
+                className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                  deskViewMode === 'timeline'
+                    ? 'bg-white dark:bg-zinc-900 text-brand-red shadow-xs'
+                    : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                }`}
+              >
+                Timeline
+              </button>
+            </div>
+
+            {/* Advanced Filters Button */}
+            <button
+              onClick={() => setShowFilterPanel(true)}
+              className="relative flex items-center gap-2 px-4 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs font-mono font-bold uppercase tracking-wider text-zinc-700 dark:text-zinc-300 hover:border-brand-red hover:text-brand-red transition-all cursor-pointer"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+              </svg>
+              <span className="hidden sm:inline">Filters</span>
+              {advancedFilters.activeFilterCount > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 flex items-center justify-center w-5 h-5 text-[10px] font-bold bg-brand-red text-white rounded-full">
+                  {advancedFilters.activeFilterCount}
+                </span>
+              )}
+            </button>
+          </div>
+
           {role === 'owner' && (
             <HandoffReviewList handoffs={workspaceState.handoffs} onApprove={handleApproveHandoff} onReject={handleRejectHandoff} />
           )}
           {myHandoff && (
             <HandoffReplyCard handoff={myHandoff} onSubmitReply={handleSubmitHandoffReply} />
           )}
-          <ErrorBoundary>
-            <TaskCalendarFeed
-              cards={deskCards}
-              activeFilter={activeFilter}
-              setActiveFilter={setActiveFilter}
-              handleMarkDone={workspace.handleMarkDone}
-              handleDismiss={workspace.handleDismiss}
-              handleSendToBoard={workspace.handleSendToBoard}
-              onAddTask={handleAddTask}
-            />
-          </ErrorBoundary>
+
+          {deskViewMode === 'feed' && (
+            <ErrorBoundary>
+              <TaskCalendarFeed
+                cards={filteredDeskCards}
+                activeFilter={activeFilter}
+                setActiveFilter={setActiveFilter}
+                handleMarkDone={workspace.handleMarkDone}
+                handleDismiss={workspace.handleDismiss}
+                handleSendToBoard={workspace.handleSendToBoard}
+                onAddTask={handleAddTask}
+              />
+            </ErrorBoundary>
+          )}
+
+          {deskViewMode === 'kanban' && (
+            <ErrorBoundary>
+              <KanbanBoard
+                cards={filteredDeskCards}
+                role={role}
+                onMarkDone={workspace.handleMarkDone}
+                onDismiss={workspace.handleDismiss}
+                onAddTask={handleAddTask}
+              />
+            </ErrorBoundary>
+          )}
+
+          {deskViewMode === 'timeline' && (
+            <ErrorBoundary>
+              <TimelineView
+                cards={filteredDeskCards}
+                role={role}
+                onTaskClick={(taskId) => {
+                  // Handle task click - could open a detail modal
+                  console.log('Task clicked:', taskId);
+                }}
+                onDateChange={(taskId, newDate) => {
+                  // Handle date change from timeline drag
+                  console.log('Task date changed:', taskId, newDate);
+                }}
+              />
+            </ErrorBoundary>
+          )}
         </div>
       )}
 
@@ -569,6 +706,28 @@ export default function DashboardPage({ role }: DashboardPageProps) {
       setActiveFilter={setActiveFilter}
       toggleTheme={workspace.toggleTheme}
       handleClearNotifications={workspace.handleClearNotifications}
+    />
+
+    <KeyboardShortcutsHelp
+      shortcuts={shortcuts}
+      open={showKeyboardHelp}
+      onClose={() => setShowKeyboardHelp(false)}
+    />
+
+    <FilterPanel
+      criteria={advancedFilters.criteria}
+      updateCriteria={advancedFilters.updateCriteria}
+      clearFilters={advancedFilters.clearFilters}
+      quickFilters={advancedFilters.quickFilters}
+      applyQuickFilter={advancedFilters.applyQuickFilter}
+      savedFilters={advancedFilters.savedFilters}
+      saveCustomFilter={advancedFilters.saveCustomFilter}
+      deleteSavedFilter={advancedFilters.deleteSavedFilter}
+      applySavedFilter={advancedFilters.applySavedFilter}
+      hasActiveFilters={advancedFilters.hasActiveFilters}
+      activeFilterCount={advancedFilters.activeFilterCount}
+      isOpen={showFilterPanel}
+      onClose={() => setShowFilterPanel(false)}
     />
     </>
   );

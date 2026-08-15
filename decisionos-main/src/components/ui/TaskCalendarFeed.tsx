@@ -1,15 +1,15 @@
 'use client';
 
-import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
-import { 
-  Calendar as CalendarIcon, 
-  ListTodo, 
-  ChevronLeft, 
-  ChevronRight, 
-  Plus, 
-  Star, 
-  Clock, 
-  User, 
+import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
+import {
+  Calendar as CalendarIcon,
+  ListTodo,
+  ChevronLeft,
+  ChevronRight,
+  Plus,
+  Star,
+  Clock,
+  User,
   ExternalLink,
   Trash2,
   Check,
@@ -18,256 +18,37 @@ import {
   MoreVertical,
   CheckCircle2,
   ArrowLeft,
-  Sparkles
+  Sparkles,
+  RefreshCw
 } from 'lucide-react';
-import { TaskCard, explainRouting } from '../../utils/sharedState';
+import { explainRouting, type TaskCard } from '@/utils/sharedState';
+import { usePullToRefresh } from '@/hooks/usePullToRefresh';
+import { useFocusTrap } from '@/hooks/useFocusTrap';
+import {
+  type NewTaskInput,
+  type TaskCalendarFeedProps,
+  type ScheduledTask,
+  type ViewMode,
+  type CalendarViewType,
+  WORKING_HOURS_START,
+  WORKING_HOURS_COUNT,
+  CALENDAR_HEIGHT_PX,
+  MOBILE_BREAKPOINT_PX,
+  PULL_REFRESH_DELAY_MS,
+  PULL_REFRESH_THRESHOLD_PX,
+  DEMO_CALENDAR_MIN_DATE,
+  DEMO_CALENDAR_MAX_DATE,
+  FILTER_TABS,
+  weeksData,
+  getDayOfYear,
+  getCurrentTimeTopPercent,
+  getTaskSchedule,
+  getCategoryColor,
+  getCalendarChipStyle,
+} from './TaskCalendar';
 
-export interface NewTaskInput {
-  title: string;
-  subtext: string;
-  type: TaskCard['type'];
-  category: TaskCard['category'];
-  scheduledDate: string;
-  scheduledTime: string;
-}
-
-interface TaskCalendarFeedProps {
-  cards: TaskCard[];
-  activeFilter: string;
-  setActiveFilter: (filter: string) => void;
-  handleMarkDone: (id: number) => void;
-  handleDismiss: (id: number) => void;
-  handleSendToBoard: (title: string) => void;
-  onAddTask: (input: NewTaskInput) => void;
-}
-
-interface ScheduledTask extends TaskCard {
-  weekNum: number;
-  dayOfWeek: number; // 1 = Mon, 2 = Tue, 3 = Wed, 4 = Thu, 5 = Fri, 6 = Sat, 7 = Sun
-  startTime: string; // "09:00"
-  durationHours: number;
-}
-
-interface DayInfo {
-  name: string;
-  date: string;
-  fullDateLabel: string;
-  dayNum: number;
-  month: 'prev' | 'current' | 'next';
-  isToday?: boolean;
-  dayOfYear: number;
-}
-
-interface WeekInfo {
-  weekNum: number;
-  label: string;
-  days: DayInfo[];
-}
-
-// 6 weeks of August 2026 dataset
-const weeksData: WeekInfo[] = [
-  {
-    weekNum: 31,
-    label: 'W31',
-    days: [
-      { name: 'MON', date: '27', fullDateLabel: 'July 27', dayNum: 1, month: 'prev', dayOfYear: 208 },
-      { name: 'TUE', date: '28', fullDateLabel: 'July 28', dayNum: 2, month: 'prev', dayOfYear: 209 },
-      { name: 'WED', date: '29', fullDateLabel: 'July 29', dayNum: 3, month: 'prev', dayOfYear: 210 },
-      { name: 'THU', date: '30', fullDateLabel: 'July 30', dayNum: 4, month: 'prev', dayOfYear: 211 },
-      { name: 'FRI', date: '31', fullDateLabel: 'July 31', dayNum: 5, month: 'prev', dayOfYear: 212 },
-      { name: 'SAT', date: '1',  fullDateLabel: 'August 1', dayNum: 6, month: 'current', dayOfYear: 213 },
-      { name: 'SUN', date: '2',  fullDateLabel: 'August 2', dayNum: 7, month: 'current', dayOfYear: 214 },
-    ]
-  },
-  {
-    weekNum: 32,
-    label: 'W32',
-    days: [
-      { name: 'MON', date: '3',  fullDateLabel: 'August 3', dayNum: 1, month: 'current', dayOfYear: 215 },
-      { name: 'TUE', date: '4',  fullDateLabel: 'August 4', dayNum: 2, month: 'current', dayOfYear: 216 },
-      { name: 'WED', date: '5',  fullDateLabel: 'August 5', dayNum: 3, month: 'current', dayOfYear: 217 },
-      { name: 'THU', date: '6',  fullDateLabel: 'August 6', dayNum: 4, month: 'current', dayOfYear: 218 },
-      { name: 'FRI', date: '7',  fullDateLabel: 'August 7', dayNum: 5, month: 'current', dayOfYear: 219 },
-      { name: 'SAT', date: '8',  fullDateLabel: 'August 8', dayNum: 6, month: 'current', dayOfYear: 220 },
-      { name: 'SUN', date: '9',  fullDateLabel: 'August 9', dayNum: 7, month: 'current', dayOfYear: 221 },
-    ]
-  },
-  {
-    weekNum: 33,
-    label: 'W33',
-    days: [
-      { name: 'MON', date: '10', fullDateLabel: 'August 10', dayNum: 1, month: 'current', dayOfYear: 222 },
-      { name: 'TUE', date: '11', fullDateLabel: 'August 11', dayNum: 2, month: 'current', dayOfYear: 223 },
-      { name: 'WED', date: '12', fullDateLabel: 'August 12', dayNum: 3, month: 'current', dayOfYear: 224 },
-      { name: 'THU', date: '13', fullDateLabel: 'August 13', dayNum: 4, month: 'current', dayOfYear: 225 },
-      { name: 'FRI', date: '14', fullDateLabel: 'August 14', dayNum: 5, month: 'current', dayOfYear: 226 },
-      { name: 'SAT', date: '15', fullDateLabel: 'August 15', dayNum: 6, month: 'current', dayOfYear: 227 },
-      { name: 'SUN', date: '16', fullDateLabel: 'August 16', dayNum: 7, month: 'current', dayOfYear: 228 },
-    ]
-  },
-  {
-    weekNum: 34,
-    label: 'W34',
-    days: [
-      { name: 'MON', date: '17', fullDateLabel: 'August 17', dayNum: 1, month: 'current', dayOfYear: 229 },
-      { name: 'TUE', date: '18', fullDateLabel: 'August 18', dayNum: 2, month: 'current', dayOfYear: 230 },
-      { name: 'WED', date: '19', fullDateLabel: 'August 19', dayNum: 3, month: 'current', dayOfYear: 231 },
-      { name: 'THU', date: '20', fullDateLabel: 'August 20', dayNum: 4, month: 'current', dayOfYear: 232 },
-      { name: 'FRI', date: '21', fullDateLabel: 'August 21', dayNum: 5, month: 'current', dayOfYear: 233 },
-      { name: 'SAT', date: '22', fullDateLabel: 'August 22', dayNum: 6, month: 'current', dayOfYear: 234 },
-      { name: 'SUN', date: '23', fullDateLabel: 'August 23', dayNum: 7, month: 'current', dayOfYear: 235 },
-    ]
-  },
-  {
-    weekNum: 35,
-    label: 'W35',
-    days: [
-      { name: 'MON', date: '24', fullDateLabel: 'August 24', dayNum: 1, month: 'current', dayOfYear: 236 },
-      { name: 'TUE', date: '25', fullDateLabel: 'August 25', dayNum: 2, month: 'current', dayOfYear: 237 },
-      { name: 'WED', date: '26', fullDateLabel: 'August 26', dayNum: 3, month: 'current', dayOfYear: 238 },
-      { name: 'THU', date: '27', fullDateLabel: 'August 27', dayNum: 4, month: 'current', dayOfYear: 239 },
-      { name: 'FRI', date: '28', fullDateLabel: 'August 28', dayNum: 5, month: 'current', dayOfYear: 240 },
-      { name: 'SAT', date: '29', fullDateLabel: 'August 29', dayNum: 6, month: 'current', dayOfYear: 241 },
-      { name: 'SUN', date: '30', fullDateLabel: 'August 30', dayNum: 7, month: 'current', dayOfYear: 242 },
-    ]
-  },
-  {
-    weekNum: 36,
-    label: 'W36',
-    days: [
-      { name: 'MON', date: '31', fullDateLabel: 'August 31', dayNum: 1, month: 'current', dayOfYear: 243 },
-      { name: 'TUE', date: '1',  fullDateLabel: 'September 1', dayNum: 2, month: 'next', dayOfYear: 244 },
-      { name: 'WED', date: '2',  fullDateLabel: 'September 2', dayNum: 3, month: 'next', dayOfYear: 245 },
-      { name: 'THU', date: '3',  fullDateLabel: 'September 3', dayNum: 4, month: 'next', dayOfYear: 246 },
-      { name: 'FRI', date: '4',  fullDateLabel: 'September 4', dayNum: 5, month: 'next', dayOfYear: 247 },
-      { name: 'SAT', date: '5',  fullDateLabel: 'September 5', dayNum: 6, month: 'next', dayOfYear: 248 },
-      { name: 'SUN', date: '6',  fullDateLabel: 'September 6', dayNum: 7, month: 'next', dayOfYear: 249 },
-    ]
-  }
-];
-
-// weeksData covers a fixed July 27 - September 6, 2026 window; dayOfYear values
-// above are real 2026 day-of-year numbers, so "today" can be matched dynamically
-// instead of a hardcoded flag going stale the day after it was authored.
-function getDayOfYear(date: Date): number {
-  const start = new Date(date.getFullYear(), 0, 0);
-  return Math.floor((date.getTime() - start.getTime()) / 86400000);
-}
-
-// Time grid spans 8:00-19:00 (11 hour rows, see `hours` below); returns the
-// same 0-100 top-offset used by getCalendarChipStyle, or null when the
-// current time falls outside the displayed range.
-function getCurrentTimeTopPercent(): number | null {
-  const now = new Date();
-  const timeVal = now.getHours() + now.getMinutes() / 60;
-  if (timeVal < 8 || timeVal > 19) return null;
-  return ((timeVal - 8) / 11) * 100;
-}
-
-// The fixed weeksData window above, as ISO bounds for the Add Task date picker.
-const DEMO_CALENDAR_MIN_DATE = '2026-07-27';
-const DEMO_CALENDAR_MAX_DATE = '2026-09-06';
-
-// Locates a user-chosen scheduledDate within the fixed weeksData window.
-function getExplicitSchedule(card: TaskCard): { weekNum: number; dayOfWeek: number } | null {
-  if (!card.scheduledDate) return null;
-  const parsed = new Date(`${card.scheduledDate}T00:00:00`);
-  if (Number.isNaN(parsed.getTime())) return null;
-  const doy = getDayOfYear(parsed);
-  for (const week of weeksData) {
-    const day = week.days.find(d => d.dayOfYear === doy);
-    if (day) return { weekNum: week.weekNum, dayOfWeek: day.dayNum };
-  }
-  return null;
-}
-
-// Map tasks to realistic weeks & days of August 2026
-function getTaskSchedule(card: TaskCard): { weekNum: number; dayOfWeek: number; startTime: string; durationHours: number } {
-  // Tasks added via "Add Task" carry an explicit date/time — honor that
-  // before falling back to the keyword-matched/pseudo-random demo schedule.
-  const explicit = getExplicitSchedule(card);
-  if (explicit) {
-    return { ...explicit, startTime: card.scheduledTime || '09:00', durationHours: 1 };
-  }
-
-  const title = card.title.toLowerCase();
-
-  if (title.includes("mumbai retailer") && title.includes("prepare")) {
-    return { weekNum: 32, dayOfWeek: 3, startTime: "10:00", durationHours: 1.5 }; // Wed Aug 5
-  }
-  if (title.includes("100 pieces of cotton-nylon")) {
-    return { weekNum: 32, dayOfWeek: 4, startTime: "11:30", durationHours: 1.5 }; // Thu Aug 6
-  }
-  if (title.includes("develop new cotton-nylon")) {
-    return { weekNum: 32, dayOfWeek: 5, startTime: "14:00", durationHours: 1.5 }; // Fri Aug 7
-  }
-  if (title.includes("delhi cotton mills")) {
-    return { weekNum: 32, dayOfWeek: 4, startTime: "09:00", durationHours: 1.5 }; // Thu Aug 6
-  }
-  if (title.includes("revised prices") && title.includes("tomorrow")) {
-    return { weekNum: 32, dayOfWeek: 6, startTime: "13:00", durationHours: 1.0 }; // Sat Aug 8
-  }
-  if (title.includes("revised quote to deli")) {
-    return { weekNum: 32, dayOfWeek: 5, startTime: "16:30", durationHours: 1.0 }; // Fri Aug 7
-  }
-  if (title.includes("production review meeting")) {
-    return { weekNum: 32, dayOfWeek: 5, startTime: "15:00", durationHours: 1.0 }; // Fri Aug 7
-  }
-  if (title.includes("increase all sales prices")) {
-    return { weekNum: 32, dayOfWeek: 1, startTime: "09:00", durationHours: 1.5 }; // Mon Aug 3
-  }
-  if (title.includes("approve inr 15,000")) {
-    return { weekNum: 32, dayOfWeek: 2, startTime: "13:30", durationHours: 1.0 }; // Tue Aug 4
-  }
-  if (title.includes("ravi kumar")) {
-    return { weekNum: 32, dayOfWeek: 2, startTime: "11:00", durationHours: 1.0 }; // Tue Aug 4
-  }
-  if (title.includes("po-8812")) {
-    return { weekNum: 32, dayOfWeek: 5, startTime: "10:30", durationHours: 1.5 }; // Fri Aug 7
-  }
-  
-  // Default fallback scheduler: spread across all weeks
-  const weekNum = 31 + (card.id % 6); // Weeks 31 to 36
-  const day = (card.id % 5) + 1; // Mon to Fri
-  const startHour = 9 + ((card.id % 4) * 2); // 9:00, 11:00, 13:00, 15:00
-  const hourStr = startHour.toString().padStart(2, '0') + ":00";
-  return { weekNum, dayOfWeek: day, startTime: hourStr, durationHours: 1.0 };
-}
-
-function getCategoryColor(category: string) {
-  switch (category) {
-    case 'CUSTOMER': return 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100/50 dark:bg-blue-950/30 dark:text-blue-300 dark:border-blue-900/50 dark:hover:bg-blue-950/50';
-    case 'SUPPLIER': return 'bg-purple-50 text-purple-700 border-purple-200 hover:bg-purple-100/50 dark:bg-purple-950/30 dark:text-purple-300 dark:border-purple-900/50 dark:hover:bg-purple-950/50';
-    case 'INVOICE': return 'bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100/50 dark:bg-amber-950/30 dark:text-amber-300 dark:border-amber-900/50 dark:hover:bg-amber-950/50';
-    case 'PAYMENT': return 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100/50 dark:bg-emerald-950/30 dark:text-emerald-300 dark:border-emerald-900/50 dark:hover:bg-emerald-950/50';
-    case 'COMPLAINT': return 'bg-red-50 text-red-700 border-red-200 hover:bg-red-100/50 dark:bg-red-950/30 dark:text-red-300 dark:border-red-900/50 dark:hover:bg-red-950/50';
-    default: return 'bg-indigo-50 text-indigo-700 border-indigo-200 hover:bg-indigo-100/50 dark:bg-indigo-950/30 dark:text-indigo-300 dark:border-indigo-900/50 dark:hover:bg-indigo-950/50';
-  }
-}
-
-function getCalendarChipStyle(task: ScheduledTask) {
-  const [hStr, mStr] = task.startTime.split(':');
-  const h = parseInt(hStr);
-  const m = parseInt(mStr);
-  const timeVal = h + m / 60;
-
-  const top = ((timeVal - 8) / 11) * 100;
-  const height = (task.durationHours / 11) * 100;
-
-  return {
-    top: `${top}%`,
-    height: `${height}%`,
-  };
-}
-
-const FILTER_TABS = [
-  { key: 'ALL', label: 'All Tasks' },
-  { key: 'CUSTOMER', label: 'Customers' },
-  { key: 'SUPPLIER', label: 'Suppliers' },
-  { key: 'INVOICE', label: 'Invoices' },
-  { key: 'PAYMENT', label: 'Payments' },
-  { key: 'COMPLAINT', label: 'Complaints' },
-];
+// Re-export NewTaskInput for external use
+export type { NewTaskInput };
 
 export default function TaskCalendarFeed({
   cards,
@@ -292,7 +73,7 @@ export default function TaskCalendarFeed({
   // Split/calendar are grid-heavy desktop layouts; land phone-width visitors
   // on the plain task list instead (they can still switch views manually).
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+    if (typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT_PX) {
       setViewMode('tasks');
     }
   }, []);
@@ -309,6 +90,17 @@ export default function TaskCalendarFeed({
   const [focusedWeekIdx, setFocusedWeekIdx] = useState<number | null>(null);
   const monthGridRef = useRef<HTMLDivElement>(null);
 
+  // ─── Pull to refresh ───
+  const { isPulling, isRefreshing, pullDistance } = usePullToRefresh({
+    onRefresh: async () => {
+      // In a real implementation, this would refetch data from the API
+      // For now, we'll just simulate a refresh delay
+      await new Promise(resolve => setTimeout(resolve, PULL_REFRESH_DELAY_MS));
+    },
+    threshold: PULL_REFRESH_THRESHOLD_PX,
+    disabled: typeof window !== 'undefined' && window.innerWidth >= MOBILE_BREAKPOINT_PX, // Only on mobile
+  });
+
   // ─── Add Task modal state ───
   const [showAddTask, setShowAddTask] = useState(false);
   const [newTitle, setNewTitle] = useState('');
@@ -320,6 +112,83 @@ export default function TaskCalendarFeed({
     return todayIso >= DEMO_CALENDAR_MIN_DATE && todayIso <= DEMO_CALENDAR_MAX_DATE ? todayIso : DEMO_CALENDAR_MIN_DATE;
   });
   const [newTime, setNewTime] = useState('09:00');
+
+  // ─── Swipe gesture state ───
+  const [swipeState, setSwipeState] = useState<{
+    taskId: number | null;
+    startX: number;
+    currentX: number;
+    isSwiping: boolean;
+  }>({ taskId: null, startX: 0, currentX: 0, isSwiping: false });
+
+  // ─── Focus trap for Add Task modal ───
+  const addTaskTrapRef = useFocusTrap(showAddTask, () => setShowAddTask(false));
+
+  // ─── Focus trap for Task Details modal ───
+  const taskDetailsTrapRef = useFocusTrap(!!selectedTask, () => setSelectedTask(null));
+
+  // ─── Keyboard navigation for week picker ───
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Don't interfere when modals are open or user is typing
+      if (showAddTask || selectedTask) return;
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const currentIdx = weeksData.findIndex(w => w.weekNum === activeWeekNum);
+        if (currentIdx > 0) {
+          setActiveWeekNum(weeksData[currentIdx - 1].weekNum);
+        }
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        const currentIdx = weeksData.findIndex(w => w.weekNum === activeWeekNum);
+        if (currentIdx < weeksData.length - 1) {
+          setActiveWeekNum(weeksData[currentIdx + 1].weekNum);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showAddTask, selectedTask, weeksData, activeWeekNum]);
+
+  // ─── Swipe gesture handlers ───
+  const handleTouchStart = (e: React.TouchEvent, taskId: number) => {
+    const touch = e.touches[0];
+    setSwipeState({
+      taskId,
+      startX: touch.clientX,
+      currentX: touch.clientX,
+      isSwiping: true,
+    });
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!swipeState.isSwiping) return;
+    const touch = e.touches[0];
+    setSwipeState(prev => ({ ...prev, currentX: touch.clientX }));
+  };
+
+  const handleTouchEnd = (taskId: number) => {
+    if (!swipeState.isSwiping) return;
+
+    const swipeDistance = swipeState.currentX - swipeState.startX;
+    const threshold = 100; // Minimum swipe distance in pixels
+
+    if (Math.abs(swipeDistance) > threshold) {
+      if (swipeDistance > 0) {
+        // Swipe right: Star/unstar task
+        setStarredTasks(prev => ({ ...prev, [taskId]: !prev[taskId] }));
+      } else {
+        // Swipe left: Dismiss task
+        handleDismiss(taskId);
+      }
+    }
+
+    // Reset swipe state
+    setSwipeState({ taskId: null, startX: 0, currentX: 0, isSwiping: false });
+  };
 
   const handleAddTaskSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -340,7 +209,7 @@ export default function TaskCalendarFeed({
   };
 
   const activeWeek = weeksDataToday.find(w => w.weekNum === activeWeekNum) || weeksDataToday[1];
-  const hours = Array.from({ length: 11 }, (_, i) => i + 8); // 8 AM to 6 PM
+  const hours = Array.from({ length: WORKING_HOURS_COUNT }, (_, i) => i + WORKING_HOURS_START); // 8 AM to 6 PM
   const isSmall = viewMode === 'split' && !isCalendarLarge;
 
   const scheduledTasks: ScheduledTask[] = useMemo(
@@ -394,22 +263,25 @@ export default function TaskCalendarFeed({
     }
   };
 
-  // Click outside listener for task detail modal
-  const detailsRef = useRef<HTMLDivElement>(null);
-  const handleClickOutside = useCallback((event: MouseEvent) => {
-    if (detailsRef.current && !detailsRef.current.contains(event.target as Node)) {
-      setSelectedTask(null);
-    }
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [handleClickOutside]);
-
   return (
     <div className="flex flex-col bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-sm overflow-hidden select-none relative z-10">
-      
+
+      {/* ─── Pull to Refresh Indicator ─── */}
+      {(isPulling || isRefreshing) && (
+        <div
+          className="pull-to-refresh-indicator flex items-center justify-center gap-2 py-3 bg-blue-50 dark:bg-blue-900/20 border-b border-blue-200 dark:border-blue-800"
+          style={{
+            transform: `translateY(${Math.min(pullDistance - 80, 0)}px)`,
+            transition: isPulling ? 'none' : 'transform 0.3s ease-out',
+          }}
+        >
+          <RefreshCw className={`w-4 h-4 text-blue-600 dark:text-blue-400 ${isRefreshing ? 'animate-spin' : ''}`} />
+          <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+            {isRefreshing ? 'Refreshing...' : 'Release to refresh'}
+          </span>
+        </div>
+      )}
+
       {/* ─── Google Workspace styled Header ─── */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 border-b border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-900/50">
         
@@ -438,28 +310,35 @@ export default function TaskCalendarFeed({
           </div>
           
           <div className="flex items-center gap-1 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-lg p-0.5 shadow-sm">
-            <button 
+            <button
               onClick={() => handleWeekNav('prev')}
               disabled={calendarViewType === 'month'}
-              className={`p-1 rounded transition-colors cursor-pointer ${
-                calendarViewType === 'month' 
-                  ? 'opacity-40 text-zinc-400 dark:text-zinc-700 cursor-not-allowed' 
+              className={`p-1 sm:p-2 rounded transition-colors cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center ${
+                calendarViewType === 'month'
+                  ? 'opacity-40 text-zinc-400 dark:text-zinc-700 cursor-not-allowed'
                   : 'text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-700'
               }`}
+              aria-label="Previous week"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <span className="text-[10px] font-mono px-2 text-zinc-500 dark:text-zinc-400 font-bold whitespace-nowrap">
-              {calendarViewType === 'month' ? 'ALL WEEKS' : `WEEK ${activeWeek.weekNum}`}
+              {calendarViewType === 'month' ? 'ALL WEEKS' : (
+                <>
+                  WEEK {activeWeek.weekNum}
+                  <span className="hidden sm:inline text-[9px] opacity-60 ml-1.5" title="Use arrow keys to navigate">← →</span>
+                </>
+              )}
             </span>
-            <button 
+            <button
               onClick={() => handleWeekNav('next')}
               disabled={calendarViewType === 'month'}
-              className={`p-1 rounded transition-colors cursor-pointer ${
-                calendarViewType === 'month' 
-                  ? 'opacity-40 text-zinc-400 dark:text-zinc-700 cursor-not-allowed' 
+              className={`p-1 sm:p-2 rounded transition-colors cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center ${
+                calendarViewType === 'month'
+                  ? 'opacity-40 text-zinc-400 dark:text-zinc-700 cursor-not-allowed'
                   : 'text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-700'
               }`}
+              aria-label="Next week"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -748,7 +627,7 @@ export default function TaskCalendarFeed({
                  </div>
 
                 {/* Time Grid Scrollable */}
-                <div className="flex-1 relative flex overflow-y-auto" style={{ height: '520px' }}>
+                <div className="flex-1 relative flex overflow-y-auto" style={{ height: `${CALENDAR_HEIGHT_PX}px` }}>
                   
                   {/* Left Time slots column */}
                   <div className="w-[12.5%] shrink-0 border-r border-zinc-200 dark:border-zinc-800 bg-zinc-50/10 dark:bg-zinc-900/10 relative">
@@ -757,8 +636,8 @@ export default function TaskCalendarFeed({
                         key={hour} 
                         className="absolute left-0 right-0 border-b border-zinc-100 dark:border-zinc-800/40 flex justify-center items-start pt-1 font-mono text-[11px] font-bold text-zinc-500 dark:text-zinc-500"
                         style={{ 
-                          top: `${(idx / 11) * 100}%`,
-                          height: `${100 / 11}%`
+                          top: `${(idx / WORKING_HOURS_COUNT) * 100}%`,
+                          height: `${100 / WORKING_HOURS_COUNT}%`
                         }}
                       >
                         {hour > 12 ? `${hour - 12} PM` : hour === 12 ? '12 PM' : `${hour} AM`}
@@ -810,12 +689,23 @@ export default function TaskCalendarFeed({
                             const style = getCalendarChipStyle(task);
                             const catColor = getCategoryColor(task.category);
                             
+                            const swipeOffset = swipeState.isSwiping && swipeState.taskId === task.id
+                              ? swipeState.currentX - swipeState.startX
+                              : 0;
+
                             return (
                               <button
                                 key={task.id}
                                 onClick={() => setSelectedTask(task)}
-                                style={style}
-                                className={`absolute left-1 right-1 p-1.5 rounded-lg border text-left flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer ${catColor} ${
+                                onTouchStart={(e) => handleTouchStart(e, task.id)}
+                                onTouchMove={handleTouchMove}
+                                onTouchEnd={() => handleTouchEnd(task.id)}
+                                style={{
+                                  ...style,
+                                  transform: swipeOffset !== 0 ? `translateX(${swipeOffset}px)` : undefined,
+                                  transition: swipeState.isSwiping && swipeState.taskId === task.id ? 'none' : undefined,
+                                }}
+                                className={`absolute left-1 right-1 p-1.5 rounded-lg border text-left flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-md cursor-pointer ${catColor} ${
                                   task.done ? 'opacity-40 line-through' : ''
                                 }`}
                               >
@@ -888,12 +778,24 @@ export default function TaskCalendarFeed({
                     <p className="text-[9px] font-mono mt-0.5">Nice work!</p>
                   </div>
                 ) : (
-                  filteredScheduledTasks.filter(t => !t.done).map((task) => (
-                    <div 
-                      key={task.id} 
-                      onClick={() => setSelectedTask(task)}
-                      className="group flex items-start gap-2.5 p-2 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800/40 transition-colors cursor-pointer border border-transparent hover:border-zinc-100 dark:hover:border-zinc-900"
-                    >
+                  filteredScheduledTasks.filter(t => !t.done).map((task) => {
+                    const swipeOffset = swipeState.isSwiping && swipeState.taskId === task.id
+                      ? swipeState.currentX - swipeState.startX
+                      : 0;
+
+                    return (
+                      <div
+                        key={task.id}
+                        onClick={() => setSelectedTask(task)}
+                        onTouchStart={(e) => handleTouchStart(e, task.id)}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={() => handleTouchEnd(task.id)}
+                        style={{
+                          transform: swipeOffset !== 0 ? `translateX(${swipeOffset}px)` : undefined,
+                          transition: swipeState.isSwiping && swipeState.taskId === task.id ? 'none' : 'all 0.2s',
+                        }}
+                        className="group flex items-start gap-2.5 p-2 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800/40 cursor-pointer border border-transparent hover:border-zinc-100 dark:hover:border-zinc-900"
+                      >
                       {/* Checkbox button */}
                       <button
                         onClick={(e) => {
@@ -927,24 +829,27 @@ export default function TaskCalendarFeed({
 
                       {/* Right icons (Star & actions) */}
                       <div className="flex items-center gap-1 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <button 
+                        <button
                           onClick={(e) => toggleStar(task.id, e)}
-                          className="p-1 text-zinc-300 hover:text-amber-400 transition-colors cursor-pointer"
+                          className="p-2 text-zinc-300 hover:text-amber-400 transition-colors cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center"
+                          aria-label={starredTasks[task.id] ? "Unstar task" : "Star task"}
                         >
                           <Star className={`w-3.5 h-3.5 ${starredTasks[task.id] ? 'fill-amber-400 text-amber-400' : ''}`} />
                         </button>
-                        <button 
+                        <button
                           onClick={(e) => {
                             e.stopPropagation();
                             handleDismiss(task.id);
                           }}
-                          className="p-1 text-zinc-400 hover:text-red-500 transition-colors cursor-pointer"
+                          className="p-2 text-zinc-400 hover:text-red-500 transition-colors cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center"
+                          aria-label="Dismiss task"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
                     </div>
-                  ))
+                    );
+                  })
                 )}
               </div>
 
@@ -961,12 +866,24 @@ export default function TaskCalendarFeed({
 
                   {!completedCollapsed && (
                     <div className="space-y-0.5 mt-1">
-                      {filteredScheduledTasks.filter(t => t.done).map((task) => (
-                        <div 
-                          key={task.id}
-                          onClick={() => setSelectedTask(task)}
-                          className="group flex items-start gap-2.5 p-2 rounded-xl bg-zinc-50/20 dark:bg-zinc-950/10 hover:bg-zinc-50 dark:hover:bg-zinc-800/20 opacity-55 hover:opacity-85 transition-all cursor-pointer"
-                        >
+                      {filteredScheduledTasks.filter(t => t.done).map((task) => {
+                        const swipeOffset = swipeState.isSwiping && swipeState.taskId === task.id
+                          ? swipeState.currentX - swipeState.startX
+                          : 0;
+
+                        return (
+                          <div
+                            key={task.id}
+                            onClick={() => setSelectedTask(task)}
+                            onTouchStart={(e) => handleTouchStart(e, task.id)}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={() => handleTouchEnd(task.id)}
+                            style={{
+                              transform: swipeOffset !== 0 ? `translateX(${swipeOffset}px)` : undefined,
+                              transition: swipeState.isSwiping && swipeState.taskId === task.id ? 'none' : 'all 0.2s',
+                            }}
+                            className="group flex items-start gap-2.5 p-2 rounded-xl bg-zinc-50/20 dark:bg-zinc-950/10 hover:bg-zinc-50 dark:hover:bg-zinc-800/20 opacity-55 hover:opacity-85 cursor-pointer"
+                          >
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
@@ -991,7 +908,8 @@ export default function TaskCalendarFeed({
                             <Trash2 className="w-3.5 h-3.5" />
                           </button>
                         </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -1005,35 +923,43 @@ export default function TaskCalendarFeed({
 
       {/* ─── Task Details Popover (Google Calendar Modal style) ─── */}
       {selectedTask && (
-        <div className="fixed inset-0 bg-zinc-950/20 dark:bg-black/40 backdrop-blur-sm z-[250] flex items-center justify-center p-4">
-          <div 
-            ref={detailsRef}
+        <div
+          className="fixed inset-0 bg-zinc-950/20 dark:bg-black/40 backdrop-blur-sm z-[250] flex items-center justify-center p-4"
+          onClick={() => setSelectedTask(null)}
+        >
+          <div
+            ref={taskDetailsTrapRef}
+            onClick={(e) => e.stopPropagation()}
             className="w-full max-w-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl p-5 relative overflow-hidden animate-fade-up"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="task-details-title"
           >
             {/* Header background accents */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-brand-red"></div>
 
             {/* Actions Bar */}
             <div className="flex items-center justify-end gap-1 mb-2">
-              <button 
+              <button
                 onClick={(e) => toggleStar(selectedTask.id, e)}
-                className="p-1.5 text-zinc-400 hover:text-amber-400 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
-                title="Star task"
+                className="p-2.5 text-zinc-400 hover:text-amber-400 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label={starredTasks[selectedTask.id] ? "Unstar task" : "Star task"}
               >
                 <Star className={`w-4 h-4 ${starredTasks[selectedTask.id] ? 'fill-amber-400 text-amber-400' : ''}`} />
               </button>
-              <button 
+              <button
                 onClick={() => {
                   handleDismiss(selectedTask.id);
                   setSelectedTask(null);
                 }}
-                className="p-1.5 text-zinc-400 hover:text-red-500 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
-                title="Dismiss task"
+                className="p-2.5 text-zinc-400 hover:text-red-500 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label="Dismiss task"
               >
                 <Trash2 className="w-4 h-4" />
               </button>
-              <button 
+              <button
                 onClick={() => setSelectedTask(null)}
+                aria-label="Close task details"
                 className="px-2 py-1 text-[10px] font-mono font-bold text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 cursor-pointer"
               >
                 ESC
@@ -1051,7 +977,7 @@ export default function TaskCalendarFeed({
                     {selectedTask.source} INBOX
                   </span>
                 </div>
-                <h3 className="text-sm font-bold text-zinc-900 dark:text-white leading-snug">
+                <h3 id="task-details-title" className="text-sm font-bold text-zinc-900 dark:text-white leading-snug">
                   {selectedTask.title}
                 </h3>
               </div>
@@ -1125,12 +1051,22 @@ export default function TaskCalendarFeed({
 
       {/* ─── Add Task Modal ─── */}
       {showAddTask && (
-        <div className="fixed inset-0 bg-zinc-950/20 dark:bg-black/40 backdrop-blur-sm z-[260] flex items-center justify-center p-4">
-          <div className="w-full max-w-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl p-5 relative overflow-hidden animate-fade-up">
+        <div
+          className="fixed inset-0 bg-zinc-950/20 dark:bg-black/40 backdrop-blur-sm z-[260] flex items-center justify-center p-4"
+          onClick={() => setShowAddTask(false)}
+        >
+          <div
+            ref={addTaskTrapRef}
+            onClick={(e) => e.stopPropagation()}
+            className="w-full max-w-sm bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl p-5 relative overflow-hidden animate-fade-up"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="add-task-title"
+          >
             <div className="absolute top-0 left-0 right-0 h-1 bg-brand-red"></div>
 
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-sm font-bold text-zinc-900 dark:text-white">Add Task</h3>
+              <h3 id="add-task-title" className="text-sm font-bold text-zinc-900 dark:text-white">Add Task</h3>
               <button
                 onClick={() => setShowAddTask(false)}
                 className="px-2 py-1 text-[10px] font-mono font-bold text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 cursor-pointer"

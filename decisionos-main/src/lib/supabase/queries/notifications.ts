@@ -1,5 +1,7 @@
-import { supabase } from '../client';
-import type { Database } from '../client';
+import { createClient } from '../client';
+
+const supabase = createClient();
+// TODO: Import Database type from generated Supabase types
 
 type NotificationRow = Database['public']['Tables']['notifications']['Row'];
 

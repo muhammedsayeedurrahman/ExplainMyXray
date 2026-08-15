@@ -3,10 +3,19 @@ import OpenAI from 'openai';
 import { createClient } from '@supabase/supabase-js';
 import { transcribeRateLimit, checkRateLimit, createRateLimitResponse } from '@/lib/rateLimitRedis';
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Initialize OpenAI client (lazy initialization to avoid errors in demo mode)
+let openai: OpenAI | null = null;
+function getOpenAIClient(): OpenAI {
+  if (!openai && process.env.OPENAI_API_KEY) {
+    openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+  if (!openai) {
+    throw new Error('OpenAI API key not configured');
+  }
+  return openai;
+}
 
 /**
  * POST /api/transcribe
@@ -129,7 +138,7 @@ export async function POST(request: NextRequest) {
 
     // Call Whisper API
     const startTime = Date.now();
-    const transcription = await openai.audio.transcriptions.create({
+    const transcription = await getOpenAIClient().audio.transcriptions.create({
       file: file,
       model: 'whisper-1',
       // Use provided language or auto-detect

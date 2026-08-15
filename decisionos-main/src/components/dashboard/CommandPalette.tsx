@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { Search, ArrowRight, Moon, BellOff, LogOut, ListTodo } from 'lucide-react';
 import { TAB_ICONS } from './DashboardShell';
 import { RoleConfig, TabId } from '@/config/roles';
 import { WorkspaceState } from '@/utils/sharedState';
 import { TEAM } from '@/config/team';
+import { useFocusTrap } from '@/hooks/useFocusTrap';
 
 interface CommandItem {
   id: string;
@@ -45,6 +46,9 @@ export default function CommandPalette({
   const [highlighted, setHighlighted] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const close = useCallback(() => onOpenChange(false), [onOpenChange]);
+  const trapRef = useFocusTrap(open, close);
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
@@ -65,8 +69,6 @@ export default function CommandPalette({
     const t = setTimeout(() => inputRef.current?.focus(), 10);
     return () => clearTimeout(t);
   }, [open]);
-
-  const close = () => onOpenChange(false);
 
   // Approximates each role's Decision Desk visibility (owner sees everything,
   // others see what's assigned to them) — good enough for a quick-jump list.
@@ -133,7 +135,7 @@ export default function CommandPalette({
     ];
 
     return [...navItems, ...taskItems, ...peopleItems, ...actionItems];
-  }, [config, visibleCards, setActiveTab, setActiveFilter, toggleTheme, handleClearNotifications, router]);
+  }, [config, visibleCards, setActiveTab, setActiveFilter, toggleTheme, handleClearNotifications, router, close]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -180,8 +182,12 @@ export default function CommandPalette({
       onClick={close}
     >
       <div
+        ref={trapRef}
         onClick={(e) => e.stopPropagation()}
         className="w-full max-w-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl overflow-hidden animate-fade-up"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Command palette"
       >
         <div className="flex items-center gap-2.5 px-4 py-3 border-b border-zinc-200 dark:border-zinc-800">
           <Search className="w-4 h-4 text-zinc-400 shrink-0" />
@@ -198,7 +204,30 @@ export default function CommandPalette({
 
         <div className="max-h-80 overflow-y-auto p-2">
           {sections.length === 0 ? (
-            <div className="py-10 text-center text-xs text-zinc-400 font-mono">No matches found.</div>
+            <div className="py-12 text-center">
+              <div className="text-2xl mb-3">🔍</div>
+              <p className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-1">No matches found</p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-4">
+                Try searching for a tab, task, or person
+              </p>
+              <div className="text-left max-w-xs mx-auto">
+                <p className="text-[9px] font-mono font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-2 px-2">
+                  Popular Commands
+                </p>
+                <div className="space-y-1">
+                  {items.slice(0, 5).map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={item.onSelect}
+                      className="w-full flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-left transition-colors cursor-pointer text-zinc-600 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800/60"
+                    >
+                      <span className="text-zinc-400 dark:text-zinc-500 shrink-0 flex items-center justify-center w-4">{item.icon}</span>
+                      <span className="text-xs font-semibold truncate">{item.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
           ) : (
             sections.map(([section, sectionItems]) => (
               <div key={section} className="mb-2 last:mb-0">

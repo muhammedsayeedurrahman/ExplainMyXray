@@ -5,10 +5,19 @@ import { checkRateLimit, createRateLimitResponse } from '@/lib/rateLimitRedis';
 import { Ratelimit } from '@upstash/ratelimit';
 import { redis } from '@/lib/redis';
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Initialize OpenAI client (lazy initialization to avoid errors in demo mode)
+let openai: OpenAI | null = null;
+function getOpenAIClient(): OpenAI {
+  if (!openai && process.env.OPENAI_API_KEY) {
+    openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+  if (!openai) {
+    throw new Error('OpenAI API key not configured');
+  }
+  return openai;
+}
 
 // Rate limit: 10 task breakdowns per hour per user
 const taskBreakdownRateLimit = new Ratelimit({
@@ -170,7 +179,7 @@ Respond ONLY with valid JSON in this format:
 
     const userPrompt = `Task to break down: "${task}"${context ? `\n\nAdditional context: ${context}` : ''}`;
 
-    const completion = await openai.chat.completions.create({
+    const completion = await getOpenAIClient().chat.completions.create({
       model: 'gpt-4',
       messages: [
         { role: 'system', content: systemPrompt },

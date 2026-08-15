@@ -2,7 +2,9 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
-import { supabase } from '../client';
+import { createClient } from '../client';
+
+const supabase = createClient();
 import * as handoffQueries from '../queries/handoffs';
 import type { Handoff } from '../queries/handoffs';
 

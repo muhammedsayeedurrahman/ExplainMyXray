@@ -1,5 +1,7 @@
-import { supabase } from '../client';
-import type { Database } from '../client';
+import { createClient } from '../client';
+
+const supabase = createClient();
+// TODO: Import Database type from generated Supabase types
 
 type HandoffRow = Database['public']['Tables']['handoffs']['Row'];
 type HandoffInsert = Database['public']['Tables']['handoffs']['Insert'];

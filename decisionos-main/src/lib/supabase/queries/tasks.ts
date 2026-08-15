@@ -1,9 +1,11 @@
-import { supabase } from '../client';
-import type { Database } from '../client';
+import { createClient } from '../client';
 
-type TaskRow = Database['public']['Tables']['tasks']['Row'];
-type TaskInsert = Database['public']['Tables']['tasks']['Insert'];
-type TaskUpdate = Database['public']['Tables']['tasks']['Update'];
+const supabase = createClient();
+
+// TODO: Import Database type from generated Supabase types
+// type TaskRow = Database['public']['Tables']['tasks']['Row'];
+// type TaskInsert = Database['public']['Tables']['tasks']['Insert'];
+// type TaskUpdate = Database['public']['Tables']['tasks']['Update'];
 
 export interface Task {
   id: string;

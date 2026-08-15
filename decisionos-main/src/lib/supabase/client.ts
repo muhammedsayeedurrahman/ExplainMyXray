@@ -1,19 +1,8 @@
 import { createBrowserClient } from '@supabase/ssr';
 
 /**
- * Create a Supabase client for browser-side usage
- *
- * This client is used in Client Components and browser-side code.
- * It automatically handles session management via cookies.
- *
- * @example
- * ```tsx
- * 'use client';
- * import { createClient } from '@/lib/supabase/client';
- *
- * const supabase = createClient();
- * const { data } = await supabase.from('tasks').select('*');
- * ```
+ * Create a Supabase client for client-side operations
+ * This client includes authentication state management
  */
 export function createClient() {
   return createBrowserClient(
@@ -21,3 +10,9 @@ export function createClient() {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
 }
+
+/**
+ * Singleton Supabase client for browser
+ * Use this for client-side data fetching and mutations
+ */
+export const supabase = createClient();

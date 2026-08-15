@@ -32,7 +32,7 @@ test.describe('Authentication', () => {
 
     // Check if dark class is added to html element
     const htmlElement = page.locator('html');
-    const hasBackClass = await htmlElement.evaluate((el) =>
+    const hasDarkClass = await htmlElement.evaluate((el) =>
       el.classList.contains('dark')
     );
 

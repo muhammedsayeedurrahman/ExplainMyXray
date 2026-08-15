@@ -53,6 +53,21 @@
   height: var(--nav-h);
 }
 
+@media (max-width: 768px) {
+  .pill-nav-items {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .pill-nav-items::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .pill-logo {
   width: var(--nav-h);
   height: var(--nav-h);

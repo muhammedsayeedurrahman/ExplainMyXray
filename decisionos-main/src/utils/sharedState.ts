@@ -1,5 +1,13 @@
 'use client';
 
+/**
+ * Shared types and utilities for DecisionOS
+ *
+ * NOTE: This file previously contained localStorage functions (getSharedState, saveSharedState)
+ * which have been removed. The app now uses Supabase for data persistence.
+ * See src/hooks/useTasks.ts, useHandoffs.ts, and useWorkspaceData.ts
+ */
+
 export interface TaskCard {
   id: number;
   title: string;
@@ -15,14 +23,17 @@ export interface TaskCard {
   // scheduler uses these instead of guessing from the title.
   scheduledDate?: string;
   scheduledTime?: string;
+  // Timeline view support
+  createdAt?: string; // ISO timestamp
+  dueDate?: string; // ISO timestamp
 }
 
 export interface HandoffItem {
-  id: 'sales_handoff' | 'production_handoff';
+  id: 'sales_handoff' | 'production_handoff' | string;
   title: string;
   description: string;
   instruction: string;
-  status: 'pending' | 'submitted' | 'approved';
+  status: 'pending' | 'submitted' | 'approved' | 'rejected';
   replyText: string;
 }
 
@@ -35,50 +46,6 @@ export interface WorkspaceState {
     production: number;
     finance: number;
   };
-}
-
-import { DEMO_CARDS, DEMO_HANDOFFS, DEMO_NOTIFICATIONS } from '@/fixtures/demo-data';
-
-export const LOCAL_STORAGE_KEY = 'sharma_workspace_state';
-
-// Use demo data in development, empty state in production
-const isDevelopment = process.env.NODE_ENV === 'development';
-const initialCards: TaskCard[] = isDevelopment ? DEMO_CARDS : [];
-const initialHandoffs: HandoffItem[] = isDevelopment ? DEMO_HANDOFFS : [];
-const DEFAULT_NOTIFICATIONS = isDevelopment ? DEMO_NOTIFICATIONS : { owner: 0, sales: 0, production: 0, finance: 0 };
-
-export function getSharedState(): WorkspaceState {
-  if (typeof window === 'undefined') {
-    return {
-      cards: initialCards,
-      handoffs: initialHandoffs,
-      notifications: { ...DEFAULT_NOTIFICATIONS }
-    };
-  }
-  const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
-  if (!raw) {
-    const defaultState: WorkspaceState = {
-      cards: initialCards,
-      handoffs: initialHandoffs,
-      notifications: { ...DEFAULT_NOTIFICATIONS }
-    };
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(defaultState));
-    return defaultState;
-  }
-  try {
-    return JSON.parse(raw);
-  } catch (e) {
-    return {
-      cards: initialCards,
-      handoffs: initialHandoffs,
-      notifications: { ...DEFAULT_NOTIFICATIONS }
-    };
-  }
-}
-
-export function saveSharedState(state: WorkspaceState) {
-  if (typeof window === 'undefined') return;
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state));
 }
 
 const ROLE_LABELS: Record<TaskCard['assignedTo'], string> = {

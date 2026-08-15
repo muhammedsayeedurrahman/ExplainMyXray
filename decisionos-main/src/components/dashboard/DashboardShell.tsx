@@ -8,11 +8,14 @@ import {
   CircleDollarSign, Camera, CalendarDays, Settings, LogOut, Search, Sun, Moon
 } from 'lucide-react';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
-import NotificationsPanel from './NotificationsPanel';
+import { NotificationCenter } from '@/components/ui/NotificationCenter';
+import { ConnectionStatus } from '@/components/ui/ConnectionStatus';
 import PillNav, { PillNavItem } from '@/components/PillNav';
 import CaptureBar from './CaptureBar';
 import { ACCENT_STYLES, TabId } from '@/config/roles';
 import { useWorkspace } from '@/hooks/useWorkspace';
+
+import { MobileBottomNav } from '@/components/ui/MobileBottomNav';
 
 // Shared with CommandPalette so quick-search results use the same icon per tab.
 export const TAB_ICONS: Record<TabId, React.ReactNode> = {
@@ -52,11 +55,38 @@ export default function DashboardShell({
   const avatarBg = ACCENT_STYLES[config.accent].solidBg;
   const notificationCount = workspaceState.notifications[config.id];
 
+  // Mobile bottom navigation items (top 4 most frequent tabs for the role)
+  const mobileNavTabs: TabId[] = config.navTabs.slice(0, 4);
+  const mobileNavItems = mobileNavTabs.map((tabId) => {
+    const iconMap: Record<TabId, any> = {
+      desk: LayoutDashboard,
+      brief: FileText,
+      mywork: CheckSquare,
+      people: Users,
+      brain: Brain,
+      finance: CircleDollarSign,
+      capture: Camera,
+      meetings: CalendarDays,
+      settings: Settings,
+    };
+    return {
+      id: tabId,
+      label: config.tabTitles[tabId] || tabId,
+      icon: iconMap[tabId] || LayoutDashboard,
+      onClick: () => setActiveTab(tabId),
+      active: activeTab === tabId,
+      badge: tabId === 'brief' ? notificationCount : undefined,
+    };
+  });
+
   return (
     // Sidebar wraps the whole shell (not just SidebarBody) so the mobile
     // hamburger trigger in the header below can share its open/close state
     // via useSidebar() — avoids a second prop-drilled state pair.
     <Sidebar open={sidebarOpen} setOpen={setSidebarOpen}>
+      {/* Real-time connection status indicator */}
+      <ConnectionStatus />
+
       <div className="flex flex-col md:flex-row h-screen overflow-hidden bg-zinc-100 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 font-sans transition-colors duration-200">
 
         <SidebarBody className="justify-between gap-6 bg-white dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 px-2 min-w-[60px]">
@@ -121,7 +151,7 @@ export default function DashboardShell({
         <div className="flex-1 flex flex-col overflow-hidden min-w-0">
 
           <header className="h-14 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex items-center justify-between gap-2 px-3 sm:px-6 relative z-20 shrink-0">
-            <div className="flex items-center gap-2 min-w-0">
+            <div className="flex items-center gap-2 min-w-0 max-w-[50%] sm:max-w-none">
               <SidebarMobileTrigger className="-ml-1" />
               <h1 className="font-logo font-black text-xs uppercase tracking-wider text-zinc-900 dark:text-white truncate">
                 {headerTitle}
@@ -147,8 +177,6 @@ export default function DashboardShell({
                       <span className="flex items-center gap-1.5">
                         <Search className="w-3.5 h-3.5" />
                         <span className="hidden sm:inline">Search</span>
-                        {/* Keyboard shortcut hint is meaningless on the touch popover this
-                            same label renders into below 768px, so it's desktop-row only. */}
                         <kbd className="hidden md:inline ml-0.5 px-1 py-0.5 bg-zinc-950/5 dark:bg-white/10 rounded text-[8px] font-bold">Ctrl K</kbd>
                       </span>
                     ),
@@ -173,18 +201,12 @@ export default function DashboardShell({
                   },
                 ]}
               />
-              <NotificationsPanel
-                config={config}
-                workspaceState={workspaceState}
-                notificationCount={notificationCount}
-                onClearAll={handleClearNotifications}
-                setActiveTab={setActiveTab}
-              />
+              <NotificationCenter />
             </div>
           </header>
 
           <main className="flex-1 overflow-hidden flex flex-col relative app-canvas dark:bg-zinc-950">
-            <div className={`flex-1 overflow-y-auto p-4 sm:p-6 ${activeTab === 'desk' ? 'pb-28 sm:pb-24' : ''}`}>
+            <div className={`flex-1 overflow-y-auto p-4 sm:p-6 pb-24 md:pb-6 ${activeTab === 'desk' ? 'md:pb-24' : ''}`}>
               {children}
             </div>
 
@@ -203,6 +225,9 @@ export default function DashboardShell({
                 onFileUpload={workspace.handleFileUpload}
               />
             )}
+
+            {/* Mobile bottom navigation bar */}
+            <MobileBottomNav items={mobileNavItems} />
           </main>
         </div>
       </div>

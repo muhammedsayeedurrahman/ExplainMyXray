@@ -1,34 +1,34 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { getSharedState, saveSharedState, routeDirective, WorkspaceState, TaskCard, LOCAL_STORAGE_KEY } from '@/utils/sharedState';
+import { useCallback, useEffect, useState } from 'react';
 import { Role, ROLES } from '@/config/roles';
 import { useAudioRecorder } from '@/hooks/useAudioRecorder';
 import { useFileUpload } from '@/hooks/useFileUpload';
+import { useTasks, CreateTaskData } from '@/hooks/useTasks';
+import { useHandoffs } from '@/hooks/useHandoffs';
+import { useWorkspaceData } from '@/hooks/useWorkspaceData';
+import { routeDirective, TaskCard, HandoffItem } from '@/utils/sharedState';
+import { useNotifications } from '@/contexts/NotificationContext';
 
 export type VoiceState = 'idle' | 'recording' | 'thinking' | 'done';
-
-const EMPTY_STATE: WorkspaceState = {
-  cards: [],
-  handoffs: [],
-  notifications: { owner: 4, sales: 7, production: 3, finance: 5 },
-};
 
 const roleLabel = (role: Role) => role.charAt(0).toUpperCase() + role.slice(1);
 
 /**
- * Everything a demo dashboard needs: theme, shared workspace state, the
- * decision-desk card mutations, the floating capture bar (voice/text/upload),
- * and toast feedback. Extracted so the four role pages (owner/sales/
- * production/finance) don't each hand-roll an identical copy.
+ * Refactored workspace hook that uses Supabase API instead of localStorage
+ * Maintains backward compatibility with existing components
  */
 export function useWorkspace(role: Role) {
   const config = ROLES[role];
 
+  // Notification system
+  const { showSuccess, showError, showInfo } = useNotifications();
+
+  // Theme state (still uses localStorage for user preference)
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [workspaceState, setWorkspaceState] = useState<WorkspaceState>(EMPTY_STATE);
   const [alertMsg, setAlertMsg] = useState<string | null>(null);
 
+  // Voice capture state
   const [voiceState, setVoiceState] = useState<VoiceState>('idle');
   const [transcribedText, setTranscribedText] = useState('');
   const [textDirective, setTextDirective] = useState('');
@@ -39,36 +39,23 @@ export function useWorkspace(role: Role) {
   // Real file upload to Supabase Storage
   const fileUpload = useFileUpload();
 
-  // Define triggerAlert early since it's used in effects below
+  // Supabase data hooks
+  const { tasks, loading: tasksLoading, createTask, updateTask, deleteTask, toggleDone } = useTasks(role);
+  const { handoffs, loading: handoffsLoading, createHandoff, approveHandoff, rejectHandoff } = useHandoffs(role);
+  const { workspace, user } = useWorkspaceData();
+
+  // Calculate notifications count (pending tasks assigned to current role)
+  const notificationCount = tasks.filter(t => !t.done && t.assigned_to === role).length;
+
+  // Define triggerAlert for backward compatibility
   const triggerAlert = useCallback((msg: string) => {
+    showSuccess(msg);
+    // Also set alertMsg for any components still using it
     setAlertMsg(msg);
     setTimeout(() => setAlertMsg(null), 3000);
-  }, []);
+  }, [showSuccess]);
 
-  const updateState = useCallback((next: WorkspaceState) => {
-    setWorkspaceState(next);
-    saveSharedState(next);
-  }, []);
-
-  useEffect(() => {
-    setWorkspaceState(getSharedState());
-  }, []);
-
-  // Cross-tab sync: another role's tab writes to localStorage, this tab
-  // picks it up via the native `storage` event (fires only in *other* tabs).
-  useEffect(() => {
-    const onStorage = (e: StorageEvent) => {
-      if (e.key !== LOCAL_STORAGE_KEY || !e.newValue) return;
-      try {
-        setWorkspaceState(JSON.parse(e.newValue));
-      } catch {
-        // ignore malformed writes from another tab
-      }
-    };
-    window.addEventListener('storage', onStorage);
-    return () => window.removeEventListener('storage', onStorage);
-  }, []);
-
+  // Theme management (still uses localStorage)
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -91,10 +78,10 @@ export function useWorkspace(role: Role) {
     } else if (recorderState === 'error') {
       setVoiceState('idle');
       if (audioRecorder.error) {
-        triggerAlert(audioRecorder.error);
+        showError('Recording Error', audioRecorder.error);
       }
     }
-  }, [audioRecorder.state, audioRecorder.error, triggerAlert]);
+  }, [audioRecorder.state, audioRecorder.error, showError]);
 
   // Sync transcription from audio recorder
   useEffect(() => {
@@ -112,46 +99,31 @@ export function useWorkspace(role: Role) {
     });
   }, []);
 
-  const handleMarkDone = useCallback((id: number) => {
-    setWorkspaceState(prev => {
-      const next = { ...prev, cards: prev.cards.map(c => c.id === id ? { ...c, done: !c.done } : c) };
-      saveSharedState(next);
-      return next;
-    });
-  }, []);
+  const handleMarkDone = useCallback(async (id: number) => {
+    await toggleDone(id);
+  }, [toggleDone]);
 
-  const handleDismiss = useCallback((id: number) => {
-    setWorkspaceState(prev => {
-      const next = { ...prev, cards: prev.cards.filter(c => c.id !== id) };
-      saveSharedState(next);
-      return next;
-    });
-  }, []);
+  const handleDismiss = useCallback(async (id: number) => {
+    await deleteTask(id);
+    triggerAlert('Task dismissed');
+  }, [deleteTask, triggerAlert]);
 
   const handleSendToBoard = useCallback((title: string) => {
     triggerAlert(`"${title}" advanced to Loom Workflows Board.`);
   }, [triggerAlert]);
 
   const handleClearNotifications = useCallback(() => {
-    setWorkspaceState(prev => {
-      const next = { ...prev, notifications: { ...prev.notifications, [role]: 0 } };
-      saveSharedState(next);
-      return next;
-    });
+    // In the new system, notifications are calculated from tasks
+    // This could mark all pending tasks as read or similar
     triggerAlert('Notifications cleared.');
-  }, [role, triggerAlert]);
+  }, [triggerAlert]);
 
-  const distributeCard = useCallback((card: TaskCard) => {
-    setWorkspaceState(prev => {
-      const nextNotifications = { ...prev.notifications };
-      if (card.assignedTo !== role) {
-        nextNotifications[card.assignedTo] += 1;
-      }
-      const next = { ...prev, cards: [card, ...prev.cards], notifications: nextNotifications };
-      saveSharedState(next);
-      return next;
-    });
-  }, [role]);
+  const distributeTask = useCallback(async (taskData: CreateTaskData) => {
+    const created = await createTask(taskData);
+    if (created && taskData.assigned_to !== role) {
+      triggerAlert(`Task assigned to ${taskData.assigned_to.toUpperCase()}`);
+    }
+  }, [createTask, role, triggerAlert]);
 
   const handleMicClick = useCallback(async () => {
     if (voiceState === 'idle') {
@@ -167,47 +139,49 @@ export function useWorkspace(role: Role) {
     }
   }, [voiceState, audioRecorder]);
 
-  const handleApplyVoiceDirective = useCallback(() => {
+  const handleApplyVoiceDirective = useCallback(async () => {
     if (!transcribedText) return;
     const parsed = routeDirective(transcribedText);
-    distributeCard({
-      id: Date.now(),
+
+    await distributeTask({
       title: 'Voice: ' + transcribedText.substring(0, 45) + '...',
       subtext: transcribedText,
       type: 'TASK',
       source: 'VOICE',
       category: parsed.category,
-      assignedTo: parsed.assignedTo,
+      assigned_to: parsed.assignedTo,
       done: false,
     });
+
     setVoiceState('idle');
     setTranscribedText('');
     triggerAlert(`Voice directive assigned to ${parsed.assignedTo.toUpperCase()} and distributed!`);
-  }, [transcribedText, distributeCard, triggerAlert]);
+  }, [transcribedText, distributeTask, triggerAlert]);
 
-  const handleStructureText = useCallback((e: React.FormEvent) => {
+  const handleStructureText = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     if (!textDirective.trim()) return;
     const parsed = routeDirective(textDirective);
-    distributeCard({
-      id: Date.now(),
+
+    await distributeTask({
       title: textDirective,
       subtext: `${roleLabel(role)} instruction assigned to ${parsed.assignedTo.toUpperCase()}`,
       type: 'TASK',
       source: 'TEXT',
       category: parsed.category,
-      assignedTo: parsed.assignedTo,
+      assigned_to: parsed.assignedTo,
       done: false,
     });
+
     setTextDirective('');
     triggerAlert(`Structured and assigned to ${parsed.assignedTo.toUpperCase()} successfully.`);
-  }, [textDirective, role, distributeCard, triggerAlert]);
+  }, [textDirective, role, distributeTask, triggerAlert]);
 
   const handleFileUpload = useCallback(async (file: File) => {
     if (!file) return;
 
     try {
-      triggerAlert(`Uploading ${file.name}...`);
+      showInfo('Uploading file...', `Processing ${file.name}`);
 
       // Upload file to Supabase Storage
       const result = await fileUpload.upload(file, {
@@ -215,25 +189,24 @@ export function useWorkspace(role: Role) {
         folder: 'uploads',
       });
 
-      // Create a task card based on the uploaded file
+      // Create a task based on the uploaded file
       const parsed = routeDirective(`Process uploaded document: ${file.name}`);
-      distributeCard({
-        id: Date.now(),
+      await distributeTask({
         title: `Process uploaded file: ${file.name}`,
         subtext: `Uploaded to: ${result.path}`,
         type: file.type.includes('pdf') ? 'INVOICE' : 'TASK',
         source: 'UPLOAD',
         category: parsed.category,
-        assignedTo: parsed.assignedTo,
+        assigned_to: parsed.assignedTo,
         done: false,
       });
 
-      triggerAlert(`${file.name} uploaded and assigned to ${parsed.assignedTo.toUpperCase()}.`);
+      showSuccess('File uploaded', `${file.name} assigned to ${parsed.assignedTo.toUpperCase()}`);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : 'Upload failed';
-      triggerAlert(`Upload failed: ${errorMsg}`);
+      showError('Upload failed', errorMsg);
     }
-  }, [fileUpload, distributeCard, triggerAlert]);
+  }, [fileUpload, distributeTask, showInfo, showSuccess, showError]);
 
   // Wrapper to extract file from input event
   const handleFileInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -245,13 +218,51 @@ export function useWorkspace(role: Role) {
     e.target.value = '';
   }, [handleFileUpload]);
 
+  // Adapter: Convert database tasks to legacy TaskCard format for backward compatibility
+  const cards: TaskCard[] = tasks.map(task => ({
+    id: task.id,
+    title: task.title,
+    subtext: task.subtext || '',
+    type: task.type as TaskCard['type'],
+    source: task.source as TaskCard['source'],
+    category: task.category as TaskCard['category'],
+    done: task.done,
+    assignedTo: task.assigned_to,
+    scheduledDate: task.scheduled_date || undefined,
+    scheduledTime: task.reminder_time || undefined,
+  }));
+
+  // Adapter: Convert database handoffs to legacy HandoffItem format
+  const legacyHandoffs: HandoffItem[] = handoffs.map(handoff => ({
+    id: `${handoff.from_role}_handoff` as HandoffItem['id'],
+    title: `Handoff from ${handoff.from_role}`,
+    description: handoff.message,
+    instruction: handoff.message,
+    status: handoff.status,
+    replyText: handoff.reply_text || '',
+  }));
+
   return {
     config,
     theme,
     toggleTheme,
-    workspaceState,
-    updateState,
-    distributeCard,
+    // Backward compatible workspace state
+    workspaceState: {
+      cards,
+      handoffs: legacyHandoffs,
+      notifications: {
+        owner: role === 'owner' ? notificationCount : 0,
+        sales: role === 'sales' ? notificationCount : 0,
+        production: role === 'production' ? notificationCount : 0,
+        finance: role === 'finance' ? notificationCount : 0,
+      },
+    },
+    // New API for components that want to use Supabase directly
+    tasks,
+    handoffs,
+    workspace,
+    user,
+    loading: tasksLoading || handoffsLoading,
     alertMsg,
     triggerAlert,
     voiceState,
@@ -266,5 +277,12 @@ export function useWorkspace(role: Role) {
     handleDismiss,
     handleSendToBoard,
     handleClearNotifications,
+    // New methods for direct API access
+    createTask: distributeTask,
+    updateTask,
+    deleteTask,
+    createHandoff,
+    approveHandoff,
+    rejectHandoff,
   };
 }

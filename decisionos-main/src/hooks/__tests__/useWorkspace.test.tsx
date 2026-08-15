@@ -21,11 +21,18 @@ vi.mock('@/utils/sharedState', async () => {
 // Create a stable mock for audio recorder
 const mockAudioRecorder = {
   state: 'idle' as const,
-  error: null,
+  isRecording: false,
   transcription: '',
+  detectedLanguage: null,
+  error: null,
+  audioBlob: null,
+  recordingDuration: 0,
   startRecording: vi.fn(),
   stopRecording: vi.fn(),
   cancelRecording: vi.fn(),
+  reset: vi.fn(),
+  setLanguage: vi.fn(),
+  isSupported: true,
 };
 
 // Mock the audio recorder hook
