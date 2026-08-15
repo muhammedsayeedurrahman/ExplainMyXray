@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase/client';
+import { supabase, isDemoMode } from '@/lib/supabase/client';
 import Link from 'next/link';
 import type { Role } from '@/types/database.types';
 
@@ -21,12 +21,8 @@ export default function SignupPage() {
     setLoading(true);
 
     try {
-      // Check if running in demo mode (placeholder Supabase credentials)
-      const isDemoMode = process.env.NEXT_PUBLIC_SUPABASE_URL?.includes('placeholder') ||
-                        !process.env.NEXT_PUBLIC_SUPABASE_URL ||
-                        process.env.NEXT_PUBLIC_SUPABASE_URL === 'https://placeholder.supabase.co';
-
-      if (isDemoMode) {
+      // Check if running in demo mode - don't make any Supabase calls
+      if (isDemoMode()) {
         // Demo mode: Simulate signup and redirect to demo page
         await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
         router.push(`/demo/${role}`);
