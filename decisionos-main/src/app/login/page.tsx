@@ -20,10 +20,34 @@ export default function LoginPage() {
     try {
       // Check if running in demo mode - don't make any Supabase calls
       if (isDemoMode()) {
-        // Demo mode: Simulate login and redirect to demo page
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
-        // Default to owner role in demo mode
-        router.push('/demo/owner');
+        // Check if user exists in localStorage
+        const demoUserStr = localStorage.getItem('demo_user');
+
+        if (demoUserStr) {
+          try {
+            const demoUser = JSON.parse(demoUserStr);
+
+            // Validate email matches (password can be anything in demo mode)
+            if (demoUser.email === email) {
+              await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
+              // Redirect to user's actual role dashboard
+              router.push(`/demo/${demoUser.role}`);
+              return;
+            } else {
+              // Email doesn't match - show error
+              setError('Invalid email or password');
+              setLoading(false);
+              return;
+            }
+          } catch (e) {
+            // Invalid JSON in localStorage
+            console.error('Invalid demo user data in localStorage');
+          }
+        }
+
+        // No existing user - prompt to sign up
+        setError('No account found with this email. Please sign up first.');
+        setLoading(false);
         return;
       }
 

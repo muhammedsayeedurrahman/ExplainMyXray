@@ -55,6 +55,15 @@ export default function DashboardShell({
   const avatarBg = ACCENT_STYLES[config.accent].solidBg;
   const notificationCount = workspaceState.notifications[config.id];
 
+  const handleSignOut = () => {
+    // Clear demo user session data
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('demo_user');
+    }
+    // Redirect to landing page
+    router.push('/');
+  };
+
   // Mobile bottom navigation items (top 4 most frequent tabs for the role)
   const mobileNavTabs: TabId[] = config.navTabs.slice(0, 4);
   const mobileNavItems = mobileNavTabs.map((tabId) => {
@@ -141,7 +150,7 @@ export default function DashboardShell({
                 href: '#',
                 label: 'Sign Out',
                 icon: <LogOut size={16} className="shrink-0 text-zinc-400" />,
-                onClick: () => router.push('/'),
+                onClick: handleSignOut,
               }}
               className="px-2 py-1.5 text-xs font-mono font-bold text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
             />
