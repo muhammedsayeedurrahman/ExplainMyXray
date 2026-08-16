@@ -38,6 +38,7 @@ interface DashboardShellProps {
   extraHeaderItems?: PillNavItem[];
   onOpenPalette?: () => void;
   children: React.ReactNode;
+  userName?: string; // Dynamic user name from signup/login
 }
 
 export default function DashboardShell({
@@ -48,12 +49,16 @@ export default function DashboardShell({
   extraHeaderItems,
   onOpenPalette,
   children,
+  userName,
 }: DashboardShellProps) {
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
   const { config, theme, toggleTheme, workspaceState, handleClearNotifications } = workspace;
   const avatarBg = ACCENT_STYLES[config.accent].solidBg;
   const notificationCount = workspaceState.notifications[config.id];
+
+  // Use dynamic userName if provided, otherwise fall back to config.personName
+  const displayName = userName || config.personName;
 
   const handleSignOut = () => {
     // Clear demo user session data
@@ -140,7 +145,7 @@ export default function DashboardShell({
             <SidebarLink
               link={{
                 href: '#',
-                label: config.personName,
+                label: displayName,
                 icon: <div className={`w-7 h-7 rounded-full ${avatarBg} flex items-center justify-center font-logo font-black text-white text-[10px] shrink-0`}>{config.initials}</div>,
               }}
               className="px-2 py-1.5 text-xs font-bold dark:text-white"

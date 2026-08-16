@@ -540,6 +540,7 @@ export default function DashboardPage({ role }: DashboardPageProps) {
       headerTitle={config.tabTitles[activeTab] ?? ''}
       extraHeaderItems={headerExtras}
       onOpenPalette={() => setPaletteOpen(true)}
+      userName={getDemoUserName(role)}
     >
       {activeTab === 'desk' && (
         <div className="space-y-6 animate-fade-up">

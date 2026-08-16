@@ -8,9 +8,22 @@ export async function GET(request: Request) {
 
   if (code) {
     const supabase = await createClient();
-    await supabase.auth.exchangeCodeForSession(code);
+    const { data: sessionData } = await supabase.auth.exchangeCodeForSession(code);
+
+    if (sessionData?.user) {
+      // Get user profile to determine their role
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('role')
+        .eq('id', sessionData.user.id)
+        .single();
+
+      // Redirect to role-specific dashboard
+      const role = profile?.role || 'owner';
+      return NextResponse.redirect(`${origin}/demo/${role}`);
+    }
   }
 
-  // URL to redirect to after sign in process completes
-  return NextResponse.redirect(`${origin}/demo/owner`);
+  // If no code or authentication failed, redirect to login
+  return NextResponse.redirect(`${origin}/login`);
 }
